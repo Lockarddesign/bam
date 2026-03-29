@@ -4,7 +4,7 @@ description: "Dirty HVAC coils silently drive up static pressure, waste energy, 
 date: 2026-02-07
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80"
+image: "/images/gallery/return-air-grille-egg-crate-angled.webp"
 video: "/videos/dirty-coils-static-pressure.mp4"
 ---
 

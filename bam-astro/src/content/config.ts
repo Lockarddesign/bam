@@ -9,6 +9,7 @@ const services = defineCollection({
     category: z.enum(['core', 'specialty']),
     shortDescription: z.string(),
     icon: z.string(),
+    heroImage: z.string().optional(),
 
     diagnostics: z.object({
       title: z.string(),

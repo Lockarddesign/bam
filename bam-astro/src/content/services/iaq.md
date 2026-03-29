@@ -2,6 +2,7 @@
 title: "Commercial Indoor Air Quality"
 slug: "iaq"
 category: "core"
+heroImage: "/images/gallery/return-air-grille-dirty-straight-on.webp"
 shortDescription: "Comprehensive IAQ audits, monitoring, and remediation strategies for ASHRAE 62.1 compliance and occupant wellness."
 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>'
 

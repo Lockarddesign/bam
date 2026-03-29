@@ -19,6 +19,7 @@ interface Props {
   category: 'core' | 'specialty';
   shortDescription: string;
   icon: string;
+  heroImage?: string;
   diagnostics: {
     title: string;
     description: string;
@@ -42,6 +43,7 @@ const {
   slug,
   category,
   shortDescription,
+  heroImage,
   diagnostics,
   protocol,
   roi,
@@ -64,6 +66,9 @@ const categoryLabel = category === 'core' ? 'Core Service' : 'Specialty Service'
 
   <!-- ════════════════════ HERO ════════════════════ -->
   <section class="relative w-full py-28 md:py-36 flex flex-col items-center justify-center bg-dark overflow-hidden">
+    {heroImage && (
+      <img src={heroImage} alt={title} class="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" />
+    )}
     <div class="absolute inset-0 bg-gradient-to-b from-dark/60 via-dark/80 to-dark"></div>
     <div class="absolute inset-0 opacity-[0.04] site-grid-dark"></div>
 
