@@ -4,7 +4,7 @@ description: "For most institutional facilities, restoring a cooling tower deliv
 date: 2025-11-14
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1760904730891-8a63cde68d3b?auto=format&fit=crop&w=800&q=80"
 ---
 
 Facility directors facing aging cooling towers often assume full replacement is the only viable path. But for the majority of institutional systems — hospitals, universities, government buildings — **restoration can recover 60–80% of original performance** at 30–50% of the replacement cost.

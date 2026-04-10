@@ -192,6 +192,7 @@ const homeFaqs = [
         <YouTubeEmbed videoId="eSpw4Bh5qFU" title="BAM — Kline Commercial" />
       </div>
     </div>
+
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
@@ -282,6 +283,63 @@ const homeFaqs = [
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-mint transition-colors duration-300 leading-tight">{item.title}</h3>
             <p class="text-light-grey text-base md:text-lg leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FROM THE FIELD — PHOTO GALLERY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative bg-ice py-16 md:py-20 overflow-hidden border-b border-light-grey">
+    <div class="absolute inset-0 opacity-[0.03] site-grid-light"></div>
+    <div class="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 mb-10 flex items-end justify-between">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-[0.25em] text-primary/40 mb-2 block">From the Field</span>
+        <h2 class="text-2xl md:text-3xl font-black text-primary tracking-tight uppercase leading-none">Real Work. Real Facilities.</h2>
+      </div>
+      <a href="/services/" class="hidden md:inline-flex items-center text-[11px] font-bold uppercase tracking-widest text-primary/60 hover:text-primary transition-colors">
+        View Services <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="relative z-10 overflow-hidden" style="height: 180px;">
+      <div class="pointer-events-none absolute inset-y-0 left-0 z-10" style="width: 80px; background: linear-gradient(to right, var(--color-ice), transparent);"></div>
+      <div class="pointer-events-none absolute inset-y-0 right-0 z-10" style="width: 80px; background: linear-gradient(to left, var(--color-ice), transparent);"></div>
+      <div class="gallery-scroll flex animate-scroll" style="gap: 12px; height: 180px;">
+        {[
+          "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg",
+          "/images/jobs/rectangular-duct-interior-pre-cleaning_05-05-2025.jpg",
+          "/images/jobs/clean-plenum-interior-new-liner_05-05-2025.jpg",
+          "/images/jobs/return-air-grille-dirty-straight-on_05-05-2025.jpg",
+          "/images/jobs/insulated-duct-interior-post-cleaning-1_05-05-2025.jpg",
+          "/images/jobs/evaporator-coil-housing-access-panel_11-04-2025.jpg",
+          "/images/jobs/flex-duct-interior-inspection-1_05-05-2025.jpg",
+          "/images/jobs/perforated-ceiling-supply-diffuser-1_05-05-2025.jpg",
+          "/images/jobs/duct-interior-light-tack-tape-1_11-03-2025.jpg",
+          "/images/jobs/insulated-duct-interior-junction_11-04-2025.jpg",
+          "/images/jobs/warehouse-hvac-unit-above-pallet-racking_05-05-2025.jpg",
+          "/images/jobs/evaporator-coil-closeup-snapchat_11-2025.jpg",
+          "/images/jobs/plenum-box-duct-liner-inspection_05-05-2025.jpg",
+          "/images/jobs/return-air-grille-egg-crate-angled_05-05-2025.jpg",
+          "/images/jobs/insulated-duct-interior-post-cleaning-2_05-05-2025.jpg",
+          "/images/jobs/flex-duct-interior-inspection-2_05-05-2025.jpg",
+          "/images/jobs/duct-interior-light-tack-tape-2_11-03-2025.jpg",
+          "/images/jobs/perforated-ceiling-supply-diffuser-2_05-05-2025.jpg",
+          "/images/jobs/duct-interior-junction-light-tack-tape_11-03-2025.jpg",
+          "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg",
+          "/images/jobs/rectangular-duct-interior-pre-cleaning_05-05-2025.jpg",
+          "/images/jobs/clean-plenum-interior-new-liner_05-05-2025.jpg",
+          "/images/jobs/return-air-grille-dirty-straight-on_05-05-2025.jpg",
+          "/images/jobs/insulated-duct-interior-post-cleaning-1_05-05-2025.jpg",
+          "/images/jobs/evaporator-coil-housing-access-panel_11-04-2025.jpg",
+          "/images/jobs/flex-duct-interior-inspection-1_05-05-2025.jpg",
+          "/images/jobs/perforated-ceiling-supply-diffuser-1_05-05-2025.jpg",
+          "/images/jobs/duct-interior-light-tack-tape-1_11-03-2025.jpg",
+          "/images/jobs/insulated-duct-interior-junction_11-04-2025.jpg",
+        ].map(src => (
+          <div class="flex-shrink-0 rounded-lg overflow-hidden shadow-md" style="width: 260px; height: 180px;">
+            <img src={src} alt="" class="w-full h-full object-cover" loading="lazy" decoding="async" />
           </div>
         ))}
       </div>
@@ -408,7 +466,7 @@ const homeFaqs = [
         <!-- Step 1 — Left -->
         <div class="method-step relative z-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-14 mb-16 lg:mb-28" data-step="0">
           <div class="method-step-image relative w-full lg:w-[48%] h-[240px] md:h-[280px] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-light-grey/50 group">
-            <img src="/images/method/diagnose.webp" alt="Technician inspecting HVAC unit interior" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+            <img src="/images/jobs/evaporator-coil-housing-access-panel_11-04-2025.jpg" alt="Evaporator coil housing with access panel open for inspection" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-primary mix-blend-multiply opacity-40 group-hover:opacity-25 transition-opacity duration-500"></div>
           </div>
           <div class="method-node mx-auto lg:hidden flex-shrink-0 w-14 h-14 rounded-full border-2 border-light-grey bg-ice flex items-center justify-center text-slate font-black text-lg transition-all duration-700">01</div>
@@ -424,7 +482,7 @@ const homeFaqs = [
         <!-- Step 2 — Right -->
         <div class="method-step relative z-10 flex flex-col lg:flex-row-reverse items-center gap-6 lg:gap-14 mb-16 lg:mb-28" data-step="1">
           <div class="method-step-image relative w-full lg:w-[48%] h-[240px] md:h-[280px] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-light-grey/50 group">
-            <img src="/images/method/document.webp" alt="Technician documenting coil before/after with checklist" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+            <img src="/images/jobs/rectangular-duct-interior-pre-cleaning_05-05-2025.jpg" alt="Rectangular duct interior before cleaning showing debris buildup" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-primary mix-blend-multiply opacity-40 group-hover:opacity-25 transition-opacity duration-500"></div>
           </div>
           <div class="method-node mx-auto lg:hidden flex-shrink-0 w-14 h-14 rounded-full border-2 border-light-grey bg-ice flex items-center justify-center text-slate font-black text-lg transition-all duration-700">02</div>
@@ -440,7 +498,7 @@ const homeFaqs = [
         <!-- Step 3 — Left -->
         <div class="method-step relative z-10 flex flex-col lg:flex-row items-center gap-6 lg:gap-14 mb-16 lg:mb-28" data-step="2">
           <div class="method-step-image relative w-full lg:w-[48%] h-[240px] md:h-[280px] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-light-grey/50 group">
-            <img src="/images/method/restore.webp" alt="Technician cleaning coil surface" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+            <img src="/images/jobs/insulated-duct-interior-post-cleaning-2_05-05-2025.jpg" alt="Clean insulated duct interior after professional restoration" class="w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-primary mix-blend-multiply opacity-40 group-hover:opacity-25 transition-opacity duration-500"></div>
           </div>
           <div class="method-node mx-auto lg:hidden flex-shrink-0 w-14 h-14 rounded-full border-2 border-light-grey bg-ice flex items-center justify-center text-slate font-black text-lg transition-all duration-700">03</div>
@@ -456,7 +514,7 @@ const homeFaqs = [
         <!-- Step 4 — Right -->
         <div class="method-step relative z-10 flex flex-col lg:flex-row-reverse items-center gap-6 lg:gap-14" data-step="3">
           <div class="method-step-image relative w-full lg:w-[48%] h-[240px] md:h-[280px] rounded-xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] border border-light-grey/50 group">
-            <img src="/images/method/verify.webp" alt="Verified HVAC unit with panels removed for inspection" class="w-full h-full object-cover brightness-110 transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
+            <img src="/images/jobs/clean-plenum-interior-new-liner_05-05-2025.jpg" alt="Clean plenum interior with new liner after restoration" class="w-full h-full object-cover brightness-110 transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />
             <div class="absolute inset-0 bg-transparent"></div>
           </div>
           <div class="method-node mx-auto lg:hidden flex-shrink-0 w-14 h-14 rounded-full border-2 border-light-grey bg-ice flex items-center justify-center text-slate font-black text-lg transition-all duration-700">04</div>
@@ -471,6 +529,20 @@ const homeFaqs = [
       </div>
     </div>
   </section>
+
+  <style>
+    @keyframes scroll-gallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-scroll {
+      animation: scroll-gallery 60s linear infinite;
+      width: max-content;
+    }
+    .animate-scroll:hover {
+      animation-play-state: paused;
+    }
+  </style>
 
   <!-- ═══════════════════════════════════════════════════════════════
        BLOG / INSIGHTS CAROUSEL

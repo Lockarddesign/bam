@@ -4,6 +4,7 @@ slug: "chiller"
 category: "core"
 shortDescription: "Recover lost tonnage and reduce head pressure through tube cleaning, tube sheet refurbishment, and epoxy resurfacing of water boxes."
 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>'
+heroImage: "https://images.unsplash.com/photo-1565013928057-19c40faed034?auto=format&fit=crop&w=1200&q=80"
 
 diagnostics:
   title: "Heat Transfer Efficiency"

@@ -4,7 +4,7 @@ description: "A practical guide to managing Legionella risk in cooling towers th
 date: 2026-01-31
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1587560699334-bea93391dcef?auto=format&fit=crop&w=800&q=80"
+image: "https://images.unsplash.com/photo-1760904730891-8a63cde68d3b?auto=format&fit=crop&w=800&q=80"
 ---
 
 Of all the risks a facility director must manage, few are as serious as Legionella. The bacteria, which causes the severe and sometimes fatal form of pneumonia known as Legionnaires' disease, thrives in the warm, wet environments of water systems — and cooling towers are a primary source of concern. For any facility with a cooling tower, especially in healthcare, hospitality, or senior living, a Legionella outbreak is a worst-case scenario, carrying immense legal, financial, and reputational consequences.

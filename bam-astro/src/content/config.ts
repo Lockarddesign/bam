@@ -9,6 +9,7 @@ const services = defineCollection({
     category: z.enum(['core', 'specialty']),
     shortDescription: z.string(),
     icon: z.string(),
+    heroImage: z.string().optional(),
 
     diagnostics: z.object({
       title: z.string(),
@@ -46,6 +47,15 @@ const services = defineCollection({
         answer: z.string(),
       })
     ),
+
+    gallery: z
+      .array(
+        z.object({
+          src: z.string(),
+          alt: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 

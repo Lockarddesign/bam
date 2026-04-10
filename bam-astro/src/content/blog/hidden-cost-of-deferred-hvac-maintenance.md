@@ -4,7 +4,7 @@ description: "Deferred maintenance doesn't save money — it compounds costs. He
 date: 2025-09-18
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/rectangular-duct-interior-pre-cleaning_05-05-2025.jpg"
 ---
 
 Every facility director has faced the budget meeting where HVAC maintenance gets pushed to "next quarter." The logic seems sound — the system is running, there are more urgent priorities, and the maintenance can wait.

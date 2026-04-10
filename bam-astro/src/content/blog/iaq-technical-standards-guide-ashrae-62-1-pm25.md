@@ -4,7 +4,7 @@ description: "Understand the key technical standards and testing protocols that 
 date: 2026-03-01
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/perforated-ceiling-supply-diffuser-1_05-05-2025.jpg"
 ---
 
 For facility directors, the term "Indoor Air Quality" has evolved from a background concern into a primary performance indicator for a healthy, safe, and productive building. Occupants, tenants, and employees now have a heightened awareness of the air they breathe, and they expect facility leadership to provide a demonstrably clean environment. Meeting this expectation requires moving beyond subjective assessments and embracing a data-driven approach grounded in established technical standards.

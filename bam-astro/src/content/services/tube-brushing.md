@@ -4,6 +4,7 @@ slug: "tube-brushing"
 category: "specialty"
 shortDescription: "Mechanical cleaning of heat exchanger tubes to remove mud, algae, and scale. Essential for chiller efficiency."
 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>'
+heroImage: "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg"
 
 diagnostics:
   title: "Heat Exchange Recovery"

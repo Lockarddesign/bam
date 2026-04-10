@@ -4,6 +4,7 @@ slug: "duct-cleaning"
 category: "core"
 shortDescription: "Commercial air conveyance cleaning compliant with NADCA ACR standards. Source removal for hospitals, schools, and offices."
 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>'
+heroImage: "/images/jobs/insulated-duct-interior-post-cleaning-1_05-05-2025.jpg"
 
 diagnostics:
   title: "Supply Air Hygiene"
@@ -73,6 +74,34 @@ faq:
     answer: "NADCA recommends assessment-driven intervals rather than fixed schedules. Most commercial facilities benefit from cleaning every 3–7 years, but healthcare and manufacturing environments with higher particulate loads may require shorter cycles. BAM performs a visual inspection and surface sampling to determine the appropriate timeline for your facility."
   - question: "What documentation does BAM provide after a commercial duct cleaning?"
     answer: "Every project includes a complete closeout package with before-and-after photographs, a NADCA-standard vacuum test report, zone-by-zone scope verification, and a summary of any deficiencies found. This documentation satisfies Joint Commission, accreditation body, and internal audit requirements for healthcare and educational facilities."
+
+gallery:
+  - src: "/images/jobs/flex-duct-interior-inspection-1_05-05-2025.jpg"
+    alt: "Flex duct interior inspection"
+  - src: "/images/jobs/flex-duct-interior-inspection-2_05-05-2025.jpg"
+    alt: "Spiral liner inside flex duct"
+  - src: "/images/jobs/rectangular-duct-interior-pre-cleaning_05-05-2025.jpg"
+    alt: "Rectangular duct interior before cleaning"
+  - src: "/images/jobs/insulated-duct-interior-post-cleaning-1_05-05-2025.jpg"
+    alt: "Insulated duct interior after cleaning"
+  - src: "/images/jobs/insulated-duct-interior-post-cleaning-2_05-05-2025.jpg"
+    alt: "Clean insulated duct with liner pins"
+  - src: "/images/jobs/insulated-duct-interior-junction_11-04-2025.jpg"
+    alt: "Insulated duct junction point"
+  - src: "/images/jobs/duct-interior-light-tack-tape-1_11-03-2025.jpg"
+    alt: "Duct interior with tack tape"
+  - src: "/images/jobs/duct-interior-light-tack-tape-2_11-03-2025.jpg"
+    alt: "Duct interior inspection"
+  - src: "/images/jobs/duct-interior-junction-light-tack-tape_11-03-2025.jpg"
+    alt: "Duct junction with tack tape"
+  - src: "/images/jobs/clean-plenum-interior-new-liner_05-05-2025.jpg"
+    alt: "Clean plenum with new liner"
+  - src: "/images/jobs/plenum-box-duct-liner-inspection_05-05-2025.jpg"
+    alt: "Plenum box duct liner inspection"
+  - src: "/images/jobs/perforated-ceiling-supply-diffuser-1_05-05-2025.jpg"
+    alt: "Perforated ceiling supply diffuser"
+  - src: "/images/jobs/perforated-ceiling-supply-diffuser-2_05-05-2025.jpg"
+    alt: "Ceiling supply diffuser in drop tile"
 ---
 
 NADCA-Aligned Duct Cleaning services from Building & Air Maintenance.

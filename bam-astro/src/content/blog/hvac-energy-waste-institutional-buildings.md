@@ -4,7 +4,7 @@ description: "Most institutional facilities are hemorrhaging energy through degr
 date: 2025-06-20
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/duct-interior-light-tack-tape-1_11-03-2025.jpg"
 ---
 
 HVAC systems typically account for **40–60% of total energy consumption** in institutional buildings. When those systems degrade — and they all do — the energy waste compounds quickly. Our assessments routinely find facilities spending 20–40% more on HVAC energy than their systems were designed to consume.

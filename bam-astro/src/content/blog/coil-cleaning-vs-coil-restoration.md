@@ -4,7 +4,7 @@ description: "Standard coil cleaning recovers a fraction of lost performance. Tr
 date: 2025-07-12
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg"
 ---
 
 When facility managers request "coil cleaning," they typically expect a significant improvement in system performance. But standard pressure washing or chemical cleaning often recovers only **15–25% of lost capacity** — because surface dirt is rarely the primary problem.

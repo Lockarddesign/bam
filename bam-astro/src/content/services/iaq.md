@@ -4,6 +4,7 @@ slug: "iaq"
 category: "core"
 shortDescription: "Comprehensive IAQ audits, monitoring, and remediation strategies for ASHRAE 62.1 compliance and occupant wellness."
 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>'
+heroImage: "/images/jobs/return-air-grille-dirty-straight-on_05-05-2025.jpg"
 
 diagnostics:
   title: "Environmental Health"
@@ -73,6 +74,16 @@ faq:
     answer: "A typical investigation spans 3–5 business days: one day for the occupant interview and walkthrough, 1–3 days of continuous data logging, and a final day for sample collection if biologicals are suspected. BAM delivers the engineering report with corrective recommendations within two weeks of testing completion."
   - question: "What industries require formal indoor air quality testing?"
     answer: "Healthcare facilities must meet Joint Commission and CMS ventilation standards. Schools fall under state IAQ mandates and EPA Tools for Schools guidance. Federal buildings follow GSA P100 requirements. Manufacturing plants with process chemicals need OSHA PEL monitoring. BAM serves all four sectors with documentation calibrated to each regulatory framework."
+
+gallery:
+  - src: "/images/jobs/return-air-grille-dirty-straight-on_05-05-2025.jpg"
+    alt: "Dirty return air grille showing contamination buildup"
+  - src: "/images/jobs/return-air-grille-egg-crate-angled_05-05-2025.jpg"
+    alt: "Egg crate return air grille with visible debris accumulation"
+  - src: "/images/jobs/perforated-ceiling-supply-diffuser-1_05-05-2025.jpg"
+    alt: "Perforated ceiling supply diffuser in drop tile ceiling"
+  - src: "/images/jobs/perforated-ceiling-supply-diffuser-2_05-05-2025.jpg"
+    alt: "Ceiling supply diffuser during IAQ inspection"
 ---
 
 Commercial Indoor Air Quality services from Building & Air Maintenance.

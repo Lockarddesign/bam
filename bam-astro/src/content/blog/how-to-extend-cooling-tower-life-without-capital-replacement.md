@@ -4,8 +4,7 @@ description: "Cooling tower refurbishment offers 40-60% savings over replacement
 date: 2026-02-28
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
-video: "/videos/cooling-tower-life-extension.mp4"
+image: "https://images.unsplash.com/photo-1761115435501-bebf019aba54?auto=format&fit=crop&w=800&q=80"
 ---
 
 For facility directors, the phrase "capital replacement" is often met with a sense of dread. It signifies a significant, often unplanned, budget expenditure, along with operational disruptions and a lengthy procurement process. When a mission-critical cooling tower is the subject of this conversation, the stakes are even higher. A failing cooling tower can cripple production, compromise occupant comfort, and drive energy costs sky-high. But what if there was a third option — a strategic alternative to the binary choice of "run to fail" or "replace"?

@@ -4,7 +4,7 @@ description: "ASHRAE 62.1 and 241 are reshaping indoor air quality requirements.
 date: 2025-10-22
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/return-air-grille-dirty-straight-on_05-05-2025.jpg"
 ---
 
 The post-pandemic landscape has permanently elevated indoor air quality from a "nice to have" to a regulatory and liability imperative. ASHRAE Standards 62.1 and the newer 241 are driving real changes in how facilities must approach ventilation, filtration, and air cleaning.

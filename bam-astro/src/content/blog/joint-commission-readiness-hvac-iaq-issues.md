@@ -4,7 +4,7 @@ description: "A practical guide for healthcare facility directors on the HVAC an
 date: 2026-02-21
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/return-air-grille-egg-crate-angled_05-05-2025.jpg"
 video: "/videos/joint-commission-readiness.mp4"
 ---
 

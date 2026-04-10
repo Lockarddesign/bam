@@ -4,7 +4,7 @@ description: "Why chemical water treatment alone isn't enough for Legionella pre
 date: 2026-02-28
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/evaporator-coil-housing-access-panel_11-04-2025.jpg"
 ---
 
 For facility directors, managing the risk of Legionella is a paramount responsibility. While a properly administered chemical water treatment plan is the foundation of any Water Management Program (WMP), it is not a complete strategy on its own. Chemical treatments can be rendered ineffective by the physical condition of the cooling tower itself. Sludge, scale, and biofilm create protective shields for bacteria, while stagnant water zones allow them to multiply unchecked. True Legionella risk mitigation requires a dual approach: chemical treatment combined with rigorous mechanical hygiene.

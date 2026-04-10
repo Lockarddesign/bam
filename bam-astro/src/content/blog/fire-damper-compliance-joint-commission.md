@@ -4,7 +4,7 @@ description: "Fire and smoke damper failures are among the top Joint Commission 
 date: 2025-08-05
 draft: false
 author: "BAM Technical Team"
-image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=800&q=80"
+image: "/images/jobs/plenum-box-duct-liner-inspection_05-05-2025.jpg"
 ---
 
 Fire and smoke damper deficiencies consistently rank among the **top 10 findings in Joint Commission surveys**. For healthcare facilities, a failed damper isn't just a maintenance issue — it's a life safety deficiency that can trigger Immediate Jeopardy findings and CMS intervention.

@@ -4,6 +4,7 @@ slug: "ahu"
 category: "core"
 shortDescription: "Deep steam cleaning and restoration of air handling units to improve static pressure, indoor air quality, and thermal transfer."
 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>'
+heroImage: "/images/jobs/evaporator-coil-housing-access-panel_11-04-2025.jpg"
 
 diagnostics:
   title: "Airflow & Hygiene"
@@ -73,6 +74,14 @@ faq:
     answer: "BAM's protocol removes mold, biofilm, bacteria, dust, and construction debris from coils, blower housings, plenums, and drain pans. We use EPA-registered biocides for surface sanitization after physical removal. Post-cleaning verification confirms compliance with ASHRAE 62.1 ventilation and NADCA cleanliness standards."
   - question: "How often should commercial air handling units be deep cleaned?"
     answer: "Most institutional AHUs require deep cleaning every 3–5 years, though healthcare facilities and high-humidity environments may need shorter intervals. BAM performs a visual and static pressure assessment to determine the right schedule. Ignoring deep cleaning risks biological amplification that standard filter changes cannot address."
+
+gallery:
+  - src: "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg"
+    alt: "Evaporator coil fins during inspection"
+  - src: "/images/jobs/evaporator-coil-closeup-snapchat_11-2025.jpg"
+    alt: "Coil surface detail during assessment"
+  - src: "/images/jobs/evaporator-coil-housing-access-panel_11-04-2025.jpg"
+    alt: "AHU access panel open for restoration"
 ---
 
 AHU & Coil Restoration services from Building & Air Maintenance.
