@@ -1,0 +1,30 @@
+---
+/**
+ * FAQPageSchema
+ *
+ * Standalone FAQPage JSON-LD block. Only emit this when the corresponding FAQ
+ * is actually rendered in the visible HTML below. Hidden FAQs trigger Google
+ * structured-data violations.
+ */
+interface Props {
+  canonicalURL: string;
+  faq: Array<{ question: string; answer: string }>;
+}
+
+const { canonicalURL, faq } = Astro.props;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${canonicalURL}#faq`,
+  mainEntity: faq.map((q) => ({
+    '@type': 'Question',
+    name: q.question,
+    acceptedAnswer: { '@type': 'Answer', text: q.answer },
+  })),
+};
+---
+
+{faq && faq.length > 0 && (
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

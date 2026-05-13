@@ -1,0 +1,109 @@
+---
+/**
+ * HVACBusinessSchema
+ *
+ * Renders the residential silo's primary identity as a Schema.org HVACBusiness
+ * node, forked from the commercial ServiceAreaBusiness graph. Includes
+ * Organization + WebSite singleton references plus the residential
+ * HVACBusiness entity at `${site}#residential-localbusiness`.
+ *
+ * Reference: notes/residential-schema-plan.md (vault).
+ */
+import { siteConfig } from '../../config/site.config';
+
+interface Props {
+  canonicalURL: string;
+  /** Optional list of breadcrumbs ({ name, url }). Home is auto-prefixed. */
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const { canonicalURL, breadcrumbs } = Astro.props;
+
+const site = Astro.site?.toString().replace(/\/$/, '') || 'https://buildingandair.com';
+const res = siteConfig.residential;
+
+const sameAsLinks = [
+  ...siteConfig.socialLinks,
+  siteConfig.gbpReviewLink,
+  siteConfig.googleBusinessUrl,
+].filter(Boolean);
+
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'Organization',
+    '@id': `${site}#organization`,
+    name: siteConfig.businessName,
+    url: site,
+    logo: `${site}${siteConfig.logo}`,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    sameAs: sameAsLinks,
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${site}#website`,
+    url: site,
+    name: siteConfig.businessName,
+    publisher: { '@id': `${site}#organization` },
+  },
+  {
+    '@type': 'HVACBusiness',
+    '@id': `${site}#residential-localbusiness`,
+    name: `${siteConfig.businessName} — Residential`,
+    url: `${site}/residential/`,
+    telephone: res.phone,
+    email: siteConfig.email,
+    parentOrganization: { '@id': `${site}#organization` },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.mainAddress.street,
+      addressLocality: siteConfig.mainAddress.city,
+      addressRegion: siteConfig.mainAddress.state,
+      postalCode: siteConfig.mainAddress.zip,
+      addressCountry: siteConfig.mainAddress.country,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: siteConfig.geo.lat,
+      longitude: siteConfig.geo.lng,
+    },
+    areaServed: res.serviceAreaCounties.map((county) => ({
+      '@type': 'AdministrativeArea',
+      name: `${county} County, PA`,
+    })),
+    priceRange: '$$',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Residential HVAC Services',
+      itemListElement: res.services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title,
+          url: `${site}/residential/${s.slug}/`,
+        },
+      })),
+    },
+  },
+];
+
+if (breadcrumbs && breadcrumbs.length > 0) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${canonicalURL}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site },
+      ...breadcrumbs.map((crumb, i) => ({
+        '@type': 'ListItem',
+        position: i + 2,
+        name: crumb.name,
+        item: new URL(crumb.url, Astro.site).toString(),
+      })),
+    ],
+  });
+}
+
+const schema = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

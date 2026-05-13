@@ -1,0 +1,128 @@
+---
+/**
+ * ResidentialLocalBusinessSchema
+ *
+ * Per-city HVACBusiness schema for /residential/locations/[city]/ pages.
+ * Each city gets its own LocalBusiness instance with city-specific geo and
+ * areaServed, while still pointing parentOrganization back to the canonical
+ * Organization node. No address swap (HQ remains the registered address).
+ */
+import { siteConfig } from '../../config/site.config';
+
+interface Props {
+  canonicalURL: string;
+  city: {
+    name: string;
+    slug: string;
+    state: string;
+    zip: string;
+    lat: number;
+    lng: number;
+  };
+  breadcrumbs?: Array<{ name: string; url: string }>;
+  faq?: Array<{ question: string; answer: string }>;
+}
+
+const { canonicalURL, city, breadcrumbs, faq } = Astro.props;
+
+const site = Astro.site?.toString().replace(/\/$/, '') || 'https://buildingandair.com';
+const res = siteConfig.residential;
+
+const sameAsLinks = [
+  ...siteConfig.socialLinks,
+  siteConfig.gbpReviewLink,
+  siteConfig.googleBusinessUrl,
+].filter(Boolean);
+
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'Organization',
+    '@id': `${site}#organization`,
+    name: siteConfig.businessName,
+    url: site,
+    logo: `${site}${siteConfig.logo}`,
+    telephone: siteConfig.phone,
+    email: siteConfig.email,
+    sameAs: sameAsLinks,
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${site}#website`,
+    url: site,
+    name: siteConfig.businessName,
+    publisher: { '@id': `${site}#organization` },
+  },
+  {
+    '@type': 'HVACBusiness',
+    '@id': `${canonicalURL}#residential-localbusiness-${city.slug}`,
+    name: `${siteConfig.businessName} — Residential, ${city.name}, ${city.state}`,
+    url: canonicalURL,
+    telephone: res.phone,
+    email: siteConfig.email,
+    parentOrganization: { '@id': `${site}#organization` },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.mainAddress.street,
+      addressLocality: siteConfig.mainAddress.city,
+      addressRegion: siteConfig.mainAddress.state,
+      postalCode: siteConfig.mainAddress.zip,
+      addressCountry: siteConfig.mainAddress.country,
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: city.lat,
+      longitude: city.lng,
+    },
+    areaServed: {
+      '@type': 'City',
+      name: city.name,
+      containedInPlace: { '@type': 'State', name: city.state },
+    },
+    priceRange: '$$',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Residential HVAC Services',
+      itemListElement: res.services.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: s.title,
+          url: `${site}/residential/${s.slug}/`,
+        },
+      })),
+    },
+  },
+];
+
+if (faq && faq.length > 0) {
+  graph.push({
+    '@type': 'FAQPage',
+    '@id': `${canonicalURL}#faq`,
+    mainEntity: faq.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer },
+    })),
+  });
+}
+
+if (breadcrumbs && breadcrumbs.length > 0) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${canonicalURL}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site },
+      ...breadcrumbs.map((crumb, i) => ({
+        '@type': 'ListItem',
+        position: i + 2,
+        name: crumb.name,
+        item: new URL(crumb.url, Astro.site).toString(),
+      })),
+    ],
+  });
+}
+
+const schema = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
