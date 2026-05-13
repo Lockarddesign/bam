@@ -4,6 +4,10 @@
  *
  * Mockup scaffold. All copy is placeholder pending owner answers
  * (see notes/residential-launch-owner-questionnaire.md in the vault).
+ *
+ * Design language mirrors the commercial homepage (uppercase H1, tight tracking,
+ * font-black, commercial card geometry, border-left FAQ, two-column bottom CTA)
+ * but uses the lighter residential palette (white + brand mint, sage-deep CTAs).
  */
 import ResidentialLayout from '../../layouts/ResidentialLayout.astro';
 import HVACBusinessSchema from '../../components/schema/HVACBusinessSchema.astro';
@@ -11,8 +15,6 @@ import { siteConfig } from '../../config/site.config';
 
 const res = siteConfig.residential;
 const canonicalURL = new URL('/residential/', Astro.site).toString();
-
-const heroPhoto = 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80';
 
 const differentiators = [
   {
@@ -61,6 +63,19 @@ const faq = [
 ];
 
 const breadcrumbs = [{ name: 'Residential', url: '/residential/' }];
+
+const residentialServiceIcons: Record<string, string> = {
+  'ac-repair':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>`,
+  'ac-install':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h2"/><path d="M6 14h2"/><path d="M11 10h2"/><path d="M11 14h2"/><path d="M16 10h2"/></svg>`,
+  'furnace-repair':  `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
+  'furnace-install': `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6"/><path d="M9 13c1 1 2 1 3 1s2 0 3-1"/><circle cx="12" cy="17" r="1"/></svg>`,
+  'heat-pump':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9a4 4 0 0 0-2 7.5"/><path d="M12 3v2"/><path d="m6.6 18.4-1.4 1.4"/><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>`,
+  'mini-split':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="9" rx="2"/><path d="M6 18c1-1 2-1 3 0s2 1 3 0 2-1 3 0 2 1 3 0"/></svg>`,
+  'duct-cleaning':   `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>`,
+  'iaq':             `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.6.8c0 5.52-2.36 10.06-7.32 12.4A7 7 0 0 1 11 20Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
+  'maintenance':     `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  'emergency':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+};
 ---
 
 <ResidentialLayout
@@ -70,141 +85,220 @@ const breadcrumbs = [{ name: 'Residential', url: '/residential/' }];
 >
   <HVACBusinessSchema slot="head" canonicalURL={canonicalURL} breadcrumbs={breadcrumbs} />
 
-  <!-- ════════════════════ HERO ════════════════════ -->
-  <section class="relative w-full min-h-[calc(100vh-72px)] flex items-center res-bg-warm overflow-hidden">
-    <!-- soft sage half-circle behind the H1 -->
-    <div class="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full opacity-30" style="background-color: var(--color-sage);"></div>
-    <div class="absolute top-1/2 -right-24 w-72 h-72 rounded-full opacity-20" style="background-color: var(--color-terracotta);"></div>
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO — uppercase, font-black, embedded lead form, fits above fold
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative w-full res-bg-warm overflow-hidden min-h-[calc(100vh-72px)] flex items-center py-8 md:py-10">
+    <div class="absolute inset-0 opacity-[0.05] site-grid-dots"></div>
+    <div class="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full opacity-25 pointer-events-none" style="background-color: var(--color-sage);"></div>
+    <div class="absolute -bottom-40 -right-32 w-[440px] h-[440px] rounded-full opacity-20 pointer-events-none" style="background-color: var(--color-sage);"></div>
 
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-center">
+
+      <!-- LEFT: Headline, subhead, CTAs -->
       <div>
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-4">
-          [PLACEHOLDER] Family run since 2020
-        </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight res-text-ink mb-5">
-          [PLACEHOLDER] Your home<br />should feel like your home.
+        <div class="mb-4 md:mb-5 flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
+          <span class="font-bold text-[10px] md:text-xs tracking-[0.22em] uppercase res-text-sage">
+            Family run since 2020
+          </span>
+        </div>
+
+        <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.25rem] font-black uppercase tracking-tighter leading-[0.9] res-text-ink mb-5 md:mb-6">
+          Home Comfort,<br/>
+          <span class="res-text-sage">Done Right</span>,<br/>
+          By Neighbors.
         </h1>
-        <p class="text-base md:text-lg leading-[1.7] res-text-slate max-w-xl mb-8">
+
+        <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-xl mb-6 md:mb-8">
           [PLACEHOLDER copy pending owner answers] Same trusted techs. Same Building and Air. Now for your house. We answer the phone, we show up on time, we leave your home cleaner than we found it.
         </p>
 
-        <!-- Inline quote starter -->
-        <form class="flex flex-col sm:flex-row gap-3 mb-5" action="/thank-you/" method="get">
-          <input
-            type="text"
-            name="address"
-            placeholder="Your street address"
-            class="flex-1 px-4 py-3 rounded-md border res-border-cream bg-white text-base res-text-ink placeholder:text-gray-400 focus:outline-none focus:ring-2"
-            style="border-color: var(--color-cream);"
-            aria-label="Your street address"
-          />
-          <button
-            type="submit"
-            class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold whitespace-nowrap"
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5">
+          <a
+            href={`tel:${res.phoneRaw}`}
+            class="res-btn-primary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline w-full sm:w-auto"
           >
-            {res.ctaLabel}
-          </button>
-        </form>
-        <p class="text-sm res-text-slate">
-          or call
-          <a href={`tel:${res.phoneRaw}`} class="font-semibold underline res-text-sage">{res.phone}</a>
+            Call {res.phone}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+          <a
+            href="#residential-quote"
+            class="res-btn-secondary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline w-full sm:w-auto"
+          >
+            Request a Quote
+          </a>
+        </div>
+
+        <p class="text-xs md:text-sm res-text-slate leading-relaxed max-w-xl">
+          [PLACEHOLDER: Trusted by [3 institutional clients] now servicing homes in Schuylkill, Berks, Lebanon, Dauphin counties.]
         </p>
       </div>
 
-      <div class="hidden lg:block">
-        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-          <img
-            src={heroPhoto}
-            alt="[PLACEHOLDER] Warm sunlit living room in a Pennsylvania home"
-            class="w-full h-full object-cover object-[center_top]"
-            loading="eager"
-          />
+      <!-- RIGHT: Embedded lead form -->
+      <div id="residential-quote" class="w-full">
+        <div class="res-bg-surface border res-border-cream rounded-lg p-6 md:p-7 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.20)]">
+          <div class="h-1 w-12 bg-[var(--color-sage-deep)] rounded-full mb-4"></div>
+          <h2 class="text-base font-bold uppercase tracking-[0.14em] res-text-ink mb-1.5">
+            Get a Free Estimate
+          </h2>
+          <p class="text-xs md:text-sm res-text-slate mb-5 leading-relaxed">
+            Tell us what is going on. We will call you back within one business day.
+          </p>
+
+          <form name="residential-hero-quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+            <input type="hidden" name="form-name" value="residential-hero-quote" />
+            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="space-y-1.5">
+                <label for="rh-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
+                <input type="text" id="rh-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+              </div>
+              <div class="space-y-1.5">
+                <label for="rh-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
+                <input type="tel" id="rh-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="rh-service" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Service Needed</label>
+              <select id="rh-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
+                <option value="">Choose one</option>
+                {res.services.map((s) => (
+                  <option value={s.slug}>{s.title}</option>
+                ))}
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="rh-summary" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Brief Description</label>
+              <textarea id="rh-summary" name="summary" rows="3" placeholder="Tell us what your system is doing (or not doing)." class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="res-btn-primary w-full px-6 py-3.5 rounded-sm font-bold tracking-[0.18em] uppercase text-xs">
+              {res.ctaLabel}
+            </button>
+          </form>
+
+          <p class="text-[10px] res-text-slate mt-4 leading-relaxed">
+            No spam, no high-pressure sales. We respond to every message.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ SERVICES GRID ════════════════════ -->
-  <section class="res-bg-cream py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-6 md:px-10">
-      <div class="text-center mb-12">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+  <!-- ═══════════════════════════════════════════════════════════════
+       SERVICES GRID — mirror commercial card geometry, lighter palette
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <div class="text-center mb-14 md:mb-16">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           What we do for homeowners
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          Heating, cooling, and clean air for your house.
+        <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          Heating, Cooling, and Clean Air<br/>For Your Home.
         </h2>
-        <div class="res-divider mx-auto"></div>
+        <div class="w-24 h-1.5 mx-auto opacity-30 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
-        {res.services.map((s) => (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+        {res.services.map((service) => (
           <a
-            href={`/residential/${s.slug}/`}
-            class="res-bg-surface rounded-2xl p-5 md:p-6 no-underline hover:shadow-lg transition-shadow flex flex-col"
+            href={`/residential/${service.slug}/`}
+            class="group relative rounded-xl p-6 pt-7 transition-all duration-300 h-full flex flex-col no-underline overflow-hidden hover:-translate-y-1.5 bg-white border border-[var(--color-warm-line)] hover:border-[var(--color-sage-deep)]/30 shadow-[0_2px_16px_rgba(38,90,74,0.06)] hover:shadow-[0_16px_40px_rgba(38,90,74,0.14)]"
           >
-            <h3 class="font-semibold text-base res-text-ink mb-2">{s.title}</h3>
-            <p class="text-sm leading-relaxed res-text-slate flex-1">{s.shortDescription}</p>
-            <span class="mt-3 text-xs font-semibold res-text-sage">Learn more &rarr;</span>
+            <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--color-sage)] to-[var(--color-sage-deep)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <div class="relative z-10 mb-5 w-11 h-11 rounded-lg flex items-center justify-center transition-colors duration-300" style="background-color: rgba(167, 215, 197, 0.25); color: var(--color-sage-deep);">
+              <Fragment set:html={residentialServiceIcons[service.id] || residentialServiceIcons['maintenance']} />
+            </div>
+
+            <h3 class="relative z-10 text-[15px] font-extrabold uppercase tracking-tight leading-snug res-text-ink mb-2.5">
+              {service.title}
+            </h3>
+            <p class="relative z-10 text-[13px] res-text-slate leading-relaxed flex-grow">
+              {service.shortDescription}
+            </p>
+
+            <div class="relative z-10 mt-6 pt-4 border-t border-[var(--color-warm-line)] flex items-center font-bold text-[11px] uppercase tracking-widest res-text-sage transition-colors duration-300">
+              <span>Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-auto opacity-40 group-hover:opacity-90 transition-all duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ DIFFERENTIATORS ════════════════════ -->
-  <section class="res-bg-warm py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-6 md:px-10">
-      <div class="max-w-2xl mb-12">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+  <!-- ═══════════════════════════════════════════════════════════════
+       DIFFERENTIATORS — Why neighbors call us first
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-warm py-20 md:py-24 overflow-hidden">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+      <div class="text-center mb-14 md:mb-20">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Why neighbors call us first
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          You should not have to wonder who is in your house.
+        <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          You Should Not Have to Wonder<br/>Who Is in Your House.
         </h2>
-        <div class="res-divider"></div>
+        <div class="w-24 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {differentiators.map((d) => (
-          <div class="res-bg-surface rounded-2xl p-6 md:p-8 shadow-sm">
-            <h3 class="font-semibold text-lg res-text-ink mb-2">{d.title}</h3>
-            <p class="text-base leading-[1.7] res-text-slate">{d.body}</p>
+        {differentiators.map((d, i) => (
+          <div class="group rounded-lg border border-[var(--color-warm-line)] bg-white p-8 md:p-10 transition-all duration-300 hover:border-[var(--color-sage-deep)]/40 hover:shadow-[0_14px_40px_-12px_rgba(38,90,74,0.18)]">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300" style="background-color: rgba(167, 215, 197, 0.3); color: var(--color-sage-deep);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <span class="text-[11px] font-bold tracking-[0.25em] uppercase res-text-sage opacity-70">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold res-text-ink mb-3 leading-tight">{d.title}</h3>
+            <p class="res-text-slate text-base md:text-lg leading-relaxed">{d.body}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ SERVICE AREA ════════════════════ -->
-  <section class="res-bg-cream py-16 md:py-20">
+  <!-- ═══════════════════════════════════════════════════════════════
+       SERVICE AREA — counties + cities
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="res-bg-cream py-20 md:py-24">
     <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <div>
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Where we work
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          Counties we serve.
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          Counties We Serve.
         </h2>
-        <div class="res-divider mb-6"></div>
-        <p class="text-base leading-[1.7] res-text-slate mb-6 max-w-md">
+        <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
+        <p class="text-base md:text-lg leading-relaxed res-text-slate mb-7 max-w-md">
           [PLACEHOLDER copy pending owner answers] Based in Pine Grove. Serving Pennsylvania homeowners across these counties.
         </p>
         <ul class="grid grid-cols-2 gap-3 mb-8">
           {res.serviceAreaCounties.map((c) => (
             <li class="flex items-center gap-2 text-base res-text-ink">
-              <span class="w-2 h-2 rounded-full" style="background-color: var(--color-sage);"></span>
-              <span>{c} County</span>
+              <span class="w-2 h-2 rounded-full" style="background-color: var(--color-sage-deep);"></span>
+              <span class="font-semibold">{c} County</span>
             </li>
           ))}
         </ul>
-        <p class="text-sm res-text-slate mb-2">Cities we work in most often:</p>
+        <p class="text-[10px] font-bold tracking-[0.22em] uppercase res-text-sage mb-3">Cities we work in most often</p>
         <ul class="flex flex-wrap gap-2">
           {res.serviceAreaCities.map((c) => (
             <li>
               <a
                 href={`/residential/locations/${c.slug}/`}
-                class="inline-block res-bg-surface px-3 py-1.5 rounded-full text-sm res-text-ink no-underline hover:shadow-sm"
+                class="inline-block res-bg-surface border res-border-cream px-3.5 py-1.5 rounded-full text-sm font-semibold res-text-ink no-underline hover:border-[var(--color-sage-deep)] hover:res-text-sage transition-colors"
               >{c.name}</a>
             </li>
           ))}
@@ -224,61 +318,153 @@ const breadcrumbs = [{ name: 'Residential', url: '/residential/' }];
     </div>
   </section>
 
-  <!-- ════════════════════ TRUST TRANSFER ════════════════════ -->
-  <section class="res-bg-warm py-16 md:py-20">
-    <div class="max-w-4xl mx-auto px-6 md:px-10 text-center">
-      <p class="text-xl md:text-2xl leading-snug res-text-ink font-normal">
-        [PLACEHOLDER] Same techs trusted by
-        <span class="res-text-terra font-semibold">[institutional client placeholder]</span>,
-        now servicing homes across
-        <span class="res-text-sage font-semibold">Schuylkill County and beyond</span>.
-      </p>
-    </div>
-  </section>
+  <!-- ═══════════════════════════════════════════════════════════════
+       FAQ — mirrors commercial border-left pattern, light palette
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-warm py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
 
-  <!-- ════════════════════ FAQ ════════════════════ -->
-  <section class="res-bg-cream py-16 md:py-20">
-    <div class="max-w-3xl mx-auto px-6 md:px-10">
-      <div class="text-center mb-10">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+    <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
+      <div class="text-center mb-14 md:mb-20">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Questions homeowners ask us
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          Common questions.
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          Frequently Asked Questions
         </h2>
-        <div class="res-divider mx-auto"></div>
+        <div class="w-24 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
 
-      <div class="space-y-4">
-        {faq.map((q, i) => (
-          <details class="res-bg-surface rounded-2xl p-5 md:p-6 group">
-            <summary class="cursor-pointer font-semibold text-base md:text-lg res-text-ink list-none flex items-start justify-between gap-4">
-              <span>{q.question}</span>
-              <span class="res-text-sage flex-shrink-0 text-xl leading-none">+</span>
+      <div class="space-y-10 md:space-y-12">
+        {faq.map((q) => (
+          <details class="group border-l-2 pl-6 md:pl-8" style="border-color: rgba(38, 90, 74, 0.4);">
+            <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+              <h3 class="text-lg md:text-xl font-bold res-text-ink leading-snug">{q.question}</h3>
+              <span class="res-text-sage flex-shrink-0 text-xl leading-none mt-1 transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
-            <p class="mt-3 text-base leading-[1.7] res-text-slate">{q.answer}</p>
+            <p class="res-text-slate text-base md:text-lg leading-relaxed mt-4">{q.answer}</p>
           </details>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ FINAL CTA ════════════════════ -->
-  <section class="res-bg-warm py-16 md:py-20">
-    <div class="max-w-3xl mx-auto px-6 md:px-10 text-center res-bg-surface rounded-2xl p-8 md:p-12 shadow-md">
-      <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-        [PLACEHOLDER] Ready to get comfortable again?
-      </h2>
-      <p class="text-base md:text-lg leading-[1.7] res-text-slate mb-8 max-w-xl mx-auto">
-        [PLACEHOLDER] Tell us what is going on with your system. We will give you a straight answer and a free estimate.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/contact/" class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold no-underline">
-          {res.ctaLabel}
-        </a>
-        <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary px-6 py-3 rounded-md text-sm font-semibold no-underline">
-          Call {res.phone}
-        </a>
+  <!-- ═══════════════════════════════════════════════════════════════
+       BOTTOM CTA — two columns, mirrors commercial /index.astro
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-cream pt-20 pb-20 md:pt-24 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        <!-- LEFT: copy + value props -->
+        <div class="flex flex-col space-y-7">
+          <div>
+            <span class="font-bold text-[10px] tracking-[0.22em] uppercase mb-4 block res-text-sage">
+              Ready when you are
+            </span>
+            <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5 max-w-xl">
+              Request a Free<br/>Home Estimate.
+            </h2>
+            <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
+              [PLACEHOLDER] Tell us what is going on with your system. We will give you a straight answer and a free estimate, with the price up front before we start.
+            </p>
+          </div>
+
+          <ul class="space-y-5 mt-1">
+            {[
+              { title: 'Real Person, Same Day', description: 'A neighbor answers the phone. No phone tree, no overseas call center.' },
+              { title: 'Up-Front Pricing', description: 'You get the number before we start. No surprise add-ons in the driveway.' },
+              { title: 'NADCA Certified Standards', description: 'The same indoor air quality standards hospitals require, applied to your home.' },
+            ].map((item) => (
+              <li class="flex items-start gap-4">
+                <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <p class="res-text-ink text-sm font-bold uppercase tracking-[0.14em]">{item.title}</p>
+                  <p class="res-text-slate text-sm md:text-base leading-relaxed mt-1">{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex items-center gap-3 mt-2">
+            <div class="p-2.5 rounded-full" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[11px] uppercase tracking-[0.28em] res-text-slate font-semibold">Direct Line</span>
+              <a href={`tel:${res.phoneRaw}`} class="text-sm font-bold res-text-ink hover:res-text-sage transition-colors">{res.phone}</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: form -->
+        <div class="w-full lg:max-w-xl lg:ml-auto">
+          <div class="res-bg-surface border res-border-cream rounded-lg p-6 md:p-8 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.20)]">
+            <div class="h-1 w-16 rounded-full mb-4" style="background-color: var(--color-sage-deep);"></div>
+            <div class="mb-6">
+              <h3 class="res-text-ink font-bold text-base uppercase tracking-[0.12em]">
+                Free Estimate Request
+              </h3>
+              <p class="res-text-slate text-xs md:text-sm mt-2 leading-relaxed">
+                Fill out the details below and we will call you back within one business day.
+              </p>
+            </div>
+
+            <form name="residential-bottom-quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="residential-bottom-quote" />
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+              <div class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="space-y-1.5">
+                    <label for="rb-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
+                    <input type="text" id="rb-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                  </div>
+                  <div class="space-y-1.5">
+                    <label for="rb-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
+                    <input type="tel" id="rb-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                  </div>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="rb-email" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Email</label>
+                  <input type="email" id="rb-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="rb-service" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Service Needed</label>
+                  <select id="rb-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
+                    <option value="">Choose one</option>
+                    {res.services.map((s) => (
+                      <option value={s.slug}>{s.title}</option>
+                    ))}
+                    <option value="not-sure">Not sure yet</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="rb-message" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Message</label>
+                  <textarea id="rb-message" name="message" rows="4" placeholder="Tell us what is happening with your system." class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <button type="submit" class="res-btn-primary w-full px-8 py-4 rounded-sm font-bold tracking-[0.22em] uppercase text-sm">
+                  {res.ctaLabel}
+                </button>
+              </div>
+            </form>
+
+            <p class="text-[10px] res-text-slate mt-4 leading-relaxed">
+              No spam, no high-pressure sales. We respond to every message.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
