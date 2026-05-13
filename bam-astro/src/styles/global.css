@@ -14,6 +14,15 @@ html {
   --color-slate: #5E7A86;
   --color-offwhite: #F7F9F8;
 
+  /* Residential silo tokens. Used inside `[data-theme="residential"]` scope. */
+  --color-warm-white: #FAF6F1;
+  --color-sage: #8FB39A;
+  --color-sage-deep: #6F9580;
+  --color-terracotta: #C97B5A;
+  --color-cream: #F0E6D6;
+  --color-warm-slate: #6F5F55;
+  --color-warm-ink: #1F2933;
+
   --font-sans: 'Inter', sans-serif;
 
   --animate-fade-in-up: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -158,4 +167,46 @@ body {
 .group:hover > .mask-btn-layer.has-interacted,
 .btn-liquid:hover > .mask-btn-layer.has-interacted {
   animation: mask-ani-enter 0.7s steps(70) forwards;
+}
+
+/* ── Residential theme scope ──
+   Wrap residential content in <div data-theme="residential"> to opt into the
+   warm homeowner-facing palette. Header and Footer stay in their commercial
+   chrome (rendered outside this scope) so the brand wordmark is consistent. */
+[data-theme="residential"] {
+  background-color: var(--color-warm-white);
+  color: var(--color-warm-slate);
+}
+[data-theme="residential"] .res-bg-warm    { background-color: var(--color-warm-white); }
+[data-theme="residential"] .res-bg-cream   { background-color: var(--color-cream); }
+[data-theme="residential"] .res-bg-sage    { background-color: var(--color-sage); }
+[data-theme="residential"] .res-bg-surface { background-color: #FFFFFF; }
+[data-theme="residential"] .res-text-ink   { color: var(--color-warm-ink); }
+[data-theme="residential"] .res-text-slate { color: var(--color-warm-slate); }
+[data-theme="residential"] .res-text-sage  { color: var(--color-sage-deep); }
+[data-theme="residential"] .res-text-terra { color: var(--color-terracotta); }
+[data-theme="residential"] .res-border-cream { border-color: var(--color-cream); }
+[data-theme="residential"] .res-divider {
+  width: 64px;
+  height: 2px;
+  background-color: var(--color-terracotta);
+  border-radius: 999px;
+}
+[data-theme="residential"] .res-btn-primary {
+  background-color: var(--color-sage-deep);
+  color: #FFFFFF;
+  transition: background-color 0.2s ease;
+}
+[data-theme="residential"] .res-btn-primary:hover {
+  background-color: var(--color-warm-ink);
+}
+[data-theme="residential"] .res-btn-secondary {
+  background-color: transparent;
+  color: var(--color-terracotta);
+  border: 1.5px solid var(--color-terracotta);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+[data-theme="residential"] .res-btn-secondary:hover {
+  background-color: var(--color-terracotta);
+  color: #FFFFFF;
 }

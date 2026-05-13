@@ -120,4 +120,34 @@ export const siteConfig = {
     { id: 'south-jersey', title: 'South Jersey', slug: 'south-jersey' },
     { id: 'harrisburg-york', title: 'Harrisburg / York', slug: 'harrisburg-york' },
   ],
+
+  /** Residential silo — mockup scaffold. Copy is placeholder pending owner answers. */
+  residential: {
+    enabled: true,
+    /** Placeholder: pending owner confirmation of a dedicated residential line */
+    phone: '(570) 900-5827',
+    phoneRaw: '5709005827',
+    ctaLabel: 'Get a Free Estimate',
+    emergencyCtaLabel: '24/7 Emergency Service',
+    serviceAreaCounties: ['Schuylkill', 'Berks', 'Lebanon', 'Dauphin'],
+    serviceAreaCities: [
+      { name: 'Pine Grove', slug: 'pine-grove', state: 'PA', zip: '17963', lat: 40.5484, lng: -76.3853 },
+      { name: 'Pottsville', slug: 'pottsville', state: 'PA', zip: '17901', lat: 40.6856, lng: -76.1955 },
+      { name: 'Schuylkill Haven', slug: 'schuylkill-haven', state: 'PA', zip: '17972', lat: 40.6298, lng: -76.1716 },
+      { name: 'Reading', slug: 'reading', state: 'PA', zip: '19601', lat: 40.3356, lng: -75.9269 },
+      { name: 'Lebanon', slug: 'lebanon', state: 'PA', zip: '17042', lat: 40.3409, lng: -76.4113 },
+    ],
+    services: [
+      { id: 'ac-repair', title: 'AC Repair', slug: 'ac-repair', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'ac-install', title: 'AC Installation', slug: 'ac-install', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'furnace-repair', title: 'Furnace Repair', slug: 'furnace-repair', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'furnace-install', title: 'Furnace Installation', slug: 'furnace-install', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'heat-pump', title: 'Heat Pump Services', slug: 'heat-pump', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'mini-split', title: 'Ductless Mini Split', slug: 'mini-split', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'duct-cleaning', title: 'NADCA Certified Home Duct Cleaning', slug: 'duct-cleaning', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'iaq', title: 'Indoor Air Quality', slug: 'iaq', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'maintenance', title: 'Maintenance Plans', slug: 'maintenance', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+      { id: 'emergency', title: 'Emergency HVAC Service', slug: 'emergency', shortDescription: '[PLACEHOLDER copy pending owner answers]' },
+    ],
+  },
 };
