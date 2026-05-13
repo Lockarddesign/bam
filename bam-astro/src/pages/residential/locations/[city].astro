@@ -5,6 +5,10 @@
  * Generates a hyperlocal page per city in
  * siteConfig.residential.serviceAreaCities. Map embed is city-specific, not
  * HQ-centered, per the location-page-must-have-local-map rule.
+ *
+ * Design language mirrors the commercial homepage / service pages: uppercase
+ * H1, tight tracking, commercial card geometry, border-left FAQ, two-column
+ * bottom CTA with embedded form. Lighter sage-and-white palette.
  */
 import ResidentialLayout from '../../../layouts/ResidentialLayout.astro';
 import ResidentialLocalBusinessSchema from '../../../components/schema/ResidentialLocalBusinessSchema.astro';
@@ -62,6 +66,19 @@ const faq = [
     answer: '[PLACEHOLDER copy pending owner answers] We handle repair, install, and maintenance on AC, furnaces, heat pumps, mini splits, ductwork, and indoor air quality.',
   },
 ];
+
+const residentialServiceIcons: Record<string, string> = {
+  'ac-repair':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>`,
+  'ac-install':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h2"/><path d="M6 14h2"/><path d="M11 10h2"/><path d="M11 14h2"/><path d="M16 10h2"/></svg>`,
+  'furnace-repair':  `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
+  'furnace-install': `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6"/><path d="M9 13c1 1 2 1 3 1s2 0 3-1"/><circle cx="12" cy="17" r="1"/></svg>`,
+  'heat-pump':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9a4 4 0 0 0-2 7.5"/><path d="M12 3v2"/><path d="m6.6 18.4-1.4 1.4"/><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>`,
+  'mini-split':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="9" rx="2"/><path d="M6 18c1-1 2-1 3 0s2 1 3 0 2-1 3 0 2 1 3 0"/></svg>`,
+  'duct-cleaning':   `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>`,
+  'iaq':             `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.6.8c0 5.52-2.36 10.06-7.32 12.4A7 7 0 0 1 11 20Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
+  'maintenance':     `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  'emergency':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+};
 ---
 
 <ResidentialLayout
@@ -77,85 +94,141 @@ const faq = [
     faq={faq}
   />
 
-  <!-- ════════════════════ HERO ════════════════════ -->
-  <section class="relative w-full min-h-[calc(100vh-72px)] flex items-center res-bg-warm overflow-hidden">
-    <div class="absolute -top-32 -left-32 w-[460px] h-[460px] rounded-full opacity-25" style="background-color: var(--color-sage);"></div>
-    <div class="absolute top-1/2 -right-32 w-80 h-80 rounded-full opacity-20" style="background-color: var(--color-terracotta);"></div>
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO — uppercase, font-black, fits viewport, embedded CTA
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative w-full res-bg-warm overflow-hidden min-h-[calc(100vh-72px)] flex items-center py-8 md:py-10">
+    <div class="absolute inset-0 opacity-[0.05] site-grid-dots"></div>
+    <div class="absolute -top-32 -left-32 w-[460px] h-[460px] rounded-full opacity-25 pointer-events-none" style="background-color: var(--color-sage);"></div>
+    <div class="absolute -bottom-40 -right-32 w-[420px] h-[420px] rounded-full opacity-20 pointer-events-none" style="background-color: var(--color-sage);"></div>
 
-    <div class="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 py-12">
-      <nav class="text-xs res-text-slate mb-6 flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
-        <a href="/" class="hover:underline res-text-slate no-underline">Home</a>
-        <span>/</span>
-        <a href="/residential/" class="hover:underline res-text-slate no-underline">Residential</a>
-        <span>/</span>
-        <span class="res-text-ink">{city.name}</span>
-      </nav>
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-14 items-center">
 
-      <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-4">
-        Serving {city.name}, {city.state}
-      </span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight res-text-ink mb-5 max-w-3xl">
-        [PLACEHOLDER] HVAC repair and installation in {city.name}.
-      </h1>
-      <p class="text-base md:text-lg leading-[1.7] res-text-slate max-w-2xl mb-8">
-        [PLACEHOLDER copy pending owner answers] Heating, cooling, ductwork, and indoor air quality for {city.name} homeowners. Same trusted techs. Same Building and Air. Now for your house.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3">
-        <a href="/contact/" class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold no-underline">
-          {res.ctaLabel}
-        </a>
-        <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary px-6 py-3 rounded-md text-sm font-semibold no-underline">
-          Call {res.phone}
-        </a>
+      <div>
+        <nav class="text-[11px] res-text-slate mb-5 flex items-center gap-2 flex-wrap font-semibold tracking-wider uppercase" aria-label="Breadcrumb">
+          <a href="/" class="hover:res-text-sage res-text-slate no-underline transition-colors">Home</a>
+          <span class="opacity-50">/</span>
+          <a href="/residential/" class="hover:res-text-sage res-text-slate no-underline transition-colors">Residential</a>
+          <span class="opacity-50">/</span>
+          <span class="res-text-ink">{city.name}</span>
+        </nav>
+
+        <div class="mb-4 md:mb-5 flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
+          <span class="font-bold text-[10px] md:text-xs tracking-[0.22em] uppercase res-text-sage">
+            Serving {city.name}, {city.state}
+          </span>
+        </div>
+
+        <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-[4rem] font-black uppercase tracking-tighter leading-[0.92] res-text-ink mb-5 md:mb-6">
+          HVAC Repair and<br/>Installation in<br/>
+          <span class="res-text-sage">{city.name}.</span>
+        </h1>
+
+        <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-xl mb-6 md:mb-8">
+          [PLACEHOLDER copy pending owner answers] Heating, cooling, ductwork, and indoor air quality for {city.name} homeowners. Same trusted techs. Same Building and Air. Now for your house.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <a href="#city-quote" class="res-btn-primary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline">
+            {res.ctaLabel}
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline">
+            Call {res.phone}
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: local map preview -->
+      <div class="hidden lg:block">
+        <div class="res-bg-surface border res-border-cream rounded-lg p-4 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.20)]">
+          <div class="aspect-[4/3] rounded-md overflow-hidden">
+            <iframe
+              src={`https://www.google.com/maps?q=${encodeURIComponent(`${city.name}, ${city.state}`)}&output=embed`}
+              width="100%"
+              height="100%"
+              style="border:0;"
+              loading="eager"
+              referrerpolicy="no-referrer-when-downgrade"
+              title={`Map of ${city.name}, ${city.state}`}
+            ></iframe>
+          </div>
+          <p class="text-[10px] font-bold tracking-[0.22em] uppercase res-text-sage mt-3 text-center">
+            On the ground in {city.name}
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ SERVICES AVAILABLE ════════════════════ -->
-  <section class="res-bg-cream py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-6 md:px-10">
-      <div class="text-center mb-12">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+  <!-- ═══════════════════════════════════════════════════════════════
+       SERVICES AVAILABLE — commercial card geometry
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+      <div class="text-center mb-14">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           What we do in {city.name}
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          Services available locally.
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          Services Available Locally.
         </h2>
-        <div class="res-divider mx-auto"></div>
+        <div class="w-24 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-5">
         {res.services.map((s) => (
           <a
             href={`/residential/${s.slug}/`}
-            class="res-bg-surface rounded-2xl p-5 no-underline hover:shadow-lg transition-shadow flex flex-col"
+            class="group relative rounded-xl p-6 pt-7 transition-all duration-300 h-full flex flex-col no-underline overflow-hidden hover:-translate-y-1.5 bg-white border border-[var(--color-warm-line)] hover:border-[var(--color-sage-deep)]/30 shadow-[0_2px_16px_rgba(38,90,74,0.06)] hover:shadow-[0_16px_40px_rgba(38,90,74,0.14)]"
           >
-            <h3 class="font-semibold text-base res-text-ink mb-2">{s.title}</h3>
-            <span class="mt-auto text-xs font-semibold res-text-sage">Learn more &rarr;</span>
+            <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--color-sage)] to-[var(--color-sage-deep)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+            <div class="relative z-10 mb-5 w-11 h-11 rounded-lg flex items-center justify-center transition-colors duration-300" style="background-color: rgba(167, 215, 197, 0.25); color: var(--color-sage-deep);">
+              <Fragment set:html={residentialServiceIcons[s.id] || residentialServiceIcons['maintenance']} />
+            </div>
+
+            <h3 class="relative z-10 text-[15px] font-extrabold uppercase tracking-tight leading-snug res-text-ink mb-2.5">
+              {s.title}
+            </h3>
+            <p class="relative z-10 text-[13px] res-text-slate leading-relaxed flex-grow">
+              {s.shortDescription}
+            </p>
+
+            <div class="relative z-10 mt-6 pt-4 border-t border-[var(--color-warm-line)] flex items-center font-bold text-[11px] uppercase tracking-widest res-text-sage transition-colors duration-300">
+              <span>Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-auto opacity-40 group-hover:opacity-90 transition-all duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ LOCAL MAP ════════════════════ -->
-  <section class="res-bg-warm py-16 md:py-20">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+  <!-- ═══════════════════════════════════════════════════════════════
+       LOCAL MAP + COPY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="res-bg-warm py-20 md:py-24">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <div>
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Where we work
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          On the ground in {city.name}.
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          On the Ground in {city.name}.
         </h2>
-        <div class="res-divider mb-5"></div>
-        <p class="text-base leading-[1.7] res-text-slate max-w-md mb-4">
+        <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
+        <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-md mb-5">
           [PLACEHOLDER copy pending owner answers] We service homes throughout {city.name} and the surrounding neighborhoods. Same-day visits available for active maintenance customers.
         </p>
         <p class="text-sm res-text-slate">
-          Based in Pine Grove. <a href={`tel:${res.phoneRaw}`} class="res-text-sage font-semibold">{res.phone}</a>
+          Based in Pine Grove. <a href={`tel:${res.phoneRaw}`} class="res-text-sage font-bold hover:underline">{res.phone}</a>
         </p>
       </div>
-      <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-md res-bg-surface">
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-md res-bg-surface border res-border-cream">
         <iframe
           src={`https://www.google.com/maps?q=${encodeURIComponent(`${city.name}, ${city.state}`)}&output=embed`}
           width="100%"
@@ -169,105 +242,214 @@ const faq = [
     </div>
   </section>
 
-  <!-- ════════════════════ WHY LOCALS TRUST US ════════════════════ -->
-  <section class="res-bg-cream py-16 md:py-20">
-    <div class="max-w-5xl mx-auto px-6 md:px-10">
-      <div class="text-center mb-12 max-w-2xl mx-auto">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+  <!-- ═══════════════════════════════════════════════════════════════
+       WHY LOCALS TRUST US — commercial cards
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14 max-w-3xl mx-auto">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Why {city.name} homeowners call us
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          Local techs. Local trucks. Real answers.
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          Local Techs. Local Trucks.<br/>Real Answers.
         </h2>
-        <div class="res-divider mx-auto"></div>
+        <div class="w-24 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="res-bg-surface rounded-2xl p-6">
-          <h3 class="font-semibold text-lg res-text-ink mb-2">[PLACEHOLDER] We live here.</h3>
-          <p class="text-base leading-[1.7] res-text-slate">[PLACEHOLDER] Our crews live nearby. When you call, you reach a neighbor.</p>
-        </div>
-        <div class="res-bg-surface rounded-2xl p-6">
-          <h3 class="font-semibold text-lg res-text-ink mb-2">[PLACEHOLDER] We answer the phone.</h3>
-          <p class="text-base leading-[1.7] res-text-slate">[PLACEHOLDER] A real person picks up. No phone tree, no overseas call center.</p>
-        </div>
-        <div class="res-bg-surface rounded-2xl p-6">
-          <h3 class="font-semibold text-lg res-text-ink mb-2">[PLACEHOLDER] Straight prices.</h3>
-          <p class="text-base leading-[1.7] res-text-slate">[PLACEHOLDER] You get the number before we start the work.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════ REVIEWS PLACEHOLDER ════════════════════ -->
-  <section class="res-bg-warm py-16 md:py-20">
-    <div class="max-w-6xl mx-auto px-6 md:px-10">
-      <div class="text-center mb-12">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
-          What neighbors are saying
-        </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          From homeowners near {city.name}.
-        </h2>
-        <div class="res-divider mx-auto"></div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {reviews.map((r) => (
-          <div class="res-bg-surface rounded-2xl p-6">
-            <div class="flex gap-1 mb-3 res-text-terra">
-              {Array.from({ length: r.rating }).map(() => (
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              ))}
-            </div>
-            <p class="text-base leading-[1.7] res-text-slate italic mb-4">&ldquo;{r.quote}&rdquo;</p>
-            <p class="text-sm font-semibold res-text-ink">{r.name}</p>
+        {[
+          { num: '01', title: 'We Live Here', body: '[PLACEHOLDER] Our crews live nearby. When you call, you reach a neighbor.' },
+          { num: '02', title: 'We Answer the Phone', body: '[PLACEHOLDER] A real person picks up. No phone tree, no overseas call center.' },
+          { num: '03', title: 'Straight Prices', body: '[PLACEHOLDER] You get the number before we start the work.' },
+        ].map((d) => (
+          <div class="group relative rounded-xl p-7 bg-white border border-[var(--color-warm-line)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-sage-deep)]/30 hover:shadow-[0_14px_30px_-12px_rgba(38,90,74,0.14)] overflow-hidden">
+            <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--color-sage)] to-[var(--color-sage-deep)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="text-3xl font-black res-text-sage mb-3 tracking-tight">{d.num}</div>
+            <h3 class="font-extrabold text-lg uppercase tracking-tight res-text-ink mb-2.5">{d.title}</h3>
+            <p class="text-base res-text-slate leading-relaxed">{d.body}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ FAQ ════════════════════ -->
-  <section class="res-bg-cream py-16 md:py-20">
-    <div class="max-w-3xl mx-auto px-6 md:px-10">
-      <div class="text-center mb-10">
-        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+  <!-- ═══════════════════════════════════════════════════════════════
+       REVIEWS
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="res-bg-warm py-20 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-14">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
+          What neighbors are saying
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          From Homeowners Near {city.name}.
+        </h2>
+        <div class="w-24 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {reviews.map((r) => (
+          <div class="rounded-xl p-7 bg-white border border-[var(--color-warm-line)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-sage-deep)]/30 hover:shadow-[0_14px_30px_-12px_rgba(38,90,74,0.14)]">
+            <div class="flex gap-1 mb-4" style="color: var(--color-sage-deep);">
+              {Array.from({ length: r.rating }).map(() => (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              ))}
+            </div>
+            <p class="text-base leading-relaxed res-text-slate italic mb-5">&ldquo;{r.quote}&rdquo;</p>
+            <p class="text-sm font-bold res-text-ink uppercase tracking-[0.12em]">{r.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FAQ — border-left commercial pattern
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-cream py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
+      <div class="text-center mb-14 md:mb-20">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Common questions
         </span>
-        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-          Questions from {city.name} homeowners.
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          Questions From {city.name}<br/>Homeowners.
         </h2>
-        <div class="res-divider mx-auto"></div>
+        <div class="w-24 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
-      <div class="space-y-4">
+      <div class="space-y-10 md:space-y-12">
         {faq.map((q) => (
-          <details class="res-bg-surface rounded-2xl p-5 md:p-6">
-            <summary class="cursor-pointer font-semibold text-base md:text-lg res-text-ink list-none flex items-start justify-between gap-4">
-              <span>{q.question}</span>
-              <span class="res-text-sage flex-shrink-0 text-xl leading-none">+</span>
+          <details class="group border-l-2 pl-6 md:pl-8" style="border-color: rgba(38, 90, 74, 0.4);">
+            <summary class="cursor-pointer list-none flex items-start justify-between gap-4">
+              <h3 class="text-lg md:text-xl font-bold res-text-ink leading-snug">{q.question}</h3>
+              <span class="res-text-sage flex-shrink-0 text-xl leading-none mt-1 transition-transform duration-200 group-open:rotate-45">+</span>
             </summary>
-            <p class="mt-3 text-base leading-[1.7] res-text-slate">{q.answer}</p>
+            <p class="res-text-slate text-base md:text-lg leading-relaxed mt-4">{q.answer}</p>
           </details>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ════════════════════ FINAL CTA ════════════════════ -->
-  <section class="res-bg-warm py-16 md:py-20">
-    <div class="max-w-3xl mx-auto px-6 md:px-10 text-center res-bg-surface rounded-2xl p-8 md:p-12 shadow-md">
-      <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
-        [PLACEHOLDER] Need help with your {city.name} home?
-      </h2>
-      <p class="text-base md:text-lg leading-[1.7] res-text-slate mb-8 max-w-xl mx-auto">
-        [PLACEHOLDER] When your AC quits in July, we answer the phone. Tell us what is going on and we will come take a look.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/contact/" class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold no-underline">
-          {res.ctaLabel}
-        </a>
-        <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary px-6 py-3 rounded-md text-sm font-semibold no-underline">
-          Call {res.phone}
-        </a>
+  <!-- ═══════════════════════════════════════════════════════════════
+       BOTTOM CTA — two columns, embedded form
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="city-quote" class="relative res-bg-warm pt-20 pb-20 md:pt-24 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+        <div class="flex flex-col space-y-7">
+          <div>
+            <span class="font-bold text-[10px] tracking-[0.22em] uppercase mb-4 block res-text-sage">
+              Ready when you are
+            </span>
+            <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5 max-w-xl">
+              Need Help With Your<br/>{city.name} Home?
+            </h2>
+            <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
+              [PLACEHOLDER] When your AC quits in July, we answer the phone. Tell us what is going on and we will come take a look.
+            </p>
+          </div>
+
+          <ul class="space-y-5 mt-1">
+            {[
+              { title: 'Local Crews', description: 'Neighbors. Marked trucks. Uniforms.' },
+              { title: 'Same-Day Response', description: 'For active maintenance customers in PA.' },
+              { title: 'Licensed and Insured', description: 'Fully covered to operate in Pennsylvania.' },
+            ].map((item) => (
+              <li class="flex items-start gap-4">
+                <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <p class="res-text-ink text-sm font-bold uppercase tracking-[0.14em]">{item.title}</p>
+                  <p class="res-text-slate text-sm md:text-base leading-relaxed mt-1">{item.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div class="flex items-center gap-3 mt-2">
+            <div class="p-2.5 rounded-full" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-[11px] uppercase tracking-[0.28em] res-text-slate font-semibold">Direct Line</span>
+              <a href={`tel:${res.phoneRaw}`} class="text-sm font-bold res-text-ink hover:res-text-sage transition-colors">{res.phone}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full lg:max-w-xl lg:ml-auto">
+          <div class="res-bg-surface border res-border-cream rounded-lg p-6 md:p-8 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.20)]">
+            <div class="h-1 w-16 rounded-full mb-4" style="background-color: var(--color-sage-deep);"></div>
+            <div class="mb-6">
+              <h3 class="res-text-ink font-bold text-base uppercase tracking-[0.12em]">
+                Free Estimate Request
+              </h3>
+              <p class="res-text-slate text-xs md:text-sm mt-2 leading-relaxed">
+                Serving <span class="font-semibold res-text-ink">{city.name}, {city.state}</span>
+              </p>
+            </div>
+
+            <form name={`residential-${city.slug}-quote`} method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value={`residential-${city.slug}-quote`} />
+              <input type="hidden" name="city" value={`${city.name}, ${city.state}`} />
+              <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+              <div class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="space-y-1.5">
+                    <label for="lc-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
+                    <input type="text" id="lc-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                  </div>
+                  <div class="space-y-1.5">
+                    <label for="lc-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
+                    <input type="tel" id="lc-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                  </div>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="lc-email" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Email</label>
+                  <input type="email" id="lc-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="lc-service" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Service Needed</label>
+                  <select id="lc-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
+                    <option value="">Choose one</option>
+                    {res.services.map((s) => (
+                      <option value={s.slug}>{s.title}</option>
+                    ))}
+                    <option value="not-sure">Not sure yet</option>
+                  </select>
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="lc-message" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Message</label>
+                  <textarea id="lc-message" name="message" rows="4" placeholder={`Tell us what is happening with your ${city.name} home.`} class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <button type="submit" class="res-btn-primary w-full px-8 py-4 rounded-sm font-bold tracking-[0.22em] uppercase text-sm">
+                  {res.ctaLabel}
+                </button>
+              </div>
+            </form>
+
+            <p class="text-[10px] res-text-slate mt-4 leading-relaxed">
+              No spam, no high-pressure sales. We respond to every message.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
