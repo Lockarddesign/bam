@@ -1,0 +1,285 @@
+---
+/**
+ * Residential Hub — /residential/
+ *
+ * Mockup scaffold. All copy is placeholder pending owner answers
+ * (see notes/residential-launch-owner-questionnaire.md in the vault).
+ */
+import ResidentialLayout from '../../layouts/ResidentialLayout.astro';
+import HVACBusinessSchema from '../../components/schema/HVACBusinessSchema.astro';
+import { siteConfig } from '../../config/site.config';
+
+const res = siteConfig.residential;
+const canonicalURL = new URL('/residential/', Astro.site).toString();
+
+const heroPhoto = 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80';
+
+const differentiators = [
+  {
+    title: 'Same trusted techs as our commercial side.',
+    body: '[PLACEHOLDER] The crews that maintain hospitals and schools now answer the phone for your home. Same standards, same uniforms, same Building and Air.',
+  },
+  {
+    title: 'Family run out of Pine Grove.',
+    body: '[PLACEHOLDER] We live here. Our kids go to school here. When you call, you reach a neighbor, not a call center.',
+  },
+  {
+    title: 'NADCA certified duct cleaning.',
+    body: '[PLACEHOLDER] Most home HVAC companies do not hold this certification. We do. The same standard hospitals require, applied to your home.',
+  },
+  {
+    title: 'Straight prices, no surprises.',
+    body: '[PLACEHOLDER pricing posture pending owner confirmation] You get the number before we start. No upsells once the truck is in your driveway.',
+  },
+];
+
+const faq = [
+  {
+    question: '[PLACEHOLDER] What areas do you serve for residential HVAC?',
+    answer: '[PLACEHOLDER copy pending owner answers] We serve homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties in Pennsylvania.',
+  },
+  {
+    question: '[PLACEHOLDER] Do you offer free estimates?',
+    answer: '[PLACEHOLDER copy pending owner answers] Yes. Estimates for new system installs and major repairs are free.',
+  },
+  {
+    question: '[PLACEHOLDER] How fast can you get to my house in an emergency?',
+    answer: '[PLACEHOLDER copy pending owner answers] We offer 24/7 emergency service for active maintenance customers. Pending owner confirmation of standard response times.',
+  },
+  {
+    question: '[PLACEHOLDER] Are you licensed and insured in Pennsylvania?',
+    answer: '[PLACEHOLDER copy pending owner answers] Yes. Building and Air Maintenance is fully licensed and insured to operate in Pennsylvania.',
+  },
+  {
+    question: '[PLACEHOLDER] Do you offer financing?',
+    answer: '[PLACEHOLDER pending owner confirmation of financing partner]',
+  },
+  {
+    question: '[PLACEHOLDER] What brands of equipment do you install?',
+    answer: '[PLACEHOLDER pending owner confirmation of preferred manufacturers]',
+  },
+];
+
+const breadcrumbs = [{ name: 'Residential', url: '/residential/' }];
+---
+
+<ResidentialLayout
+  title="Residential HVAC in Schuylkill County | BAM"
+  description="Family run heating, cooling, and indoor air quality services for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. [PLACEHOLDER]"
+  canonicalURL={canonicalURL}
+>
+  <HVACBusinessSchema slot="head" canonicalURL={canonicalURL} breadcrumbs={breadcrumbs} />
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="relative w-full min-h-[calc(100vh-72px)] flex items-center res-bg-warm overflow-hidden">
+    <!-- soft sage half-circle behind the H1 -->
+    <div class="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full opacity-30" style="background-color: var(--color-sage);"></div>
+    <div class="absolute top-1/2 -right-24 w-72 h-72 rounded-full opacity-20" style="background-color: var(--color-terracotta);"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div>
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-4">
+          [PLACEHOLDER] Family run since 2020
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight res-text-ink mb-5">
+          [PLACEHOLDER] Your home<br />should feel like your home.
+        </h1>
+        <p class="text-base md:text-lg leading-[1.7] res-text-slate max-w-xl mb-8">
+          [PLACEHOLDER copy pending owner answers] Same trusted techs. Same Building and Air. Now for your house. We answer the phone, we show up on time, we leave your home cleaner than we found it.
+        </p>
+
+        <!-- Inline quote starter -->
+        <form class="flex flex-col sm:flex-row gap-3 mb-5" action="/thank-you/" method="get">
+          <input
+            type="text"
+            name="address"
+            placeholder="Your street address"
+            class="flex-1 px-4 py-3 rounded-md border res-border-cream bg-white text-base res-text-ink placeholder:text-gray-400 focus:outline-none focus:ring-2"
+            style="border-color: var(--color-cream);"
+            aria-label="Your street address"
+          />
+          <button
+            type="submit"
+            class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold whitespace-nowrap"
+          >
+            {res.ctaLabel}
+          </button>
+        </form>
+        <p class="text-sm res-text-slate">
+          or call
+          <a href={`tel:${res.phoneRaw}`} class="font-semibold underline res-text-sage">{res.phone}</a>
+        </p>
+      </div>
+
+      <div class="hidden lg:block">
+        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+          <img
+            src={heroPhoto}
+            alt="[PLACEHOLDER] Warm sunlit living room in a Pennsylvania home"
+            class="w-full h-full object-cover object-[center_top]"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SERVICES GRID ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          What we do for homeowners
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          Heating, cooling, and clean air for your house.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
+        {res.services.map((s) => (
+          <a
+            href={`/residential/${s.slug}/`}
+            class="res-bg-surface rounded-2xl p-5 md:p-6 no-underline hover:shadow-lg transition-shadow flex flex-col"
+          >
+            <h3 class="font-semibold text-base res-text-ink mb-2">{s.title}</h3>
+            <p class="text-sm leading-relaxed res-text-slate flex-1">{s.shortDescription}</p>
+            <span class="mt-3 text-xs font-semibold res-text-sage">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ DIFFERENTIATORS ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="max-w-2xl mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Why neighbors call us first
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          You should not have to wonder who is in your house.
+        </h2>
+        <div class="res-divider"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {differentiators.map((d) => (
+          <div class="res-bg-surface rounded-2xl p-6 md:p-8 shadow-sm">
+            <h3 class="font-semibold text-lg res-text-ink mb-2">{d.title}</h3>
+            <p class="text-base leading-[1.7] res-text-slate">{d.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SERVICE AREA ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div>
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Where we work
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          Counties we serve.
+        </h2>
+        <div class="res-divider mb-6"></div>
+        <p class="text-base leading-[1.7] res-text-slate mb-6 max-w-md">
+          [PLACEHOLDER copy pending owner answers] Based in Pine Grove. Serving Pennsylvania homeowners across these counties.
+        </p>
+        <ul class="grid grid-cols-2 gap-3 mb-8">
+          {res.serviceAreaCounties.map((c) => (
+            <li class="flex items-center gap-2 text-base res-text-ink">
+              <span class="w-2 h-2 rounded-full" style="background-color: var(--color-sage);"></span>
+              <span>{c} County</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-sm res-text-slate mb-2">Cities we work in most often:</p>
+        <ul class="flex flex-wrap gap-2">
+          {res.serviceAreaCities.map((c) => (
+            <li>
+              <a
+                href={`/residential/locations/${c.slug}/`}
+                class="inline-block res-bg-surface px-3 py-1.5 rounded-full text-sm res-text-ink no-underline hover:shadow-sm"
+              >{c.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-md res-bg-surface">
+        <iframe
+          src="https://www.google.com/maps?q=Pine+Grove,+PA&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="BAM Residential service area map"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ TRUST TRANSFER ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-6 md:px-10 text-center">
+      <p class="text-xl md:text-2xl leading-snug res-text-ink font-normal">
+        [PLACEHOLDER] Same techs trusted by
+        <span class="res-text-terra font-semibold">[institutional client placeholder]</span>,
+        now servicing homes across
+        <span class="res-text-sage font-semibold">Schuylkill County and beyond</span>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FAQ ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-10">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Questions homeowners ask us
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          Common questions.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+
+      <div class="space-y-4">
+        {faq.map((q, i) => (
+          <details class="res-bg-surface rounded-2xl p-5 md:p-6 group">
+            <summary class="cursor-pointer font-semibold text-base md:text-lg res-text-ink list-none flex items-start justify-between gap-4">
+              <span>{q.question}</span>
+              <span class="res-text-sage flex-shrink-0 text-xl leading-none">+</span>
+            </summary>
+            <p class="mt-3 text-base leading-[1.7] res-text-slate">{q.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FINAL CTA ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-10 text-center res-bg-surface rounded-2xl p-8 md:p-12 shadow-md">
+      <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+        [PLACEHOLDER] Ready to get comfortable again?
+      </h2>
+      <p class="text-base md:text-lg leading-[1.7] res-text-slate mb-8 max-w-xl mx-auto">
+        [PLACEHOLDER] Tell us what is going on with your system. We will give you a straight answer and a free estimate.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/contact/" class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          {res.ctaLabel}
+        </a>
+        <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          Call {res.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</ResidentialLayout>

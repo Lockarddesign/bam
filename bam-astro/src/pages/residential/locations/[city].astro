@@ -1,0 +1,274 @@
+---
+/**
+ * Residential Location Template — /residential/locations/[city]/
+ *
+ * Generates a hyperlocal page per city in
+ * siteConfig.residential.serviceAreaCities. Map embed is city-specific, not
+ * HQ-centered, per the location-page-must-have-local-map rule.
+ */
+import ResidentialLayout from '../../../layouts/ResidentialLayout.astro';
+import ResidentialLocalBusinessSchema from '../../../components/schema/ResidentialLocalBusinessSchema.astro';
+import { siteConfig } from '../../../config/site.config';
+
+export async function getStaticPaths() {
+  return siteConfig.residential.serviceAreaCities.map((city) => ({
+    params: { city: city.slug },
+    props: { city },
+  }));
+}
+
+const { city } = Astro.props;
+const res = siteConfig.residential;
+const canonicalURL = new URL(`/residential/locations/${city.slug}/`, Astro.site).toString();
+
+const breadcrumbs = [
+  { name: 'Residential', url: '/residential/' },
+  { name: city.name, url: `/residential/locations/${city.slug}/` },
+];
+
+const reviews = [
+  {
+    name: '[PLACEHOLDER Reviewer Name]',
+    quote: `[PLACEHOLDER review pending real customer attribution in ${city.name}]`,
+    rating: 5,
+  },
+  {
+    name: '[PLACEHOLDER Reviewer Name]',
+    quote: `[PLACEHOLDER review pending real customer attribution in ${city.name}]`,
+    rating: 5,
+  },
+  {
+    name: '[PLACEHOLDER Reviewer Name]',
+    quote: '[PLACEHOLDER review pending real customer attribution]',
+    rating: 5,
+  },
+];
+
+const faq = [
+  {
+    question: `[PLACEHOLDER] How fast can you get to a home in ${city.name}?`,
+    answer: '[PLACEHOLDER copy pending owner answers]',
+  },
+  {
+    question: `[PLACEHOLDER] Do you work on older homes in ${city.name}?`,
+    answer: '[PLACEHOLDER copy pending owner answers]',
+  },
+  {
+    question: '[PLACEHOLDER] Are you licensed and insured in Pennsylvania?',
+    answer: '[PLACEHOLDER copy pending owner answers] Yes, fully licensed and insured to operate in PA.',
+  },
+  {
+    question: `[PLACEHOLDER] What HVAC services do you offer in ${city.name}?`,
+    answer: '[PLACEHOLDER copy pending owner answers] We handle repair, install, and maintenance on AC, furnaces, heat pumps, mini splits, ductwork, and indoor air quality.',
+  },
+];
+---
+
+<ResidentialLayout
+  title={`[PLACEHOLDER] HVAC Repair and Installation in ${city.name}, ${city.state} | BAM`}
+  description={`[PLACEHOLDER] Residential heating, cooling, and indoor air quality services for homeowners in ${city.name}, ${city.state}.`}
+  canonicalURL={canonicalURL}
+>
+  <ResidentialLocalBusinessSchema
+    slot="head"
+    canonicalURL={canonicalURL}
+    city={city}
+    breadcrumbs={breadcrumbs}
+    faq={faq}
+  />
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="relative w-full min-h-[calc(100vh-72px)] flex items-center res-bg-warm overflow-hidden">
+    <div class="absolute -top-32 -left-32 w-[460px] h-[460px] rounded-full opacity-25" style="background-color: var(--color-sage);"></div>
+    <div class="absolute top-1/2 -right-32 w-80 h-80 rounded-full opacity-20" style="background-color: var(--color-terracotta);"></div>
+
+    <div class="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 py-12">
+      <nav class="text-xs res-text-slate mb-6 flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
+        <a href="/" class="hover:underline res-text-slate no-underline">Home</a>
+        <span>/</span>
+        <a href="/residential/" class="hover:underline res-text-slate no-underline">Residential</a>
+        <span>/</span>
+        <span class="res-text-ink">{city.name}</span>
+      </nav>
+
+      <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-4">
+        Serving {city.name}, {city.state}
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight res-text-ink mb-5 max-w-3xl">
+        [PLACEHOLDER] HVAC repair and installation in {city.name}.
+      </h1>
+      <p class="text-base md:text-lg leading-[1.7] res-text-slate max-w-2xl mb-8">
+        [PLACEHOLDER copy pending owner answers] Heating, cooling, ductwork, and indoor air quality for {city.name} homeowners. Same trusted techs. Same Building and Air. Now for your house.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="/contact/" class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          {res.ctaLabel}
+        </a>
+        <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          Call {res.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SERVICES AVAILABLE ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          What we do in {city.name}
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          Services available locally.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-5">
+        {res.services.map((s) => (
+          <a
+            href={`/residential/${s.slug}/`}
+            class="res-bg-surface rounded-2xl p-5 no-underline hover:shadow-lg transition-shadow flex flex-col"
+          >
+            <h3 class="font-semibold text-base res-text-ink mb-2">{s.title}</h3>
+            <span class="mt-auto text-xs font-semibold res-text-sage">Learn more &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ LOCAL MAP ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div>
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Where we work
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          On the ground in {city.name}.
+        </h2>
+        <div class="res-divider mb-5"></div>
+        <p class="text-base leading-[1.7] res-text-slate max-w-md mb-4">
+          [PLACEHOLDER copy pending owner answers] We service homes throughout {city.name} and the surrounding neighborhoods. Same-day visits available for active maintenance customers.
+        </p>
+        <p class="text-sm res-text-slate">
+          Based in Pine Grove. <a href={`tel:${res.phoneRaw}`} class="res-text-sage font-semibold">{res.phone}</a>
+        </p>
+      </div>
+      <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-md res-bg-surface">
+        <iframe
+          src={`https://www.google.com/maps?q=${encodeURIComponent(`${city.name}, ${city.state}`)}&output=embed`}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title={`Map of ${city.name}, ${city.state}`}
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ WHY LOCALS TRUST US ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Why {city.name} homeowners call us
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          Local techs. Local trucks. Real answers.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="res-bg-surface rounded-2xl p-6">
+          <h3 class="font-semibold text-lg res-text-ink mb-2">[PLACEHOLDER] We live here.</h3>
+          <p class="text-base leading-[1.7] res-text-slate">[PLACEHOLDER] Our crews live nearby. When you call, you reach a neighbor.</p>
+        </div>
+        <div class="res-bg-surface rounded-2xl p-6">
+          <h3 class="font-semibold text-lg res-text-ink mb-2">[PLACEHOLDER] We answer the phone.</h3>
+          <p class="text-base leading-[1.7] res-text-slate">[PLACEHOLDER] A real person picks up. No phone tree, no overseas call center.</p>
+        </div>
+        <div class="res-bg-surface rounded-2xl p-6">
+          <h3 class="font-semibold text-lg res-text-ink mb-2">[PLACEHOLDER] Straight prices.</h3>
+          <p class="text-base leading-[1.7] res-text-slate">[PLACEHOLDER] You get the number before we start the work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ REVIEWS PLACEHOLDER ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-12">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          What neighbors are saying
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          From homeowners near {city.name}.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {reviews.map((r) => (
+          <div class="res-bg-surface rounded-2xl p-6">
+            <div class="flex gap-1 mb-3 res-text-terra">
+              {Array.from({ length: r.rating }).map(() => (
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              ))}
+            </div>
+            <p class="text-base leading-[1.7] res-text-slate italic mb-4">&ldquo;{r.quote}&rdquo;</p>
+            <p class="text-sm font-semibold res-text-ink">{r.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FAQ ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-10">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Common questions
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          Questions from {city.name} homeowners.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+      <div class="space-y-4">
+        {faq.map((q) => (
+          <details class="res-bg-surface rounded-2xl p-5 md:p-6">
+            <summary class="cursor-pointer font-semibold text-base md:text-lg res-text-ink list-none flex items-start justify-between gap-4">
+              <span>{q.question}</span>
+              <span class="res-text-sage flex-shrink-0 text-xl leading-none">+</span>
+            </summary>
+            <p class="mt-3 text-base leading-[1.7] res-text-slate">{q.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FINAL CTA ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-10 text-center res-bg-surface rounded-2xl p-8 md:p-12 shadow-md">
+      <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+        [PLACEHOLDER] Need help with your {city.name} home?
+      </h2>
+      <p class="text-base md:text-lg leading-[1.7] res-text-slate mb-8 max-w-xl mx-auto">
+        [PLACEHOLDER] When your AC quits in July, we answer the phone. Tell us what is going on and we will come take a look.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/contact/" class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          {res.ctaLabel}
+        </a>
+        <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          Call {res.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</ResidentialLayout>

@@ -1,0 +1,347 @@
+---
+/**
+ * Residential Service Template — /residential/[slug]/
+ *
+ * Generates 10 service pages from siteConfig.residential.services. All copy
+ * is placeholder pending owner answers.
+ */
+import ResidentialLayout from '../../layouts/ResidentialLayout.astro';
+import ResidentialServiceSchema from '../../components/schema/ResidentialServiceSchema.astro';
+import { siteConfig } from '../../config/site.config';
+
+export async function getStaticPaths() {
+  return siteConfig.residential.services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const res = siteConfig.residential;
+const canonicalURL = new URL(`/residential/${service.slug}/`, Astro.site).toString();
+
+const breadcrumbs = [
+  { name: 'Residential', url: '/residential/' },
+  { name: service.title, url: `/residential/${service.slug}/` },
+];
+
+// Placeholder symptom list — owner will confirm per service
+const symptoms = [
+  '[PLACEHOLDER] Your system is making a new noise',
+  '[PLACEHOLDER] Some rooms feel warmer or colder than others',
+  '[PLACEHOLDER] You notice a smell when the system runs',
+  '[PLACEHOLDER] Your electric bill jumped this month',
+  '[PLACEHOLDER] The system runs constantly and never catches up',
+];
+
+const included = [
+  '[PLACEHOLDER] A full diagnostic visit, no high-pressure sales',
+  '[PLACEHOLDER] Up-front pricing before any work begins',
+  '[PLACEHOLDER] Cleanup that leaves your home better than we found it',
+  '[PLACEHOLDER] Written summary of what we found and what we did',
+];
+
+// Friendly homeowner-facing version of The BAM Method
+const process = [
+  { num: '01', title: 'You call.', body: '[PLACEHOLDER] We answer. A real person, no phone tree.' },
+  { num: '02', title: 'We listen.', body: '[PLACEHOLDER] You tell us what is going on. We ask the right questions.' },
+  { num: '03', title: 'We come out.', body: '[PLACEHOLDER] We show up when we said we would, in a marked truck, in uniform.' },
+  { num: '04', title: 'We fix it.', body: '[PLACEHOLDER] Straight price up front. We get the work done, clean up, and stand behind it.' },
+];
+
+const faq = [
+  {
+    question: `[PLACEHOLDER] How much does ${service.title.toLowerCase()} cost in Pennsylvania?`,
+    answer: '[PLACEHOLDER pricing posture pending owner confirmation]',
+  },
+  {
+    question: `[PLACEHOLDER] How long does ${service.title.toLowerCase()} usually take?`,
+    answer: '[PLACEHOLDER copy pending owner answers]',
+  },
+  {
+    question: '[PLACEHOLDER] Do you offer financing on installs?',
+    answer: '[PLACEHOLDER pending owner confirmation of financing partner]',
+  },
+  {
+    question: '[PLACEHOLDER] What is the warranty on your work?',
+    answer: '[PLACEHOLDER pending owner confirmation of labor warranty terms]',
+  },
+];
+---
+
+<ResidentialLayout
+  title={`[PLACEHOLDER] ${service.title} for Homeowners | BAM`}
+  description={`[PLACEHOLDER] ${service.title} services for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties.`}
+  canonicalURL={canonicalURL}
+>
+  <ResidentialServiceSchema
+    slot="head"
+    canonicalURL={canonicalURL}
+    serviceName={service.title}
+    serviceDescription={service.shortDescription}
+    breadcrumbs={breadcrumbs}
+    faq={faq}
+  />
+
+  <!-- ════════════════════ HERO ════════════════════ -->
+  <section class="relative w-full min-h-[calc(100vh-72px)] flex items-center res-bg-warm overflow-hidden">
+    <div class="absolute -top-32 -right-32 w-[460px] h-[460px] rounded-full opacity-25" style="background-color: var(--color-sage);"></div>
+    <div class="absolute bottom-0 -left-24 w-72 h-72 rounded-full opacity-20" style="background-color: var(--color-terracotta);"></div>
+
+    <div class="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 py-12">
+      <nav class="text-xs res-text-slate mb-6 flex items-center gap-2 flex-wrap" aria-label="Breadcrumb">
+        <a href="/" class="hover:underline res-text-slate no-underline">Home</a>
+        <span>/</span>
+        <a href="/residential/" class="hover:underline res-text-slate no-underline">Residential</a>
+        <span>/</span>
+        <span class="res-text-ink">{service.title}</span>
+      </nav>
+
+      <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-4">
+        For homeowners
+      </span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight res-text-ink mb-5 max-w-3xl">
+        [PLACEHOLDER] {service.title} you can actually count on.
+      </h1>
+      <p class="text-base md:text-lg leading-[1.7] res-text-slate max-w-2xl mb-8">
+        {service.shortDescription}
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="/contact/" class="res-btn-primary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          {res.ctaLabel}
+        </a>
+        <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary px-6 py-3 rounded-md text-sm font-semibold no-underline">
+          Call {res.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ WHAT'S INCLUDED ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="max-w-2xl mb-10">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          What you get
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          What is included.
+        </h2>
+        <div class="res-divider"></div>
+      </div>
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {included.map((item) => (
+          <li class="res-bg-surface rounded-2xl p-5 flex items-start gap-3">
+            <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: var(--color-sage); color: white;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span class="text-base res-text-ink leading-snug">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════ WHEN TO CALL US ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Signs to call us
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          When to call us.
+        </h2>
+        <div class="res-divider mb-5"></div>
+        <p class="text-base leading-[1.7] res-text-slate max-w-md">
+          [PLACEHOLDER] If any of these sound like your home, give us a call. No pressure, just a straight answer.
+        </p>
+      </div>
+      <ul class="space-y-3">
+        {symptoms.map((s) => (
+          <li class="flex items-start gap-3 res-bg-surface rounded-2xl p-4">
+            <span class="w-2 h-2 rounded-full mt-2.5 flex-shrink-0" style="background-color: var(--color-terracotta);"></span>
+            <span class="text-base res-text-ink">{s}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════ PROCESS (4-STEP) ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-12 max-w-xl mx-auto">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          How it works
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          From your first call to a fixed system.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {process.map((p) => (
+          <div class="res-bg-surface rounded-2xl p-6">
+            <div class="text-3xl font-bold res-text-sage mb-3">{p.num}</div>
+            <h3 class="font-semibold text-lg res-text-ink mb-2">{p.title}</h3>
+            <p class="text-base leading-[1.7] res-text-slate">{p.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ PRICING POSTURE ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-10 res-bg-surface rounded-2xl p-8 md:p-12 text-center">
+      <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+        How we price
+      </span>
+      <h2 class="text-2xl md:text-3xl font-semibold res-text-ink mb-3">
+        Straight prices. Up front.
+      </h2>
+      <div class="res-divider mx-auto mb-5"></div>
+      <p class="text-base md:text-lg leading-[1.7] res-text-slate">
+        [PLACEHOLDER pricing posture pending owner confirmation] You get a written price before we start the work. No surprises, no add-ons in the middle of the job.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════ LOCAL TRUST SIGNALS ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
+      <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+        Local, licensed, insured
+      </span>
+      <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+        We live here too.
+      </h2>
+      <div class="res-divider mx-auto mb-8"></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+        <div>
+          <div class="text-3xl font-bold res-text-sage mb-1">[PLACEHOLDER]</div>
+          <div class="text-sm res-text-slate">Years serving PA</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold res-text-sage mb-1">NADCA</div>
+          <div class="text-sm res-text-slate">Certified</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold res-text-sage mb-1">[PLACEHOLDER]</div>
+          <div class="text-sm res-text-slate">Homes serviced</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold res-text-sage mb-1">PA</div>
+          <div class="text-sm res-text-slate">Licensed &amp; insured</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ SERVICE AREA ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
+      <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+        Where we work
+      </span>
+      <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+        Towns we serve.
+      </h2>
+      <div class="res-divider mx-auto mb-8"></div>
+      <ul class="flex flex-wrap gap-3 justify-center max-w-3xl mx-auto">
+        {res.serviceAreaCities.map((c) => (
+          <li>
+            <a
+              href={`/residential/locations/${c.slug}/`}
+              class="inline-block res-bg-surface px-4 py-2 rounded-full text-base res-text-ink no-underline hover:shadow-sm"
+            >{c.name}, {c.state}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FAQ ════════════════════ -->
+  <section class="res-bg-cream py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-10">
+        <span class="inline-block text-xs font-semibold uppercase tracking-[0.2em] res-text-sage mb-3">
+          Questions
+        </span>
+        <h2 class="text-2xl md:text-4xl font-semibold res-text-ink mb-3">
+          Common questions.
+        </h2>
+        <div class="res-divider mx-auto"></div>
+      </div>
+      <div class="space-y-4">
+        {faq.map((q) => (
+          <details class="res-bg-surface rounded-2xl p-5 md:p-6">
+            <summary class="cursor-pointer font-semibold text-base md:text-lg res-text-ink list-none flex items-start justify-between gap-4">
+              <span>{q.question}</span>
+              <span class="res-text-sage flex-shrink-0 text-xl leading-none">+</span>
+            </summary>
+            <p class="mt-3 text-base leading-[1.7] res-text-slate">{q.answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════ FINAL CTA + FORM ════════════════════ -->
+  <section class="res-bg-warm py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 md:px-10 res-bg-surface rounded-2xl p-8 md:p-12 shadow-md">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl md:text-3xl font-semibold res-text-ink mb-3">
+          [PLACEHOLDER] Get a free estimate.
+        </h2>
+        <p class="text-base res-text-slate">
+          [PLACEHOLDER] We will call you back within one business day.
+        </p>
+      </div>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-3" action="/thank-you/" method="get">
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          class="px-4 py-3 rounded-md border bg-white text-base res-text-ink placeholder:text-gray-400 focus:outline-none"
+          style="border-color: var(--color-cream);"
+          aria-label="Your name"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone number"
+          required
+          class="px-4 py-3 rounded-md border bg-white text-base res-text-ink placeholder:text-gray-400 focus:outline-none"
+          style="border-color: var(--color-cream);"
+          aria-label="Phone number"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="md:col-span-2 px-4 py-3 rounded-md border bg-white text-base res-text-ink placeholder:text-gray-400 focus:outline-none"
+          style="border-color: var(--color-cream);"
+          aria-label="Email"
+        />
+        <textarea
+          name="message"
+          placeholder={`Tell us what is happening with your system. Service: ${service.title}`}
+          rows="3"
+          class="md:col-span-2 px-4 py-3 rounded-md border bg-white text-base res-text-ink placeholder:text-gray-400 focus:outline-none"
+          style="border-color: var(--color-cream);"
+          aria-label="Tell us what is happening"
+        ></textarea>
+        <button type="submit" class="md:col-span-2 res-btn-primary px-6 py-3 rounded-md text-sm font-semibold">
+          {res.ctaLabel}
+        </button>
+      </form>
+      <p class="text-center text-sm res-text-slate mt-4">
+        or call
+        <a href={`tel:${res.phoneRaw}`} class="font-semibold underline res-text-sage">{res.phone}</a>
+      </p>
+    </div>
+  </section>
+</ResidentialLayout>
