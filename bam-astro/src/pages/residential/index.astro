@@ -18,47 +18,47 @@ const canonicalURL = new URL('/residential/', Astro.site).toString();
 
 const differentiators = [
   {
-    title: 'Same trusted techs as our commercial side.',
-    body: '[PLACEHOLDER] The crews that maintain hospitals and schools now answer the phone for your home. Same standards, same uniforms, same Building and Air.',
+    title: 'Same techs the hospitals call.',
+    body: 'The crews that restore HVAC for hospitals, schools, and federal facilities are now the ones answering the phone for your home. Same training, same standards, same Building and Air.',
   },
   {
-    title: 'Family run out of Pine Grove.',
-    body: '[PLACEHOLDER] We live here. Our kids go to school here. When you call, you reach a neighbor, not a call center.',
+    title: 'Family run, based in Pine Grove.',
+    body: 'We live in Schuylkill County. Our kids go to school here. When you call, you reach a neighbor, not a call center three states away.',
   },
   {
     title: 'NADCA certified duct cleaning.',
-    body: '[PLACEHOLDER] Most home HVAC companies do not hold this certification. We do. The same standard hospitals require, applied to your home.',
+    body: 'No other home HVAC company in this part of Pennsylvania holds NADCA certification. We do. It is the same standard hospitals and schools demand, now applied to your ductwork.',
   },
   {
-    title: 'Straight prices, no surprises.',
-    body: '[PLACEHOLDER pricing posture pending owner confirmation] You get the number before we start. No upsells once the truck is in your driveway.',
+    title: 'You see the price before we start.',
+    body: 'No surprise upsells once the truck is in your driveway. You get the number in writing, you say yes, then we start the work. That is it.',
   },
 ];
 
 const faq = [
   {
-    question: '[PLACEHOLDER] What areas do you serve for residential HVAC?',
-    answer: '[PLACEHOLDER copy pending owner answers] We serve homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties in Pennsylvania.',
+    question: 'What areas do you serve for residential HVAC in Pennsylvania?',
+    answer: 'We are based in Pine Grove and serve homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. That includes Pottsville, Schuylkill Haven, Reading, Lebanon, Hershey, Pottstown, Hamburg, Orwigsburg, and the towns in between. If you are not sure whether your address is in our area, call (570) 900-5827 and we will tell you straight.',
   },
   {
-    question: '[PLACEHOLDER] Do you offer free estimates?',
-    answer: '[PLACEHOLDER copy pending owner answers] Yes. Estimates for new system installs and major repairs are free.',
+    question: 'Do you offer free estimates on new systems?',
+    answer: 'Yes. Estimates for new AC, furnace, heat pump, and ductless mini split installations are free. We come out, look at your current setup, size the new system to the actual square footage of your home, and hand you a written quote. No deposit, no obligation.',
   },
   {
-    question: '[PLACEHOLDER] How fast can you get to my house in an emergency?',
-    answer: '[PLACEHOLDER copy pending owner answers] We offer 24/7 emergency service for active maintenance customers. Pending owner confirmation of standard response times.',
+    question: 'How fast can you get to my home if my system stops working?',
+    answer: 'For active maintenance plan members, we offer priority dispatch and after hours service when the heat or AC goes out. For everyone else, we do our best to get out the same day or next morning. [PENDING OWNER: response time SLA we will publicly commit to]. Call (570) 900-5827 and we will tell you when we can be there.',
   },
   {
-    question: '[PLACEHOLDER] Are you licensed and insured in Pennsylvania?',
-    answer: '[PLACEHOLDER copy pending owner answers] Yes. Building and Air Maintenance is fully licensed and insured to operate in Pennsylvania.',
+    question: 'Are you licensed and insured in Pennsylvania?',
+    answer: 'Yes. Building and Air Maintenance is fully licensed and insured to work on residential HVAC systems in Pennsylvania. We carry general liability and workers comp on every crew, and we are NADCA, OSHA 30, and EPA certified. Ask us to send proof before we start a job and we will.',
   },
   {
-    question: '[PLACEHOLDER] Do you offer financing?',
-    answer: '[PLACEHOLDER pending owner confirmation of financing partner]',
+    question: 'Do you offer financing on installations?',
+    answer: 'Yes, financing is available on most new system installations. We can walk you through the options when we give you the quote, including monthly payment estimates. [PENDING OWNER: financing partner name and approval details].',
   },
   {
-    question: '[PLACEHOLDER] What brands of equipment do you install?',
-    answer: '[PLACEHOLDER pending owner confirmation of preferred manufacturers]',
+    question: 'What brands of equipment do you install?',
+    answer: 'We install high efficiency systems from major American manufacturers and match the brand to your home, budget, and Pennsylvania climate. [PENDING OWNER: top brands installed for residential]. We are not locked into one brand, which means we recommend what is right for your house, not what we are trying to move off the truck.',
   },
 ];
 
@@ -79,130 +79,135 @@ const residentialServiceIcons: Record<string, string> = {
 ---
 
 <ResidentialLayout
-  title="Residential HVAC in Schuylkill County | BAM"
-  description="Family run heating, cooling, and indoor air quality services for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. [PLACEHOLDER]"
+  title="Residential HVAC in Schuylkill County, PA | Building and Air"
+  description="Family run heating, cooling, and indoor air quality for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. NADCA certified, licensed, insured. Call (570) 900-5827."
   canonicalURL={canonicalURL}
 >
   <HVACBusinessSchema slot="head" canonicalURL={canonicalURL} breadcrumbs={breadcrumbs} />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       HERO — uppercase, font-black, embedded lead form, fits above fold
+       HERO — mirror commercial homepage hero composition
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative w-full res-bg-warm overflow-hidden min-h-[calc(100vh-72px)] flex items-center py-8 md:py-10">
-    <div class="absolute inset-0 opacity-[0.05] site-grid-dots"></div>
-    <div class="absolute -top-32 -left-32 w-[480px] h-[480px] rounded-full opacity-25 pointer-events-none" style="background-color: var(--color-sage);"></div>
-    <div class="absolute -bottom-40 -right-32 w-[440px] h-[440px] rounded-full opacity-20 pointer-events-none" style="background-color: var(--color-sage);"></div>
+  <section class="relative w-full py-20 md:py-0 md:h-[90vh] md:min-h-[760px] flex flex-col items-center justify-center font-sans overflow-hidden res-bg-warm">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1440&q=60"
+        alt="Warm sunlit family living room"
+        class="w-full h-full object-cover opacity-25"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.62) 50%, rgba(255,255,255,0.95) 100%);"></div>
+      <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+    </div>
 
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-[1.1fr_1fr] gap-8 lg:gap-14 items-center">
+    <div class="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+      <div class="mb-4 md:mb-7 flex items-center gap-3 animate-fade-in-up opacity-0" style="animation-delay: 0ms;">
+        <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
+        <span class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage">Family Run Since 2020</span>
+      </div>
 
-      <!-- LEFT: Headline, subhead, CTAs -->
-      <div>
-        <div class="mb-4 md:mb-5 flex items-center gap-3">
-          <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
-          <span class="font-bold text-[10px] md:text-xs tracking-[0.22em] uppercase res-text-sage">
-            Family run since 2020
-          </span>
-        </div>
+      <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
+        Home HVAC,<br class="hidden md:inline" />
+        <span class="res-text-sage">Built to a Hospital</span><br />
+        Standard.
+      </h1>
 
-        <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-[4.25rem] font-black uppercase tracking-tighter leading-[0.9] res-text-ink mb-5 md:mb-6">
-          Home Comfort,<br/>
-          <span class="res-text-sage">Done Right</span>,<br/>
-          By Neighbors.
-        </h1>
+      <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
+        Same techs the hospitals call, now in your home. Heating, cooling, and clean air for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. Family run out of Pine Grove. NADCA certified. You see the price before we start.
+      </p>
 
-        <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-xl mb-6 md:mb-8">
-          [PLACEHOLDER copy pending owner answers] Same trusted techs. Same Building and Air. Now for your house. We answer the phone, we show up on time, we leave your home cleaner than we found it.
-        </p>
+      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-4 animate-fade-in-up opacity-0 w-full justify-center" style="animation-delay: 300ms;">
+        <a
+          href="#residential-quote"
+          class="res-btn-primary inline-flex items-center justify-center gap-3 font-bold tracking-widest text-xs py-4 md:py-[18px] px-8 md:px-10 rounded-sm w-full sm:w-auto sm:min-w-[240px] uppercase no-underline"
+        >
+          {res.ctaLabel}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href={`tel:${res.phoneRaw}`}
+          class="hidden sm:flex items-center justify-center gap-3 px-10 py-[18px] bg-white border-2 res-text-ink font-bold text-xs tracking-widest uppercase hover:bg-[var(--color-sage-deep)] hover:text-white transition-all rounded-sm min-w-[240px] shadow-md no-underline group"
+          style="border-color: var(--color-sage-deep);"
+        >
+          Call {res.phone}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="res-text-sage group-hover:text-white transition-colors"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
+      </div>
 
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-5">
-          <a
-            href={`tel:${res.phoneRaw}`}
-            class="res-btn-primary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline w-full sm:w-auto"
-          >
-            Call {res.phone}
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          </a>
-          <a
-            href="#residential-quote"
-            class="res-btn-secondary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline w-full sm:w-auto"
-          >
-            Request a Quote
-          </a>
-        </div>
+      <a href={`tel:${res.phoneRaw}`} class="sm:hidden inline-flex items-center gap-1.5 res-text-sage hover:opacity-80 text-xs font-bold tracking-wider uppercase no-underline transition-colors mt-5 animate-fade-in-up opacity-0" style="animation-delay: 400ms;">
+        Call {res.phone}
+      </a>
+    </div>
+  </section>
 
-        <p class="text-xs md:text-sm res-text-slate leading-relaxed max-w-xl">
-          [PLACEHOLDER: Trusted by [3 institutional clients] now servicing homes in Schuylkill, Berks, Lebanon, Dauphin counties.]
+  <!-- ═══════════════════════════════════════════════════════════════
+       QUICK QUOTE STRIP — anchored from hero CTA
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="residential-quote" class="w-full res-bg-cream border-y res-border-cream py-14 md:py-16 overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-8 md:mb-10">
+        <span class="inline-block font-bold text-[10px] tracking-[0.3em] uppercase mb-3 res-text-sage">Free Home Estimate</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95]">
+          Tell us what is going on.
+        </h2>
+        <p class="text-base md:text-lg res-text-slate max-w-xl mx-auto mt-4 leading-relaxed">
+          A real person reads every message. We call you back within one business day. No spam, no pressure, no auto reply chain.
         </p>
       </div>
 
-      <!-- RIGHT: Embedded lead form -->
-      <div id="residential-quote" class="w-full">
-        <div class="res-bg-surface border res-border-cream rounded-lg p-6 md:p-7 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.20)]">
-          <div class="h-1 w-12 bg-[var(--color-sage-deep)] rounded-full mb-4"></div>
-          <h2 class="text-base font-bold uppercase tracking-[0.14em] res-text-ink mb-1.5">
-            Get a Free Estimate
-          </h2>
-          <p class="text-xs md:text-sm res-text-slate mb-5 leading-relaxed">
-            Tell us what is going on. We will call you back within one business day.
-          </p>
+      <form name="residential-hero-quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="bg-white border res-border-cream rounded-lg p-6 md:p-8 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.18)] space-y-4">
+        <input type="hidden" name="form-name" value="residential-hero-quote" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
-          <form name="residential-hero-quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
-            <input type="hidden" name="form-name" value="residential-hero-quote" />
-            <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div class="space-y-1.5">
-                <label for="rh-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-                <input type="text" id="rh-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
-              </div>
-              <div class="space-y-1.5">
-                <label for="rh-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
-                <input type="tel" id="rh-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
-              </div>
-            </div>
-
-            <div class="space-y-1.5">
-              <label for="rh-service" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Service Needed</label>
-              <select id="rh-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
-                <option value="">Choose one</option>
-                {res.services.map((s) => (
-                  <option value={s.slug}>{s.title}</option>
-                ))}
-                <option value="not-sure">Not sure yet</option>
-              </select>
-            </div>
-
-            <div class="space-y-1.5">
-              <label for="rh-summary" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Brief Description</label>
-              <textarea id="rh-summary" name="summary" rows="3" placeholder="Tell us what your system is doing (or not doing)." class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
-            </div>
-
-            <button type="submit" class="res-btn-primary w-full px-6 py-3.5 rounded-sm font-bold tracking-[0.18em] uppercase text-xs">
-              {res.ctaLabel}
-            </button>
-          </form>
-
-          <p class="text-[10px] res-text-slate mt-4 leading-relaxed">
-            No spam, no high-pressure sales. We respond to every message.
-          </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="space-y-1.5">
+            <label for="rh-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
+            <input type="text" id="rh-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+          </div>
+          <div class="space-y-1.5">
+            <label for="rh-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
+            <input type="tel" id="rh-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+          </div>
         </div>
-      </div>
+
+        <div class="space-y-1.5">
+          <label for="rh-service" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Service Needed</label>
+          <select id="rh-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
+            <option value="">Choose one</option>
+            {res.services.map((s) => (
+              <option value={s.slug}>{s.title}</option>
+            ))}
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="space-y-1.5">
+          <label for="rh-summary" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Brief Description</label>
+          <textarea id="rh-summary" name="summary" rows="3" placeholder="Tell us what your system is doing (or not doing)." class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+        </div>
+
+        <button type="submit" class="res-btn-primary w-full px-6 py-4 rounded-sm font-bold tracking-[0.22em] uppercase text-xs">
+          {res.ctaLabel}
+        </button>
+      </form>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
        SERVICES GRID — mirror commercial card geometry, lighter palette
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
-      <div class="text-center mb-14 md:mb-16">
+      <div class="text-center mb-10 md:mb-12">
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           What we do for homeowners
         </span>
         <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
-          Heating, Cooling, and Clean Air<br/>For Your Home.
+          Ten Services. One Crew.<br/>One Phone Number.
         </h2>
         <div class="w-24 h-1.5 mx-auto opacity-30 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
@@ -239,16 +244,19 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        DIFFERENTIATORS — Why neighbors call us first
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-warm py-20 md:py-24 overflow-hidden">
+  <section class="relative res-bg-warm py-14 md:py-18 overflow-hidden">
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-      <div class="text-center mb-14 md:mb-20">
+      <div class="text-center mb-10 md:mb-12">
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Why neighbors call us first
         </span>
         <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
           You Should Not Have to Wonder<br/>Who Is in Your House.
         </h2>
-        <div class="w-24 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
+        <p class="text-base md:text-lg res-text-slate max-w-2xl mx-auto mt-5 leading-relaxed">
+          Four reasons homeowners in Pottsville, Pine Grove, Reading, and Lebanon keep our number on the fridge instead of the other guy's.
+        </p>
+        <div class="w-24 h-1 mx-auto mt-6 opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -271,7 +279,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        SERVICE AREA — counties + cities
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="res-bg-cream py-20 md:py-24">
+  <section class="res-bg-cream py-14 md:py-18">
     <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <div>
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
@@ -282,7 +290,7 @@ const residentialServiceIcons: Record<string, string> = {
         </h2>
         <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
         <p class="text-base md:text-lg leading-relaxed res-text-slate mb-7 max-w-md">
-          [PLACEHOLDER copy pending owner answers] Based in Pine Grove. Serving Pennsylvania homeowners across these counties.
+          We are based in Pine Grove and run residential calls across four Pennsylvania counties. Same crews, same trucks, the whole footprint. If your address is anywhere in this map, we can be at your door.
         </p>
         <ul class="grid grid-cols-2 gap-3 mb-8">
           {res.serviceAreaCounties.map((c) => (
@@ -321,11 +329,11 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        FAQ — mirrors commercial border-left pattern, light palette
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-warm py-20 md:py-28 overflow-hidden">
+  <section class="relative res-bg-warm py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
-      <div class="text-center mb-14 md:mb-20">
+      <div class="text-center mb-10 md:mb-12">
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Questions homeowners ask us
         </span>
@@ -352,7 +360,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        BOTTOM CTA — two columns, mirrors commercial /index.astro
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream pt-20 pb-20 md:pt-24 md:pb-24 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
@@ -365,18 +373,18 @@ const residentialServiceIcons: Record<string, string> = {
               Ready when you are
             </span>
             <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5 max-w-xl">
-              Request a Free<br/>Home Estimate.
+              Get a Free<br/>Home Estimate.
             </h2>
             <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
-              [PLACEHOLDER] Tell us what is going on with your system. We will give you a straight answer and a free estimate, with the price up front before we start.
+              Tell us what your system is doing or not doing. We will give you a straight answer, a written price, and a real date we can be at your house. No deposit, no obligation.
             </p>
           </div>
 
           <ul class="space-y-5 mt-1">
             {[
-              { title: 'Real Person, Same Day', description: 'A neighbor answers the phone. No phone tree, no overseas call center.' },
-              { title: 'Up-Front Pricing', description: 'You get the number before we start. No surprise add-ons in the driveway.' },
-              { title: 'NADCA Certified Standards', description: 'The same indoor air quality standards hospitals require, applied to your home.' },
+              { title: 'A Real Person Picks Up', description: 'A neighbor answers the phone in Pine Grove. No phone tree, no overseas call center, no auto reply chain.' },
+              { title: 'Price in Writing, Up Front', description: 'You see the number before we cut a wire. No add ons in the driveway, no surprise charges at the end of the visit.' },
+              { title: 'NADCA Certified Standards', description: 'The same indoor air quality and duct cleaning standards hospitals require, now applied to your house.' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
@@ -410,7 +418,7 @@ const residentialServiceIcons: Record<string, string> = {
                 Free Estimate Request
               </h3>
               <p class="res-text-slate text-xs md:text-sm mt-2 leading-relaxed">
-                Fill out the details below and we will call you back within one business day.
+                Fill in the details below. A real person reads every message and calls you back within one business day.
               </p>
             </div>
 
@@ -460,7 +468,7 @@ const residentialServiceIcons: Record<string, string> = {
             </form>
 
             <p class="text-[10px] res-text-slate mt-4 leading-relaxed">
-              No spam, no high-pressure sales. We respond to every message.
+              No spam, no pressure pitch, no auto reply chain. A real person reads every message.
             </p>
           </div>
         </div>

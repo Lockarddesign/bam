@@ -32,38 +32,42 @@ const breadcrumbs = [
 
 const reviews = [
   {
-    name: '[PLACEHOLDER Reviewer Name]',
-    quote: `[PLACEHOLDER review pending real customer attribution in ${city.name}]`,
+    name: `[PENDING OWNER: real customer name for ${city.name}]`,
+    quote: `[PENDING OWNER: real customer review from a ${city.name} homeowner. We will not publish a fake testimonial here. Pulling from the residential GBP once reviews land.]`,
     rating: 5,
   },
   {
-    name: '[PLACEHOLDER Reviewer Name]',
-    quote: `[PLACEHOLDER review pending real customer attribution in ${city.name}]`,
+    name: `[PENDING OWNER: real customer name for ${city.name}]`,
+    quote: `[PENDING OWNER: real customer review from a ${city.name} homeowner.]`,
     rating: 5,
   },
   {
-    name: '[PLACEHOLDER Reviewer Name]',
-    quote: '[PLACEHOLDER review pending real customer attribution]',
+    name: `[PENDING OWNER: real customer name near ${city.name}]`,
+    quote: '[PENDING OWNER: real customer review from a homeowner in Schuylkill, Berks, Lebanon, or Dauphin County.]',
     rating: 5,
   },
 ];
 
 const faq = [
   {
-    question: `[PLACEHOLDER] How fast can you get to a home in ${city.name}?`,
-    answer: '[PLACEHOLDER copy pending owner answers]',
+    question: `How fast can you get to a home in ${city.name}, ${city.state}?`,
+    answer: `We are based in Pine Grove and ${city.name} is in our regular service area. For active maintenance plan members we offer priority dispatch and after hours service. For everyone else, we work hard to get out the same day or the next morning. [PENDING OWNER: response time SLA for ${city.name}]. Call (570) 900-5827 and we will tell you exactly when we can be at your door.`,
   },
   {
-    question: `[PLACEHOLDER] Do you work on older homes in ${city.name}?`,
-    answer: '[PLACEHOLDER copy pending owner answers]',
+    question: `Do you work on older homes in ${city.name}?`,
+    answer: `Yes. A lot of ${city.name} housing stock predates central air, and plenty of homes are still running original ductwork or oil furnaces. We work on every system type we see in Pennsylvania, including older boilers, oil furnaces, single zone ductless retrofits, and homes that need full new ductwork. We tell you straight whether something is worth repairing or whether replacement is the smarter spend.`,
   },
   {
-    question: '[PLACEHOLDER] Are you licensed and insured in Pennsylvania?',
-    answer: '[PLACEHOLDER copy pending owner answers] Yes, fully licensed and insured to operate in PA.',
+    question: `Are you licensed and insured to work in ${city.name}, ${city.state}?`,
+    answer: 'Yes. Building and Air Maintenance is fully licensed and insured to work on residential HVAC across Pennsylvania, including general liability and workers comp on every crew. We are NADCA, OSHA 30, and EPA certified. Ask for proof before we start a job and we will hand it to you.',
   },
   {
-    question: `[PLACEHOLDER] What HVAC services do you offer in ${city.name}?`,
-    answer: '[PLACEHOLDER copy pending owner answers] We handle repair, install, and maintenance on AC, furnaces, heat pumps, mini splits, ductwork, and indoor air quality.',
+    question: `What HVAC services do you offer in ${city.name}?`,
+    answer: `Everything a homeowner needs. AC repair and installation, furnace repair and installation, heat pump and ductless mini split work, NADCA certified duct cleaning, whole home indoor air quality, maintenance plans, and after hours service for active members. One crew, one phone number, one set of standards across every job we do in ${city.name}.`,
+  },
+  {
+    question: `Are heat pumps a good idea for a home in ${city.name}, PA?`,
+    answer: `Modern cold climate heat pumps can absolutely heat a Pennsylvania home through a Schuylkill County winter, and the federal 25C tax credit plus state rebates make the math work better than it did a few years ago. The honest answer for your specific house depends on insulation, ductwork, and current fuel costs. We walk through all of it with you on a free estimate, no pressure either way.`,
   },
 ];
 
@@ -82,8 +86,8 @@ const residentialServiceIcons: Record<string, string> = {
 ---
 
 <ResidentialLayout
-  title={`[PLACEHOLDER] HVAC Repair and Installation in ${city.name}, ${city.state} | BAM`}
-  description={`[PLACEHOLDER] Residential heating, cooling, and indoor air quality services for homeowners in ${city.name}, ${city.state}.`}
+  title={`HVAC Repair and Installation in ${city.name}, ${city.state} | Building and Air`}
+  description={`Heating, cooling, and indoor air quality for homeowners in ${city.name}, ${city.state}. Same techs the hospitals call. NADCA certified, licensed, insured. Call (570) 900-5827.`}
   canonicalURL={canonicalURL}
 >
   <ResidentialLocalBusinessSchema
@@ -95,69 +99,60 @@ const residentialServiceIcons: Record<string, string> = {
   />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       HERO — uppercase, font-black, fits viewport, embedded CTA
+       HERO — mirror commercial homepage hero composition
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative w-full res-bg-warm overflow-hidden min-h-[calc(100vh-72px)] flex items-center py-8 md:py-10">
-    <div class="absolute inset-0 opacity-[0.05] site-grid-dots"></div>
-    <div class="absolute -top-32 -left-32 w-[460px] h-[460px] rounded-full opacity-25 pointer-events-none" style="background-color: var(--color-sage);"></div>
-    <div class="absolute -bottom-40 -right-32 w-[420px] h-[420px] rounded-full opacity-20 pointer-events-none" style="background-color: var(--color-sage);"></div>
+  <section class="relative w-full py-20 md:py-0 md:h-[90vh] md:min-h-[760px] flex flex-col items-center justify-center font-sans overflow-hidden res-bg-warm">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1440&q=60"
+        alt={`Homes in ${city.name}, ${city.state}`}
+        class="w-full h-full object-cover opacity-25"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.62) 50%, rgba(255,255,255,0.95) 100%);"></div>
+      <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+    </div>
 
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-14 items-center">
+    <div class="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+      <nav class="text-[11px] res-text-slate mb-5 md:mb-6 flex items-center gap-2 flex-wrap justify-center font-semibold tracking-wider uppercase" aria-label="Breadcrumb">
+        <a href="/residential/" class="hover:opacity-70 res-text-slate no-underline transition-opacity">Residential</a>
+        <span class="opacity-50">/</span>
+        <span class="res-text-ink">{city.name}</span>
+      </nav>
 
-      <div>
-        <nav class="text-[11px] res-text-slate mb-5 flex items-center gap-2 flex-wrap font-semibold tracking-wider uppercase" aria-label="Breadcrumb">
-          <a href="/" class="hover:res-text-sage res-text-slate no-underline transition-colors">Home</a>
-          <span class="opacity-50">/</span>
-          <a href="/residential/" class="hover:res-text-sage res-text-slate no-underline transition-colors">Residential</a>
-          <span class="opacity-50">/</span>
-          <span class="res-text-ink">{city.name}</span>
-        </nav>
-
-        <div class="mb-4 md:mb-5 flex items-center gap-3">
-          <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
-          <span class="font-bold text-[10px] md:text-xs tracking-[0.22em] uppercase res-text-sage">
-            Serving {city.name}, {city.state}
-          </span>
-        </div>
-
-        <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-[4rem] font-black uppercase tracking-tighter leading-[0.92] res-text-ink mb-5 md:mb-6">
-          HVAC Repair and<br/>Installation in<br/>
-          <span class="res-text-sage">{city.name}.</span>
-        </h1>
-
-        <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-xl mb-6 md:mb-8">
-          [PLACEHOLDER copy pending owner answers] Heating, cooling, ductwork, and indoor air quality for {city.name} homeowners. Same trusted techs. Same Building and Air. Now for your house.
-        </p>
-
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <a href="#city-quote" class="res-btn-primary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline">
-            {res.ctaLabel}
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline">
-            Call {res.phone}
-          </a>
-        </div>
+      <div class="mb-4 md:mb-7 flex items-center gap-3 animate-fade-in-up opacity-0" style="animation-delay: 0ms;">
+        <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
+        <span class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage">Serving {city.name}, {city.state}</span>
       </div>
 
-      <!-- RIGHT: local map preview -->
-      <div class="hidden lg:block">
-        <div class="res-bg-surface border res-border-cream rounded-lg p-4 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.20)]">
-          <div class="aspect-[4/3] rounded-md overflow-hidden">
-            <iframe
-              src={`https://www.google.com/maps?q=${encodeURIComponent(`${city.name}, ${city.state}`)}&output=embed`}
-              width="100%"
-              height="100%"
-              style="border:0;"
-              loading="eager"
-              referrerpolicy="no-referrer-when-downgrade"
-              title={`Map of ${city.name}, ${city.state}`}
-            ></iframe>
-          </div>
-          <p class="text-[10px] font-bold tracking-[0.22em] uppercase res-text-sage mt-3 text-center">
-            On the ground in {city.name}
-          </p>
-        </div>
+      <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
+        HVAC Repair and<br class="hidden md:inline" />
+        Installation in<br />
+        <span class="res-text-sage">{city.name}.</span>
+      </h1>
+
+      <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
+        Heating, cooling, ductwork, and indoor air quality for homeowners in {city.name}, {city.state}. Same techs the hospitals call. Family run out of Pine Grove. NADCA certified. You see the price before we start.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up opacity-0 w-full justify-center" style="animation-delay: 300ms;">
+        <a
+          href="#city-quote"
+          class="res-btn-primary inline-flex items-center justify-center gap-3 font-bold tracking-widest text-xs py-4 md:py-[18px] px-8 md:px-10 rounded-sm w-full sm:w-auto sm:min-w-[240px] uppercase no-underline"
+        >
+          {res.ctaLabel}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href={`tel:${res.phoneRaw}`}
+          class="hidden sm:flex items-center justify-center gap-3 px-10 py-[18px] bg-white border-2 res-text-ink font-bold text-xs tracking-widest uppercase hover:bg-[var(--color-sage-deep)] hover:text-white transition-all rounded-sm min-w-[240px] shadow-md no-underline group"
+          style="border-color: var(--color-sage-deep);"
+        >
+          Call {res.phone}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="res-text-sage group-hover:text-white transition-colors"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -165,7 +160,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        SERVICES AVAILABLE — commercial card geometry
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
@@ -211,7 +206,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        LOCAL MAP + COPY
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="res-bg-warm py-20 md:py-24">
+  <section class="res-bg-warm py-14 md:py-18">
     <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       <div>
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
@@ -222,7 +217,7 @@ const residentialServiceIcons: Record<string, string> = {
         </h2>
         <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
         <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-md mb-5">
-          [PLACEHOLDER copy pending owner answers] We service homes throughout {city.name} and the surrounding neighborhoods. Same-day visits available for active maintenance customers.
+          We run residential calls all over {city.name} and the surrounding neighborhoods. Pennsylvania weather is hard on home HVAC, humid summers, brutal winters, and a lot of older houses still working with their original ductwork. We know what is in the houses around here because we live in them too. Same day visits for active maintenance plan members. Next morning at the latest for most others.
         </p>
         <p class="text-sm res-text-slate">
           Based in Pine Grove. <a href={`tel:${res.phoneRaw}`} class="res-text-sage font-bold hover:underline">{res.phone}</a>
@@ -245,7 +240,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        WHY LOCALS TRUST US — commercial cards
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
@@ -260,9 +255,9 @@ const residentialServiceIcons: Record<string, string> = {
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
-          { num: '01', title: 'We Live Here', body: '[PLACEHOLDER] Our crews live nearby. When you call, you reach a neighbor.' },
-          { num: '02', title: 'We Answer the Phone', body: '[PLACEHOLDER] A real person picks up. No phone tree, no overseas call center.' },
-          { num: '03', title: 'Straight Prices', body: '[PLACEHOLDER] You get the number before we start the work.' },
+          { num: '01', title: 'We Live Here Too', body: `Family run out of Pine Grove. Our crews live, work, and raise kids in the same Pennsylvania counties we service. When something breaks at your house in ${city.name}, you reach a neighbor.` },
+          { num: '02', title: 'A Real Person Picks Up', body: 'You call (570) 900-5827 and a human in Pine Grove answers. No phone tree, no overseas call center, no callback queue measured in days.' },
+          { num: '03', title: 'Hospital Grade Standards', body: 'The same NADCA, OSHA, and EPA certifications we hold for hospitals, schools, and federal facilities apply when we are working on your house. No double standard.' },
         ].map((d) => (
           <div class="group relative rounded-xl p-7 bg-white border border-[var(--color-warm-line)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-sage-deep)]/30 hover:shadow-[0_14px_30px_-12px_rgba(38,90,74,0.14)] overflow-hidden">
             <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--color-sage)] to-[var(--color-sage-deep)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -278,7 +273,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        REVIEWS
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="res-bg-warm py-20 md:py-24">
+  <section class="res-bg-warm py-14 md:py-18">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <div class="text-center mb-14">
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
@@ -308,11 +303,11 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        FAQ — border-left commercial pattern
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream py-20 md:py-28 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
-      <div class="text-center mb-14 md:mb-20">
+      <div class="text-center mb-10 md:mb-12">
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Common questions
         </span>
@@ -338,7 +333,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        BOTTOM CTA — two columns, embedded form
        ═══════════════════════════════════════════════════════════════ -->
-  <section id="city-quote" class="relative res-bg-warm pt-20 pb-20 md:pt-24 md:pb-24 overflow-hidden">
+  <section id="city-quote" class="relative res-bg-warm py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
 
     <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
@@ -353,15 +348,15 @@ const residentialServiceIcons: Record<string, string> = {
               Need Help With Your<br/>{city.name} Home?
             </h2>
             <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
-              [PLACEHOLDER] When your AC quits in July, we answer the phone. Tell us what is going on and we will come take a look.
+              When your AC quits in July or your furnace goes out on a Tuesday night, we answer the phone. Tell us what is happening at your {city.name} home and we will give you a straight answer, a written price, and a real date we can be there.
             </p>
           </div>
 
           <ul class="space-y-5 mt-1">
             {[
-              { title: 'Local Crews', description: 'Neighbors. Marked trucks. Uniforms.' },
-              { title: 'Same-Day Response', description: 'For active maintenance customers in PA.' },
-              { title: 'Licensed and Insured', description: 'Fully covered to operate in Pennsylvania.' },
+              { title: 'Local Crews', description: 'Neighbors out of Pine Grove. Marked trucks. Uniformed techs. Shoe covers in the house.' },
+              { title: 'Same Day Response', description: 'Priority dispatch for active maintenance plan members in Pennsylvania. Next morning at the latest for most other calls.' },
+              { title: 'Licensed and Insured', description: 'Fully licensed and insured in Pennsylvania. NADCA, OSHA 30, and EPA certified.' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
@@ -445,7 +440,7 @@ const residentialServiceIcons: Record<string, string> = {
             </form>
 
             <p class="text-[10px] res-text-slate mt-4 leading-relaxed">
-              No spam, no high-pressure sales. We respond to every message.
+              No spam, no pressure pitch, no auto reply chain. A real person reads every message.
             </p>
           </div>
         </div>

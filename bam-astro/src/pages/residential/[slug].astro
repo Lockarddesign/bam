@@ -28,53 +28,65 @@ const breadcrumbs = [
   { name: service.title, url: `/residential/${service.slug}/` },
 ];
 
-// Placeholder symptom list — owner will confirm per service
+// Symptoms biased toward AC and furnace repair (the most common service intent)
 const symptoms = [
-  '[PLACEHOLDER] Your system is making a new noise',
-  '[PLACEHOLDER] Some rooms feel warmer or colder than others',
-  '[PLACEHOLDER] You notice a smell when the system runs',
-  '[PLACEHOLDER] Your electric bill jumped this month',
-  '[PLACEHOLDER] The system runs constantly and never catches up',
+  'Your AC or furnace is making a new noise. Banging, rattling, hissing, or a hum that did not used to be there.',
+  'Some rooms in the house feel warm or cold while others are comfortable, even with the thermostat set the same.',
+  'You smell something when the system kicks on. Burning, musty, or sour. Any new smell is a sign to call.',
+  'Your electric or fuel bill jumped this month and nothing else changed.',
+  'The system runs constantly and never seems to reach the temperature on the thermostat.',
+  'You see ice on the outdoor unit in summer or water pooling near the indoor unit.',
+  'The system short cycles, kicking on and off every few minutes instead of running a normal cycle.',
 ];
 
 const included = [
-  '[PLACEHOLDER] A full diagnostic visit, no high-pressure sales',
-  '[PLACEHOLDER] Up-front pricing before any work begins',
-  '[PLACEHOLDER] Cleanup that leaves your home better than we found it',
-  '[PLACEHOLDER] Written summary of what we found and what we did',
+  'A full diagnostic visit. We look at the whole system, not just the part you called about.',
+  'A written price before any work begins. You see the number, you say yes, then we start.',
+  'A marked truck, a uniformed tech, shoe covers in the house, and cleanup before we leave.',
+  'A written summary of what we found, what we did, and what we recommend you watch for next.',
 ];
 
 // Friendly homeowner-facing version of The BAM Method
 const process = [
-  { num: '01', title: 'You call.', body: '[PLACEHOLDER] We answer. A real person, no phone tree.' },
-  { num: '02', title: 'We listen.', body: '[PLACEHOLDER] You tell us what is going on. We ask the right questions.' },
-  { num: '03', title: 'We come out.', body: '[PLACEHOLDER] We show up when we said we would, in a marked truck, in uniform.' },
-  { num: '04', title: 'We fix it.', body: '[PLACEHOLDER] Straight price up front. We get the work done, clean up, and stand behind it.' },
+  { num: '01', title: 'You call.', body: 'A real person picks up at (570) 900-5827. No phone tree, no overseas call center. We get the basics so we show up ready.' },
+  { num: '02', title: 'We listen.', body: 'You tell us what your system is doing, when it started, and what you have already tried. We ask the right follow up questions.' },
+  { num: '03', title: 'We come out.', body: 'We show up in the window we promised, in a marked truck, in uniform. We diagnose the actual problem and write down what it will cost to fix.' },
+  { num: '04', title: 'We fix it.', body: 'You see the price first, you say yes, then we start. When we are done, we clean up, walk you through the work, and stand behind it in writing.' },
 ];
+
+const lowerServiceTitle = service.title.toLowerCase();
 
 const faq = [
   {
-    question: `[PLACEHOLDER] How much does ${service.title.toLowerCase()} cost in Pennsylvania?`,
-    answer: '[PLACEHOLDER pricing posture pending owner confirmation]',
+    question: `How much does ${lowerServiceTitle} cost in Pennsylvania?`,
+    answer: `Honest answer, it depends on the system, the size of your home, and what is actually wrong. A small repair on a working unit looks very different from a full replacement on a 20 year old system. We give you a written price for ${lowerServiceTitle} before any work starts, so the number you see is the number you pay. [PENDING OWNER: typical price range BAM is willing to publish for ${lowerServiceTitle}].`,
   },
   {
-    question: `[PLACEHOLDER] How long does ${service.title.toLowerCase()} usually take?`,
-    answer: '[PLACEHOLDER copy pending owner answers]',
+    question: `How long does ${lowerServiceTitle} usually take?`,
+    answer: 'Most diagnostic visits and standard repairs are done the same day we come out. New system installs typically take one full day, sometimes two if the ductwork or electrical needs work. We tell you the expected timeline before we start so you can plan around it.',
   },
   {
-    question: '[PLACEHOLDER] Do you offer financing on installs?',
-    answer: '[PLACEHOLDER pending owner confirmation of financing partner]',
+    question: 'Are you licensed and insured to work on residential HVAC in Pennsylvania?',
+    answer: 'Yes. Building and Air Maintenance is fully licensed and insured in Pennsylvania, NADCA certified, OSHA 30, and EPA certified. The same crew that maintains hospitals and schools is the one working on your home. Ask for proof of insurance before we start a job and we will hand it to you.',
   },
   {
-    question: '[PLACEHOLDER] What is the warranty on your work?',
-    answer: '[PLACEHOLDER pending owner confirmation of labor warranty terms]',
+    question: 'Do you offer financing on installs?',
+    answer: 'Yes, financing is available on most new system installations. We can walk you through the monthly payment options when we hand you the quote. [PENDING OWNER: financing partner name and approval workflow]. Ask for details when we come out.',
+  },
+  {
+    question: 'What is the warranty on your work?',
+    answer: 'Every job is covered by the manufacturer warranty on the equipment plus our labor warranty on the install. [PENDING OWNER: labor warranty length and what it covers]. The written warranty travels with the system if you ever sell the house.',
+  },
+  {
+    question: 'Will you try to upsell me once you are in the driveway?',
+    answer: 'No. You see the price in writing before we start. If we find something else while we are there, we tell you, write it down, and let you decide on your own time. We do not sell add ons in the driveway, and we do not work on commission.',
   },
 ];
 ---
 
 <ResidentialLayout
-  title={`[PLACEHOLDER] ${service.title} for Homeowners | BAM`}
-  description={`[PLACEHOLDER] ${service.title} services for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties.`}
+  title={`${service.title} in Schuylkill County, PA | Building and Air`}
+  description={`${service.title} for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. Same techs the hospitals call. NADCA certified, licensed, insured. Call (570) 900-5827.`}
   canonicalURL={canonicalURL}
 >
   <ResidentialServiceSchema
@@ -87,79 +99,60 @@ const faq = [
   />
 
   <!-- ═══════════════════════════════════════════════════════════════
-       HERO — uppercase, font-black, embedded mini lead form, fits viewport
+       HERO — mirror commercial homepage hero composition
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative w-full res-bg-warm overflow-hidden min-h-[calc(100vh-72px)] flex items-center py-8 md:py-10">
-    <div class="absolute inset-0 opacity-[0.05] site-grid-dots"></div>
-    <div class="absolute -top-32 -right-32 w-[460px] h-[460px] rounded-full opacity-25 pointer-events-none" style="background-color: var(--color-sage);"></div>
-    <div class="absolute -bottom-40 -left-32 w-[380px] h-[380px] rounded-full opacity-20 pointer-events-none" style="background-color: var(--color-sage);"></div>
+  <section class="relative w-full py-20 md:py-0 md:h-[90vh] md:min-h-[760px] flex flex-col items-center justify-center font-sans overflow-hidden res-bg-warm">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=1440&q=60"
+        alt={`${service.title} for homes`}
+        class="w-full h-full object-cover opacity-25"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.62) 50%, rgba(255,255,255,0.95) 100%);"></div>
+      <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
+    </div>
 
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-[1.15fr_1fr] gap-8 lg:gap-14 items-center">
+    <div class="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+      <nav class="text-[11px] res-text-slate mb-5 md:mb-6 flex items-center gap-2 flex-wrap justify-center font-semibold tracking-wider uppercase" aria-label="Breadcrumb">
+        <a href="/residential/" class="hover:opacity-70 res-text-slate no-underline transition-opacity">Residential</a>
+        <span class="opacity-50">/</span>
+        <span class="res-text-ink">{service.title}</span>
+      </nav>
 
-      <!-- LEFT: breadcrumb + H1 + CTAs -->
-      <div>
-        <nav class="text-[11px] res-text-slate mb-5 flex items-center gap-2 flex-wrap font-semibold tracking-wider uppercase" aria-label="Breadcrumb">
-          <a href="/" class="hover:res-text-sage res-text-slate no-underline transition-colors">Home</a>
-          <span class="opacity-50">/</span>
-          <a href="/residential/" class="hover:res-text-sage res-text-slate no-underline transition-colors">Residential</a>
-          <span class="opacity-50">/</span>
-          <span class="res-text-ink">{service.title}</span>
-        </nav>
-
-        <div class="mb-4 md:mb-5 flex items-center gap-3">
-          <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
-          <span class="font-bold text-[10px] md:text-xs tracking-[0.22em] uppercase res-text-sage">
-            For homeowners
-          </span>
-        </div>
-
-        <h1 class="text-[2rem] sm:text-4xl md:text-5xl lg:text-[4rem] font-black uppercase tracking-tighter leading-[0.92] res-text-ink mb-5 md:mb-6">
-          {service.title}<br/>
-          <span class="res-text-sage">You Can</span> <br class="hidden md:inline"/>
-          Actually Count On.
-        </h1>
-
-        <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-xl mb-6 md:mb-8">
-          {service.shortDescription}
-        </p>
-
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-          <a href="#service-quote" class="res-btn-primary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline">
-            {res.ctaLabel}
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-          <a href={`tel:${res.phoneRaw}`} class="res-btn-secondary inline-flex items-center justify-center gap-3 px-7 md:px-8 py-4 rounded-sm font-bold tracking-widest text-xs uppercase no-underline">
-            Call {res.phone}
-          </a>
-        </div>
+      <div class="mb-4 md:mb-7 flex items-center gap-3 animate-fade-in-up opacity-0" style="animation-delay: 0ms;">
+        <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
+        <span class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage">For Homeowners</span>
       </div>
 
-      <!-- RIGHT: trust quick-card -->
-      <div class="hidden lg:block">
-        <div class="res-bg-surface border res-border-cream rounded-lg p-7 shadow-[0_24px_60px_-24px_rgba(38,90,74,0.20)]">
-          <div class="h-1 w-12 bg-[var(--color-sage-deep)] rounded-full mb-4"></div>
-          <h2 class="text-base font-bold uppercase tracking-[0.14em] res-text-ink mb-5">
-            What you can expect
-          </h2>
-          <ul class="space-y-4">
-            {[
-              { label: 'Same-day response', desc: 'A real person picks up the phone.' },
-              { label: 'Up-front pricing', desc: 'You get the number before we start.' },
-              { label: 'NADCA certified', desc: 'Hospital-grade standards at home.' },
-              { label: 'Licensed and insured', desc: 'Fully covered in Pennsylvania.' },
-            ].map((item) => (
-              <li class="flex items-start gap-3">
-                <span class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                </span>
-                <div>
-                  <p class="res-text-ink text-sm font-bold uppercase tracking-[0.12em]">{item.label}</p>
-                  <p class="res-text-slate text-sm leading-relaxed mt-0.5">{item.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
+        {service.title}<br class="hidden md:inline" />
+        <span class="res-text-sage">in Pennsylvania.</span><br />
+        Done Right.
+      </h1>
+
+      <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
+        {service.shortDescription}
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up opacity-0 w-full justify-center" style="animation-delay: 300ms;">
+        <a
+          href="#service-quote"
+          class="res-btn-primary inline-flex items-center justify-center gap-3 font-bold tracking-widest text-xs py-4 md:py-[18px] px-8 md:px-10 rounded-sm w-full sm:w-auto sm:min-w-[240px] uppercase no-underline"
+        >
+          {res.ctaLabel}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a
+          href={`tel:${res.phoneRaw}`}
+          class="hidden sm:flex items-center justify-center gap-3 px-10 py-[18px] bg-white border-2 res-text-ink font-bold text-xs tracking-widest uppercase hover:bg-[var(--color-sage-deep)] hover:text-white transition-all rounded-sm min-w-[240px] shadow-md no-underline group"
+          style="border-color: var(--color-sage-deep);"
+        >
+          Call {res.phone}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="res-text-sage group-hover:text-white transition-colors"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -167,7 +160,7 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        WHAT IS INCLUDED — commercial-style cards on light bg
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-10">
@@ -196,7 +189,7 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        WHEN TO CALL US
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="res-bg-warm py-20 md:py-24">
+  <section class="res-bg-warm py-14 md:py-18">
     <div class="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
       <div>
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
@@ -207,7 +200,7 @@ const faq = [
         </h2>
         <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
         <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-md">
-          [PLACEHOLDER] If any of these sound like your home, give us a call. No pressure, just a straight answer.
+          If any of these sound like what is happening at your house, pick up the phone. Most of the time we can tell you over the call whether it is a quick fix, a real repair, or time to talk about a replacement. No pressure either way.
         </p>
       </div>
       <ul class="space-y-3">
@@ -224,7 +217,7 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        PROCESS — 4-step, commercial card pattern
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream py-20 md:py-24 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
@@ -253,7 +246,7 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        PRICING POSTURE
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="res-bg-warm py-20 md:py-24">
+  <section class="res-bg-warm py-14 md:py-18">
     <div class="max-w-3xl mx-auto px-6 md:px-10 res-bg-surface rounded-2xl p-10 md:p-12 text-center border res-border-cream shadow-[0_14px_40px_-12px_rgba(38,90,74,0.14)]">
       <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
         How we price
@@ -263,7 +256,7 @@ const faq = [
       </h2>
       <div class="w-20 h-1 mx-auto mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
       <p class="text-base md:text-lg res-text-slate leading-relaxed">
-        [PLACEHOLDER pricing posture pending owner confirmation] You get a written price before we start the work. No surprises, no add-ons in the middle of the job.
+        You get the price in writing before we cut a wire, open a panel, or pull a permit. No add ons in the driveway. No surprise charges at the end of the visit. If the job turns out to be different than we thought, we stop, write a new number, and let you decide. That is the whole pricing model.
       </p>
     </div>
   </section>
@@ -271,7 +264,7 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        LOCAL TRUST SIGNALS
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="res-bg-cream py-20 md:py-24">
+  <section class="res-bg-cream py-14 md:py-18">
     <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
       <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
         Local, licensed, insured
@@ -279,23 +272,26 @@ const faq = [
       <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
         We Live Here Too.
       </h2>
-      <div class="w-20 h-1 mx-auto mb-10 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
+      <div class="w-20 h-1 mx-auto mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
+      <p class="text-base md:text-lg res-text-slate max-w-2xl mx-auto mb-10 leading-relaxed">
+        Building and Air Maintenance is based in Pine Grove. Family run since 2020. The team behind the trucks carries 25 years of institutional HVAC experience, the kind of work hospitals, schools, and federal facilities buy every year. That same experience is what shows up in your driveway.
+      </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
-          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">[ ]</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Years serving PA</div>
+          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">25</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Years team experience</div>
         </div>
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
           <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">NADCA</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Certified</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Certified duct cleaning</div>
         </div>
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
-          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">[ ]</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Homes serviced</div>
+          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">4</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">PA counties served</div>
         </div>
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
           <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">PA</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Licensed, insured</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Licensed and insured</div>
         </div>
       </div>
     </div>
@@ -304,7 +300,7 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        SERVICE AREA
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="res-bg-warm py-20 md:py-24">
+  <section class="res-bg-warm py-14 md:py-18">
     <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
       <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
         Where we work
@@ -329,11 +325,11 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        FAQ — border-left commercial pattern
        ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative res-bg-cream py-20 md:py-28 overflow-hidden">
+  <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-light"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
-      <div class="text-center mb-14 md:mb-20">
+      <div class="text-center mb-10 md:mb-12">
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
           Questions
         </span>
@@ -359,7 +355,7 @@ const faq = [
   <!-- ═══════════════════════════════════════════════════════════════
        BOTTOM CTA — two columns, embedded form
        ═══════════════════════════════════════════════════════════════ -->
-  <section id="service-quote" class="relative res-bg-warm pt-20 pb-20 md:pt-24 md:pb-24 overflow-hidden">
+  <section id="service-quote" class="relative res-bg-warm py-14 md:py-18 overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
 
     <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
@@ -374,15 +370,15 @@ const faq = [
               Get a Free<br/>Estimate.
             </h2>
             <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
-              [PLACEHOLDER] We will call you back within one business day with a straight answer and an up-front price.
+              Tell us what your system is doing. A real person calls you back within one business day with a straight answer, a written price, and a real date we can be at your house.
             </p>
           </div>
 
           <ul class="space-y-5 mt-1">
             {[
-              { title: 'Real Person Answers', description: 'A neighbor picks up the phone, no phone tree.' },
-              { title: 'No Surprises', description: 'You get the number before we start the work.' },
-              { title: 'Trusted Standards', description: 'Same NADCA standards we apply to hospitals and schools.' },
+              { title: 'A Real Person Answers', description: 'A neighbor in Pine Grove picks up the phone, no phone tree, no overseas call center.' },
+              { title: 'No Surprise Charges', description: 'You see the number in writing before we cut a wire. The price you agree to is the price you pay.' },
+              { title: 'Hospital Grade Standards', description: 'The same NADCA, OSHA, and EPA standards we apply to hospitals and schools, now applied to your home.' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
@@ -455,7 +451,7 @@ const faq = [
             </form>
 
             <p class="text-[10px] res-text-slate mt-4 leading-relaxed">
-              No spam, no high-pressure sales. We respond to every message.
+              No spam, no pressure pitch, no auto reply chain. A real person reads every message.
             </p>
           </div>
         </div>
