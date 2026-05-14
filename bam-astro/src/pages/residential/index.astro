@@ -18,16 +18,16 @@ const canonicalURL = new URL('/residential/', Astro.site).toString();
 
 const differentiators = [
   {
-    title: 'Same techs the hospitals call.',
-    body: 'The crews that restore HVAC for hospitals, schools, and federal facilities are now the ones answering the phone for your home. Same training, same standards, same Building and Air.',
-  },
-  {
     title: 'Family run, based in Pine Grove.',
     body: 'We live in Schuylkill County. Our kids go to school here. When you call, you reach a neighbor, not a call center three states away.',
   },
   {
+    title: '25 years of HVAC experience behind every truck.',
+    body: 'Our crews carry 25 years of combined HVAC experience across Pennsylvania. Real techs, in marked uniforms, in marked trucks. The same person who answered your call is the one keeping you posted.',
+  },
+  {
     title: 'NADCA certified duct cleaning.',
-    body: 'No other home HVAC company in this part of Pennsylvania holds NADCA certification. We do. It is the same standard hospitals and schools demand, now applied to your ductwork.',
+    body: 'No other home HVAC company in this part of Pennsylvania holds NADCA certification. We do. It is the gold standard for residential duct cleaning and indoor air quality, awarded by the National Air Duct Cleaners Association.',
   },
   {
     title: 'You see the price before we start.',
@@ -109,13 +109,13 @@ const residentialServiceIcons: Record<string, string> = {
       </div>
 
       <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
-        Home HVAC,<br class="hidden md:inline" />
-        <span class="res-text-sage">Built to a Hospital</span><br />
-        Standard.
+        Heating, Cooling,<br class="hidden md:inline" />
+        and <span class="res-text-sage">Clean Air</span><br />
+        for Your Home.
       </h1>
 
       <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
-        Same techs the hospitals call, now in your home. Heating, cooling, and clean air for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. Family run out of Pine Grove. NADCA certified. You see the price before we start.
+        Family run HVAC service for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. Based in Pine Grove. NADCA certified. Licensed and insured in Pennsylvania. You see the price before we start.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-4 animate-fade-in-up opacity-0 w-full justify-center" style="animation-delay: 300ms;">
@@ -384,7 +384,7 @@ const residentialServiceIcons: Record<string, string> = {
             {[
               { title: 'A Real Person Picks Up', description: 'A neighbor answers the phone in Pine Grove. No phone tree, no overseas call center, no auto reply chain.' },
               { title: 'Price in Writing, Up Front', description: 'You see the number before we cut a wire. No add ons in the driveway, no surprise charges at the end of the visit.' },
-              { title: 'NADCA Certified Standards', description: 'The same indoor air quality and duct cleaning standards hospitals require, now applied to your house.' },
+              { title: 'NADCA Certified Crews', description: 'We are the only home HVAC team in this part of Pennsylvania with NADCA certification, the gold standard for duct cleaning and indoor air quality.' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
