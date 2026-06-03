@@ -197,7 +197,7 @@ const homeFaqs = [
       </div>
 
       <div class="rounded-xl overflow-hidden shadow-2xl shadow-black/30 border border-white/[0.08]">
-        <YouTubeEmbed videoId="eSpw4Bh5qFU" title="BAM — Kline Commercial" />
+        <YouTubeEmbed videoId="eSpw4Bh5qFU" title="BAM — Kline Commercial" poster="/images/yt/kline-commercial.webp" />
       </div>
     </div>
 
@@ -643,8 +643,8 @@ const homeFaqs = [
         id="blog-carousel"
         class="flex gap-6"
       >
-        {[...allPosts, ...allPosts, ...allPosts].map((post, i) => {
-          const isClone = i >= allPosts.length;
+        {allPosts.map((post, i) => {
+          const isClone = false; // clones are added by JS post-load to shrink initial DOM
           const dateStr = post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
           return (
             <a
@@ -1276,6 +1276,19 @@ const homeFaqs = [
     const nextBtn = document.getElementById('blog-next') as HTMLElement | null;
     const progressBar = document.getElementById('blog-progress-bar') as HTMLElement | null;
     if (!wrapper || !track) return;
+
+    // Clone the original cards twice for the seamless infinite loop. Kept out of
+    // the server-rendered HTML to shrink the initial DOM (~2/3 fewer blog nodes);
+    // this runs deferred + below-the-fold, off the LCP/first-layout path.
+    const __origCards = Array.from(track.children);
+    for (let __r = 0; __r < 2; __r++) {
+      for (const node of __origCards) {
+        const clone = node.cloneNode(true) as HTMLElement;
+        clone.setAttribute('aria-hidden', 'true');
+        clone.setAttribute('tabindex', '-1');
+        track.appendChild(clone);
+      }
+    }
 
     const cards = track.querySelectorAll<HTMLElement>('.blog-card');
     const totalCards = cards.length;
