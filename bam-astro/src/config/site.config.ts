@@ -31,7 +31,7 @@ export const siteConfig = {
   socialLinks: [
     'https://www.facebook.com/p/Building-and-Air-Maintenance-LLC-61568190331014/',
   ],
-  googleBusinessUrl: '',
+  googleBusinessUrl: 'https://maps.app.goo.gl/7QmbpMJe7XS9tdbK6',
   gbpReviewLink: '',
 
   serviceAreas: [

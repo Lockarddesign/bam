@@ -593,11 +593,12 @@ const homeFaqs = [
                 {post.data.video ? (
                     <video
                       src={post.data.video}
-                      autoplay
                       muted
                       loop
                       playsinline
-                      preload={isClone ? "none" : "metadata"}
+                      preload="none"
+                      poster={post.data.image}
+                      data-hover-video
                       class="absolute inset-0 w-full h-full object-cover"
                       style="transform: scaleX(1.24) scaleY(1.08); transform-origin: center center;"
                       draggable="false"
@@ -658,6 +659,17 @@ const homeFaqs = [
       </a>
     </div>
   </section>
+
+  <script>
+    // Blog carousel: play video on hover only (preload="none" + no autoplay
+    // means zero download until intent — keeps payload tiny while preserving motion)
+    document.querySelectorAll('.blog-card video[data-hover-video]').forEach((v) => {
+      const card = v.closest('.blog-card');
+      if (!card) return;
+      card.addEventListener('mouseenter', () => { (v as HTMLVideoElement).play().catch(() => {}); });
+      card.addEventListener('mouseleave', () => { (v as HTMLVideoElement).pause(); });
+    });
+  </script>
 
   <!-- ═══════════════════════════════════════════════════════════════
        FAQ SECTION — AEO-OPTIMIZED, STATIC RENDER

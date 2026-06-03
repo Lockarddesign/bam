@@ -149,6 +149,15 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
             </div>
             <span class="text-sm leading-relaxed">
               {siteConfig.mainAddress.street}, {siteConfig.mainAddress.city}, {siteConfig.mainAddress.state} {siteConfig.mainAddress.zip}
+              {siteConfig.googleBusinessUrl && (
+                <>
+                  <br />
+                  <a href={siteConfig.googleBusinessUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1 mt-1 text-mint hover:text-white transition-colors no-underline font-medium">
+                    View on Google
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </>
+              )}
             </span>
           </li>
           <li class="flex items-center gap-3 text-light-grey">
