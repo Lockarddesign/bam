@@ -92,11 +92,11 @@ export const siteConfig = {
 
   /** Accreditations & trust signals */
   accreditations: [
-    { name: 'NADCA Certified', logo: '/accreditations/nadca.webp' },
-    { name: 'OSHA Compliant', logo: '/accreditations/osha.webp' },
-    { name: 'PA COSTARS Vendor', logo: '/accreditations/costars.webp' },
-    { name: 'EPA Certified', logo: '/accreditations/epa.webp' },
-    { name: 'Schuylkill County Chamber', logo: '/accreditations/schuylkill-chamber.webp' },
+    { name: 'NADCA Certified', logo: '/accreditations/nadca.webp', width: 127 },
+    { name: 'OSHA Compliant', logo: '/accreditations/osha.webp', width: 114 },
+    { name: 'PA COSTARS Vendor', logo: '/accreditations/costars.webp', width: 173 },
+    { name: 'EPA Certified', logo: '/accreditations/epa.webp', width: 121 },
+    { name: 'Schuylkill County Chamber', logo: '/accreditations/schuylkill-chamber.webp', width: 104 },
   ],
 
   /** Super pixel / lead-gen tools */
