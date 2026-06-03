@@ -36,93 +36,86 @@ const coverageStates = ['PA', 'NJ', 'MD', 'DE', 'NY'];
     <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
-        <!-- LEFT COLUMN: Info -->
-        <div class="lg:col-span-2 flex flex-col gap-10">
+        <!-- LEFT COLUMN: E-E-A-T trust sidebar -->
+        <div class="lg:col-span-2 flex flex-col gap-7">
 
-          <!-- Emergency Card -->
-          <div class="bg-dark rounded-lg border border-mint/20 p-8 relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-mint/[0.06] blur-[60px] pointer-events-none"></div>
-            <div class="relative z-10">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse"></div>
-                <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-red-400">Emergency Support</span>
-              </div>
-              <h3 class="text-white text-xl font-bold mb-2">24/7 Emergency Line</h3>
-              <p class="text-light-grey/70 text-sm leading-relaxed mb-5">
-                Critical HVAC failures don't wait for business hours. Call our emergency line for immediate triage.
+          <!-- Ownership-led -->
+          <div class="bg-dark rounded-lg border border-mint/20 overflow-hidden">
+            <img src="/images/community/bam-leadership-group.webp" alt="BAM ownership and leadership with Pennsylvania Secretary of Labor & Industry Nancy Walker at the Schuylkill Chamber Business Executive Forum" width="1400" height="933" loading="lazy" decoding="async" class="w-full h-[210px] object-cover object-[center_top]" />
+            <div class="p-7">
+              <span class="text-mint text-[10px] font-bold uppercase tracking-[0.3em] mb-3 block">Ownership-Led</span>
+              <h3 class="text-white text-xl font-bold mb-3 leading-snug">You deal directly with the owners</h3>
+              <p class="text-light-grey/70 text-sm leading-relaxed">
+                No call centers, no layers. When you reach out to BAM, you are talking to the people who stand behind the scope, the safety plan, and the final verification report on every site.
               </p>
-              <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                class="inline-flex items-center gap-3 px-6 py-3.5 bg-mint text-primary font-bold text-sm uppercase tracking-widest rounded-sm transition-all hover:shadow-[0_10px_30px_-10px_rgba(167,215,197,0.5)] hover:-translate-y-0.5"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                {siteConfig.phone}
-              </a>
             </div>
           </div>
 
-          <!-- Direct Channels -->
-          <div>
-            <h3 class="text-primary text-lg font-bold uppercase tracking-tight mb-6">Direct Channels</h3>
-            <div class="space-y-5">
-              <div class="flex items-start gap-4">
-                <div class="p-2.5 bg-primary/[0.07] rounded-lg border border-primary/10 text-primary shrink-0 mt-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <div>
-                  <p class="text-primary text-sm font-bold uppercase tracking-wide">Headquarters</p>
-                  <p class="text-slate text-sm leading-relaxed mt-1">
-                    {siteConfig.mainAddress.street}<br />
-                    {siteConfig.mainAddress.city}, {siteConfig.mainAddress.state} {siteConfig.mainAddress.zip}
-                  </p>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="p-2.5 bg-primary/[0.07] rounded-lg border border-primary/10 text-primary shrink-0 mt-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                </div>
-                <div>
-                  <p class="text-primary text-sm font-bold uppercase tracking-wide">Email</p>
-                  <a href={`mailto:${siteConfig.email}`} class="text-slate text-sm hover:text-primary transition-colors no-underline mt-1 block">{siteConfig.email}</a>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="p-2.5 bg-primary/[0.07] rounded-lg border border-primary/10 text-primary shrink-0 mt-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </div>
-                <div>
-                  <p class="text-primary text-sm font-bold uppercase tracking-wide">Phone</p>
-                  <a href={`tel:${siteConfig.phoneRaw}`} class="text-slate text-sm hover:text-primary transition-colors no-underline mt-1 block">{siteConfig.phone}</a>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="p-2.5 bg-primary/[0.07] rounded-lg border border-primary/10 text-primary shrink-0 mt-0.5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                </div>
-                <div>
-                  <p class="text-primary text-sm font-bold uppercase tracking-wide">Office Hours</p>
-                  <p class="text-slate text-sm leading-relaxed mt-1">
-                    Mon – Fri: 7:00 AM – 5:00 PM EST<br />
-                    Emergency: 24/7
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Coverage Territory -->
-          <div>
-            <h3 class="text-primary text-lg font-bold uppercase tracking-tight mb-5">Core Coverage Territory</h3>
-            <div class="flex flex-wrap gap-2">
-              {coverageStates.map(state => (
-                <span class="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-light-grey rounded-sm text-primary font-bold text-xs uppercase tracking-widest">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                  {state}
-                </span>
+          <!-- Why facilities trust BAM (E-E-A-T) -->
+          <div class="bg-white border border-light-grey rounded-lg p-7">
+            <h3 class="text-primary text-sm font-bold uppercase tracking-[0.18em] mb-5">Why Facilities Trust BAM</h3>
+            <ul class="space-y-4">
+              {[
+                { t: '25 Years of Field Experience', d: 'Leadership that came up through the trade, not a sales desk.' },
+                { t: 'NADCA Certified Firm', d: 'The gold standard for commercial duct cleaning and IAQ.' },
+                { t: 'EPA Universal \u00b7 OSHA-30', d: 'Compliance-ready crews in occupied, mission-critical facilities.' },
+                { t: 'PA COSTARS Vendor', d: 'Approved for public-sector and institutional procurement.' },
+              ].map(item => (
+                <li class="flex items-start gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mint mt-0.5 shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                  <div>
+                    <p class="text-primary text-sm font-bold leading-snug">{item.t}</p>
+                    <p class="text-slate text-xs leading-relaxed mt-0.5">{item.d}</p>
+                  </div>
+                </li>
               ))}
+            </ul>
+            <div class="flex items-center gap-2 mt-5 pt-5 border-t border-light-grey">
+              <span class="flex items-center gap-0.5 text-amber-500">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </span>
+              <span class="text-slate text-xs font-semibold">5.0 on Google</span>
+            </div>
+          </div>
+
+          <!-- Direct line -->
+          <a href={`tel:${siteConfig.phoneRaw}`} class="flex items-center justify-between gap-4 bg-primary rounded-lg p-6 hover:bg-[#1e483b] transition-colors no-underline">
+            <div>
+              <span class="text-mint text-[10px] font-bold uppercase tracking-[0.25em] block mb-1">Call the team directly</span>
+              <span class="text-white text-xl font-bold">{siteConfig.phone}</span>
+            </div>
+            <span class="p-3 bg-mint/15 rounded-full text-mint shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+          </a>
+
+          <!-- Channels + coverage -->
+          <div class="bg-white border border-light-grey rounded-lg p-7">
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint mt-0.5 shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <p class="text-slate text-sm leading-relaxed">{siteConfig.mainAddress.street}, {siteConfig.mainAddress.city}, {siteConfig.mainAddress.state} {siteConfig.mainAddress.zip}</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint mt-0.5 shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <a href={`mailto:${siteConfig.email}`} class="text-slate text-sm hover:text-primary transition-colors no-underline">{siteConfig.email}</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint mt-0.5 shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <p class="text-slate text-sm leading-relaxed">Mon&ndash;Fri 7:00 AM &ndash; 5:00 PM EST<br /><span class="text-primary font-semibold">Emergency: 24/7</span></p>
+              </div>
+            </div>
+            <div class="mt-6 pt-5 border-t border-light-grey">
+              <p class="text-primary text-[11px] font-bold uppercase tracking-[0.18em] mb-3">Core Coverage</p>
+              <div class="flex flex-wrap gap-2">
+                {coverageStates.map(state => (
+                  <span class="inline-flex items-center px-3 py-1.5 bg-ice border border-light-grey rounded text-primary font-bold text-[11px] uppercase tracking-widest">{state}</span>
+                ))}
+              </div>
             </div>
           </div>
 
