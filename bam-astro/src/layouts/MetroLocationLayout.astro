@@ -1,6 +1,5 @@
 ---
 import BaseLayout from './BaseLayout.astro';
-import MapSection from '../components/MapSection.astro';
 import LocalFAQ from '../components/LocalFAQ.astro';
 import { siteConfig } from '../config/site.config';
 
@@ -46,6 +45,8 @@ const props = Astro.props;
     { name: 'Locations', url: '/locations/' },
     { name: props.metroName, url: Astro.url.pathname },
   ]}
+  mapEmbedUrl={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(props.mapQuery)}&zoom=11`}
+  mapLabel={props.metroName}
 >
 
 <!-- Hero -->
@@ -198,9 +199,6 @@ const props = Astro.props;
     </div>
   </div>
 </section>
-
-<!-- Location map -->
-<MapSection embedUrl={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(props.mapQuery)}&zoom=11`} locationLabel={props.metroName} />
 
 <!-- FAQ -->
 <LocalFAQ cityName={props.metroName} />

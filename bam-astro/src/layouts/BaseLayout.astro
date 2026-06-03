@@ -6,6 +6,7 @@ import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import MobileBottomBar from '../components/MobileBottomBar.astro';
+import MapSection from '../components/MapSection.astro';
 import { siteConfig } from '../config/site.config';
 
 interface Props {
@@ -38,6 +39,12 @@ interface Props {
   breadcrumbs?: Array<{ name: string; url: string }>;
   noindex?: boolean;
   preloadImages?: Array<string | { href: string; type?: string }>;
+  /** Bottom-of-page map. showMap defaults true; pass a city-specific
+   *  mapEmbedUrl/mapLabel on location pages, or showMap={false} to hide. */
+  showMap?: boolean;
+  mapEmbedUrl?: string;
+  mapLabel?: string;
+  mapTitle?: string;
 }
 
 const props = Astro.props;
@@ -92,6 +99,10 @@ const props = Astro.props;
     <main>
       <slot />
     </main>
+
+    {props.showMap !== false && (
+      <MapSection embedUrl={props.mapEmbedUrl} locationLabel={props.mapLabel} mapTitle={props.mapTitle} />
+    )}
 
     <Footer />
     <MobileBottomBar />

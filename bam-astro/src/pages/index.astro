@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import YouTubeEmbed from '../components/YouTubeEmbed.astro';
 import FAQ from '../components/FAQ.astro';
-import MapSection from '../components/MapSection.astro';
 import { siteConfig } from '../config/site.config';
 import { getCollection } from 'astro:content';
 
@@ -749,9 +748,6 @@ const homeFaqs = [
 
   <!-- FAQ (shared component) -->
   <FAQ faqs={homeFaqs} schema={false} />
-
-  <!-- Location / map (shared component) -->
-  <MapSection />
 
   <!-- ═══════════════════════════════════════════════════════════════
        SITE VISIT CTA SECTION
