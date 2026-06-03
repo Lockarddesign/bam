@@ -733,14 +733,14 @@ const homeFaqs = [
           </div>
 
           <!-- Phone + directions -->
-          <div class="mt-auto flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch gap-3">
-            <a href={`tel:${siteConfig.phoneRaw}`} class="flex items-center justify-center gap-2.5 px-4 py-3 bg-[#0F1816] border border-mint/20 rounded-sm text-white hover:border-mint/50 transition-colors no-underline">
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <span class="text-sm font-bold whitespace-nowrap">{siteConfig.phone}</span>
+          <div class="mt-auto flex flex-col gap-3">
+            <a href={`tel:${siteConfig.phoneRaw}`} class="w-full flex items-center justify-center gap-2.5 px-4 py-3 bg-[#0F1816] border border-mint/20 rounded-sm text-white hover:border-mint/50 transition-colors no-underline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mint shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span class="text-sm font-bold">{siteConfig.phone}</span>
             </a>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=Building%20and%20Air%20Maintenance%2C%20LLC" target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 bg-mint text-primary font-bold tracking-[0.16em] uppercase text-xs rounded-sm transition-all hover:bg-white no-underline">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Building%20and%20Air%20Maintenance%2C%20LLC" target="_blank" rel="noopener" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-mint text-primary font-bold tracking-[0.16em] uppercase text-xs rounded-sm transition-all hover:bg-white no-underline">
               Get Directions
-              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </a>
           </div>
         </div>
