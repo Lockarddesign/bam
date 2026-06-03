@@ -31,3 +31,6 @@ screenshot-*.mjs
 
 # Netlify
 .netlify/
+
+# Claude Code worktrees
+.claude/worktrees/
