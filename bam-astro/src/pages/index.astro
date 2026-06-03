@@ -185,7 +185,7 @@ const homeFaqs = [
        ═══════════════════════════════════════════════════════════════ -->
   <section class="relative py-20 md:py-28 bg-dark overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-dark"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-mint/[0.06] blur-[150px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.08), transparent 70%);"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
       <div class="text-center mb-10 md:mb-14">
@@ -207,8 +207,8 @@ const homeFaqs = [
        ═══════════════════════════════════════════════════════════════ -->
   <section id="services" class="relative py-24 bg-ice overflow-hidden">
     <div class="absolute inset-0 opacity-[0.03] site-grid-light"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[900px] h-[500px] rounded-full bg-mint/[0.10] blur-[120px] pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[100px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[900px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.13), transparent 70%);"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] pointer-events-none" style="background: radial-gradient(circle at center, rgba(38,90,74,0.07), transparent 70%);"></div>
 
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
       <div class="text-center mb-20">
@@ -415,7 +415,7 @@ const homeFaqs = [
        ═══════════════════════════════════════════════════════════════ -->
   <section id="industries" class="relative py-28 md:py-36 bg-dark overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-mint/[0.06] blur-[150px] pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.08), transparent 70%);"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
       <div class="text-center mb-16 md:mb-24">
@@ -437,7 +437,7 @@ const homeFaqs = [
               href={`/industries/${industry.slug}/`}
               class="group relative flex flex-col justify-between rounded-xl p-8 md:p-10 min-h-[220px] no-underline overflow-hidden border border-white/[0.08] bg-white/[0.04] transition-all duration-500 hover:border-mint/30 hover:bg-white/[0.08] hover:shadow-[0_0_80px_rgba(167,215,197,0.1)]"
             >
-              <div class="absolute top-0 right-0 w-40 h-40 rounded-full bg-mint/[0.04] blur-[60px] pointer-events-none group-hover:bg-mint/[0.08] transition-all duration-700"></div>
+              <div class="absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700" style="background: radial-gradient(circle at center, rgba(167,215,197,0.16), transparent 70%);"></div>
 
               <div>
                 <div class="flex items-center gap-4 mb-5">
@@ -596,14 +596,16 @@ const homeFaqs = [
 
   <style>
     @keyframes scroll-gallery {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
     }
     .animate-scroll {
       animation: scroll-gallery 60s linear infinite;
       width: max-content;
+      will-change: transform;
     }
-    .animate-scroll:hover {
+    .animate-scroll:hover,
+    .animate-scroll.marquee-paused {
       animation-play-state: paused;
     }
   </style>
@@ -733,6 +735,16 @@ const homeFaqs = [
       card.addEventListener('mouseenter', () => { (v as HTMLVideoElement).play().catch(() => {}); });
       card.addEventListener('mouseleave', () => { (v as HTMLVideoElement).pause(); });
     });
+
+    // Pause CSS marquees when off-screen so they don't repaint/composite while
+    // scrolled away (big Safari win — WebKit keeps compositing them otherwise)
+    const marquees = document.querySelectorAll('.animate-scroll, .accreditations-track');
+    if (marquees.length) {
+      const mo = new IntersectionObserver((entries) => {
+        entries.forEach((e) => e.target.classList.toggle('marquee-paused', !e.isIntersecting));
+      }, { rootMargin: '120px' });
+      marquees.forEach((m) => mo.observe(m));
+    }
   </script>
 
   <!-- ═══════════════════════════════════════════════════════════════
@@ -740,7 +752,7 @@ const homeFaqs = [
        ═══════════════════════════════════════════════════════════════ -->
   <section class="relative py-24 md:py-32 bg-dark overflow-hidden">
     <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full bg-mint/[0.05] blur-[180px] pointer-events-none"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.07), transparent 70%);"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12 lg:px-16">
       <div class="text-center mb-16 md:mb-20">
@@ -981,13 +993,15 @@ const homeFaqs = [
 
 <style>
   @keyframes accreditations-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-33.33%); }
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-33.33%, 0, 0); }
   }
   .accreditations-track {
     animation: accreditations-scroll 48s linear infinite;
+    will-change: transform;
   }
-  .accreditations-track:hover {
+  .accreditations-track:hover,
+  .accreditations-track.marquee-paused {
     animation-play-state: paused;
   }
 
