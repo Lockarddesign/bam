@@ -50,7 +50,7 @@ const sameAsLinks = [
   ...siteConfig.socialLinks,
   siteConfig.gbpReviewLink,
   siteConfig.googleBusinessUrl,
-];
+].filter(Boolean);
 
 const imageUrl = new URL(image, Astro.site).toString();
 

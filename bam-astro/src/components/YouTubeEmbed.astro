@@ -2,10 +2,12 @@
 interface Props {
   videoId: string;
   title: string;
+  /** local poster (webp/avif) — avoids the 182KB YouTube maxres thumb */
+  poster?: string;
 }
 
-const { videoId, title } = Astro.props;
-const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
+const { videoId, title, poster } = Astro.props;
+const thumbnailUrl = poster ?? `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
 ---
 
 <div class="yt-facade group" data-video-id={videoId}>
@@ -13,7 +15,10 @@ const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`;
     src={thumbnailUrl}
     alt={title}
     class="yt-facade-thumb"
+    width="1268"
+    height="713"
     loading="lazy"
+    decoding="async"
   />
   <button class="yt-facade-play" aria-label={`Play: ${title}`}>
     <svg viewBox="0 0 68 48" width="68" height="48">

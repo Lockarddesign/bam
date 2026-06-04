@@ -31,8 +31,26 @@ export const siteConfig = {
   socialLinks: [
     'https://www.facebook.com/p/Building-and-Air-Maintenance-LLC-61568190331014/',
   ],
-  googleBusinessUrl: '',
+  googleBusinessUrl: 'https://maps.app.goo.gl/7QmbpMJe7XS9tdbK6',
   gbpReviewLink: '',
+
+  googleRating: { value: '5.0', count: 3 },
+
+  /** Verbatim Google reviews (do not paraphrase) */
+  testimonials: [
+    {
+      name: 'Cheryl Bonilla',
+      rating: 5,
+      source: 'Google',
+      quote: '5 stars all the way. Building and Air Maintenance exceeded my expectations. They were prompt, professional, and very knowledgeable. The quality of work was excellent, and they took the time to make sure everything was done right. Communication was great throughout the whole process, and it is clear they care about their customers and their reputation. I would not hesitate to use them again or recommend them to others.',
+    },
+    {
+      name: 'Vincent Klemer',
+      rating: 5,
+      source: 'Google',
+      quote: 'If you’re looking for top notch work look no further than BAM. Incredibly professional, thorough and on schedule from start to finish. Travis has been a blessing to work. I would recommend them to anyone. Will definitely have them do more work in the future',
+    },
+  ],
 
   serviceAreas: [
     'Pennsylvania',
@@ -92,11 +110,11 @@ export const siteConfig = {
 
   /** Accreditations & trust signals */
   accreditations: [
-    { name: 'NADCA Certified', logo: '/accreditations/nadca.webp' },
-    { name: 'OSHA Compliant', logo: '/accreditations/osha.webp' },
-    { name: 'PA COSTARS Vendor', logo: '/accreditations/costars.webp' },
-    { name: 'EPA Certified', logo: '/accreditations/epa.webp' },
-    { name: 'Schuylkill County Chamber', logo: '/accreditations/schuylkill-chamber.webp' },
+    { name: 'NADCA Certified', logo: '/accreditations/nadca.webp', width: 127 },
+    { name: 'OSHA Compliant', logo: '/accreditations/osha.webp', width: 114 },
+    { name: 'PA COSTARS Vendor', logo: '/accreditations/costars.webp', width: 173 },
+    { name: 'EPA Certified', logo: '/accreditations/epa.webp', width: 121 },
+    { name: 'Schuylkill County Chamber', logo: '/accreditations/schuylkill-chamber.webp', width: 104 },
   ],
 
   /** Super pixel / lead-gen tools */

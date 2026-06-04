@@ -11,7 +11,7 @@ const allPosts = (await getCollection('blog'))
   description="Expert insights on HVAC restoration, IAQ compliance, energy optimization, and mechanical system maintenance for institutional facilities."
   breadcrumbs={[{ name: 'Blog', url: '/blog/' }]}
 >
-  <section class="relative py-20 md:py-28 bg-dark overflow-hidden">
+  <section class="relative bg-dark overflow-hidden py-20 md:py-28">
     <div class="absolute inset-0 opacity-[0.05] site-grid-dark"></div>
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
       <span class="inline-block text-mint font-bold text-xs tracking-[0.3em] uppercase mb-5">Insights & Expertise</span>
@@ -22,8 +22,8 @@ const allPosts = (await getCollection('blog'))
     </div>
   </section>
 
-  <section class="py-16 md:py-24 bg-ice">
-    <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+  <section class="bg-ice py-20 md:py-28">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {allPosts.map((post) => {
           const dateStr = post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
