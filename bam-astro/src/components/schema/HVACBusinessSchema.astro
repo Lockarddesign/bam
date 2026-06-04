@@ -67,10 +67,10 @@ const graph: Record<string, unknown>[] = [
       latitude: siteConfig.geo.lat,
       longitude: siteConfig.geo.lng,
     },
-    areaServed: res.serviceAreaCounties.map((county) => ({
-      '@type': 'AdministrativeArea',
-      name: `${county} County, PA`,
-    })),
+    areaServed: [
+      { '@type': 'AdministrativeArea', name: `${res.serviceAreaCountyLabel}, PA` },
+      ...res.serviceAreaCities.map((c) => ({ '@type': 'City', name: `${c.name}, ${c.state}` })),
+    ],
     priceRange: '$$',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

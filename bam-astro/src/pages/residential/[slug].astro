@@ -2,8 +2,8 @@
 /**
  * Residential Service Template — /residential/[slug]/
  *
- * Generates 10 service pages from siteConfig.residential.services. All copy
- * is placeholder pending owner answers. Design language mirrors the commercial
+ * Generates 5 service pages from siteConfig.residential.services. Design
+ * language mirrors the commercial
  * service / homepage patterns: uppercase H1, tight tracking, commercial card
  * geometry, border-left FAQ, two-column bottom CTA with embedded form. Lighter
  * sage-and-white palette.
@@ -28,65 +28,16 @@ const breadcrumbs = [
   { name: service.title, url: `/residential/${service.slug}/` },
 ];
 
-// Symptoms biased toward AC and furnace repair (the most common service intent)
-const symptoms = [
-  'Your AC or furnace is making a new noise. Banging, rattling, hissing, or a hum that did not used to be there.',
-  'Some rooms in the house feel warm or cold while others are comfortable, even with the thermostat set the same.',
-  'You smell something when the system kicks on. Burning, musty, or sour. Any new smell is a sign to call.',
-  'Your electric or fuel bill jumped this month and nothing else changed.',
-  'The system runs constantly and never seems to reach the temperature on the thermostat.',
-  'You see ice on the outdoor unit in summer or water pooling near the indoor unit.',
-  'The system short cycles, kicking on and off every few minutes instead of running a normal cycle.',
-];
-
-const included = [
-  'A full diagnostic visit. We look at the whole system, not just the part you called about.',
-  'A written price before any work begins. You see the number, you say yes, then we start.',
-  'A marked truck, a uniformed tech, shoe covers in the house, and cleanup before we leave.',
-  'A written summary of what we found, what we did, and what we recommend you watch for next.',
-];
-
-// Friendly homeowner-facing version of The BAM Method
-const process = [
-  { num: '01', title: 'You call.', body: 'A real person picks up at (570) 900-5827. No phone tree, no overseas call center. We get the basics so we show up ready.' },
-  { num: '02', title: 'We listen.', body: 'You tell us what your system is doing, when it started, and what you have already tried. We ask the right follow up questions.' },
-  { num: '03', title: 'We come out.', body: 'We show up in the window we promised, in a marked truck, in uniform. We diagnose the actual problem and write down what it will cost to fix.' },
-  { num: '04', title: 'We fix it.', body: 'You see the price first, you say yes, then we start. When we are done, we clean up, walk you through the work, and stand behind it in writing.' },
-];
-
-const lowerServiceTitle = service.title.toLowerCase();
-
-const faq = [
-  {
-    question: `How much does ${lowerServiceTitle} cost in Pennsylvania?`,
-    answer: `Honest answer, it depends on the system, the size of your home, and what is actually wrong. A small repair on a working unit looks very different from a full replacement on a 20 year old system. We give you a written price for ${lowerServiceTitle} before any work starts, so the number you see is the number you pay. [PENDING OWNER: typical price range BAM is willing to publish for ${lowerServiceTitle}].`,
-  },
-  {
-    question: `How long does ${lowerServiceTitle} usually take?`,
-    answer: 'Most diagnostic visits and standard repairs are done the same day we come out. New system installs typically take one full day, sometimes two if the ductwork or electrical needs work. We tell you the expected timeline before we start so you can plan around it.',
-  },
-  {
-    question: 'Are you licensed and insured to work on residential HVAC in Pennsylvania?',
-    answer: 'Yes. Building and Air Maintenance is fully licensed and insured in Pennsylvania, NADCA certified, OSHA 30, and EPA certified. Ask for proof of insurance before we start a job and we will hand it to you.',
-  },
-  {
-    question: 'Do you offer financing on installs?',
-    answer: 'Yes, financing is available on most new system installations. We can walk you through the monthly payment options when we hand you the quote. [PENDING OWNER: financing partner name and approval workflow]. Ask for details when we come out.',
-  },
-  {
-    question: 'What is the warranty on your work?',
-    answer: 'Every job is covered by the manufacturer warranty on the equipment plus our labor warranty on the install. [PENDING OWNER: labor warranty length and what it covers]. The written warranty travels with the system if you ever sell the house.',
-  },
-  {
-    question: 'Will you try to upsell me once you are in the driveway?',
-    answer: 'No. You see the price in writing before we start. If we find something else while we are there, we tell you, write it down, and let you decide on your own time. We do not sell add ons in the driveway, and we do not work on commission.',
-  },
-];
+// Per service data comes from the config. service.included, service.faq, and
+// the shared res.process drive the page. No repair, install, or symptom copy.
+const included = service.included;
+const process = res.process;
+const faq = service.faq;
 ---
 
 <ResidentialLayout
   title={`${service.title} in Schuylkill County, PA | Building and Air`}
-  description={`${service.title} for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. Family run local HVAC. NADCA certified, licensed, insured. Call (570) 900-5827.`}
+  description={`${service.title} for homes in Schuylkill County, PA. The only NADCA certified company in the county. Preventive duct cleaning and indoor air quality care. Call (570) 900-5827.`}
   canonicalURL={canonicalURL}
 >
   <ResidentialServiceSchema
@@ -129,12 +80,11 @@ const faq = [
 
       <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
         {service.title}<br class="hidden md:inline" />
-        <span class="res-text-sage">in Pennsylvania.</span><br />
-        Done Right.
+        <span class="res-text-sage">in Schuylkill County.</span>
       </h1>
 
       <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
-        {service.shortDescription}
+        {service.heroSub}
       </p>
 
       <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up opacity-0 w-full justify-center" style="animation-delay: 300ms;">
@@ -186,31 +136,77 @@ const faq = [
     </div>
   </section>
 
+  {service.id === 'maintenance-plans' && (
+    <!-- ═══════════════════════════════════════════════════════════════
+         MAINTENANCE PLAN TIERS — Good / Better / Best
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="relative res-bg-warm py-14 md:py-18 overflow-hidden">
+      <div class="absolute inset-0 opacity-[0.04] site-grid-dots"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-10">
+        <div class="text-center mb-12 md:mb-14 max-w-2xl mx-auto">
+          <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
+            Annual plans
+          </span>
+          <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+            Good. Better. Best.
+          </h2>
+          <div class="w-20 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+          {res.plans.map((plan) => (
+            <div class={`relative rounded-2xl p-7 md:p-8 flex flex-col h-full transition-all duration-300 hover:-translate-y-1.5 ${plan.featured ? 'bg-[var(--color-sage-deep)] text-white shadow-[0_20px_50px_-16px_rgba(38,90,74,0.4)]' : 'bg-white border border-[var(--color-warm-line)] shadow-[0_2px_16px_rgba(38,90,74,0.06)] hover:shadow-[0_16px_40px_rgba(38,90,74,0.14)]'}`}>
+              {plan.featured && (
+                <span class="absolute top-5 right-5 text-[9px] font-bold tracking-[0.18em] uppercase px-2.5 py-1 rounded-full bg-white/20 text-white">Most complete</span>
+              )}
+              <div class={`text-[11px] font-bold tracking-[0.22em] uppercase mb-2 ${plan.featured ? 'text-white/80' : 'res-text-sage'}`}>{plan.tagline}</div>
+              <h3 class={`text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 ${plan.featured ? 'text-white' : 'res-text-ink'}`}>{plan.name}</h3>
+              <p class={`text-sm leading-relaxed mb-5 ${plan.featured ? 'text-white/85' : 'res-text-slate'}`}>{plan.summary}</p>
+              <ul class="space-y-3 mb-6 flex-grow">
+                {plan.includes.map((inc) => (
+                  <li class="flex items-start gap-3">
+                    <span class={`mt-0.5 flex-shrink-0 ${plan.featured ? 'text-white' : 'res-text-sage'}`}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </span>
+                    <span class={`text-sm leading-snug ${plan.featured ? 'text-white/90' : 'res-text-ink'}`}>{inc}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class={`text-xs font-semibold uppercase tracking-[0.14em] pt-4 border-t ${plan.featured ? 'border-white/20 text-white/80' : 'border-[var(--color-warm-line)] res-text-slate'}`}>{plan.price}</div>
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-sm res-text-slate max-w-2xl mx-auto mt-8 leading-relaxed">
+          Add ons: dryer vent cleaning and air sampling. A fall preventive maintenance opt in discount is available when you sign with the service agreement.
+        </p>
+      </div>
+    </section>
+  )}
+
   <!-- ═══════════════════════════════════════════════════════════════
-       WHEN TO CALL US
+       WHY IT MATTERS — preventive value, no symptom list
        ═══════════════════════════════════════════════════════════════ -->
   <section class="res-bg-warm py-14 md:py-18">
     <div class="max-w-6xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 lg:gap-16 items-start">
       <div>
         <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
-          Signs to call us
+          Why it matters
         </span>
         <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
-          When to Call Us.
+          Care That Pays<br/>You Back.
         </h2>
         <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
         <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-md">
-          If any of these sound like what is happening at your house, pick up the phone. Most of the time we can tell you over the call whether it is a quick fix, a real repair, or time to talk about a replacement. No pressure either way.
+          We do not sell or replace equipment. Our focus is preventive maintenance that lowers your utility costs and extends the life of the system you already own. A clean system moves air with less resistance, runs more efficiently, and lasts longer.
         </p>
       </div>
-      <ul class="space-y-3">
-        {symptoms.map((s) => (
-          <li class="flex items-start gap-3 rounded-lg p-4 bg-white border border-[var(--color-warm-line)] transition-all duration-300 hover:border-[var(--color-sage-deep)]/30 hover:shadow-[0_8px_24px_-12px_rgba(38,90,74,0.18)]">
-            <span class="w-2 h-2 rounded-full mt-2.5 flex-shrink-0" style="background-color: var(--color-sage-deep);"></span>
-            <span class="text-base res-text-ink font-medium">{s}</span>
-          </li>
-        ))}
-      </ul>
+      <div class="res-bg-surface border res-border-cream rounded-2xl p-8 md:p-10 shadow-[0_14px_40px_-12px_rgba(38,90,74,0.14)]">
+        <p class="text-lg md:text-xl res-text-ink leading-relaxed font-semibold mb-4">
+          From secure federal facilities to hospital surgical suites to your living room, the care never changes. Only the address.
+        </p>
+        <p class="text-base res-text-slate leading-relaxed">
+          We are the only NADCA certified company in Schuylkill County. We bring commercial grade restoration and indoor air quality discipline into homes. Source removal, HEPA containment, encapsulation, and lab verified air sampling, held to the same standard we hold in healthcare and federal work.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -226,7 +222,7 @@ const faq = [
           How it works
         </span>
         <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
-          From Your First Call<br/>to a Fixed System.
+          The NADCA Standard,<br/>Step by Step.
         </h2>
         <div class="w-20 h-1 mx-auto opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
@@ -256,7 +252,7 @@ const faq = [
       </h2>
       <div class="w-20 h-1 mx-auto mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
       <p class="text-base md:text-lg res-text-slate leading-relaxed">
-        You get the price in writing before we cut a wire, open a panel, or pull a permit. No add ons in the driveway. No surprise charges at the end of the visit. If the job turns out to be different than we thought, we stop, write a new number, and let you decide. That is the whole pricing model.
+        Estimates are free. You get clear pricing in writing before we begin, and a written closeout report when we finish. We do not sell or replace equipment, so there is nothing to upsell you in the driveway. No surprise charges at the end of the visit. That is the whole pricing model.
       </p>
     </div>
   </section>
@@ -267,31 +263,31 @@ const faq = [
   <section class="res-bg-cream py-14 md:py-18">
     <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
       <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
-        Local, licensed, insured
+        Local and certified
       </span>
       <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
         We Live Here Too.
       </h2>
       <div class="w-20 h-1 mx-auto mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
       <p class="text-base md:text-lg res-text-slate max-w-2xl mx-auto mb-10 leading-relaxed">
-        Building and Air Maintenance is based in Pine Grove. Family run since 2020. Our crews carry 25 years of HVAC experience across Pennsylvania. Licensed and insured to work on residential systems statewide. NADCA, OSHA 30, and EPA certified.
+        Building and Air is based in Pine Grove and serves homeowners across Schuylkill County. Our crews carry 20 plus combined years of field experience, and we are the only NADCA certified company in the county. Every job comes with a one year workmanship guarantee and a written statement of cleanliness.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
-          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">25</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Years team experience</div>
+          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">20+</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Combined years experience</div>
         </div>
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
           <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">NADCA</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Certified duct cleaning</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Certified, the only one in county</div>
         </div>
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
-          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">4</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">PA counties served</div>
+          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">1 yr</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Workmanship guarantee</div>
         </div>
         <div class="rounded-xl p-5 bg-white border border-[var(--color-warm-line)]">
-          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">PA</div>
-          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Licensed and insured</div>
+          <div class="text-3xl md:text-4xl font-black res-text-sage mb-1 tracking-tight">Free</div>
+          <div class="text-xs font-bold tracking-[0.14em] uppercase res-text-slate">Estimates, no pressure</div>
         </div>
       </div>
     </div>
@@ -370,15 +366,15 @@ const faq = [
               Get a Free<br/>Estimate.
             </h2>
             <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
-              Tell us what your system is doing. A real person calls you back within one business day with a straight answer, a written price, and a real date we can be at your house.
+              Tell us about your home and what you are after. A real person calls you back with a straight answer and a free estimate. We typically schedule within a few days, and our hours follow our Google listing.
             </p>
           </div>
 
           <ul class="space-y-5 mt-1">
             {[
               { title: 'A Real Person Answers', description: 'A neighbor in Pine Grove picks up the phone, no phone tree, no overseas call center.' },
-              { title: 'No Surprise Charges', description: 'You see the number in writing before we cut a wire. The price you agree to is the price you pay.' },
-              { title: 'NADCA Certified', description: 'We are NADCA, OSHA 30, and EPA certified. Licensed and insured in Pennsylvania. Ask for proof, we will send it.' },
+              { title: 'Only NADCA Certified in the County', description: 'We hold the credential no other company in Schuylkill County does, the gold standard for duct cleaning and indoor air quality.' },
+              { title: 'Preventive, Not Pushy', description: 'We do not sell or replace equipment. Free estimates, clear pricing, and a written statement of cleanliness on every job.' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">

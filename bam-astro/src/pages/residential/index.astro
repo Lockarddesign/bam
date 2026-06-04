@@ -2,8 +2,9 @@
 /**
  * Residential Hub — /residential/
  *
- * Mockup scaffold. All copy is placeholder pending owner answers
- * (see notes/residential-launch-owner-questionnaire.md in the vault).
+ * Copy and data reflect the owner questionnaire (2026-06-04): Schuylkill County
+ * only, NADCA certified preventive duct cleaning, indoor air quality, dryer vent
+ * cleaning, air sampling, and maintenance plans. No installs, no repairs.
  *
  * Design language mirrors the commercial homepage (uppercase H1, tight tracking,
  * font-black, commercial card geometry, border-left FAQ, two-column bottom CTA)
@@ -18,69 +19,60 @@ const canonicalURL = new URL('/residential/', Astro.site).toString();
 
 const differentiators = [
   {
-    title: 'Family run, based in Pine Grove.',
-    body: 'We live in Schuylkill County. Our kids go to school here. When you call, you reach a neighbor, not a call center three states away.',
+    title: 'The only NADCA certified company in Schuylkill County.',
+    body: 'NADCA certification is the standard set by the National Air Duct Cleaners Association. We are the only company in Schuylkill County that holds it. When we clean your ducts, we do it to that standard, every time.',
   },
   {
-    title: '25 years of HVAC experience behind every truck.',
-    body: 'Our crews carry 25 years of combined HVAC experience across Pennsylvania. Real techs, in marked uniforms, in marked trucks. The same person who answered your call is the one keeping you posted.',
+    title: 'Commercial discipline, brought home.',
+    body: 'The same methods we use in hospital surgical suites and secure federal facilities now come to your living room. Source removal, HEPA containment, encapsulation, and lab verified air sampling. Nothing less.',
   },
   {
-    title: 'NADCA certified duct cleaning.',
-    body: 'No other home HVAC company in this part of Pennsylvania holds NADCA certification. We do. It is the gold standard for residential duct cleaning and indoor air quality, awarded by the National Air Duct Cleaners Association.',
+    title: 'Preventive maintenance, not equipment sales.',
+    body: 'We do not sell or replace systems. Our focus is keeping the system you already have clean and running well, which lowers your utility costs and extends the life of your equipment.',
   },
   {
-    title: 'You see the price before we start.',
-    body: 'No surprise upsells once the truck is in your driveway. You get the number in writing, you say yes, then we start the work. That is it.',
+    title: '20 plus combined years of field experience.',
+    body: 'Our team brings 20 plus combined years of field experience to every home. Real people, careful work, and a clear written record of what we did and why.',
   },
 ];
 
 const faq = [
   {
-    question: 'What areas do you serve for residential HVAC in Pennsylvania?',
-    answer: 'We are based in Pine Grove and serve homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. That includes Pottsville, Schuylkill Haven, Reading, Lebanon, Hershey, Pottstown, Hamburg, Orwigsburg, and the towns in between. If you are not sure whether your address is in our area, call (570) 900-5827 and we will tell you straight.',
+    question: 'What areas do you serve?',
+    answer: 'We serve Schuylkill County, including Pottsville, Orwigsburg, and Hegins, along with the towns in between. We are based in Pine Grove. If you are not sure whether your address is in our area, call (570) 900-5827 and we will tell you straight.',
   },
   {
-    question: 'Do you offer free estimates on new systems?',
-    answer: 'Yes. Estimates for new AC, furnace, heat pump, and ductless mini split installations are free. We come out, look at your current setup, size the new system to the actual square footage of your home, and hand you a written quote. No deposit, no obligation.',
+    question: 'What does NADCA certified mean and why does it matter?',
+    answer: 'NADCA is the National Air Duct Cleaners Association, and its certification is the recognized standard for duct cleaning and indoor air quality. It means the work is done with source removal, HEPA containment, and proper verification rather than a quick blow through. We are the only NADCA certified company in Schuylkill County, so you get that standard on every job.',
   },
   {
-    question: 'How fast can you get to my home if my system stops working?',
-    answer: 'For active maintenance plan members, we offer priority dispatch and after hours service when the heat or AC goes out. For everyone else, we do our best to get out the same day or next morning. [PENDING OWNER: response time SLA we will publicly commit to]. Call (570) 900-5827 and we will tell you when we can be there.',
+    question: 'Do you do installs or repairs?',
+    answer: 'No. We do not sell, install, or replace equipment, and we do not do repairs or diagnostics. We focus on preventive work: whole home duct cleaning, indoor air quality, dryer vent cleaning, air sampling, and maintenance plans that keep your existing system clean and running well.',
   },
   {
-    question: 'Are you licensed and insured in Pennsylvania?',
-    answer: 'Yes. Building and Air Maintenance is fully licensed and insured to work on residential HVAC systems in Pennsylvania. We carry general liability and workers comp on every crew, and we are NADCA, OSHA 30, and EPA certified. Ask us to send proof before we start a job and we will.',
+    question: 'Are estimates free?',
+    answer: 'Yes. Estimates are free. We look at your system, explain what we recommend, and give you a clear written price before any work begins. No deposit, no pressure.',
   },
   {
-    question: 'Do you offer financing on installations?',
-    answer: 'Yes, financing is available on most new system installations. We can walk you through the options when we give you the quote, including monthly payment estimates. [PENDING OWNER: financing partner name and approval details].',
-  },
-  {
-    question: 'What brands of equipment do you install?',
-    answer: 'We install high efficiency systems from major American manufacturers and match the brand to your home, budget, and Pennsylvania climate. [PENDING OWNER: top brands installed for residential]. We are not locked into one brand, which means we recommend what is right for your house, not what we are trying to move off the truck.',
+    question: 'How fast can you come out?',
+    answer: 'We typically schedule visits within a few days. Our hours follow the listing on our Google Business Profile. Call (570) 900-5827 and we will set a time that works for you.',
   },
 ];
 
 const breadcrumbs = [{ name: 'Residential', url: '/residential/' }];
 
 const residentialServiceIcons: Record<string, string> = {
-  'ac-repair':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>`,
-  'ac-install':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h2"/><path d="M6 14h2"/><path d="M11 10h2"/><path d="M11 14h2"/><path d="M16 10h2"/></svg>`,
-  'furnace-repair':  `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
-  'furnace-install': `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6"/><path d="M9 13c1 1 2 1 3 1s2 0 3-1"/><circle cx="12" cy="17" r="1"/></svg>`,
-  'heat-pump':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9a4 4 0 0 0-2 7.5"/><path d="M12 3v2"/><path d="m6.6 18.4-1.4 1.4"/><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>`,
-  'mini-split':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="9" rx="2"/><path d="M6 18c1-1 2-1 3 0s2 1 3 0 2-1 3 0 2 1 3 0"/></svg>`,
-  'duct-cleaning':   `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>`,
-  'iaq':             `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.6.8c0 5.52-2.36 10.06-7.32 12.4A7 7 0 0 1 11 20Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
-  'maintenance':     `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-  'emergency':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  'duct-cleaning':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>`,
+  'iaq':                 `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.6.8c0 5.52-2.36 10.06-7.32 12.4A7 7 0 0 1 11 20Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
+  'dryer-vent-cleaning': `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2"/><path d="M12.59 19.41A2 2 0 1 0 14 16H2"/><path d="M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2"/></svg>`,
+  'air-sampling':        `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L5.5 17a2 2 0 0 0 1.7 3h9.6a2 2 0 0 0 1.7-3L14 9.5V3"/><path d="M7.5 14h9"/></svg>`,
+  'maintenance-plans':   `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
 };
 ---
 
 <ResidentialLayout
-  title="Residential HVAC in Schuylkill County, PA | Building and Air"
-  description="Family run heating, cooling, and indoor air quality for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. NADCA certified, licensed, insured. Call (570) 900-5827."
+  title="Residential Duct Cleaning and Indoor Air Quality in Schuylkill County, PA | Building and Air"
+  description="The only NADCA certified company in Schuylkill County. Whole home duct cleaning, indoor air quality, dryer vent cleaning, air sampling, and maintenance plans for homeowners in Pottsville, Orwigsburg, and Hegins. Call (570) 900-5827."
   canonicalURL={canonicalURL}
 >
   <HVACBusinessSchema slot="head" canonicalURL={canonicalURL} breadcrumbs={breadcrumbs} />
@@ -105,17 +97,17 @@ const residentialServiceIcons: Record<string, string> = {
     <div class="relative z-10 w-full max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
       <div class="mb-4 md:mb-7 flex items-center gap-3 animate-fade-in-up opacity-0" style="animation-delay: 0ms;">
         <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
-        <span class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage">Family Run Since 2020</span>
+        <span class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage">{res.positioning.eyebrow}</span>
       </div>
 
       <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
-        Heating, Cooling,<br class="hidden md:inline" />
-        and <span class="res-text-sage">Clean Air</span><br />
-        for Your Home.
+        Cleaner Air.<br class="hidden md:inline" />
+        <span class="res-text-sage">Healthier Home.</span><br />
+        Lower Bills.
       </h1>
 
       <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
-        Family run HVAC service for homeowners across Schuylkill, Berks, Lebanon, and Dauphin counties. Based in Pine Grove. NADCA certified. Licensed and insured in Pennsylvania. You see the price before we start.
+        {res.positioning.heroLine} The only NADCA certified company in Schuylkill County, focused on preventive maintenance, not selling you a new system. Free estimates.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-4 animate-fade-in-up opacity-0 w-full justify-center" style="animation-delay: 300ms;">
@@ -153,7 +145,7 @@ const residentialServiceIcons: Record<string, string> = {
           Tell us what is going on.
         </h2>
         <p class="text-base md:text-lg res-text-slate max-w-xl mx-auto mt-4 leading-relaxed">
-          A real person reads every message. We call you back within one business day. No spam, no pressure, no auto reply chain.
+          A real person reads every message and calls you back. We usually schedule visits within a few days. No spam, no pressure, no auto reply chain.
         </p>
       </div>
 
@@ -185,7 +177,7 @@ const residentialServiceIcons: Record<string, string> = {
 
         <div class="space-y-1.5">
           <label for="rh-summary" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Brief Description</label>
-          <textarea id="rh-summary" name="summary" rows="3" placeholder="Tell us what your system is doing (or not doing)." class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+          <textarea id="rh-summary" name="summary" rows="3" placeholder="Tell us a bit about your home and what you are looking for." class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
         </div>
 
         <button type="submit" class="res-btn-primary w-full px-6 py-4 rounded-sm font-bold tracking-[0.22em] uppercase text-xs">
@@ -207,7 +199,7 @@ const residentialServiceIcons: Record<string, string> = {
           What we do for homeowners
         </span>
         <h2 class="text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
-          Ten Services. One Crew.<br/>One Phone Number.
+          Five Services.<br/>One Standard.
         </h2>
         <div class="w-24 h-1.5 mx-auto opacity-30 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
@@ -221,7 +213,7 @@ const residentialServiceIcons: Record<string, string> = {
             <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--color-sage)] to-[var(--color-sage-deep)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             <div class="relative z-10 mb-5 w-11 h-11 rounded-lg flex items-center justify-center transition-colors duration-300" style="background-color: rgba(167, 215, 197, 0.25); color: var(--color-sage-deep);">
-              <Fragment set:html={residentialServiceIcons[service.id] || residentialServiceIcons['maintenance']} />
+              <Fragment set:html={residentialServiceIcons[service.id] || residentialServiceIcons['maintenance-plans']} />
             </div>
 
             <h3 class="relative z-10 text-[15px] font-extrabold uppercase tracking-tight leading-snug res-text-ink mb-2.5">
@@ -254,7 +246,7 @@ const residentialServiceIcons: Record<string, string> = {
           You Should Not Have to Wonder<br/>Who Is in Your House.
         </h2>
         <p class="text-base md:text-lg res-text-slate max-w-2xl mx-auto mt-5 leading-relaxed">
-          Four reasons homeowners in Pottsville, Pine Grove, Reading, and Lebanon keep our number on the fridge instead of the other guy's.
+          Four reasons homeowners in Pottsville, Orwigsburg, and Hegins keep our number on the fridge instead of the other guy's.
         </p>
         <div class="w-24 h-1 mx-auto mt-6 opacity-40 rounded-full" style="background-color: var(--color-sage-deep);"></div>
       </div>
@@ -277,7 +269,7 @@ const residentialServiceIcons: Record<string, string> = {
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       SERVICE AREA — counties + cities
+       SERVICE AREA — Schuylkill County + towns
        ═══════════════════════════════════════════════════════════════ -->
   <section class="res-bg-cream py-14 md:py-18">
     <div class="max-w-7xl mx-auto px-6 md:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -286,21 +278,17 @@ const residentialServiceIcons: Record<string, string> = {
           Where we work
         </span>
         <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
-          Counties We Serve.
+          Where We Work.
         </h2>
         <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
         <p class="text-base md:text-lg leading-relaxed res-text-slate mb-7 max-w-md">
-          We are based in Pine Grove and run residential calls across four Pennsylvania counties. Same crews, same trucks, the whole footprint. If your address is anywhere in this map, we can be at your door.
+          We are based in Pine Grove and serve homeowners across {res.serviceAreaCountyLabel}, including Pottsville, Orwigsburg, and Hegins. If your address is anywhere in this map, we can be at your door.
         </p>
-        <ul class="grid grid-cols-2 gap-3 mb-8">
-          {res.serviceAreaCounties.map((c) => (
-            <li class="flex items-center gap-2 text-base res-text-ink">
-              <span class="w-2 h-2 rounded-full" style="background-color: var(--color-sage-deep);"></span>
-              <span class="font-semibold">{c} County</span>
-            </li>
-          ))}
-        </ul>
-        <p class="text-[10px] font-bold tracking-[0.22em] uppercase res-text-sage mb-3">Cities we work in most often</p>
+        <div class="flex items-center gap-2 mb-8 text-base res-text-ink">
+          <span class="w-2 h-2 rounded-full" style="background-color: var(--color-sage-deep);"></span>
+          <span class="font-semibold">{res.serviceAreaCountyLabel}, Pennsylvania</span>
+        </div>
+        <p class="text-[10px] font-bold tracking-[0.22em] uppercase res-text-sage mb-3">Towns we work in most often</p>
         <ul class="flex flex-wrap gap-2">
           {res.serviceAreaCities.map((c) => (
             <li>
@@ -314,7 +302,7 @@ const residentialServiceIcons: Record<string, string> = {
       </div>
       <div class="aspect-[4/3] rounded-2xl overflow-hidden shadow-md res-bg-surface">
         <iframe
-          src="https://www.google.com/maps?q=Pine+Grove,+PA&output=embed"
+          src="https://www.google.com/maps?q=Schuylkill+County,+PA&output=embed"
           width="100%"
           height="100%"
           style="border:0;"
@@ -322,6 +310,41 @@ const residentialServiceIcons: Record<string, string> = {
           referrerpolicy="no-referrer-when-downgrade"
           title="BAM Residential service area map"
         ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       REVIEWS — verbatim Google reviews
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="res-bg-cream py-14 md:py-18">
+    <div class="max-w-5xl mx-auto px-6 md:px-10">
+      <div class="text-center mb-10 md:mb-12">
+        <span class="inline-block font-bold text-[10px] tracking-[0.22em] uppercase mb-4 res-text-sage">
+          What homeowners say
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter res-text-ink leading-[0.95] mb-5">
+          5.0 on Google.
+        </h2>
+        <div class="w-24 h-1.5 mx-auto opacity-30 rounded-full" style="background-color: var(--color-sage-deep);"></div>
+      </div>
+
+      <!-- TODO: config has 2 of 3 Google reviews; add the 3rd verbatim when available -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {siteConfig.testimonials.map((t) => (
+          <div class="bg-white border res-border-cream rounded-lg p-6 md:p-8 shadow-[0_2px_16px_rgba(38,90,74,0.06)] flex flex-col">
+            <div class="flex items-center gap-1 mb-4 res-text-sage">
+              {Array.from({ length: t.rating }).map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              ))}
+            </div>
+            <p class="res-text-slate text-base md:text-lg leading-relaxed italic flex-grow">{t.quote}</p>
+            <div class="mt-5 pt-4 border-t border-[var(--color-warm-line)] flex items-center justify-between">
+              <span class="res-text-ink text-sm font-bold uppercase tracking-[0.12em]">{t.name}</span>
+              <span class="res-text-sage text-[11px] font-bold uppercase tracking-widest">{t.source}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -376,15 +399,15 @@ const residentialServiceIcons: Record<string, string> = {
               Get a Free<br/>Home Estimate.
             </h2>
             <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
-              Tell us what your system is doing or not doing. We will give you a straight answer, a written price, and a real date we can be at your house. No deposit, no obligation.
+              Tell us about your home and what you are looking for. We will give you a straight answer, a written price, and a real date we can be at your house. No deposit, no obligation.
             </p>
           </div>
 
           <ul class="space-y-5 mt-1">
             {[
-              { title: 'A Real Person Picks Up', description: 'A neighbor answers the phone in Pine Grove. No phone tree, no overseas call center, no auto reply chain.' },
-              { title: 'Price in Writing, Up Front', description: 'You see the number before we cut a wire. No add ons in the driveway, no surprise charges at the end of the visit.' },
-              { title: 'NADCA Certified Crews', description: 'We are the only home HVAC team in this part of Pennsylvania with NADCA certification, the gold standard for duct cleaning and indoor air quality.' },
+              { title: 'Only NADCA Certified in the County', description: 'We are the only NADCA certified company in Schuylkill County, the recognized standard for duct cleaning and indoor air quality.' },
+              { title: 'Preventive, Not Pushy', description: 'We do not sell or replace equipment. Our focus is keeping your existing system clean and running well, which lowers your bills.' },
+              { title: 'Free Estimates, Clear Pricing', description: 'You see the number in writing before any work begins. No deposit, no surprise charges at the end of the visit.' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
@@ -418,7 +441,7 @@ const residentialServiceIcons: Record<string, string> = {
                 Free Estimate Request
               </h3>
               <p class="res-text-slate text-xs md:text-sm mt-2 leading-relaxed">
-                Fill in the details below. A real person reads every message and calls you back within one business day.
+                Fill in the details below. A real person reads every message and calls you back, usually within a few days.
               </p>
             </div>
 
@@ -456,7 +479,7 @@ const residentialServiceIcons: Record<string, string> = {
 
                 <div class="space-y-1.5">
                   <label for="rb-message" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Message</label>
-                  <textarea id="rb-message" name="message" rows="4" placeholder="Tell us what is happening with your system." class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+                  <textarea id="rb-message" name="message" rows="4" placeholder="Tell us a bit about your home and what you are looking for." class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
                 </div>
               </div>
 

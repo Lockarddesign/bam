@@ -37,10 +37,10 @@ const sameAsLinks = [
   siteConfig.googleBusinessUrl,
 ].filter(Boolean);
 
-const areaServed = res.serviceAreaCounties.map((county) => ({
-  '@type': 'AdministrativeArea',
-  name: `${county} County, PA`,
-}));
+const areaServed = [
+  { '@type': 'AdministrativeArea', name: `${res.serviceAreaCountyLabel}, PA` },
+  ...res.serviceAreaCities.map((c) => ({ '@type': 'City', name: `${c.name}, ${c.state}` })),
+];
 
 const graph: Record<string, unknown>[] = [
   {

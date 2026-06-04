@@ -9,6 +9,9 @@
  * Design language mirrors the commercial homepage / service pages: uppercase
  * H1, tight tracking, commercial card geometry, border-left FAQ, two-column
  * bottom CTA with embedded form. Lighter sage-and-white palette.
+ *
+ * Copy reflects owner answers: Schuylkill County only, NADCA certified
+ * preventive air care. No installs, no repairs.
  */
 import ResidentialLayout from '../../../layouts/ResidentialLayout.astro';
 import ResidentialLocalBusinessSchema from '../../../components/schema/ResidentialLocalBusinessSchema.astro';
@@ -30,64 +33,39 @@ const breadcrumbs = [
   { name: city.name, url: `/residential/locations/${city.slug}/` },
 ];
 
-const reviews = [
-  {
-    name: `[PENDING OWNER: real customer name for ${city.name}]`,
-    quote: `[PENDING OWNER: real customer review from a ${city.name} homeowner. We will not publish a fake testimonial here. Pulling from the residential GBP once reviews land.]`,
-    rating: 5,
-  },
-  {
-    name: `[PENDING OWNER: real customer name for ${city.name}]`,
-    quote: `[PENDING OWNER: real customer review from a ${city.name} homeowner.]`,
-    rating: 5,
-  },
-  {
-    name: `[PENDING OWNER: real customer name near ${city.name}]`,
-    quote: '[PENDING OWNER: real customer review from a homeowner in Schuylkill, Berks, Lebanon, or Dauphin County.]',
-    rating: 5,
-  },
-];
+const reviews = siteConfig.testimonials;
 
 const faq = [
   {
-    question: `How fast can you get to a home in ${city.name}, ${city.state}?`,
-    answer: `We are based in Pine Grove and ${city.name} is in our regular service area. For active maintenance plan members we offer priority dispatch and after hours service. For everyone else, we work hard to get out the same day or the next morning. [PENDING OWNER: response time SLA for ${city.name}]. Call (570) 900-5827 and we will tell you exactly when we can be at your door.`,
-  },
-  {
-    question: `Do you work on older homes in ${city.name}?`,
-    answer: `Yes. A lot of ${city.name} housing stock predates central air, and plenty of homes are still running original ductwork or oil furnaces. We work on every system type we see in Pennsylvania, including older boilers, oil furnaces, single zone ductless retrofits, and homes that need full new ductwork. We tell you straight whether something is worth repairing or whether replacement is the smarter spend.`,
-  },
-  {
-    question: `Are you licensed and insured to work in ${city.name}, ${city.state}?`,
-    answer: 'Yes. Building and Air Maintenance is fully licensed and insured to work on residential HVAC across Pennsylvania, including general liability and workers comp on every crew. We are NADCA, OSHA 30, and EPA certified. Ask for proof before we start a job and we will hand it to you.',
-  },
-  {
     question: `What HVAC services do you offer in ${city.name}?`,
-    answer: `Everything a homeowner needs. AC repair and installation, furnace repair and installation, heat pump and ductless mini split work, NADCA certified duct cleaning, whole home indoor air quality, maintenance plans, and after hours service for active members. One crew, one phone number, one set of standards across every job we do in ${city.name}.`,
+    answer: `Five things, and we do them well. Whole home duct cleaning to the NADCA standard, indoor air quality, dryer vent cleaning, air sampling, and preventive maintenance plans. We do not install or repair equipment. We do not sell furnaces, air conditioners, or heat pumps. Our focus is keeping the system you already own clean, healthy, and running efficiently.`,
   },
   {
-    question: `Are heat pumps a good idea for a home in ${city.name}, PA?`,
-    answer: `Modern cold climate heat pumps can absolutely heat a Pennsylvania home through a Schuylkill County winter, and the federal 25C tax credit plus state rebates make the math work better than it did a few years ago. The honest answer for your specific house depends on insulation, ductwork, and current fuel costs. We walk through all of it with you on a free estimate, no pressure either way.`,
+    question: `How fast can you get to a home in ${city.name}, ${city.state}?`,
+    answer: `We are based in Pine Grove and ${city.name} is in our Schuylkill County service area. We typically respond within a few days, and our hours follow the listing on our Google Business Profile. Call (570) 900-5827 and we will tell you when we can be at your door.`,
+  },
+  {
+    question: `What makes you different from other companies near ${city.name}?`,
+    answer: `We are the only NADCA certified company in Schuylkill County. We bring commercial grade restoration and indoor air quality discipline to homes. Source removal, HEPA containment, encapsulation, and lab verified air sampling. The same standards we use in federal facilities and hospital surgical suites, applied to your home.`,
+  },
+  {
+    question: `Are estimates free?`,
+    answer: `Yes. Estimates are free. We will look at your system, tell you what we find, and give you a straight price before any work begins.`,
   },
 ];
 
 const residentialServiceIcons: Record<string, string> = {
-  'ac-repair':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M12 2v20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>`,
-  'ac-install':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h2"/><path d="M6 14h2"/><path d="M11 10h2"/><path d="M11 14h2"/><path d="M16 10h2"/></svg>`,
-  'furnace-repair':  `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
-  'furnace-install': `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h6"/><path d="M9 13c1 1 2 1 3 1s2 0 3-1"/><circle cx="12" cy="17" r="1"/></svg>`,
-  'heat-pump':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9a4 4 0 0 0-2 7.5"/><path d="M12 3v2"/><path d="m6.6 18.4-1.4 1.4"/><path d="M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg>`,
-  'mini-split':      `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="9" rx="2"/><path d="M6 18c1-1 2-1 3 0s2 1 3 0 2-1 3 0 2 1 3 0"/></svg>`,
-  'duct-cleaning':   `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>`,
-  'iaq':             `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.6.8c0 5.52-2.36 10.06-7.32 12.4A7 7 0 0 1 11 20Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
-  'maintenance':     `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-  'emergency':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  'duct-cleaning':       `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg>`,
+  'iaq':                 `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.6.8c0 5.52-2.36 10.06-7.32 12.4A7 7 0 0 1 11 20Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
+  'dryer-vent-cleaning': `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2"/><path d="M12.59 19.41A2 2 0 1 0 14 16H2"/><path d="M17.73 7.73A2.5 2.5 0 1 1 19.5 12H2"/></svg>`,
+  'air-sampling':        `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.5L5.5 17a2 2 0 0 0 1.7 3h9.6a2 2 0 0 0 1.7-3L14 9.5V3"/><path d="M7.5 14h9"/></svg>`,
+  'maintenance-plans':   `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
 };
 ---
 
 <ResidentialLayout
-  title={`HVAC Repair and Installation in ${city.name}, ${city.state} | Building and Air`}
-  description={`Heating, cooling, and indoor air quality for homeowners in ${city.name}, ${city.state}. Family run local HVAC. NADCA certified, licensed, insured. Call (570) 900-5827.`}
+  title={`NADCA Certified Home Air Care in ${city.name}, ${city.state} | Building and Air`}
+  description={`Whole home duct cleaning, indoor air quality, and preventive maintenance for homeowners in ${city.name}, ${city.state}. The only NADCA certified company in Schuylkill County. Call (570) 900-5827.`}
   canonicalURL={canonicalURL}
 >
   <ResidentialLocalBusinessSchema
@@ -128,13 +106,13 @@ const residentialServiceIcons: Record<string, string> = {
       </div>
 
       <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
-        HVAC Repair and<br class="hidden md:inline" />
-        Installation in<br />
-        <span class="res-text-sage">{city.name}.</span>
+        Clean Air for<br />
+        Your <span class="res-text-sage">{city.name}</span><br class="hidden md:inline" />
+        <span class="res-text-sage">Home.</span>
       </h1>
 
       <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
-        Heating, cooling, ductwork, and indoor air quality for homeowners in {city.name}, {city.state}. Family run out of Pine Grove. NADCA certified. Licensed and insured. You see the price before we start.
+        Whole home duct cleaning, indoor air quality, and preventive maintenance for homeowners in {city.name}, {city.state}. We are the only NADCA certified company in Schuylkill County. {res.positioning.heroLine}
       </p>
 
       <div class="flex flex-col sm:flex-row items-center gap-4 animate-fade-in-up opacity-0 w-full justify-center" style="animation-delay: 300ms;">
@@ -183,7 +161,7 @@ const residentialServiceIcons: Record<string, string> = {
             <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--color-sage)] to-[var(--color-sage-deep)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
             <div class="relative z-10 mb-5 w-11 h-11 rounded-lg flex items-center justify-center transition-colors duration-300" style="background-color: rgba(167, 215, 197, 0.25); color: var(--color-sage-deep);">
-              <Fragment set:html={residentialServiceIcons[s.id] || residentialServiceIcons['maintenance']} />
+              <Fragment set:html={residentialServiceIcons[s.id] || residentialServiceIcons['maintenance-plans']} />
             </div>
 
             <h3 class="relative z-10 text-[15px] font-extrabold uppercase tracking-tight leading-snug res-text-ink mb-2.5">
@@ -217,7 +195,7 @@ const residentialServiceIcons: Record<string, string> = {
         </h2>
         <div class="w-20 h-1 mb-6 rounded-full" style="background-color: var(--color-sage-deep); opacity: 0.4;"></div>
         <p class="text-base md:text-lg leading-relaxed res-text-slate max-w-md mb-5">
-          We run residential calls all over {city.name} and the surrounding neighborhoods. Pennsylvania weather is hard on home HVAC, humid summers, brutal winters, and a lot of older houses still working with their original ductwork. We know what is in the houses around here because we live in them too. Same day visits for active maintenance plan members. Next morning at the latest for most others.
+          We serve {city.name} and the rest of Schuylkill County with preventive duct cleaning and indoor air quality work. We know what is in the houses around here because we live in them too. We typically respond within a few days, and our hours follow the listing on our Google Business Profile.
         </p>
         <p class="text-sm res-text-slate">
           Based in Pine Grove. <a href={`tel:${res.phoneRaw}`} class="res-text-sage font-bold hover:underline">{res.phone}</a>
@@ -255,9 +233,9 @@ const residentialServiceIcons: Record<string, string> = {
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {[
-          { num: '01', title: 'We Live Here Too', body: `Family run out of Pine Grove. Our crews live, work, and raise kids in the same Pennsylvania counties we service. When something breaks at your house in ${city.name}, you reach a neighbor.` },
+          { num: '01', title: 'We Live Here Too', body: `Family run out of Pine Grove. Our crews live, work, and raise kids in Schuylkill County, the same county we serve. When you need clean air at your home in ${city.name}, you reach a neighbor.` },
           { num: '02', title: 'A Real Person Picks Up', body: 'You call (570) 900-5827 and a human in Pine Grove answers. No phone tree, no overseas call center, no callback queue measured in days.' },
-          { num: '03', title: 'NADCA Certified Crews', body: 'We are NADCA, OSHA 30, and EPA certified. Licensed and insured to work on residential HVAC across Pennsylvania. Ask for proof, we will send it.' },
+          { num: '03', title: 'Only NADCA Certified in the County', body: 'We are the only NADCA certified company in Schuylkill County. We bring commercial grade restoration and indoor air quality discipline to your home. Source removal, HEPA containment, and lab verified sampling.' },
         ].map((d) => (
           <div class="group relative rounded-xl p-7 bg-white border border-[var(--color-warm-line)] transition-all duration-300 hover:-translate-y-1.5 hover:border-[var(--color-sage-deep)]/30 hover:shadow-[0_14px_30px_-12px_rgba(38,90,74,0.14)] overflow-hidden">
             <div class="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[var(--color-sage)] to-[var(--color-sage-deep)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -273,6 +251,7 @@ const residentialServiceIcons: Record<string, string> = {
   <!-- ═══════════════════════════════════════════════════════════════
        REVIEWS
        ═══════════════════════════════════════════════════════════════ -->
+  <!-- TODO: config has 2 of 3 Google reviews; add the 3rd verbatim when available -->
   <section class="res-bg-warm py-14 md:py-18">
     <div class="max-w-6xl mx-auto px-6 md:px-10">
       <div class="text-center mb-14">
@@ -348,15 +327,15 @@ const residentialServiceIcons: Record<string, string> = {
               Need Help With Your<br/>{city.name} Home?
             </h2>
             <p class="res-text-slate text-base md:text-lg leading-relaxed max-w-xl">
-              When your AC quits in July or your furnace goes out on a Tuesday night, we answer the phone. Tell us what is happening at your {city.name} home and we will give you a straight answer, a written price, and a real date we can be there.
+              Schedule whole home duct cleaning, indoor air quality work, or a preventive maintenance visit for your {city.name} home. Tell us what you are after and we will give you a straight answer, a free estimate, and a real date we can be there.
             </p>
           </div>
 
           <ul class="space-y-5 mt-1">
             {[
-              { title: 'Local Crews', description: 'Neighbors out of Pine Grove. Marked trucks. Uniformed techs. Shoe covers in the house.' },
-              { title: 'Same Day Response', description: 'Priority dispatch for active maintenance plan members in Pennsylvania. Next morning at the latest for most other calls.' },
-              { title: 'Licensed and Insured', description: 'Fully licensed and insured in Pennsylvania. NADCA, OSHA 30, and EPA certified.' },
+              { title: 'Within a Few Days', description: 'We typically respond within a few days, and our hours follow the listing on our Google Business Profile.' },
+              { title: 'Only NADCA Certified in the County', description: 'We are the only NADCA certified company in Schuylkill County. Commercial grade air care discipline, applied to your home.' },
+              { title: 'Free Estimates, Clear Pricing', description: 'Estimates are free. We tell you what we find and give you a straight price before any work begins.' },
             ].map((item) => (
               <li class="flex items-start gap-4">
                 <div class="w-7 h-7 rounded-full flex items-center justify-center mt-1 flex-shrink-0" style="background-color: rgba(167, 215, 197, 0.4); color: var(--color-sage-deep);">
