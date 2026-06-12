@@ -35,7 +35,7 @@ exports.handler = async (event) => {
         "content-type": "application/json",
         "x-ingest-key": process.env.BAM_INGEST_KEY,
       },
-      body: JSON.stringify({ data }),
+      body: JSON.stringify(data),
     });
 
     if (!res.ok) {
