@@ -33,7 +33,7 @@ exports.handler = async (event) => {
       method: "POST",
       headers: {
         "content-type": "application/json",
-        "x-bam-ingest-key": process.env.BAM_INGEST_KEY,
+        "x-ingest-key": process.env.BAM_INGEST_KEY,
       },
       body: JSON.stringify({ data }),
     });
