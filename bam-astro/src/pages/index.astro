@@ -182,122 +182,6 @@ const homeFaqs = [
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       SEE BAM IN ACTION — VIDEO
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative bg-dark overflow-hidden py-20 md:py-28">
-    <div class="absolute inset-0 opacity-[0.04] site-grid-dark"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.08), transparent 70%);"></div>
-
-    <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
-      <div class="text-center mb-10 md:mb-14">
-        <span class="inline-block text-mint font-bold text-xs tracking-[0.3em] uppercase mb-4">See BAM in Action</span>
-        <h2 class="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[0.9]">
-          Institutional-Grade Execution
-        </h2>
-      </div>
-
-      <div class="rounded-xl overflow-hidden shadow-2xl shadow-black/30 border border-white/[0.08]">
-        <YouTubeEmbed videoId="eSpw4Bh5qFU" title="BAM — Kline Commercial" poster="/images/yt/kline-commercial.webp" />
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       CAPABILITIES / SERVICES SECTION
-       ═══════════════════════════════════════════════════════════════ -->
-  <section id="services" class="relative bg-ice overflow-hidden py-20 md:py-28">
-    <div class="absolute inset-0 opacity-[0.03] site-grid-light"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[900px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.13), transparent 70%);"></div>
-    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] pointer-events-none" style="background: radial-gradient(circle at center, rgba(38,90,74,0.07), transparent 70%);"></div>
-
-    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
-      <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-[0.9] mb-6">
-          Specialized HVAC Services <br/>For Mission-Critical Facilities
-        </h2>
-        <div class="w-24 h-1.5 bg-primary mx-auto opacity-20"></div>
-      </div>
-
-      <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {allDisplayServices.map((service) => (
-          <a
-            href={`/services/${service.slug}/`}
-            class="service-card relative rounded-xl p-6 pt-7 transition-all duration-300 group h-full flex flex-col no-underline overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(38,90,74,0.18)] bg-primary/[0.07] backdrop-blur-xl border border-primary/[0.12] shadow-[0_2px_16px_rgba(38,90,74,0.06)] hover:bg-primary/[0.12] hover:border-primary/20"
-          >
-            <canvas class="wave-card-bg absolute inset-0 w-full h-full pointer-events-none z-0 rounded-xl" aria-hidden="true"></canvas>
-            <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/60 via-white/30 to-mint/10 pointer-events-none z-[1]"></div>
-            <div class="absolute inset-[1px] rounded-xl bg-gradient-to-br from-white/40 to-transparent pointer-events-none z-[1]"></div>
-            <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent z-[1]"></div>
-
-            <div class="relative z-10 mb-5 w-11 h-11 rounded-lg bg-primary/[0.08] border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/[0.14] transition-colors duration-300">
-              <Fragment set:html={serviceIconMap[service.id] || ''} />
-            </div>
-
-            <h3 class="relative z-10 text-[15px] font-extrabold text-primary mb-2.5 uppercase tracking-tight leading-snug">
-              {service.title}
-            </h3>
-            <p class="relative z-10 text-[13px] text-slate leading-relaxed flex-grow">
-              {service.shortDescription}
-            </p>
-
-            <div class="relative z-10 mt-6 pt-4 border-t border-primary/10 flex items-center text-primary font-bold text-[11px] uppercase tracking-widest group-hover:text-primary/80 transition-colors duration-300">
-              <span>Learn More</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-auto opacity-40 group-hover:opacity-80 transition-all duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <div class="mt-16 w-full flex flex-col sm:flex-row items-center justify-center gap-6 pt-16 border-t border-light-grey/50">
-        <a href="/contact/" class="relative group inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold text-sm uppercase tracking-widest rounded-sm shadow-lg shadow-primary/10 transition-all overflow-hidden">
-          <span class="relative z-10">Request a Site Visit</span>
-          <span class="mask-btn-layer absolute inset-0 z-20 flex items-center justify-center bg-white text-primary font-bold text-sm uppercase tracking-widest w-[101%]">Request a Site Visit</span>
-        </a>
-        <a href="/services/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-primary hover:text-white transition-colors">
-          View All Services
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
-       WHY FACILITIES CHOOSE BAM
-       ═══════════════════════════════════════════════════════════════ -->
-  <section class="relative bg-dark overflow-hidden py-20 md:py-28">
-    <div class="absolute inset-0 opacity-[0.05] site-grid-dark"></div>
-    <canvas id="why-bam-pulse-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-[1]"></canvas>
-
-    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
-      <div class="text-center mb-20 md:mb-28">
-        <span class="inline-block text-mint font-bold text-xs tracking-[0.3em] uppercase mb-5">The BAM Standard</span>
-        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8">Why Institutions Trust BAM</h2>
-        <div class="w-24 h-1 bg-mint mx-auto rounded-full opacity-60"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
-        {[
-          { num: '01', title: 'Technicians-First Leadership', description: 'We aren\'t just executives looking at the bottom line; we\'re the techs, too. We know what it takes to do the job right and prioritize ethical stewardship over short-term profits.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>` },
-          { num: '02', title: '\u201CDo No Harm\u201D Philosophy', description: 'Our standard is simple: do no harm, and leave the facility better than we found it. We treat your mechanical rooms with the exact same care we apply to secure federal sites.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>` },
-          { num: '03', title: 'Catastrophic Risk Prevention', description: 'Hiring the wrong contractor can trigger EPA violations or shut down a million-dollar-a-day production line. We provide the precision necessary to eliminate those risks.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>` },
-          { num: '04', title: 'Federal-Level Discretion', description: 'We are trusted inside highly secure government environments. That demand for absolute discretion, zero shortcuts, and rigorous documentation is baked into everything we do.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>` },
-        ].map((item) => (
-          <div class="group rounded-lg border border-white/[0.08] bg-white/[0.04] p-10 md:p-12 transition-all duration-500 hover:border-mint/30 hover:bg-white/[0.07] hover:shadow-[0_0_60px_rgba(167,215,197,0.08)]">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-mint/10 border border-mint/20 flex items-center justify-center text-mint group-hover:bg-mint group-hover:text-primary group-hover:border-mint transition-all duration-300">
-                <Fragment set:html={item.icon} />
-              </div>
-              <span class="text-mint/60 text-sm font-bold tracking-[0.25em] uppercase">{item.num}</span>
-            </div>
-            <h3 class="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-mint transition-colors duration-300 leading-tight">{item.title}</h3>
-            <p class="text-light-grey text-base md:text-lg leading-relaxed">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════════════════════════
        TRUSTED IN OUR COMMUNITY
        ═══════════════════════════════════════════════════════════════ -->
   <section class="relative bg-ice overflow-hidden border-b border-light-grey py-20 md:py-28">
@@ -748,6 +632,122 @@ const homeFaqs = [
 
   <!-- FAQ (shared component) -->
   <FAQ faqs={homeFaqs} schema={false} />
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SEE BAM IN ACTION — VIDEO
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative bg-dark overflow-hidden py-20 md:py-28">
+    <div class="absolute inset-0 opacity-[0.04] site-grid-dark"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.08), transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-10 md:mb-14">
+        <span class="inline-block text-mint font-bold text-xs tracking-[0.3em] uppercase mb-4">See BAM in Action</span>
+        <h2 class="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[0.9]">
+          Institutional-Grade Execution
+        </h2>
+      </div>
+
+      <div class="rounded-xl overflow-hidden shadow-2xl shadow-black/30 border border-white/[0.08]">
+        <YouTubeEmbed videoId="eSpw4Bh5qFU" title="BAM — Kline Commercial" poster="/images/yt/kline-commercial.webp" />
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       CAPABILITIES / SERVICES SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section id="services" class="relative bg-ice overflow-hidden py-20 md:py-28">
+    <div class="absolute inset-0 opacity-[0.03] site-grid-light"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 w-[900px] h-[500px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(167,215,197,0.13), transparent 70%);"></div>
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] pointer-events-none" style="background: radial-gradient(circle at center, rgba(38,90,74,0.07), transparent 70%);"></div>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+      <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-black text-primary tracking-tighter uppercase leading-[0.9] mb-6">
+          Specialized HVAC Services <br/>For Mission-Critical Facilities
+        </h2>
+        <div class="w-24 h-1.5 bg-primary mx-auto opacity-20"></div>
+      </div>
+
+      <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {allDisplayServices.map((service) => (
+          <a
+            href={`/services/${service.slug}/`}
+            class="service-card relative rounded-xl p-6 pt-7 transition-all duration-300 group h-full flex flex-col no-underline overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_16px_40px_rgba(38,90,74,0.18)] bg-primary/[0.07] backdrop-blur-xl border border-primary/[0.12] shadow-[0_2px_16px_rgba(38,90,74,0.06)] hover:bg-primary/[0.12] hover:border-primary/20"
+          >
+            <canvas class="wave-card-bg absolute inset-0 w-full h-full pointer-events-none z-0 rounded-xl" aria-hidden="true"></canvas>
+            <div class="absolute inset-0 rounded-xl bg-gradient-to-br from-white/60 via-white/30 to-mint/10 pointer-events-none z-[1]"></div>
+            <div class="absolute inset-[1px] rounded-xl bg-gradient-to-br from-white/40 to-transparent pointer-events-none z-[1]"></div>
+            <div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/80 to-transparent z-[1]"></div>
+
+            <div class="relative z-10 mb-5 w-11 h-11 rounded-lg bg-primary/[0.08] border border-primary/10 flex items-center justify-center text-primary group-hover:bg-primary/[0.14] transition-colors duration-300">
+              <Fragment set:html={serviceIconMap[service.id] || ''} />
+            </div>
+
+            <h3 class="relative z-10 text-[15px] font-extrabold text-primary mb-2.5 uppercase tracking-tight leading-snug">
+              {service.title}
+            </h3>
+            <p class="relative z-10 text-[13px] text-slate leading-relaxed flex-grow">
+              {service.shortDescription}
+            </p>
+
+            <div class="relative z-10 mt-6 pt-4 border-t border-primary/10 flex items-center text-primary font-bold text-[11px] uppercase tracking-widest group-hover:text-primary/80 transition-colors duration-300">
+              <span>Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="ml-auto opacity-40 group-hover:opacity-80 transition-all duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-16 w-full flex flex-col sm:flex-row items-center justify-center gap-6 pt-16 border-t border-light-grey/50">
+        <a href="/contact/" class="relative group inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-bold text-sm uppercase tracking-widest rounded-sm shadow-lg shadow-primary/10 transition-all overflow-hidden">
+          <span class="relative z-10">Request a Site Visit</span>
+          <span class="mask-btn-layer absolute inset-0 z-20 flex items-center justify-center bg-white text-primary font-bold text-sm uppercase tracking-widest w-[101%]">Request a Site Visit</span>
+        </a>
+        <a href="/services/" class="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-primary hover:text-white transition-colors">
+          View All Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       WHY FACILITIES CHOOSE BAM
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative bg-dark overflow-hidden py-20 md:py-28">
+    <div class="absolute inset-0 opacity-[0.05] site-grid-dark"></div>
+    <canvas id="why-bam-pulse-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-[1]"></canvas>
+
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+      <div class="text-center mb-20 md:mb-28">
+        <span class="inline-block text-mint font-bold text-xs tracking-[0.3em] uppercase mb-5">The BAM Standard</span>
+        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-8">Why Institutions Trust BAM</h2>
+        <div class="w-24 h-1 bg-mint mx-auto rounded-full opacity-60"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-12">
+        {[
+          { num: '01', title: 'Technicians-First Leadership', description: 'We aren\'t just executives looking at the bottom line; we\'re the techs, too. We know what it takes to do the job right and prioritize ethical stewardship over short-term profits.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>` },
+          { num: '02', title: '\u201CDo No Harm\u201D Philosophy', description: 'Our standard is simple: do no harm, and leave the facility better than we found it. We treat your mechanical rooms with the exact same care we apply to secure federal sites.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>` },
+          { num: '03', title: 'Catastrophic Risk Prevention', description: 'Hiring the wrong contractor can trigger EPA violations or shut down a million-dollar-a-day production line. We provide the precision necessary to eliminate those risks.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>` },
+          { num: '04', title: 'Federal-Level Discretion', description: 'We are trusted inside highly secure government environments. That demand for absolute discretion, zero shortcuts, and rigorous documentation is baked into everything we do.', icon: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>` },
+        ].map((item) => (
+          <div class="group rounded-lg border border-white/[0.08] bg-white/[0.04] p-10 md:p-12 transition-all duration-500 hover:border-mint/30 hover:bg-white/[0.07] hover:shadow-[0_0_60px_rgba(167,215,197,0.08)]">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-mint/10 border border-mint/20 flex items-center justify-center text-mint group-hover:bg-mint group-hover:text-primary group-hover:border-mint transition-all duration-300">
+                <Fragment set:html={item.icon} />
+              </div>
+              <span class="text-mint/60 text-sm font-bold tracking-[0.25em] uppercase">{item.num}</span>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-4 group-hover:text-mint transition-colors duration-300 leading-tight">{item.title}</h3>
+            <p class="text-light-grey text-base md:text-lg leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
        SITE VISIT CTA SECTION
