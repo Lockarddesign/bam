@@ -159,6 +159,79 @@ const residentialServiceIcons: Record<string, string> = {
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
+       ACCREDITATIONS — homeowner-relevant, light theme
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="res-bg-warm py-12 md:py-14 border-y res-border-cream">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-8">
+        <h2 class="text-sm font-bold tracking-[1.2px] res-text-slate uppercase">Certified, Licensed &amp; Insured</h2>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        {siteConfig.accreditations.map((a) => (
+          <img src={a.logo} alt={a.name} width={a.width} height="96" class="h-16 md:h-[72px] w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" decoding="async" />
+        ))}
+      </div>
+      <p class="res-text-slate text-center text-base md:text-lg font-semibold leading-relaxed mt-8 max-w-3xl mx-auto">
+        The only NADCA certified company in Schuylkill County. The same standards we carry into hospitals and federal facilities, brought home to you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TRUSTED IN OUR COMMUNITY — owners + Chamber, light theme
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-cream overflow-hidden border-b res-border-cream py-16 md:py-20">
+    <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-5">
+          <span class="inline-block res-text-sage font-bold text-xs tracking-[0.3em] uppercase mb-4">In the Community</span>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-black res-text-ink tracking-tighter uppercase leading-[0.9] mb-6">
+            <span class="block">Trusted</span>
+            <span class="block">In Our</span>
+            <span class="block res-text-sage">Community</span>
+          </h2>
+          <div class="w-20 h-1 rounded-full mb-7" style="background-color: var(--color-sage-deep); opacity: 0.6;"></div>
+          <p class="res-text-slate text-base md:text-lg leading-relaxed mb-5">
+            BAM is proud to call Schuylkill County home. We sponsored the Schuylkill Chamber of Commerce Business Executive Forum, where our team joined Pennsylvania Secretary of Labor &amp; Industry Nancy Walker for the keynote.
+          </p>
+          <p class="res-text-slate text-base leading-relaxed mb-8" style="opacity: 0.85;">
+            When you call, you get the owners who live and work here, not a national call center. We show up for our community the same way we show up at your front door.
+          </p>
+          <a href="https://www.schuylkillchamber.com/" target="_blank" rel="noopener" class="group inline-flex items-center gap-4 bg-white border res-border-cream rounded-xl pl-4 pr-5 py-3 shadow-sm hover:shadow-md transition-all no-underline">
+            <img src="/accreditations/schuylkill-chamber.webp" alt="Schuylkill Chamber of Commerce" width="104" height="112" class="h-11 w-auto object-contain" />
+            <span class="flex flex-col leading-tight">
+              <span class="res-text-ink text-sm font-bold">Proud Sponsor &amp; Member</span>
+              <span class="inline-flex items-center gap-1 res-text-sage text-xs font-semibold uppercase tracking-[0.14em]">
+                Visit the Chamber
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-0.5 transition-transform"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </span>
+            </span>
+          </a>
+        </div>
+
+        <!-- Photo collage — owners + team -->
+        <div class="lg:col-span-7 grid grid-cols-2 gap-3 md:gap-4">
+          <div class="rounded-2xl overflow-hidden border res-border-cream shadow-lg">
+            <img src="/images/community/bam-leadership-group.webp" alt="The BAM team with Pennsylvania Secretary of Labor & Industry Nancy Walker and Schuylkill Chamber of Commerce leadership" width="1400" height="933" loading="lazy" decoding="async" class="w-full h-[210px] md:h-[240px] object-cover object-[center_top]" />
+          </div>
+          <div class="rounded-2xl overflow-hidden border res-border-cream shadow-lg">
+            <img src="/images/community/bam-podium-forum.webp" alt="Travis McCormick of BAM speaking at the Schuylkill Chamber Business Executive Forum" width="1400" height="933" loading="lazy" decoding="async" class="w-full h-[210px] md:h-[240px] object-cover object-[center_top]" />
+          </div>
+          <div class="rounded-2xl overflow-hidden border res-border-cream shadow-lg">
+            <img src="/images/community/bam-secretary-conversation.webp" alt="BAM team members speaking with Pennsylvania Secretary of Labor & Industry Nancy Walker" width="1400" height="933" loading="lazy" decoding="async" class="w-full h-[210px] md:h-[240px] object-cover object-[center_top]" />
+          </div>
+          <div class="rounded-2xl overflow-hidden border res-border-cream shadow-lg">
+            <img src="/images/community/business-executive-forum-sign.webp" alt="Building and Air Maintenance sponsorship signage at the Business Executive Forum" width="1400" height="933" loading="lazy" decoding="async" class="w-full h-[210px] md:h-[240px] object-cover object-center" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
        SERVICES GRID — mirror commercial card geometry, lighter palette
        ═══════════════════════════════════════════════════════════════ -->
   <section class="relative res-bg-cream py-14 md:py-18 overflow-hidden">
@@ -233,6 +306,34 @@ const residentialServiceIcons: Record<string, string> = {
             </div>
             <h3 class="text-xl md:text-2xl font-bold res-text-ink mb-3 leading-tight">{d.title}</h3>
             <p class="res-text-slate text-base md:text-lg leading-relaxed">{d.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HOW IT WORKS — residential 4-step process (the BAM Method, homeowner version)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative res-bg-warm py-16 md:py-20 overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 md:px-12">
+      <div class="text-center mb-12 md:mb-16">
+        <span class="inline-block res-text-sage font-bold text-xs tracking-[0.22em] uppercase mb-4">How it works</span>
+        <h2 class="text-4xl md:text-5xl font-black res-text-ink tracking-tighter uppercase leading-[0.95] max-w-3xl mx-auto">
+          Simple, Honest, Done Right.
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        {[
+          { n: '01', t: 'Reach Out', d: 'Call or request a free estimate. A real person reads every message and calls you back, usually within a few days.' },
+          { n: '02', t: 'We Take a Look', d: 'We inspect your ducts, vents, and air with the same NADCA certified standards we use in hospitals and federal buildings.' },
+          { n: '03', t: 'NADCA Clean', d: 'We clean to the national standard, keep your home tidy, and show you the before and after photos. No upselling, no pressure.' },
+          { n: '04', t: 'Breathe Easier', d: 'Cleaner air, lower bills, and a written statement of cleanliness. We are here for the long haul, not a one time sale.' },
+        ].map((s) => (
+          <div class="bg-white border res-border-cream rounded-xl p-6 md:p-7 shadow-[0_2px_16px_rgba(38,90,74,0.06)] flex flex-col">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center font-black text-base mb-5" style="background-color: var(--color-sage-deep); color: #ffffff;">{s.n}</div>
+            <h3 class="res-text-ink text-lg md:text-xl font-bold mb-2.5 tracking-tight">{s.t}</h3>
+            <p class="res-text-slate text-sm leading-relaxed flex-grow">{s.d}</p>
           </div>
         ))}
       </div>
