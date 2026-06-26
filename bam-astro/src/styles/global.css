@@ -16,17 +16,18 @@ html {
   --color-offwhite: #F7F9F8;
 
   /* Residential silo tokens. Used inside `[data-theme="residential"]` scope.
-     Green and white only. Lighter, airier counterpart to the commercial palette.
-     No warm/sandstone tones anywhere. */
+     CLEAN LIGHT THEME: a true light-mode inversion of the commercial dark theme.
+     Neutral white/grey surfaces, near-black text, BAM deep-green accent. No mint
+     fills, no warm/sandstone tones. Same structure as commercial, flipped skin. */
   --color-warm-white: #FFFFFF;
-  --color-warm-alt:   #A7D7C5;
-  --color-sage:       #A7D7C5;
+  --color-warm-alt:   #F1F5F4;
+  --color-sage:       #E7EFEB;
   --color-sage-deep:  #265A4A;
   --color-sage-mid:   #6F9580;
-  --color-warm-slate: #5E7A86;
-  --color-warm-ink:   #0B1110;
-  --color-warm-line:  #C9E2D3;
-  --color-cream:      #C9E2D3;
+  --color-warm-slate: #51605C;
+  --color-warm-ink:   #0E1413;
+  --color-warm-line:  #E2E8E6;
+  --color-cream:      #F1F5F4;
 
   --font-sans: 'Inter', sans-serif;
 
