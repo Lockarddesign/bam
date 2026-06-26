@@ -50,6 +50,12 @@ export const siteConfig = {
       source: 'Google',
       quote: 'If you’re looking for top notch work look no further than BAM. Incredibly professional, thorough and on schedule from start to finish. Travis has been a blessing to work. I would recommend them to anyone. Will definitely have them do more work in the future',
     },
+    {
+      name: 'Kitchen GNB',
+      rating: 5,
+      source: 'Google',
+      quote: 'A shout out to BAM, who did wonderful work on our HVAC. I love the before and after pictures. Professional on every level. I would recommend BAM to anyone, great price than any other companies around. Travis was a Godsent. We will definitely have BAM keep up with our HVAC.',
+    },
   ],
 
   serviceAreas: [

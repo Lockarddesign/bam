@@ -24,6 +24,10 @@ const coreServices = siteConfig.services.filter(s => s.category === 'core');
 const specialtyServices = siteConfig.services.filter(s => s.category === 'specialty');
 
 const residentialServices = siteConfig.residential?.services ?? [];
+// Split residential services across the two mega-menu columns (no empty column).
+const homeComfortSlugs = ['duct-cleaning', 'dryer-vent-cleaning', 'maintenance-plans'];
+const homeComfortServices = residentialServices.filter((s) => homeComfortSlugs.includes(s.slug));
+const airQualityServices = residentialServices.filter((s) => !homeComfortSlugs.includes(s.slug));
 const residentialCities = siteConfig.residential?.serviceAreaCities ?? [];
 
 const headerCtaLabel = isResidential ? (siteConfig.residential?.ctaLabel ?? 'Get a Free Estimate') : 'Request a Site Visit';
@@ -261,7 +265,7 @@ const industryIconMap: Record<string, string> = {
                     <div class="p-6">
                       <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate mb-4">Home Comfort</h4>
                       <div class="space-y-1">
-                        {residentialServices.slice(0, 5).map(s => (
+                        {homeComfortServices.map(s => (
                           <a href={`/residential/${s.slug}/`} class="flex items-center gap-3 px-2 py-2 rounded-md text-primary no-underline hover:bg-mint/15 transition-colors group">
                             <span class="flex-shrink-0 w-7 h-7 rounded-md bg-primary/[0.07] flex items-center justify-center text-mint group-hover:bg-primary group-hover:text-white transition-colors">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
@@ -274,7 +278,7 @@ const industryIconMap: Record<string, string> = {
                     <div class="p-6">
                       <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate mb-4">Air Quality & Specialty</h4>
                       <div class="space-y-1">
-                        {residentialServices.slice(5).map(s => (
+                        {airQualityServices.map(s => (
                           <a href={`/residential/${s.slug}/`} class="flex items-center gap-3 px-2 py-2 rounded-md text-primary no-underline hover:bg-mint/15 transition-colors group">
                             <span class="flex-shrink-0 w-7 h-7 rounded-md bg-primary/[0.07] flex items-center justify-center text-mint group-hover:bg-primary group-hover:text-white transition-colors">
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
