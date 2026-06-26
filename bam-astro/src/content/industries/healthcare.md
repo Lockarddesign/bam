@@ -5,7 +5,7 @@ icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0
 
 challenges:
   heading: "HVAC Challenges Unique to Healthcare"
-  introText: "Hospitals and healthcare facilities operate under some of the most rigorous indoor environmental standards in the world. HVAC failures don't just affect comfort — they directly impact infection control, surgical outcomes, and regulatory standing."
+  introText: "Hospitals and healthcare facilities operate under some of the most rigorous indoor environmental standards in the world. HVAC failures don't just affect comfort, they directly impact infection control, surgical outcomes, and regulatory standing."
   cards:
     - title: "Infection Control Risk"
       description: "Degraded coils and contaminated ductwork can harbor and circulate airborne pathogens in sterile environments."
@@ -55,7 +55,7 @@ faq:
   - question: "Can dirty AHU coils cause hospital-acquired infections?"
     answer: "Yes. Biofilm on coils harbors bacteria including Legionella and Aspergillus, which are then distributed through supply air to patient rooms, surgical suites, and isolation areas. ASHRAE 170 and Joint Commission IEQ requirements exist specifically because degraded HVAC systems are a documented vector for healthcare-associated infections."
   - question: "How often should hospital air handling units be deep cleaned?"
-    answer: "Most hospital AHUs require deep coil cleaning every 2–4 years depending on humidity levels, patient acuity, and filter maintenance quality. BAM performs static pressure and visual assessments to determine the right interval. Units serving surgical suites and isolation rooms may require more frequent attention due to stricter air quality standards."
+    answer: "Most hospital AHUs require deep coil cleaning every 2 to 4 years depending on humidity levels, patient acuity, and filter maintenance quality. BAM performs static pressure and visual assessments to determine the right interval. Units serving surgical suites and isolation rooms may require more frequent attention due to stricter air quality standards."
   - question: "Does BAM provide fire damper inspection services for Joint Commission compliance?"
     answer: "Yes. BAM performs NFPA 80 and NFPA 105 fire and smoke damper inspections with full audit-ready documentation including tagged locations, drop-test results, photographic evidence, and deficiency reports. Our teams repair most failed dampers on the same visit, accelerating your path to full Joint Commission life-safety compliance."
   - question: "What certifications do BAM technicians hold for healthcare HVAC work?"

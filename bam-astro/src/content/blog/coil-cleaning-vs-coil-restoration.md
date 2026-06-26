@@ -7,16 +7,16 @@ author: "BAM Technical Team"
 image: "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg"
 ---
 
-When facility managers request "coil cleaning," they typically expect a significant improvement in system performance. But standard pressure washing or chemical cleaning often recovers only **15–25% of lost capacity** — because surface dirt is rarely the primary problem.
+When facility managers request "coil cleaning," they typically expect a significant improvement in system performance. But standard pressure washing or chemical cleaning often recovers only **15 to 25% of lost capacity**, because surface dirt is rarely the primary problem.
 
 ## The Anatomy of Coil Degradation
 
 Coils lose performance through multiple mechanisms, and surface contamination is just the visible one:
 
-- **Fin damage** — bent, crushed, or corroded fins restrict airflow between tubes
-- **Internal fouling** — mineral scale and biofilm inside tubes reduce heat transfer
-- **Galvanic corrosion** — dissimilar metals at joints create ongoing deterioration
-- **Structural deformation** — thermal cycling and vibration shift tube alignment over time
+- **Fin damage**, bent, crushed, or corroded fins restrict airflow between tubes
+- **Internal fouling**, mineral scale and biofilm inside tubes reduce heat transfer
+- **Galvanic corrosion**, dissimilar metals at joints create ongoing deterioration
+- **Structural deformation**, thermal cycling and vibration shift tube alignment over time
 
 A standard cleaning addresses surface contamination. It does nothing for the other four failure modes.
 
@@ -34,11 +34,11 @@ Coil restoration is a systematic process that addresses every degradation mechan
 
 The proof is in the numbers. We measure and document:
 
-- **Delta-T across the coil** — the temperature difference between entering and leaving air
-- **Static pressure drop** — the resistance the coil presents to airflow
-- **Airflow volume** — CFM delivered downstream of the coil
+- **Delta-T across the coil**, the temperature difference between entering and leaving air
+- **Static pressure drop**, the resistance the coil presents to airflow
+- **Airflow volume**, CFM delivered downstream of the coil
 
-After a standard cleaning, you might see a 10–15% improvement in these metrics. After full restoration, improvements of **30–50%** are typical, with some severely degraded coils showing even greater recovery.
+After a standard cleaning, you might see a 10 to 15% improvement in these metrics. After full restoration, improvements of **30 to 50%** are typical, with some severely degraded coils showing even greater recovery.
 
 ## When to Choose Each Approach
 

@@ -63,15 +63,15 @@ roi:
 
 faq:
   - question: "How long does a commercial cooling tower restoration take?"
-    answer: "Most single-cell restorations complete in 5–10 working days depending on scope. BAM phases work to maintain partial cooling capacity so your facility never goes fully offline. We coordinate mobilization around your peak load schedule and water treatment cycles to minimize operational disruption."
+    answer: "Most single-cell restorations complete in 5 to 10 working days depending on scope. BAM phases work to maintain partial cooling capacity so your facility never goes fully offline. We coordinate mobilization around your peak load schedule and water treatment cycles to minimize operational disruption."
   - question: "Can cooling tower restoration be performed while the building is occupied?"
     answer: "Yes. BAM engineers phased containment plans that isolate the work cell while adjacent cells continue operating. This is standard practice for hospitals and manufacturing plants where cooling interruption risks patient safety or production losses exceeding $50,000 per day."
   - question: "Does cooling tower cleaning reduce Legionella risk?"
     answer: "It is one of the most effective interventions. Removing biofilm and sediment eliminates the harborage sites where Legionella pneumophila colonizes. BAM's decontamination protocol aligns with ASHRAE Standard 188 and coordinates with your water treatment vendor to maintain biocide efficacy throughout the restoration."
   - question: "What is the cost of cooling tower restoration versus full replacement?"
-    answer: "Restoration typically costs 15–25% of full tower replacement while extending asset life by 5–10 years. It eliminates the crane mobilization, structural engineering, and extended downtime a replacement demands. BAM's scope addresses basin corrosion, fill degradation, and mechanical wear in a single mobilization."
+    answer: "Restoration typically costs 15 to 25% of full tower replacement while extending asset life by 5 to 10 years. It eliminates the crane mobilization, structural engineering, and extended downtime a replacement demands. BAM's scope addresses basin corrosion, fill degradation, and mechanical wear in a single mobilization."
   - question: "How does cooling tower fouling affect chiller plant energy consumption?"
-    answer: "Fouled fill and scaled basins raise condenser water temperature, forcing chillers to operate at higher head pressure. This can increase compressor energy consumption by 15–30%. BAM's restoration recovers thermal rejection capacity to near-design conditions, directly reducing kW/ton across your chiller plant."
+    answer: "Fouled fill and scaled basins raise condenser water temperature, forcing chillers to operate at higher head pressure. This can increase compressor energy consumption by 15 to 30%. BAM's restoration recovers thermal rejection capacity to near-design conditions, directly reducing kW/ton across your chiller plant."
   - question: "What certifications should a cooling tower restoration contractor hold?"
     answer: "At minimum, OSHA-30, confined space entry, and fall protection certifications. BAM technicians hold all three plus Universal EPA certification. We follow ASHRAE 188 for Legionella risk management and CTI guidelines for thermal performance, ensuring every restoration meets institutional compliance standards."
 ---

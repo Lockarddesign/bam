@@ -7,7 +7,7 @@ const allPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 <BaseLayout
-  title="Blog | BAM — Institutional HVAC Insights"
+  title="Blog | BAM, Institutional HVAC Insights"
   description="Expert insights on HVAC restoration, IAQ compliance, energy optimization, and mechanical system maintenance for institutional facilities."
   breadcrumbs={[{ name: 'Blog', url: '/blog/' }]}
 >

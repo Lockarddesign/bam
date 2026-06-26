@@ -67,13 +67,13 @@ faq:
   - question: "Will steam cleaning damage aluminum coil fins?"
     answer: "No. BAM uses calibrated low-pressure, high-temperature steam with fin-safe spray angles that penetrate biofilm without bending or flattening delicate aluminum fins. This method removes organic fouling that chemical rinses leave behind, restoring thermal transfer capacity to near-original specifications."
   - question: "How does a dirty AHU coil affect building energy costs?"
-    answer: "Biofilm on coil surfaces acts as an insulator and restricts airflow, forcing fans to run at higher speeds and compressors to work harder. This can increase HVAC energy spend by 10–15%. BAM's deep coil cleaning restores static pressure drop to design levels, immediately reducing fan energy consumption."
+    answer: "Biofilm on coil surfaces acts as an insulator and restricts airflow, forcing fans to run at higher speeds and compressors to work harder. This can increase HVAC energy spend by 10 to 15%. BAM's deep coil cleaning restores static pressure drop to design levels, immediately reducing fan energy consumption."
   - question: "Can a corroded AHU drain pan be repaired instead of replaced?"
     answer: "Yes. BAM resurfaces rusted or leaking condensate pans with a self-leveling, waterproof epoxy membrane that creates a new monolithic basin liner. This eliminates standing water that harbors Legionella and prevents costly water damage to ceilings below without the lead time and expense of OEM pan replacement."
   - question: "What contaminants does AHU restoration remove from the airstream?"
     answer: "BAM's protocol removes mold, biofilm, bacteria, dust, and construction debris from coils, blower housings, plenums, and drain pans. We use EPA-registered biocides for surface sanitization after physical removal. Post-cleaning verification confirms compliance with ASHRAE 62.1 ventilation and NADCA cleanliness standards."
   - question: "How often should commercial air handling units be deep cleaned?"
-    answer: "Most institutional AHUs require deep cleaning every 3–5 years, though healthcare facilities and high-humidity environments may need shorter intervals. BAM performs a visual and static pressure assessment to determine the right schedule. Ignoring deep cleaning risks biological amplification that standard filter changes cannot address."
+    answer: "Most institutional AHUs require deep cleaning every 3 to 5 years, though healthcare facilities and high-humidity environments may need shorter intervals. BAM performs a visual and static pressure assessment to determine the right schedule. Ignoring deep cleaning risks biological amplification that standard filter changes cannot address."
 
 gallery:
   - src: "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg"

@@ -10,7 +10,7 @@ export const siteConfig = {
   yearsExperience: 25,
   logo: '/logo.png',
 
-  title: 'BAM | Building & Air Maintenance — Commercial HVAC Restoration',
+  title: 'BAM | Building & Air Maintenance, Commercial HVAC Restoration',
   description:
     'Commercial HVAC restoration, IAQ, and compliance-focused mechanical services for institutional facilities in PA, NJ, MD, DE, and Southern NY.',
   ogImage: '/bam-logo.webp',
@@ -83,7 +83,7 @@ export const siteConfig = {
     { id: 'document', title: 'Document', description: 'Audit-ready documentation suitable for internal review and external inspections.' },
   ],
 
-  /** 12 HVAC services — core (7) + specialty (5) */
+  /** 12 HVAC services, core (7) + specialty (5) */
   services: [
     { id: 'cooling-tower', title: 'Cooling Tower Restoration', slug: 'cooling-tower', category: 'core' as const, shortDescription: 'Comprehensive structural and surface restoration, including specialized epoxy coating, lining, and cooling tower basin restoration to address leaks, stop corrosion, and prevent catastrophic downtime.' },
     { id: 'chiller', title: 'Chiller Restoration', slug: 'chiller', category: 'core' as const, shortDescription: 'Institutional-grade chiller refurbishment, featuring precision tube brushing and descaling to extend your high-value equipment\'s life and drastically reduce your HVAC energy spend.' },
@@ -102,7 +102,7 @@ export const siteConfig = {
   /** 11 industries served */
   industries: [
     { id: 'healthcare', title: 'Healthcare & Hospitals', slug: 'healthcare', shortDescription: 'Infection control support, IAQ compliance, and sterile environment maintenance to meet Joint Commission and ASHRAE standards.' },
-    { id: 'education', title: 'Education (K–12 & Higher Ed)', slug: 'education', shortDescription: 'Indoor environmental quality programs and preventive maintenance that keep students, faculty, and staff breathing clean air year-round.' },
+    { id: 'education', title: 'Education (K-12 & Higher Ed)', slug: 'education', shortDescription: 'Indoor environmental quality programs and preventive maintenance that keep students, faculty, and staff breathing clean air year-round.' },
     { id: 'industrial', title: 'Industrial Manufacturing', slug: 'industrial', shortDescription: 'Cooling tower restoration and process-critical HVAC maintenance to prevent unplanned production shutdowns and reduce energy waste.' },
     { id: 'food-processing', title: 'Food Processing', slug: 'food-processing', shortDescription: 'Sanitation-grade duct cleaning and coil restoration to maintain safe air handling in temperature-sensitive production environments.' },
     { id: 'government', title: 'Government & Secure Facilities', slug: 'government', shortDescription: 'Discreet, compliance-driven HVAC services for high-security environments where documentation and zero disruption are mandatory.' },
@@ -145,7 +145,7 @@ export const siteConfig = {
     { id: 'harrisburg-york', title: 'Harrisburg / York', slug: 'harrisburg-york' },
   ],
 
-  /** Residential silo — mockup scaffold. Copy is placeholder pending owner answers. */
+  /** Residential silo, mockup scaffold. Copy is placeholder pending owner answers. */
   residential: {
     enabled: true,
     phone: '(570) 900-5827',

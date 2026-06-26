@@ -1,6 +1,6 @@
 ---
 title: "Beyond Chemicals: Mechanical Hygiene for Legionella Prevention in Cooling Towers"
-description: "Why chemical water treatment alone isn't enough for Legionella prevention — and the mechanical hygiene protocols that make your Water Management Program actually work."
+description: "Why chemical water treatment alone isn't enough for Legionella prevention, and the mechanical hygiene protocols that make your Water Management Program actually work."
 date: 2026-02-28
 draft: false
 author: "BAM Technical Team"
@@ -13,7 +13,7 @@ This article details the critical mechanical hygiene protocols that form an esse
 
 ## The Limits of Chemical Treatment: Why Biofilm is a Formidable Enemy
 
-Biofilm is the single greatest threat to the effectiveness of a cooling tower water treatment program. It is a complex, slimy matrix of microorganisms — including bacteria, algae, and fungi — that adheres to virtually all wetted surfaces within the tower. This matrix acts as a fortress for Legionella bacteria:
+Biofilm is the single greatest threat to the effectiveness of a cooling tower water treatment program. It is a complex, slimy matrix of microorganisms, including bacteria, algae, and fungi, that adheres to virtually all wetted surfaces within the tower. This matrix acts as a fortress for Legionella bacteria:
 
 - **It Shields Bacteria from Biocides:** The protective slime layer prevents chemicals from reaching and killing the bacteria living within it.
 - **It Consumes Disinfectants:** The organic material in biofilm rapidly consumes oxidizing biocides like chlorine, neutralizing them before they can work on the entire system.

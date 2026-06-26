@@ -1,6 +1,6 @@
 ---
 title: "Joint Commission Readiness: HVAC and IAQ Issues That Trigger Findings in Healthcare Facilities"
-description: "A practical guide for healthcare facility directors on the HVAC and indoor air quality issues most likely to trigger Joint Commission findings — and how to stay ahead of them."
+description: "A practical guide for healthcare facility directors on the HVAC and indoor air quality issues most likely to trigger Joint Commission findings, and how to stay ahead of them."
 date: 2026-02-21
 draft: false
 author: "BAM Technical Team"
@@ -8,13 +8,13 @@ image: "/images/jobs/return-air-grille-egg-crate-angled_05-05-2025.jpg"
 video: "/videos/joint-commission-readiness.mp4"
 ---
 
-For a healthcare facility director, a visit from The Joint Commission is a high-stakes event. A successful survey validates the organization's commitment to patient safety and quality of care, while a negative finding can have serious financial and reputational consequences. While there are many areas of focus during a survey, the physical environment — and specifically, the performance of your HVAC and indoor air quality (IAQ) systems — is a critical component that is often overlooked until it's too late.
+For a healthcare facility director, a visit from The Joint Commission is a high-stakes event. A successful survey validates the organization's commitment to patient safety and quality of care, while a negative finding can have serious financial and reputational consequences. While there are many areas of focus during a survey, the physical environment, and specifically, the performance of your HVAC and indoor air quality (IAQ) systems, is a critical component that is often overlooked until it's too late.
 
 This article provides a clear, actionable guide for healthcare facility leaders on the HVAC and IAQ issues that are most likely to trigger findings during a Joint Commission survey. We will translate complex standards into practical operational checks, outline a proactive approach to compliance readiness, and explain how a well-documented HVAC restoration program can be your best defense against costly citations.
 
 ## The Joint Commission's Focus on the Physical Environment
 
-The Joint Commission's standards for the physical environment are designed to protect patients, staff, and visitors from harm. They are not arbitrary rules; they are based on decades of research and best practices in infection control and risk reduction. When it comes to your HVAC and IAQ systems, the surveyors are looking for evidence that you are providing a safe, comfortable, and healthy environment of care. A failure to do so can result in a finding of "non-compliance," which can lead to a range of penalties — from a requirement for improvement to a loss of accreditation.
+The Joint Commission's standards for the physical environment are designed to protect patients, staff, and visitors from harm. They are not arbitrary rules; they are based on decades of research and best practices in infection control and risk reduction. When it comes to your HVAC and IAQ systems, the surveyors are looking for evidence that you are providing a safe, comfortable, and healthy environment of care. A failure to do so can result in a finding of "non-compliance," which can lead to a range of penalties, from a requirement for improvement to a loss of accreditation.
 
 ## Top HVAC and IAQ Issues That Trigger Findings
 

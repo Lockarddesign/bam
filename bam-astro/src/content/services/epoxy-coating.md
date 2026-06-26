@@ -63,13 +63,13 @@ roi:
 
 faq:
   - question: "How long does commercial epoxy coating take to cure before equipment can return to service?"
-    answer: "Most 100% solids epoxy systems achieve immersion-ready cure in 24–48 hours at ambient temperature. BAM verifies cure hardness before authorizing system refill to prevent premature coating failure. Total project duration including surface preparation, application, and cure typically spans 3–5 days per asset."
+    answer: "Most 100% solids epoxy systems achieve immersion-ready cure in 24 to 48 hours at ambient temperature. BAM verifies cure hardness before authorizing system refill to prevent premature coating failure. Total project duration including surface preparation, application, and cure typically spans 3 to 5 days per asset."
   - question: "Can new epoxy be applied over an existing failing coating?"
     answer: "Generally, no. BAM removes old, failing coatings down to bare substrate using abrasive blasting to SSPC SP-6 or SP-10 standards. Coating over delaminated material traps moisture and corrosion underneath, guaranteeing premature failure. Proper surface profiling is 90% of a successful lining system's longevity."
   - question: "What surfaces can be epoxy coated in commercial HVAC equipment?"
-    answer: "BAM applies protective coatings to cooling tower basins, chiller tube sheets and water boxes, condensate drain pans, structural steel supports, and mechanical room floors. Each substrate requires a specific epoxy chemistry—ceramic-filled for abrasion resistance, flexible urethane for thermal cycling, or hybrid systems for chemical immersion environments."
+    answer: "BAM applies protective coatings to cooling tower basins, chiller tube sheets and water boxes, condensate drain pans, structural steel supports, and mechanical room floors. Each substrate requires a specific epoxy chemistry, ceramic-filled for abrasion resistance, flexible urethane for thermal cycling, or hybrid systems for chemical immersion environments."
   - question: "How does epoxy basin lining compare in cost to cooling tower replacement?"
-    answer: "Relining a corroded cooling tower basin typically costs 15–20% of a full tower replacement and adds 10–15 years of service life. It also eliminates the crane mobilization, structural engineering review, and extended downtime a replacement demands. BAM's coating systems achieve zero-leakage performance verified by holiday testing."
+    answer: "Relining a corroded cooling tower basin typically costs 15 to 20% of a full tower replacement and adds 10 to 15 years of service life. It also eliminates the crane mobilization, structural engineering review, and extended downtime a replacement demands. BAM's coating systems achieve zero-leakage performance verified by holiday testing."
   - question: "What surface preparation standards does BAM follow for epoxy application?"
     answer: "BAM adheres to SSPC (Society for Protective Coatings) surface preparation standards. Depending on the substrate condition, we blast to near-white metal (SP-10) or commercial blast (SP-6), verify anchor profile depth with replica tape, and perform chloride testing to ensure no salt contamination compromises adhesion. Shortcuts in prep guarantee coating failure."
   - question: "How is the quality of an epoxy coating verified after application?"

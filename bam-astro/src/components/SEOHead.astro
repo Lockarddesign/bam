@@ -79,7 +79,7 @@ if (locationData) {
     '@type': 'ServiceAreaBusiness',
     '@id': `${canonicalURL}#localbusiness`,
     name: siteConfig.businessName,
-    alternateName: `${siteConfig.businessName} — ${locationData.city}, ${locationData.state}`,
+    alternateName: `${siteConfig.businessName}, ${locationData.city}, ${locationData.state}`,
     description: locationData.intro || description,
     url: canonicalURL,
     telephone: locationData.phone || siteConfig.phone,

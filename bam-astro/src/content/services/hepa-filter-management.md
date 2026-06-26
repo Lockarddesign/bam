@@ -67,13 +67,13 @@ faq:
   - question: "Can a standard AHU be upgraded to HEPA filtration?"
     answer: "It depends on the fan's static pressure capacity. HEPA filters impose significantly higher resistance than standard MERV-rated media. BAM performs a static pressure profile and fan curve analysis to determine whether the existing motor and drive can accommodate the additional load before recommending an upgrade path."
   - question: "How often do HEPA filters need to be replaced in healthcare facilities?"
-    answer: "Replacement intervals depend on particulate loading, not calendar time. BAM monitors differential pressure across each filter bank and recommends replacement when dP reaches 80% of the manufacturer's maximum. For hospital operating rooms and isolation rooms, this is typically every 12–24 months, though high-volume facilities may require shorter intervals."
+    answer: "Replacement intervals depend on particulate loading, not calendar time. BAM monitors differential pressure across each filter bank and recommends replacement when dP reaches 80% of the manufacturer's maximum. For hospital operating rooms and isolation rooms, this is typically every 12 to 24 months, though high-volume facilities may require shorter intervals."
   - question: "What is DOP/PAO testing and why is it required for HEPA filters?"
     answer: "DOP (Dioctyl Phthalate) or PAO (Polyalphaolefin) testing challenges the installed HEPA filter with a measured aerosol upstream, then scans the downstream face and frame seal for leaks. It is the only method that verifies the filter is actually performing at 99.97% efficiency in place. BAM certifies every filter installation with documented test results."
   - question: "What compliance standards require HEPA filter certification in hospitals?"
     answer: "USP 797 and USP 800 require certified HEPA filtration for compounding pharmacies. Joint Commission and CMS Conditions of Participation mandate proper filtration in protective environment and airborne infection isolation rooms. ASHRAE 170 specifies minimum filter efficiencies by room type. BAM's certification documentation satisfies all four regulatory frameworks."
   - question: "What happens if a HEPA filter fails DOP testing after installation?"
-    answer: "BAM isolates the leak—whether in the media, gasket, or housing frame—and performs corrective action on-site. This may involve reseating the filter, replacing a damaged gasket, or repairing the housing knife-edge. We re-test after every correction until the filter passes. No filter leaves our hands without a documented passing certification."
+    answer: "BAM isolates the leak, whether in the media, gasket, or housing frame, and performs corrective action on-site. This may involve reseating the filter, replacing a damaged gasket, or repairing the housing knife-edge. We re-test after every correction until the filter passes. No filter leaves our hands without a documented passing certification."
 ---
 
 HEPA & Filter Management services from Building & Air Maintenance.

@@ -1,21 +1,21 @@
 ---
 title: "The Hidden Cost of Deferred HVAC Maintenance in Institutional Facilities"
-description: "Deferred maintenance doesn't save money — it compounds costs. Here's how institutional facilities can quantify the true price of postponing HVAC restoration."
+description: "Deferred maintenance doesn't save money, it compounds costs. Here's how institutional facilities can quantify the true price of postponing HVAC restoration."
 date: 2025-09-18
 draft: false
 author: "BAM Technical Team"
 image: "/images/jobs/rectangular-duct-interior-pre-cleaning_05-05-2025.jpg"
 ---
 
-Every facility director has faced the budget meeting where HVAC maintenance gets pushed to "next quarter." The logic seems sound — the system is running, there are more urgent priorities, and the maintenance can wait.
+Every facility director has faced the budget meeting where HVAC maintenance gets pushed to "next quarter." The logic seems sound, the system is running, there are more urgent priorities, and the maintenance can wait.
 
-But deferred HVAC maintenance operates like compound interest in reverse. **Every dollar you don't spend today costs $4–6 within three years.**
+But deferred HVAC maintenance operates like compound interest in reverse. **Every dollar you don't spend today costs $4 to 6 within three years.**
 
 ## How Costs Compound
 
 A coil operating at 70% efficiency doesn't just waste 30% more energy. It forces the compressor to work harder, accelerating wear on the most expensive component in your system. The excess static pressure strains fan bearings and belts. Inadequate heat transfer means longer run times, which means more wear on every moving part.
 
-What started as a $15,000 coil restoration becomes a $120,000 compressor replacement — plus the emergency premium, plus the downtime costs.
+What started as a $15,000 coil restoration becomes a $120,000 compressor replacement, plus the emergency premium, plus the downtime costs.
 
 ## The Risk Multiplier for Institutional Facilities
 

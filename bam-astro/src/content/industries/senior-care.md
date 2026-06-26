@@ -5,7 +5,7 @@ icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0
 
 challenges:
   heading: "HVAC Challenges in Senior Living Facilities"
-  introText: "Senior living and assisted living facilities serve some of the most vulnerable populations. Indoor air quality isn't a comfort issue — it's a health and safety issue directly tied to resident outcomes, regulatory compliance, and family trust."
+  introText: "Senior living and assisted living facilities serve some of the most vulnerable populations. Indoor air quality isn't a comfort issue, it's a health and safety issue directly tied to resident outcomes, regulatory compliance, and family trust."
   cards:
     - title: "Vulnerable Populations"
       description: "Elderly residents with compromised immune systems are significantly more susceptible to airborne contaminants and infections."

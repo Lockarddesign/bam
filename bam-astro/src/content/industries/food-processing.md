@@ -59,7 +59,7 @@ faq:
   - question: "What documentation does BAM provide for food safety audits?"
     answer: "Every project produces a comprehensive closeout package including before-and-after photographs, equipment condition reports, cleaning methodology documentation, and scope verification. This documentation is formatted to support USDA, FDA, SQF, BRC, and GFSI audit requirements, giving your food safety team audit-ready evidence of HVAC hygiene maintenance."
   - question: "How often should food processing facility HVAC systems be deep cleaned?"
-    answer: "Most food processing environments require duct cleaning and coil restoration every 1–3 years depending on product type, particulate load, and audit cycle. High-moisture environments and bakery operations typically require more frequent attention. BAM performs condition assessments to determine the right interval for your specific production environment."
+    answer: "Most food processing environments require duct cleaning and coil restoration every 1 to 3 years depending on product type, particulate load, and audit cycle. High-moisture environments and bakery operations typically require more frequent attention. BAM performs condition assessments to determine the right interval for your specific production environment."
 ---
 
 BAM provides sanitation-grade HVAC restoration for food processing and packaging facilities across the Mid-Atlantic.
