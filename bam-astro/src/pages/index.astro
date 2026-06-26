@@ -117,8 +117,8 @@ const homeFaqs = [
 
       <!-- RIGHT — opt-in form -->
       <div class="w-full animate-fade-in-up opacity-0" style="animation-delay: 250ms;">
-        <form name="site-visit" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="bg-[#0E1413]/85 backdrop-blur-md border border-white/10 rounded-xl p-6 md:p-8 shadow-2xl shadow-black/40 space-y-4">
-          <input type="hidden" name="form-name" value="site-visit" />
+        <form name="site-visit-quick" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="bg-[#0E1413]/85 backdrop-blur-md border border-white/10 rounded-xl p-6 md:p-8 shadow-2xl shadow-black/40 space-y-4">
+          <input type="hidden" name="form-name" value="site-visit-quick" />
           <input type="hidden" name="inquiry_type" value="site-visit" />
           <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
@@ -158,13 +158,24 @@ const homeFaqs = [
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       SERVICES HUB PREVIEW BAR
+       SERVICES HUB PREVIEW BAR, split: Commercial & Industrial | Residential
        ═══════════════════════════════════════════════════════════════ -->
-  <a href="/services/" class="block w-full bg-primary py-4 text-center no-underline group hover:bg-[#1e483b] transition-colors">
-    <span class="text-white font-bold text-xs md:text-sm uppercase tracking-[0.25em]">
-      [ Preview Services Hub ]
-    </span>
-  </a>
+  <div class="grid grid-cols-1 sm:grid-cols-2 w-full bg-primary">
+    <a href="/services/" class="group flex items-center justify-center gap-3 px-6 py-5 no-underline hover:bg-[#1e483b] transition-colors">
+      <span class="text-left">
+        <span class="block text-white font-bold text-xs md:text-sm uppercase tracking-[0.2em]">View Commercial &amp; Industrial Services</span>
+        <span class="block text-mint text-[11px] md:text-xs mt-1 tracking-wide">Hospitals, schools, and critical infrastructure facilities</span>
+      </span>
+      <svg class="w-4 h-4 text-white flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" /></svg>
+    </a>
+    <a href="/residential/" class="group flex items-center justify-center gap-3 px-6 py-5 no-underline hover:bg-[#1e483b] transition-colors border-t sm:border-t-0 sm:border-l border-white/20">
+      <span class="text-left">
+        <span class="block text-white font-bold text-xs md:text-sm uppercase tracking-[0.2em]">View Residential Services</span>
+        <span class="block text-mint text-[11px] md:text-xs mt-1 tracking-wide">Serving homeowners across Schuylkill County</span>
+      </span>
+      <svg class="w-4 h-4 text-white flex-shrink-0 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" /></svg>
+    </a>
+  </div>
 
   <!-- ═══════════════════════════════════════════════════════════════
        ACCREDITATIONS SECTION
