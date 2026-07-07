@@ -10,10 +10,6 @@ interface Props {
   locationData?: {
     city: string;
     state: string;
-    address?: string;
-    zip: string;
-    lat: number;
-    lng: number;
     phone?: string;
     intro?: string;
   };
@@ -88,16 +84,16 @@ if (locationData) {
     parentOrganization: { '@id': `${Astro.site}#organization` },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: locationData.address || '',
-      addressLocality: locationData.city,
-      addressRegion: locationData.state,
-      postalCode: locationData.zip,
-      addressCountry: 'US',
+      streetAddress: siteConfig.mainAddress.street,
+      addressLocality: siteConfig.mainAddress.city,
+      addressRegion: siteConfig.mainAddress.state,
+      postalCode: siteConfig.mainAddress.zip,
+      addressCountry: siteConfig.mainAddress.country,
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: locationData.lat,
-      longitude: locationData.lng,
+      latitude: siteConfig.geo.lat,
+      longitude: siteConfig.geo.lng,
     },
     areaServed: {
       '@type': 'City',
