@@ -1,0 +1,73 @@
+name: Deploy to Netlify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bam-astro/**'
+      - 'netlify.toml'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Pinned to 20 (not the org template's default of 22) to match
+          # NODE_VERSION already set in both netlify.toml / bam-astro/netlify.toml.
+          node-version: 20
+          cache: npm
+          cache-dependency-path: bam-astro/package-lock.json
+
+      # Install using bam-astro's OWN package.json / package-lock.json.
+      # The repo-root package.json belongs to an abandoned Vite+React app
+      # (name "(final)-bam---institutional-hvac") -- it is not the live site
+      # and must never be installed or built. The live site is the Astro app
+      # in bam-astro/.
+      - name: Install dependencies (bam-astro)
+        working-directory: bam-astro
+        run: npm ci
+
+      # Run from the REPO ROOT (not bam-astro/) so `netlify deploy --build`
+      # reads the ROOT netlify.toml -- the config already proven to work in
+      # production via Netlify's UI-driven deploys:
+      #   base = "bam-astro"
+      #   publish = "bam-astro/dist"
+      #
+      # Research note (docs.netlify.com/configure-builds/overview and
+      # .../get-started, fetched 2026-08-03): Netlify's docs state the
+      # publish directory "is relative to the base directory" -- so, taken
+      # literally, base="bam-astro" + publish="bam-astro/dist" would resolve
+      # to bam-astro/bam-astro/dist, which does not exist (the real Astro
+      # build output is bam-astro/dist). The docs do not document a fallback
+      # for this case, and the CLI reference (cli.netlify.com/commands/build
+      # and /deploy) does not document whether `netlify deploy --build`
+      # performs its own dependency install, or how strictly the CLI
+      # enforces base-relative publish resolution vs. Netlify's hosted build
+      # servers. Since this exact dual-toml setup is CONFIRMED working today
+      # via Netlify's own UI-driven builds, neither netlify.toml is touched
+      # here. To avoid adding a second point of ambiguity on top of an
+      # already-unusual config, we deploy from the repo root so the CLI
+      # reads the root netlify.toml as the single source of truth --
+      # matching what's proven in production -- rather than from bam-astro/,
+      # which would instead read bam-astro/netlify.toml (publish="dist"
+      # relative to bam-astro; likely also correct, but a different
+      # resolution path than what's already live).
+      #
+      # We run `npm ci` above (scoped to bam-astro) BEFORE this step so
+      # dependencies already exist when Netlify's build step cd's into
+      # base ("bam-astro") and runs `npm run build` -- regardless of
+      # whether the CLI would otherwise attempt to install them itself.
+      - name: Build & deploy to Netlify
+        run: npx netlify deploy --build --prod
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
