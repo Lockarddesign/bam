@@ -2,7 +2,7 @@
 title: "ASHRAE 62.1 Section 8: The Operations and Maintenance Requirements Most Buildings Are Failing (and What Changed in 2025)"
 description: "Everyone reads Section 6 for the ventilation rates. Almost nobody reads Section 8, which tells you what has to happen to filters, coils, drain pans, dampers, and outdoor air after the building is occupied. ASHRAE rewrote the whole table in 2025."
 date: 2026-09-15
-draft: true
+draft: false
 author: "BAM Technical Team"
 image: "/images/jobs/warehouse-hvac-unit-above-pallet-racking_05-05-2025.jpg"
 ---

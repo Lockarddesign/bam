@@ -2,7 +2,7 @@
 title: "The Joint Commission's New Physical Environment Chapter: Where EC.02.05.01 EP 15 Went and What HVAC Surveyors Still Check in 2026"
 description: "Effective January 1, 2026, the Environment of Care and Life Safety chapters are gone from the hospital manual. Fewer elements of performance does not mean fewer findings. Here is the HVAC crosswalk, the survey data behind it, and the documentation to have ready."
 date: 2026-09-01
-draft: true
+draft: false
 author: "BAM Technical Team"
 image: "/images/jobs/clean-plenum-interior-new-liner_05-05-2025.jpg"
 ---

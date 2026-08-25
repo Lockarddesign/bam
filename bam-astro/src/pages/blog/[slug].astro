@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import { siteConfig } from '../../config/site.config';
+import { getPublishedPosts } from '../../utils/posts';
 
 export async function getStaticPaths() {
-  // Drafts are scheduled posts that have not gone live yet — no page, no sitemap entry.
-  const posts = (await getCollection('blog')).filter(p => !p.data.draft);
+  // A scheduled post has no page and no sitemap entry until its date arrives.
+  const posts = await getPublishedPosts();
   return posts.map(post => ({
     params: { slug: post.slug },
     props: { post },
@@ -16,9 +17,8 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const dateStr = post.data.date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
-const allPosts = (await getCollection('blog'))
-  .filter(p => !p.data.draft && p.slug !== post.slug)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+const allPosts = (await getPublishedPosts())
+  .filter(p => p.slug !== post.slug)
   .slice(0, 3);
 
 const relatedServices = siteConfig.services.slice(0, 4);

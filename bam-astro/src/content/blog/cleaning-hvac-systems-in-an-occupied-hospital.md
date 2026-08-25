@@ -2,7 +2,7 @@
 title: "Cleaning HVAC Systems in an Occupied Hospital: NADCA ACR 2025, ICRA 2.0, and How to Avoid an Infection Control Finding"
 description: "Cleaning a hospital air handler is a maintenance task with an infection control permit attached. Here is what NADCA's 2025 standard requires for containment and verification, where the work lands on the ICRA 2.0 matrix, what CDC actually says about duct cleaning, and the project sequence that keeps a coil cleaning from becoming a survey finding."
 date: 2026-10-06
-draft: true
+draft: false
 author: "BAM Technical Team"
 image: "/images/jobs/insulated-duct-interior-post-cleaning-1_05-05-2025.jpg"
 ---

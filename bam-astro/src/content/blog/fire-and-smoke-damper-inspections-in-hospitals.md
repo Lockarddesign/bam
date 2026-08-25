@@ -2,7 +2,7 @@
 title: "Fire and Smoke Damper Inspections in Hospitals: NFPA 80, NFPA 105, and the Documentation Surveyors Actually Read"
 description: "The six-year hospital cycle is the easy part. The findings come from what the test skipped, what the report left out, and the dampers nobody can reach. A field-level guide to NFPA 80 and 105 damper inspections for healthcare facility directors."
 date: 2026-09-08
-draft: true
+draft: false
 author: "BAM Technical Team"
 image: "/images/jobs/insulated-duct-interior-junction_11-04-2025.jpg"
 ---

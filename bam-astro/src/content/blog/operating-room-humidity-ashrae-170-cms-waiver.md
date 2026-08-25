@@ -2,7 +2,7 @@
 title: "Operating Room Humidity: ASHRAE 170, the CMS 20 Percent Waiver, and the Logs Surveyors Ask For"
 description: "Temperature and humidity out of range with no documented corrective action was one of the most common physical environment findings in 2025 hospital surveys. Here is the range, the waiver, the IFU risk assessment, the monitoring surveyors expect, and the mechanical reasons an OR drifts out of range in both seasons."
 date: 2026-09-29
-draft: true
+draft: false
 author: "BAM Technical Team"
 image: "/images/jobs/evaporator-coil-fins-closeup_11-04-2025.jpg"
 ---
