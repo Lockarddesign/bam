@@ -4,7 +4,8 @@ import { getCollection, render } from 'astro:content';
 import { siteConfig } from '../../config/site.config';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  // Drafts are scheduled posts that have not gone live yet — no page, no sitemap entry.
+  const posts = (await getCollection('blog')).filter(p => !p.data.draft);
   return posts.map(post => ({
     params: { slug: post.slug },
     props: { post },
