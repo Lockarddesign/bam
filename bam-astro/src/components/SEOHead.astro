@@ -23,6 +23,8 @@ interface Props {
     dateModified?: string;
     author: string;
     section?: string;
+    /** Clean article title for schema; falls back to the page <title>. */
+    headline?: string;
   };
   breadcrumbs?: Array<{ name: string; url: string }>;
   noindex?: boolean;
@@ -200,7 +202,9 @@ if (articleData) {
   graphEntities.push({
     '@type': 'Article',
     '@id': `${canonicalURL}#article`,
-    headline: title,
+    // Schema headline is the article's own title — the "| BAM Blog"
+    // branding suffix belongs only in the <title> tag.
+    headline: articleData.headline ?? title,
     description: description,
     datePublished: articleData.datePublished,
     ...(articleData.dateModified && { dateModified: articleData.dateModified }),

@@ -22,6 +22,28 @@ const allPosts = (await getPublishedPosts())
   .slice(0, 3);
 
 const relatedServices = siteConfig.services.slice(0, 4);
+
+// Extract the post's "Frequently Asked Questions" section into FAQPage
+// schema. Questions are `**Q: …**` lines; the answer is everything until the
+// next question or heading. Posts without the pattern simply emit no FAQ.
+function extractFaqs(body: string): Array<{ question: string; answer: string }> {
+  const faqs: Array<{ question: string; answer: string }> = [];
+  const section = body.split(/^## Frequently Asked Questions\s*$/m)[1];
+  if (!section) return faqs;
+  const block = section.split(/^## /m)[0];
+  const parts = block.split(/\*\*Q:\s*([^*]+)\*\*/).slice(1);
+  for (let i = 0; i < parts.length - 1; i += 2) {
+    const question = parts[i].trim();
+    const answer = parts[i + 1]
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1') // strip markdown links
+      .replace(/[*_`]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (question && answer) faqs.push({ question, answer });
+  }
+  return faqs;
+}
+const faqData = extractFaqs(post.body);
 ---
 <BaseLayout
   title={`${post.data.title} | BAM Blog`}
@@ -31,7 +53,9 @@ const relatedServices = siteConfig.services.slice(0, 4);
   articleData={{
     datePublished: post.data.date.toISOString(),
     author: post.data.author || 'BAM Technical Team',
+    headline: post.data.title,
   }}
+  faqData={faqData.length > 0 ? faqData : undefined}
   breadcrumbs={[
     { name: 'Blog', url: '/blog/' },
     { name: post.data.title, url: `/blog/${post.slug}/` },
@@ -76,7 +100,7 @@ const relatedServices = siteConfig.services.slice(0, 4);
 
           <!-- ── Main Content Column ── -->
           <div style="min-width:0;overflow:hidden">
-            <div class="prose prose-lg prose-slate prose-headings:text-primary prose-headings:tracking-tight prose-a:text-primary prose-a:font-semibold prose-strong:text-primary prose-li:text-slate max-w-none [&_table]:block [&_table]:overflow-x-auto">
+            <div class="prose prose-lg prose-slate prose-headings:text-primary prose-headings:tracking-tight prose-a:text-primary prose-a:font-semibold prose-strong:text-primary prose-li:text-slate max-w-none">
               <Content />
             </div>
           </div>
@@ -84,23 +108,38 @@ const relatedServices = siteConfig.services.slice(0, 4);
           <!-- ── E-E-A-T Authority Sidebar ── -->
           <aside class="space-y-8">
 
-            <!-- Author / About BAM -->
-            <div class="bg-white border border-light-grey rounded-xl p-6">
-              <div class="flex items-center gap-4 mb-4">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                </div>
-                <div>
-                  <p class="text-primary font-bold text-sm leading-tight">BAM Technical Team</p>
-                  <p class="text-slate text-xs leading-tight mt-0.5">{siteConfig.yearsExperience}+ Years in Institutional HVAC</p>
-                </div>
+            <!-- CTA Card — first so it's visible above the fold -->
+            <div class="bg-dark rounded-xl p-6 text-center relative overflow-hidden">
+              <div class="absolute inset-0 opacity-[0.04] site-grid-dark"></div>
+              <div class="relative z-10">
+                <h3 class="text-white font-bold text-base mb-2">Need Expert Help?</h3>
+                <p class="text-light-grey/70 text-sm mb-5 leading-relaxed">
+                  Request a no-obligation assessment of your HVAC systems from our technical team.
+                </p>
+                <a href="/contact/" class="inline-block w-full bg-mint text-dark font-bold text-sm uppercase tracking-widest px-6 py-3 rounded-lg hover:bg-white transition-colors">
+                  {siteConfig.ctaLabel}
+                </a>
+                <p class="text-light-grey/50 text-xs mt-3">
+                  Or call <a href={`tel:${siteConfig.phoneRaw}`} class="text-mint/80 hover:text-mint transition-colors whitespace-nowrap">{siteConfig.phone}</a>
+                </p>
               </div>
-              <p class="text-slate text-sm leading-relaxed mb-4">
-                Our articles are written by field technicians and engineers with decades of hands-on experience restoring HVAC systems in hospitals, universities, data centers, and manufacturing facilities.
-              </p>
-              <a href="/contact/" class="text-primary text-xs font-bold uppercase tracking-[0.15em] hover:text-[#1e483b] transition-colors">
-                About Our Team →
-              </a>
+            </div>
+
+            <!-- Author / About BAM -->
+            <div class="bg-white border border-light-grey rounded-xl overflow-hidden">
+              <img src="/images/community/bam-leadership-group.webp" alt="BAM ownership with Pennsylvania Secretary of Labor & Industry Nancy Walker at the Schuylkill Chamber Business Executive Forum" width="1400" height="933" loading="lazy" decoding="async" class="w-full h-40 object-cover object-[center_top]" />
+              <div class="p-6">
+                <div class="mb-3">
+                  <p class="text-primary font-bold text-sm leading-tight">BAM Technical Team</p>
+                  <p class="text-slate text-xs leading-tight mt-0.5">Ownership-Led · {siteConfig.yearsExperience}+ Years in Institutional HVAC</p>
+                </div>
+                <p class="text-slate text-sm leading-relaxed mb-4">
+                  Our articles are written by field technicians and engineers with decades of hands-on experience restoring HVAC systems in hospitals, universities, data centers, and manufacturing facilities.
+                </p>
+                <a href="/about/" class="text-primary text-xs font-bold uppercase tracking-[0.15em] hover:text-[#1e483b] transition-colors">
+                  About Our Team →
+                </a>
+              </div>
             </div>
 
             <!-- Certifications & Accreditations -->
@@ -163,23 +202,6 @@ const relatedServices = siteConfig.services.slice(0, 4);
               </ul>
             </div>
 
-            <!-- CTA Card -->
-            <div class="bg-dark rounded-xl p-6 text-center relative overflow-hidden">
-              <div class="absolute inset-0 opacity-[0.04] site-grid-dark"></div>
-              <div class="relative z-10">
-                <h3 class="text-white font-bold text-base mb-2">Need Expert Help?</h3>
-                <p class="text-light-grey/70 text-sm mb-5 leading-relaxed">
-                  Request a no-obligation assessment of your HVAC systems from our technical team.
-                </p>
-                <a href="/contact/" class="inline-block w-full bg-mint text-dark font-bold text-sm uppercase tracking-widest px-6 py-3 rounded-lg hover:bg-white transition-colors">
-                  {siteConfig.ctaLabel}
-                </a>
-                <p class="text-light-grey/50 text-xs mt-3">
-                  Or call <a href={`tel:${siteConfig.phoneRaw}`} class="text-mint/80 hover:text-mint transition-colors">{siteConfig.phone}</a>
-                </p>
-              </div>
-            </div>
-
             <!-- More Articles -->
             {allPosts.length > 0 && (
               <div class="bg-white border border-light-grey rounded-xl p-6">
@@ -225,9 +247,53 @@ const relatedServices = siteConfig.services.slice(0, 4);
         grid-template-columns: 1fr 340px !important;
       }
       .blog-two-col > aside {
-        position: sticky;
-        top: 7rem;
+        will-change: transform;
       }
     }
   </style>
+
+  <script>
+    // Wrap every article table in a scroll container. The wrapper owns the
+    // border and horizontal overflow (see .table-wrap in global.css) so the
+    // table itself can fill the full column width.
+    document.querySelectorAll('.prose table').forEach((t) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      t.parentNode?.insertBefore(wrap, t);
+      wrap.appendChild(t);
+    });
+
+    // Scroll-linked sidebar: the sidebar is shorter than the article, so it
+    // translates down as you scroll — slower than the page — and its bottom
+    // lands together with the article's bottom. Desktop only; static under
+
+    const col = document.querySelector('.blog-two-col');
+    const aside = col?.querySelector(':scope > aside');
+    const main = col?.querySelector(':scope > div');
+    const desktop = window.matchMedia('(min-width: 1024px)');
+
+    if (col && aside && main) {
+      // Locked 1:1 to scroll position — no easing. Any lag between the scroll
+      // and the transform reads as the sidebar bobbing against the page.
+      let queued = false;
+
+      const apply = () => {
+        queued = false;
+        if (!desktop.matches) { aside.style.transform = ''; return; }
+        const track = main.offsetHeight - window.innerHeight;
+        const range = main.offsetHeight - aside.offsetHeight;
+        if (track <= 0 || range <= 0) { aside.style.transform = ''; return; }
+        const p = Math.min(1, Math.max(0, -main.getBoundingClientRect().top / track));
+        aside.style.transform = `translate3d(0, ${p * range}px, 0)`;
+      };
+
+      const onScroll = () => {
+        if (!queued) { queued = true; requestAnimationFrame(apply); }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      apply();
+    }
+  </script>
 </BaseLayout>

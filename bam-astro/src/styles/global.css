@@ -5,6 +5,14 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Desktop density: AI-default Tailwind sizing reads oversized at 100% zoom on
+   a 1440x900 laptop. Root scaling reproduces the ~85%-zoom composition the
+   site was designed at. Mobile stays 100%. Type, spacing, and Tailwind
+   containers are rem-based, so everything scales together. */
+@media (min-width: 1024px) {
+  html { font-size: 85%; }
+}
+
 @theme {
   --color-dark: #0B1110;
   --color-primary: #265A4A;
@@ -38,6 +46,52 @@ html {
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0%); }
   }
+}
+
+/* Blog article tables — styled to match the BAM Technical Guide PDFs:
+   dark green header band, ruled zebra rows, compact cells, contained.
+   A script in blog/[slug].astro wraps each table in .table-wrap, which owns
+   the border, radius, and horizontal scroll; the table itself fills it. */
+.prose .table-wrap {
+  border: 1px solid var(--color-light-grey);
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  background-color: #fff;
+  margin-top: 1.75em;
+  margin-bottom: 1.75em;
+}
+.prose table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  margin: 0;
+}
+.prose table thead th {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.625rem 0.625rem;
+  vertical-align: bottom;
+  border-bottom: 0;
+}
+.prose table tbody td {
+  padding: 0.5rem 0.625rem;
+  vertical-align: top;
+  border-top: 1px solid var(--color-light-grey);
+  color: var(--color-slate-deep);
+}
+.prose table tbody tr:first-child td {
+  border-top: 0;
+}
+.prose table tbody tr:nth-child(even) td {
+  background-color: #EEF3F1;
+}
+.prose table tbody td:first-child {
+  font-weight: 600;
+  color: var(--color-primary);
 }
 
 .container {
