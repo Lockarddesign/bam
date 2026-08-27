@@ -32,6 +32,8 @@ interface Props {
     dateModified?: string;
     author: string;
     section?: string;
+    /** Clean article title for schema; falls back to the page <title>. */
+    headline?: string;
   };
   breadcrumbs?: Array<{ name: string; url: string }>;
   noindex?: boolean;
