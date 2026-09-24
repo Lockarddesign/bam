@@ -43,6 +43,15 @@ morning so it is live before anyone looks.
 
 To move a post, change its `date`. That is the whole operation.
 
+### September 24, 2026 review status
+
+Guides 02, 03, and 04 were reviewed against Travis's original PDFs and approved
+for publication. Guide 05 is held with `draft: true` pending review; its September
+22 date is preserved. Its review preview is available at
+https://blog-catchup-sep24--bamhvac.netlify.app/blog/merv-ratings-in-healthcare-ashrae-170-filter-requirements/.
+Guides 06 and 07 retain their original future publication dates. A scheduled
+rebuild has not yet been configured.
+
 ## One follow-up after Guide 03 publishes (2026-09-08)
 
 Guide 02 mentions "our fire and smoke damper inspection guide" in its FAQ as plain
