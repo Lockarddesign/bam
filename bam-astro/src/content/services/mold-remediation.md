@@ -25,7 +25,7 @@ diagnostics:
 
 protocol:
   title: "Remediation Standard (S520)"
-  description: "We follow the IICRC S520 Standard for Professional Mold Remediation."
+  description: "We follow the IICRC S520 Standard for Professional Mold Remediation. We use barriers and there are 4 levels of containment depending on the hazard level."
   steps:
     - title: "Engineering Controls"
       description: "Erecting critical barriers and establishing negative air pressure."

@@ -63,9 +63,9 @@ roi:
 
 faq:
   - question: "How long does commercial epoxy coating take to cure before equipment can return to service?"
-    answer: "Most 100% solids epoxy systems achieve immersion-ready cure in 24 to 48 hours at ambient temperature. BAM verifies cure hardness before authorizing system refill to prevent premature coating failure. Total project duration including surface preparation, application, and cure typically spans 3 to 5 days per asset."
+    answer: "Our epoxy cures underwater, greatly reducing downtime."
   - question: "Can new epoxy be applied over an existing failing coating?"
-    answer: "Generally, no. BAM removes old, failing coatings down to bare substrate using abrasive blasting to SSPC SP-6 or SP-10 standards. Coating over delaminated material traps moisture and corrosion underneath, guaranteeing premature failure. Proper surface profiling is 90% of a successful lining system's longevity."
+    answer: "No, we grind down to the metal for maximum adhesion. Coating over delaminated material traps moisture and corrosion underneath, guaranteeing premature failure. Proper surface profiling is 90% of a successful lining system's longevity."
   - question: "What surfaces can be epoxy coated in commercial HVAC equipment?"
     answer: "BAM applies protective coatings to cooling tower basins, chiller tube sheets and water boxes, condensate drain pans, structural steel supports, and mechanical room floors. Each substrate requires a specific epoxy chemistry, ceramic-filled for abrasion resistance, flexible urethane for thermal cycling, or hybrid systems for chemical immersion environments."
   - question: "How does epoxy basin lining compare in cost to cooling tower replacement?"

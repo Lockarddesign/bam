@@ -117,6 +117,7 @@ export const siteConfig = {
   /** Accreditations & trust signals */
   accreditations: [
     { name: 'NADCA Certified', logo: '/accreditations/nadca.webp', width: 127 },
+    { name: 'IAQA Corporate Member', logo: '/accreditations/iaqa.webp', width: 209 },
     { name: 'OSHA Compliant', logo: '/accreditations/osha.webp', width: 114 },
     { name: 'PA COSTARS Vendor', logo: '/accreditations/costars.webp', width: 173 },
     { name: 'EPA Certified', logo: '/accreditations/epa.webp', width: 121 },

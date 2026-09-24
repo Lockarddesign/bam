@@ -25,19 +25,21 @@ diagnostics:
 
 protocol:
   title: "Source Removal Methodology"
-  description: "We do not just encapsulate dirt. We remove it using high-velocity negative air and mechanical agitation."
+  description: "We do not just encapsulate dirt. We contain and isolate first, then remove it with rotary brushes and air rake tools under negative air. We use a portable ICRA tent to meet ICRA and clean room standards."
   steps:
     - title: "Negative Air Connection"
       description: "Connecting high-volume vacuum trucks or portable collectors to the main trunk."
       details:
-        - "Zone isolation"
+        - "Contain and isolate"
+        - "Portable ICRA tent"
         - "Static pressure maintenance"
         - "Contaminant capture"
     - title: "Mechanical Agitation"
-      description: "Using air whips, brushes, and skipper balls to dislodge debris."
+      description: "Rotary brushes and air rake tools dislodge debris so it can be captured."
       details:
+        - "Rotary brushes"
+        - "Air rake tools"
         - "Compressed air whips"
-        - "Rotary brushing"
         - "Robotic inspection"
     - title: "Component Cleaning"
       description: "Cleaning registers, diffusers, VAV boxes, and reheat coils."

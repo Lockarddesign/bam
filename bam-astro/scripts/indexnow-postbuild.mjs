@@ -26,6 +26,10 @@ if (!KEY) {
 }
 
 // Only submit on production deploys, not previews/branch builds.
+if (!process.env.NETLIFY && !process.env.CI) {
+  console.log("indexnow: local build, skipping");
+  process.exit(0);
+}
 if (process.env.NETLIFY && process.env.CONTEXT !== "production") {
   console.log(`indexnow: context is '${process.env.CONTEXT}', skipping`);
   process.exit(0);
