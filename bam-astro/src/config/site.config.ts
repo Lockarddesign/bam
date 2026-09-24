@@ -276,7 +276,7 @@ export const siteConfig = {
         name: 'Good',
         tagline: 'Air Handler Cleaning',
         summary: 'The annual baseline. We clean and sanitize the heart of your system and confirm it is performing.',
-        price: 'Pricing set per plan. Ask us.',
+        price: 'Call for Pricing',
         includes: [
           'Clean and sanitize the air handler, zBioscience AC-C on the coils, Multitask on non porous surfaces.',
           'Replace the filter.',
@@ -290,7 +290,7 @@ export const siteConfig = {
         name: 'Better',
         tagline: 'Whole System Cleaning',
         summary: 'Everything in Good, plus whole home duct cleaning to the NADCA standard. No encapsulation.',
-        price: 'Pricing set per plan. Ask us.',
+        price: 'Call for Pricing',
         includes: [
           'Everything included in Good.',
           'Whole home duct source removal and cleaning under negative pressure.',
@@ -303,7 +303,7 @@ export const siteConfig = {
         name: 'Best',
         tagline: 'Total IAQ Care',
         summary: 'Our complete level, the same service we delivered for the Muldowney residence. Everything in Better, plus encapsulation and lab verified sampling.',
-        price: 'Pricing set per plan. Ask us.',
+        price: 'Call for Pricing',
         featured: true,
         includes: [
           'Everything included in Better.',
