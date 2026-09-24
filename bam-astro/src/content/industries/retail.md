@@ -53,13 +53,13 @@ faq:
   - question: "How does BAM minimize disruption to retail store operations during HVAC service?"
     answer: "BAM schedules all restoration and maintenance work during off-hours, overnight, or pre-open windows to eliminate customer-facing disruption. For rooftop units and ductwork, we coordinate access and containment to keep the sales floor fully operational. Zero disruption to revenue-generating hours is standard on every retail project."
   - question: "What does a retail HVAC preventive maintenance program cost?"
-    answer: "BAM structures fixed-cost PM agreements that provide predictable annual budgeting and eliminate surprise repair bills. Pricing is based on equipment inventory, location count, and service frequency. The ROI is immediate—scheduled maintenance prevents the emergency failures that cost 3–5x more than planned service visits."
+    answer: "BAM structures fixed-cost PM agreements that provide predictable annual budgeting and eliminate surprise repair bills. Pricing is based on equipment inventory, location count, and service frequency. The ROI is immediate, scheduled maintenance prevents the emergency failures that cost 3 to 5x more than planned service visits."
   - question: "How does poor HVAC affect the retail customer experience?"
     answer: "Uncomfortable temperatures, stale air, and visible dust from neglected ductwork drive customers out of stores and damage brand perception. ASHRAE 62.1 ventilation standards apply to retail occupancies. BAM's coil cleaning and duct restoration ensure comfortable, clean environments that support longer dwell times and higher per-visit spending."
   - question: "Does BAM provide consolidated reporting for multi-site retail HVAC programs?"
     answer: "Yes. BAM delivers consolidated portfolio reports covering equipment condition, service history, deficiency tracking, and capital planning recommendations across all locations. This gives facilities directors and regional managers a single dashboard view of HVAC health across their portfolio, simplifying budget forecasting and prioritization decisions."
   - question: "How often should retail HVAC rooftop units be deep cleaned?"
-    answer: "Most retail rooftop units require coil cleaning every 2–4 years depending on local air quality, filtration quality, and unit age. Duct cleaning intervals range from 3–7 years. BAM performs condition assessments to determine the right schedule for each location rather than applying a one-size-fits-all calendar approach."
+    answer: "Most retail rooftop units require coil cleaning every 2 to 4 years depending on local air quality, filtration quality, and unit age. Duct cleaning intervals range from 3 to 7 years. BAM performs condition assessments to determine the right schedule for each location rather than applying a one-size-fits-all calendar approach."
 ---
 
 BAM provides scalable HVAC maintenance programs for retail and multi-site operations across the Mid-Atlantic.

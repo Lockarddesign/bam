@@ -5,7 +5,7 @@ icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0
 
 challenges:
   heading: "HVAC Challenges in Commercial Properties"
-  introText: "Commercial property managers and asset owners face constant pressure to control operating costs, retain tenants, and meet sustainability targets — all while aging HVAC systems consume more energy and deliver less comfort every year."
+  introText: "Commercial property managers and asset owners face constant pressure to control operating costs, retain tenants, and meet sustainability targets, all while aging HVAC systems consume more energy and deliver less comfort every year."
   cards:
     - title: "Rising Energy Costs"
       description: "Degraded coils and fouled towers force systems to work harder, inflating utility costs that erode net operating income."
@@ -49,17 +49,17 @@ capabilities:
 
 faq:
   - question: "How does HVAC restoration reduce operating costs for commercial real estate?"
-    answer: "Fouled coils and degraded cooling towers force HVAC systems to consume 15–30% more energy than design specifications. BAM's deep cleaning and refurbishment restore thermal transfer to near-original efficiency, directly reducing utility costs. Restoration also extends equipment life by 5–15 years, deferring the capital expense of full replacement."
+    answer: "Fouled coils and degraded cooling towers force HVAC systems to consume 15 to 30% more energy than design specifications. BAM's deep cleaning and refurbishment restore thermal transfer to near-original efficiency, directly reducing utility costs. Restoration also extends equipment life by 5 to 15 years, deferring the capital expense of full replacement."
   - question: "Does HVAC restoration improve LEED certification scores for office buildings?"
-    answer: "Yes. Restored HVAC systems operate more efficiently and deliver better indoor air quality, both of which contribute to LEED Indoor Environmental Quality and Energy & Atmosphere credits. BAM provides the documentation—energy performance data, IAQ testing results, and ASHRAE 62.1 compliance verification—that supports your LEED submission."
+    answer: "Yes. Restored HVAC systems operate more efficiently and deliver better indoor air quality, both of which contribute to LEED Indoor Environmental Quality and Energy & Atmosphere credits. BAM provides the documentation, energy performance data, IAQ testing results, and ASHRAE 62.1 compliance verification, that supports your LEED submission."
   - question: "Can BAM service HVAC across a multi-property commercial portfolio?"
     answer: "Yes. BAM manages restoration and PM programs across entire commercial real estate portfolios with a single point of contact. We standardize scope, scheduling, and documentation across all properties, giving property managers consistent service quality and predictable budgeting whether you manage 3 buildings or 30."
   - question: "How does poor indoor air quality affect tenant retention in commercial buildings?"
     answer: "Occupant complaints about stuffy air, odors, and temperature inconsistency are leading drivers of tenant turnover. Elevated CO2 from inadequate ventilation directly impairs productivity. BAM's coil restoration and IAQ remediation resolve these issues at the source, measurably improving the occupied environment that drives tenant satisfaction and lease renewals."
   - question: "What is the cost of HVAC restoration versus full equipment replacement for commercial buildings?"
-    answer: "Restoration typically costs 15–25% of full replacement while recovering 85–95% of original equipment performance. For a commercial office building, this can mean recovering hundreds of thousands in deferred capital while immediately reducing energy spend. BAM's condition assessments provide the data to make informed restore-versus-replace decisions for every asset."
+    answer: "Restoration typically costs 15 to 25% of full replacement while recovering 85 to 95% of original equipment performance. For a commercial office building, this can mean recovering hundreds of thousands in deferred capital while immediately reducing energy spend. BAM's condition assessments provide the data to make informed restore-versus-replace decisions for every asset."
   - question: "How often should commercial office building HVAC systems receive deep maintenance?"
-    answer: "Cooling towers require seasonal service per ASHRAE 188. AHU coils should be deep cleaned every 3–5 years. Chiller tubes need annual brushing. BAM builds PM programs around your lease calendar and tenant occupancy patterns to minimize disruption while maintaining continuous compliance with ASHRAE 62.1 ventilation requirements."
+    answer: "Cooling towers require seasonal service per ASHRAE 188. AHU coils should be deep cleaned every 3 to 5 years. Chiller tubes need annual brushing. BAM builds PM programs around your lease calendar and tenant occupancy patterns to minimize disruption while maintaining continuous compliance with ASHRAE 62.1 ventilation requirements."
 ---
 
 BAM provides HVAC life-extension and energy optimization services for commercial real estate portfolios across the Mid-Atlantic.

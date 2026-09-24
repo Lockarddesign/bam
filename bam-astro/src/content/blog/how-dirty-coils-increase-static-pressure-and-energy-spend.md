@@ -14,7 +14,7 @@ This article provides a clear, technical explanation of how dirty coils degrade 
 
 ## The Vicious Cycle of Coil Fouling
 
-Coil fouling is an unavoidable consequence of moving large volumes of air. Over time, airborne particulates — dust, pollen, grease, and microorganisms — accumulate on the coil surface. This buildup acts as an insulator, severely impeding the coil's ability to transfer heat. But the problem doesn't stop there. The fouling also restricts airflow, forcing the entire HVAC system to work harder to maintain the desired temperature. This creates a vicious cycle:
+Coil fouling is an unavoidable consequence of moving large volumes of air. Over time, airborne particulates, dust, pollen, grease, and microorganisms, accumulate on the coil surface. This buildup acts as an insulator, severely impeding the coil's ability to transfer heat. But the problem doesn't stop there. The fouling also restricts airflow, forcing the entire HVAC system to work harder to maintain the desired temperature. This creates a vicious cycle:
 
 1. **Reduced Airflow:** The layer of grime on the coils narrows the passages for air, increasing resistance and reducing the volume of air that can pass through.
 2. **Increased Static Pressure:** To overcome this resistance, the system fan must run at a higher speed, consuming more energy. This increased pressure puts a strain on the entire system, from the fan motor to the ductwork.
@@ -23,7 +23,7 @@ Coil fouling is an unavoidable consequence of moving large volumes of air. Over 
 
 ## Static Pressure: The Silent Killer of HVAC Efficiency
 
-Static pressure is one of the most critical, yet often overlooked, metrics in HVAC performance. It is a measure of the resistance to airflow within the system. In a clean, well-designed system, static pressure remains within a predictable range. However, as coils become fouled, static pressure begins to climb — a clear indicator that your system is struggling.
+Static pressure is one of the most critical, yet often overlooked, metrics in HVAC performance. It is a measure of the resistance to airflow within the system. In a clean, well-designed system, static pressure remains within a predictable range. However, as coils become fouled, static pressure begins to climb, a clear indicator that your system is struggling.
 
 | Static Pressure Impact | Consequence for Facility Managers |
 | --- | --- |

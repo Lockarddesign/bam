@@ -1,6 +1,6 @@
 ---
 /**
- * Shared location/map section — full-bleed grayscale Google map (color on
+ * Shared location/map section, full-bleed grayscale Google map (color on
  * hover) with a dark info card pinned left. Site-wide standard.
  * Location pages MUST pass their own city-specific embedUrl + locationLabel.
  */
@@ -18,7 +18,7 @@ interface Props {
 const {
   embedUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7623162795066!2d-76.3052182239814!3d40.568925771415415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c5fb2055fd4e95%3A0x59bd5e1a24dfd2c6!2sBuilding%20and%20Air%20Maintenance%2C%20LLC!5e0!3m2!1sen!2sus!4v1780503212406!5m2!1sen!2sus',
   locationLabel = 'Pine Grove, PA',
-  mapTitle = 'Building and Air Maintenance, LLC — Pine Grove, PA',
+  mapTitle = 'Building and Air Maintenance, LLC, Pine Grove, PA',
 } = Astro.props;
 ---
 
@@ -40,7 +40,7 @@ const {
               left-0 right-0 bottom-0 border-t border-white/10 px-6 py-6
               sm:top-0 sm:right-auto sm:w-[clamp(300px,28vw,380px)] sm:border-t-0 sm:border-r sm:px-9 sm:py-10">
     <div class="flex items-center gap-3 pb-4 mb-5 border-b border-white/10">
-      <img src="/bam-logo.webp" alt="BAM — Building & Air Maintenance" width="36" height="36" class="h-9 w-auto object-contain" />
+      <img src="/bam-logo.webp" alt="BAM, Building & Air Maintenance" width="36" height="36" class="h-9 w-auto object-contain" />
       <span class="flex flex-col leading-tight">
         <strong class="text-white font-extrabold text-sm tracking-[0.06em] uppercase">Building &amp; Air</strong>
         <span class="text-white/55 font-semibold text-[10px] tracking-[0.14em] uppercase">Maintenance, LLC</span>

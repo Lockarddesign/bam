@@ -23,6 +23,20 @@ html {
   --color-slate-deep: #41555D;
   --color-offwhite: #F7F9F8;
 
+  /* Residential silo tokens. Used inside `[data-theme="residential"]` scope.
+     CLEAN LIGHT THEME: a true light-mode inversion of the commercial dark theme.
+     Neutral white/grey surfaces, near-black text, BAM deep-green accent. No mint
+     fills, no warm/sandstone tones. Same structure as commercial, flipped skin. */
+  --color-warm-white: #FFFFFF;
+  --color-warm-alt:   #F1F5F4;
+  --color-sage:       #E7EFEB;
+  --color-sage-deep:  #265A4A;
+  --color-sage-mid:   #6F9580;
+  --color-warm-slate: #51605C;
+  --color-warm-ink:   #0E1413;
+  --color-warm-line:  #E2E8E6;
+  --color-cream:      #F1F5F4;
+
   --font-sans: 'Inter', sans-serif;
 
   --animate-fade-in-up: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -213,4 +227,98 @@ body {
 .group:hover > .mask-btn-layer.has-interacted,
 .btn-liquid:hover > .mask-btn-layer.has-interacted {
   animation: mask-ani-enter 0.7s steps(70) forwards;
+}
+
+/* ── Residential theme scope ──
+   Wrap residential content in <div data-theme="residential"> to opt into the
+   warm homeowner-facing palette. Header and Footer stay in their commercial
+   chrome (rendered outside this scope) so the brand wordmark is consistent. */
+[data-theme="residential"] {
+  background-color: var(--color-warm-white);
+  color: var(--color-warm-slate);
+}
+[data-theme="residential"] .res-bg-warm    { background-color: var(--color-warm-white); }
+[data-theme="residential"] .res-bg-cream   { background-color: var(--color-warm-alt); }
+[data-theme="residential"] .res-bg-sage    { background-color: var(--color-sage); }
+[data-theme="residential"] .res-bg-surface { background-color: #FFFFFF; }
+[data-theme="residential"] .res-text-ink   { color: var(--color-warm-ink); }
+[data-theme="residential"] .res-text-slate { color: var(--color-warm-slate); }
+[data-theme="residential"] .res-text-sage  { color: var(--color-sage-deep); }
+[data-theme="residential"] .res-text-terra { color: var(--color-sage-deep); }
+[data-theme="residential"] .res-border-cream { border-color: var(--color-warm-line); }
+[data-theme="residential"] .res-divider {
+  width: 56px;
+  height: 2px;
+  background-color: var(--color-sage);
+  border-radius: 999px;
+}
+[data-theme="residential"] .res-btn-primary {
+  position: relative;
+  background-color: var(--color-sage-deep);
+  color: #FFFFFF;
+  border: 1px solid var(--color-sage-deep);
+  box-shadow: 0 12px 30px -10px rgba(38, 90, 74, 0.4);
+  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+[data-theme="residential"] .res-btn-primary:hover {
+  background-color: #FFFFFF;
+  color: var(--color-sage-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -10px rgba(38, 90, 74, 0.5);
+}
+[data-theme="residential"] .res-btn-secondary {
+  background-color: #FFFFFF;
+  color: var(--color-sage-deep);
+  border: 2px solid var(--color-sage-deep);
+  box-shadow: 0 6px 20px -8px rgba(38, 90, 74, 0.25);
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+[data-theme="residential"] .res-btn-secondary:hover {
+  background-color: var(--color-sage-deep);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -10px rgba(38, 90, 74, 0.4);
+}
+
+/* Residential card pattern. Soft white surface with sage accent stripe on hover. */
+[data-theme="residential"] .res-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-warm-line);
+  border-radius: 16px;
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+[data-theme="residential"] .res-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-sage) 0%, var(--color-sage-deep) 100%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+[data-theme="residential"] .res-card:hover {
+  border-color: var(--color-sage);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -12px rgba(38, 90, 74, 0.14);
+}
+[data-theme="residential"] .res-card:hover::before {
+  opacity: 1;
+}
+
+/* Soft sage disc for service card icons. */
+[data-theme="residential"] .res-icon-disc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(167, 215, 197, 0.25);
+  color: var(--color-sage-deep);
+  margin-bottom: 1rem;
 }

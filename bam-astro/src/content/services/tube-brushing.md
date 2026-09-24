@@ -63,17 +63,17 @@ roi:
 
 faq:
   - question: "How often should commercial chiller tubes be brushed?"
-    answer: "Annual tube brushing before peak cooling season is the industry standard for water-cooled chillers. Facilities with aggressive water chemistry or open cooling towers may require semi-annual service. BAM recommends scheduling based on approach temperature trending—a 1°F rise in approach indicates measurable fouling that warrants immediate cleaning."
+    answer: "Annual tube brushing before peak cooling season is the industry standard for water-cooled chillers. Facilities with aggressive water chemistry or open cooling towers may require semi-annual service. BAM recommends scheduling based on approach temperature trending, a 1°F rise in approach indicates measurable fouling that warrants immediate cleaning."
   - question: "What if mechanical brushing alone cannot remove the scale?"
-    answer: "BAM implements a chemical descaling circulation prior to brushing for hardened calcium carbonate or silica deposits. Inhibited acid solutions are selected based on tube metallurgy—copper, cupronickel, or stainless steel—to dissolve mineral scale without substrate damage. This two-stage approach recovers tubes that brushing alone cannot restore."
+    answer: "BAM implements a chemical descaling circulation prior to brushing for hardened calcium carbonate or silica deposits. Inhibited acid solutions are selected based on tube metallurgy, copper, cupronickel, or stainless steel, to dissolve mineral scale without substrate damage. This two-stage approach recovers tubes that brushing alone cannot restore."
   - question: "Do you clean both condenser and evaporator tube bundles?"
     answer: "Yes. While condenser tubes foul more frequently due to open-loop tower water, evaporator tubes also accumulate biological growth and glycol-side deposits. BAM services both bundles using appropriately sized nylon or brass brushes with continuous water flush to extract all debris from the tube interior."
   - question: "How does tube fouling affect chiller energy consumption?"
-    answer: "Even a thin deposit of scale or biofilm on tube walls insulates the heat transfer surface and raises head pressure. This forces the compressor to work significantly harder, increasing kW/ton consumption by 10–20%. BAM's tube brushing restores design approach temperatures and reduces electrical demand from the first hour of post-cleaning operation."
+    answer: "Even a thin deposit of scale or biofilm on tube walls insulates the heat transfer surface and raises head pressure. This forces the compressor to work significantly harder, increasing kW/ton consumption by 10 to 20%. BAM's tube brushing restores design approach temperatures and reduces electrical demand from the first hour of post-cleaning operation."
   - question: "What inspection is performed after tube brushing?"
     answer: "BAM performs a visual light test through each tube to verify scale removal and identify any pitting, erosion, or tube wall thinning. We collect fouling samples for analysis when requested and document tube condition with borescope photography. This data informs your capital planning and helps predict re-tube timelines."
   - question: "How long does a chiller tube brushing project take?"
-    answer: "A single chiller typically requires 1–3 days depending on the number of tubes and severity of fouling. This includes head removal, rotary brushing of every tube, visual inspection, gasket replacement, and hydrostatic leak testing before return to service. BAM sequences multi-chiller plants to maintain cooling capacity throughout the project."
+    answer: "A single chiller typically requires 1 to 3 days depending on the number of tubes and severity of fouling. This includes head removal, rotary brushing of every tube, visual inspection, gasket replacement, and hydrostatic leak testing before return to service. BAM sequences multi-chiller plants to maintain cooling capacity throughout the project."
 ---
 
 Tube Brushing & Descaling services from Building & Air Maintenance.

@@ -14,7 +14,7 @@ challenges:
       description: "Good Manufacturing Practice regulations require documented evidence of environmental monitoring and HVAC maintenance."
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>'
     - title: "Cross-Contamination Risk"
-      description: "Lab HVAC systems must prevent cross-contamination between zones — a failure that can invalidate months of research."
+      description: "Lab HVAC systems must prevent cross-contamination between zones, a failure that can invalidate months of research."
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>'
     - title: "Fume Hood Exhaust"
       description: "Chemical fume hood performance depends on balanced building pressurization that degraded AHUs can compromise."
@@ -59,7 +59,7 @@ faq:
   - question: "What documentation does BAM provide for GMP-regulated lab environments?"
     answer: "Every project produces documentation meeting Good Manufacturing Practice standards: calibrated instrument readings, filter certification reports, before-and-after photographic evidence, equipment condition assessments, and deviation logs. This documentation supports FDA inspection readiness, internal quality audits, and ongoing cGMP compliance verification."
   - question: "How often should lab HVAC and HEPA systems receive maintenance?"
-    answer: "HEPA filters require replacement based on differential pressure monitoring, typically every 12–24 months for active labs. AHU coils should be deep cleaned every 2–3 years. BAM structures PM programs around your regulatory inspection calendar and production schedule to ensure continuous compliance without disrupting active research or manufacturing operations."
+    answer: "HEPA filters require replacement based on differential pressure monitoring, typically every 12 to 24 months for active labs. AHU coils should be deep cleaned every 2 to 3 years. BAM structures PM programs around your regulatory inspection calendar and production schedule to ensure continuous compliance without disrupting active research or manufacturing operations."
 ---
 
 BAM provides HEPA filtration management and AHU restoration for pharmaceutical, biotech, and research lab facilities across the Mid-Atlantic.

@@ -1,5 +1,5 @@
 ---
-title: "Education (K–12 & Higher Ed)"
+title: "Education (K-12 & Higher Ed)"
 shortDescription: "Indoor environmental quality programs and preventive maintenance that keep students, faculty, and staff breathing clean air year-round."
 icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'
 
@@ -53,7 +53,7 @@ faq:
   - question: "Can school HVAC restoration be completed during summer break?"
     answer: "Yes. BAM specializes in coordinated restoration campaigns timed to summer and winter recesses. We have completed AHU restoration across 14+ buildings in a single district over one summer break. This approach eliminates disruption to academic schedules while addressing years of deferred maintenance in a compressed timeline."
   - question: "How does BAM help school districts with limited HVAC budgets?"
-    answer: "Restoration costs a fraction of equipment replacement and extends asset life by 5–15 years. BAM provides documented condition assessments that support capital planning and grant applications. Our phased approach allows districts to prioritize the worst-performing systems first while building a multi-year restoration roadmap within existing budget cycles."
+    answer: "Restoration costs a fraction of equipment replacement and extends asset life by 5 to 15 years. BAM provides documented condition assessments that support capital planning and grant applications. Our phased approach allows districts to prioritize the worst-performing systems first while building a multi-year restoration roadmap within existing budget cycles."
   - question: "Does poor school HVAC affect student performance and attendance?"
     answer: "Yes. EPA and Harvard School of Public Health research confirms that inadequate ventilation and elevated CO2 levels directly impair cognitive function, increase absenteeism, and worsen asthma symptoms in students. BAM's coil cleaning and IAQ remediation restore ventilation rates to ASHRAE 62.1 levels, creating measurably healthier learning environments."
   - question: "Can BAM service multiple school buildings across a district?"
