@@ -8,6 +8,9 @@ on:
       - 'netlify.toml'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
+  schedule:
+    # 7:17 a.m. Eastern daylight time / 6:17 a.m. Eastern standard time.
+    - cron: '17 11 * * *'
 
 concurrency:
   group: deploy-${{ github.ref }}
