@@ -99,11 +99,11 @@ const residentialServiceIcons: Record<string, string> = {
       <div class="text-center lg:text-left">
         <div class="mb-4 md:mb-6 flex items-center justify-center lg:justify-start gap-3 animate-fade-in-up opacity-0" style="animation-delay: 0ms;">
           <div class="w-2 h-2 rounded-full bg-[var(--color-sage-deep)] animate-pulse"></div>
-          <span class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage">{res.positioning.eyebrow}</span>
+          <span class="font-bold text-[10px] md:text-xs tracking-[0.18em] uppercase res-text-sage" style="text-wrap: balance;">{res.positioning.eyebrow}</span>
         </div>
 
         <h1 class="text-[2rem] md:text-[3rem] lg:text-[3.75rem] font-black leading-[0.9] tracking-tighter res-text-ink mb-5 md:mb-7 animate-fade-in-up opacity-0 uppercase" style="animation-delay: 100ms;">
-          Cleaner Air. <span class="res-text-sage">Healthier Home.</span> Lower Bills.
+          <span class="whitespace-nowrap">Cleaner Air.</span> <span class="res-text-sage whitespace-nowrap">Healthier Home.</span> <span class="whitespace-nowrap">Lower Bills.</span>
         </h1>
 
         <p class="text-[14px] md:text-[17px] res-text-slate max-w-xl mx-auto lg:mx-0 leading-relaxed font-light mb-7 md:mb-9 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
@@ -135,18 +135,18 @@ const residentialServiceIcons: Record<string, string> = {
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <input type="text" name="name" required placeholder="Full Name *" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
-            <input type="tel" name="phone" required placeholder="Phone *" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+            <input type="text" name="name" required placeholder="Full Name *" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+            <input type="tel" name="phone" required placeholder="Phone *" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
           </div>
-          <input type="email" name="email" required placeholder="Email *" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
-          <select name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
+          <input type="email" name="email" required placeholder="Email *" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+          <select name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
             <option value="">Service Needed</option>
             {res.services.map((s) => (
               <option value={s.slug}>{s.title}</option>
             ))}
             <option value="not-sure">Not sure yet</option>
           </select>
-          <textarea name="describe_your_needs" rows="2" placeholder="Tell us a bit about your home." class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+          <textarea name="describe_your_needs" rows="2" placeholder="Tell us a bit about your home." class="w-full bg-white border res-border-cream rounded res-text-ink px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
 
           <button type="submit" class="res-btn-primary w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-sm font-bold tracking-[0.18em] uppercase text-xs">
             {res.ctaLabel}
@@ -524,22 +524,22 @@ const residentialServiceIcons: Record<string, string> = {
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div class="space-y-1.5">
                     <label for="rb-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-                    <input type="text" id="rb-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                    <input type="text" id="rb-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                   </div>
                   <div class="space-y-1.5">
                     <label for="rb-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
-                    <input type="tel" id="rb-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                    <input type="tel" id="rb-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                   </div>
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="rb-email" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Email</label>
-                  <input type="email" id="rb-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                  <input type="email" id="rb-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="rb-service" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Service Needed</label>
-                  <select id="rb-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
+                  <select id="rb-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
                     <option value="">Choose one</option>
                     {res.services.map((s) => (
                       <option value={s.slug}>{s.title}</option>
@@ -550,7 +550,7 @@ const residentialServiceIcons: Record<string, string> = {
 
                 <div class="space-y-1.5">
                   <label for="rb-message" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Message</label>
-                  <textarea id="rb-message" name="describe_your_needs" rows="4" placeholder="Tell us a bit about your home and what you are looking for." class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+                  <textarea id="rb-message" name="describe_your_needs" rows="4" placeholder="Tell us a bit about your home and what you are looking for." class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
                 </div>
               </div>
 

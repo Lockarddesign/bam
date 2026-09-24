@@ -381,22 +381,22 @@ const residentialServiceIcons: Record<string, string> = {
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div class="space-y-1.5">
                     <label for="lc-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-                    <input type="text" id="lc-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                    <input type="text" id="lc-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                   </div>
                   <div class="space-y-1.5">
                     <label for="lc-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
-                    <input type="tel" id="lc-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                    <input type="tel" id="lc-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                   </div>
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="lc-email" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Email</label>
-                  <input type="email" id="lc-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                  <input type="email" id="lc-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="lc-service" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Service Needed</label>
-                  <select id="lc-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
+                  <select id="lc-service" name="service" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all">
                     <option value="">Choose one</option>
                     {res.services.map((s) => (
                       <option value={s.slug}>{s.title}</option>
@@ -407,7 +407,7 @@ const residentialServiceIcons: Record<string, string> = {
 
                 <div class="space-y-1.5">
                   <label for="lc-message" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Message</label>
-                  <textarea id="lc-message" name="describe_your_needs" rows="4" placeholder={`Tell us what is happening with your ${city.name} home.`} class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+                  <textarea id="lc-message" name="describe_your_needs" rows="4" placeholder={`Tell us what is happening with your ${city.name} home.`} class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
                 </div>
               </div>
 

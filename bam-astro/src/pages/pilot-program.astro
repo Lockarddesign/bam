@@ -201,39 +201,39 @@ import { siteConfig } from '../config/site.config';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="pilot-name" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-                <input type="text" id="pilot-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="text" id="pilot-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
               <div class="space-y-1.5">
                 <label for="pilot-title" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Title / Role *</label>
-                <input type="text" id="pilot-title" name="job_title" placeholder="Director of Facilities" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="text" id="pilot-title" name="job_title" placeholder="Director of Facilities" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="pilot-email" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Email Address *</label>
-                <input type="email" id="pilot-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="email" id="pilot-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
               <div class="space-y-1.5">
                 <label for="pilot-phone" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Phone Number *</label>
-                <input type="tel" id="pilot-phone" name="phone" placeholder="(555) 123-4567" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="tel" id="pilot-phone" name="phone" placeholder="(555) 123-4567" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="pilot-org" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Organization / Facility *</label>
-                <input type="text" id="pilot-org" name="companyName" placeholder="Memorial Regional Hospital" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="text" id="pilot-org" name="companyName" placeholder="Memorial Regional Hospital" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
               <div class="space-y-1.5">
                 <label for="pilot-location" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Location (City, State) *</label>
-                <input type="text" id="pilot-location" name="facility_location" placeholder="Philadelphia, PA" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="text" id="pilot-location" name="facility_location" placeholder="Philadelphia, PA" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
             </div>
 
             <div class="space-y-1.5">
               <label for="pilot-facility-type" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Type *</label>
-              <select id="pilot-facility-type" name="facility_type" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+              <select id="pilot-facility-type" name="facility_type" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                 <option value="">Select facility type</option>
                 <option value="healthcare">Healthcare / Hospital</option>
                 <option value="education">Education (K-12 / Higher Ed)</option>
@@ -251,7 +251,7 @@ import { siteConfig } from '../config/site.config';
 
             <div class="space-y-1.5">
               <label for="pilot-sqft" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Approximate Square Footage</label>
-              <input type="text" id="pilot-sqft" name="square_footage" placeholder="e.g. 250,000 sq ft" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+              <input type="text" id="pilot-sqft" name="square_footage" placeholder="e.g. 250,000 sq ft" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
             </div>
 
             <div class="space-y-3">
@@ -275,12 +275,12 @@ import { siteConfig } from '../config/site.config';
 
             <div class="space-y-1.5">
               <label for="pilot-description" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Tell Us About Your Facility & Goals</label>
-              <textarea id="pilot-description" name="describe_your_needs" rows="5" placeholder="Describe your facility, the number of major HVAC systems, any known performance issues, and what you're hoping to evaluate through the pilot..." class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA] resize-none"></textarea>
+              <textarea id="pilot-description" name="describe_your_needs" rows="5" placeholder="Describe your facility, the number of major HVAC systems, any known performance issues, and what you're hoping to evaluate through the pilot..." class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA] resize-none"></textarea>
             </div>
 
             <div class="space-y-1.5">
               <label for="pilot-timeline" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Preferred Timeline</label>
-              <select id="pilot-timeline" name="timeline" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+              <select id="pilot-timeline" name="timeline" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                 <option value="">Select timeline</option>
                 <option value="asap">As soon as possible</option>
                 <option value="1-month">Within 1 month</option>

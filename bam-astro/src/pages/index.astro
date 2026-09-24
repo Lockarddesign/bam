@@ -91,7 +91,7 @@ const homeFaqs = [
         </div>
 
         <h1 class="text-[2rem] md:text-[3rem] lg:text-[3.75rem] font-black leading-[0.9] tracking-tighter text-white mb-5 md:mb-7 animate-fade-in-up opacity-0 uppercase drop-shadow-2xl" style="animation-delay: 100ms;">
-          Extending the Life of <span class="text-mint whitespace-nowrap">Mission-Critical</span> Clean Air Systems.
+          <span class="whitespace-nowrap">Extending the Life</span> <span class="whitespace-nowrap">of <span class="text-mint">Mission-Critical</span></span> <span class="whitespace-nowrap">Clean Air Systems.</span>
         </h1>
 
         <p class="text-[14px] md:text-[17px] text-light-grey/90 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light mb-7 md:mb-9 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
@@ -126,14 +126,14 @@ const homeFaqs = [
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <input type="text" name="name" required placeholder="Full Name *" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
-            <input type="text" name="companyName" placeholder="Facility / Organization" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
+            <input type="text" name="name" required placeholder="Full Name *" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
+            <input type="text" name="companyName" placeholder="Facility / Organization" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <input type="email" name="email" required placeholder="Work Email *" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
-            <input type="tel" name="phone" required placeholder="Phone *" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
+            <input type="email" name="email" required placeholder="Work Email *" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
+            <input type="tel" name="phone" required placeholder="Phone *" class="w-full bg-white/5 border border-white/15 rounded text-white placeholder:text-light-grey/50 px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all" />
           </div>
-          <select name="facility_type" class="w-full bg-white/5 border border-white/15 rounded text-light-grey/90 px-3.5 py-2.5 text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all">
+          <select name="facility_type" class="w-full bg-white/5 border border-white/15 rounded text-light-grey/90 px-3.5 py-2.5 text-base md:text-sm focus:outline-none focus:border-mint/60 focus:ring-1 focus:ring-mint/30 transition-all">
             <option value="" class="bg-dark">Facility Type</option>
             <option value="healthcare" class="bg-dark">Healthcare / Hospital</option>
             <option value="education" class="bg-dark">Education / K-12</option>
@@ -210,7 +210,7 @@ const homeFaqs = [
 
       <div class="max-w-5xl mx-auto px-6 mt-6 text-center">
         <p class="text-slate-deep text-lg md:text-[20px] font-semibold leading-relaxed">
-          Fully compliant with Joint Commission, ASHRAE, and IEQ standards. NADCA Certified · IAQA Member · Philadelphia ASHRAE Chapter · Universal EPA · OSHA 30 · PA Co-Stars
+          Fully compliant with Joint Commission, ASHRAE, and IEQ standards.<br class="hidden md:inline" /> <span class="whitespace-nowrap">NADCA Certified</span> · <span class="whitespace-nowrap">IAQA Member</span> · <span class="whitespace-nowrap">Philadelphia ASHRAE Chapter</span> · <span class="whitespace-nowrap">Universal EPA</span> · <span class="whitespace-nowrap">OSHA 30</span> · <span class="whitespace-nowrap">PA Co-Stars</span>
         </p>
       </div>
     </div>
@@ -854,49 +854,49 @@ const homeFaqs = [
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div class="space-y-1.5">
                     <label for="sv-name" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-                    <input type="text" id="sv-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                    <input type="text" id="sv-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                   </div>
                   <div class="space-y-1.5">
                     <label for="sv-title" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Title / Role</label>
-                    <input type="text" id="sv-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                    <input type="text" id="sv-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                   </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div class="space-y-1.5">
                     <label for="sv-email" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Email Address *</label>
-                    <input type="email" id="sv-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                    <input type="email" id="sv-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                   </div>
                   <div class="space-y-1.5">
                     <label for="sv-phone" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Phone Number</label>
-                    <input type="tel" id="sv-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                    <input type="tel" id="sv-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                   </div>
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="facility-name" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Name *</label>
-                  <input type="text" id="facility-name" name="companyName" placeholder="e.g. Memorial Regional Hospital" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                  <input type="text" id="facility-name" name="companyName" placeholder="e.g. Memorial Regional Hospital" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div class="space-y-1.5">
                     <label for="square-footage" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Approximate Square Footage</label>
-                    <input type="text" id="square-footage" name="square_footage" placeholder="e.g. 250,000 sq ft" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                    <input type="text" id="square-footage" name="square_footage" placeholder="e.g. 250,000 sq ft" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                   </div>
                   <div class="space-y-1.5">
                     <label for="hvac-units" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Number of HVAC Units</label>
-                    <input type="text" id="hvac-units" name="hvac_units" placeholder="e.g. 12 AHUs, 3 chillers" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                    <input type="text" id="hvac-units" name="hvac_units" placeholder="e.g. 12 AHUs, 3 chillers" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                   </div>
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="time-in-role" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Length of Time in Your Current Role</label>
-                  <input type="text" id="time-in-role" name="time_in_role" placeholder="e.g. 5 years" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                  <input type="text" id="time-in-role" name="time_in_role" placeholder="e.g. 5 years" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="summary" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Known Issues / Reason for Contact</label>
-                  <textarea id="summary" name="summary" rows="4" placeholder="Describe your current HVAC challenges, compliance concerns, or equipment issues..." class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA] resize-none"></textarea>
+                  <textarea id="summary" name="summary" rows="4" placeholder="Describe your current HVAC challenges, compliance concerns, or equipment issues..." class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA] resize-none"></textarea>
                 </div>
               </div>
 

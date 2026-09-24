@@ -78,9 +78,9 @@ const faq = service.faq;
         <span class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage">For Homeowners</span>
       </div>
 
-      <h1 class="text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms;">
+      <h1 class="text-[1.625rem] sm:text-[2rem] md:text-[3.5rem] lg:text-[4.5rem] font-black leading-[0.88] tracking-tighter res-text-ink mb-6 md:mb-10 animate-fade-in-up opacity-0 uppercase drop-shadow-sm" style="animation-delay: 100ms; text-wrap: balance;">
         {service.title}<br class="hidden md:inline" />
-        <span class="res-text-sage">in Schuylkill County.</span>
+        <span class="res-text-sage whitespace-nowrap">in Schuylkill County.</span>
       </h1>
 
       <p class="text-[14px] md:text-lg res-text-slate max-w-2xl leading-relaxed font-light mb-8 md:mb-14 opacity-0 animate-fade-in-up" style="animation-delay: 200ms;">
@@ -420,22 +420,22 @@ const faq = service.faq;
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div class="space-y-1.5">
                     <label for="sv-name" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-                    <input type="text" id="sv-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                    <input type="text" id="sv-name" name="name" required placeholder="Jane Smith" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                   </div>
                   <div class="space-y-1.5">
                     <label for="sv-phone" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Phone *</label>
-                    <input type="tel" id="sv-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                    <input type="tel" id="sv-phone" name="phone" required placeholder="(570) 555-1234" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                   </div>
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="sv-email" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Email</label>
-                  <input type="email" id="sv-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
+                  <input type="email" id="sv-email" name="email" placeholder="jane@example.com" class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400" />
                 </div>
 
                 <div class="space-y-1.5">
                   <label for="sv-message" class="res-text-slate text-[10px] font-semibold uppercase tracking-widest">Message</label>
-                  <textarea id="sv-message" name="describe_your_needs" rows="4" placeholder={`Tell us what is happening with your system. Service: ${service.title}`} class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
+                  <textarea id="sv-message" name="describe_your_needs" rows="4" placeholder={`Tell us what is happening with your system. Service: ${service.title}`} class="w-full bg-white border res-border-cream rounded res-text-ink px-4 py-3 text-base md:text-sm focus:outline-none focus:border-[var(--color-sage-deep)] focus:ring-1 focus:ring-[var(--color-sage-deep)]/20 transition-all placeholder:text-gray-400 resize-none"></textarea>
                 </div>
               </div>
 

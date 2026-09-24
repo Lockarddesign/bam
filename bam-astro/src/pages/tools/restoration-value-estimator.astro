@@ -53,7 +53,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="facilityType" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Type *</label>
-                <select id="facilityType" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="facilityType" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select facility type</option>
                   <option value="healthcare">Healthcare</option>
                   <option value="education">Education (K-12 &amp; Higher Ed)</option>
@@ -67,7 +67,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </div>
               <div class="space-y-1.5">
                 <label for="sqFt" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Square Footage *</label>
-                <select id="sqFt" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="sqFt" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select range</option>
                   <option value="under-50k">Under 50,000 sq ft</option>
                   <option value="50k-150k">50,000 to 150,000 sq ft</option>
@@ -81,7 +81,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="assetFocus" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Asset Focus *</label>
-                <select id="assetFocus" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="assetFocus" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select asset type</option>
                   <option value="cooling-tower">Cooling Tower</option>
                   <option value="chiller">Chiller</option>
@@ -90,7 +90,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </div>
               <div class="space-y-1.5">
                 <label for="assetCount" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Number of Units *</label>
-                <select id="assetCount" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="assetCount" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select count</option>
                   <option value="1">1</option>
                   <option value="2-3">2 to 3</option>
@@ -104,7 +104,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="equipmentAge" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Equipment Age *</label>
-                <select id="equipmentAge" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="equipmentAge" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select age range</option>
                   <option value="0-5">0 to 5 Years</option>
                   <option value="5-10">5 to 10 Years</option>
@@ -114,7 +114,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </div>
               <div class="space-y-1.5">
                 <label for="energySpend" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Annual Energy Spend *</label>
-                <select id="energySpend" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="energySpend" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select range</option>
                   <option value="under-50k">Under $50k</option>
                   <option value="50k-150k">$50k to $150k</option>
@@ -329,33 +329,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="space-y-1.5">
             <label for="lead-name" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-            <input type="text" id="lead-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
           <div class="space-y-1.5">
             <label for="lead-email" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Work Email *</label>
-            <input type="email" id="lead-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="email" id="lead-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="space-y-1.5">
             <label for="lead-phone" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Phone Number</label>
-            <input type="tel" id="lead-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="tel" id="lead-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
           <div class="space-y-1.5">
             <label for="lead-title" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Job Title</label>
-            <input type="text" id="lead-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="space-y-1.5">
             <label for="lead-company" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility / Company Name</label>
-            <input type="text" id="lead-company" name="companyName" placeholder="Memorial Regional Hospital" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-company" name="companyName" placeholder="Memorial Regional Hospital" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
           <div class="space-y-1.5">
             <label for="lead-location" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Location</label>
-            <input type="text" id="lead-location" name="facility_location" placeholder="Philadelphia, PA" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-location" name="facility_location" placeholder="Philadelphia, PA" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
         </div>
 
