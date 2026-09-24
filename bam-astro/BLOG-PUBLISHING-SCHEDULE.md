@@ -46,9 +46,10 @@ To move a post, change its `date`. That is the whole operation.
 ### September 24, 2026 review status
 
 Guides 02, 03, and 04 were reviewed against Travis's original PDFs and approved
-for publication. Guide 05 is held with `draft: true` pending review; its September
-22 date is preserved. Its review preview is available at
-https://blog-catchup-sep24--bamhvac.netlify.app/blog/merv-ratings-in-healthcare-ashrae-170-filter-requirements/.
+for publication. Guide 05 was also reviewed against Travis's original PDF and
+approved for publication on September 24; its September 22 date is preserved.
+Its title, introduction, and complete article body match the original, with only
+web formatting differences. No factual or editorial rewrites were made.
 Guides 06 and 07 retain their original future publication dates. A scheduled
 rebuild has not yet been configured.
 
