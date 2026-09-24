@@ -2,7 +2,7 @@
 title: "MERV Ratings in Healthcare: What ASHRAE 170 Actually Requires by Room, and the Filter Bank Mistakes That Fail Surveys"
 description: "MERV 13 is the number everyone learned in 2020. In a hospital it is wrong in both directions. Here is what ASHRAE 170 requires for each space type, where the filters have to sit, which edition your OR is held to, and the installation mistakes that turn a compliant filter into a finding."
 date: 2026-09-22
-draft: true
+draft: false
 author: "BAM Technical Team"
 image: "/images/jobs/evaporator-coil-housing-access-panel_11-04-2025.jpg"
 ---
