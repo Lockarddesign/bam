@@ -17,26 +17,28 @@ The rule lives in one place: `src/utils/posts.ts`. The blog index, the homepage,
 - In `astro dev` **every** post renders, including future-dated ones, so upcoming
   posts can be previewed locally. Dev deliberately differs from production here.
 
-## Automatic publishing and verification
+## Final two authorized releases
 
-GitHub Actions `.github/workflows/deploy.yml` rebuilds and deploys main daily at
-11:17 UTC (7:17 a.m. Eastern daylight time / 6:17 a.m. Eastern standard time).
-GitHub may delay scheduled jobs; publication occurs when the deployment completes.
-No computer needs to stay awake for the production build.
+There are only two remaining scheduled publications:
 
-Only posts on main with `draft: false` and a reached date publish. Keep unapproved
-copy in draft. Scheduling does not authorize an agent to rewrite client copy.
+- September 29, 2026: Operating Room Humidity.
+- October 6, 2026: Cleaning HVAC Systems in an Occupied Hospital.
 
-Hermes job `11510497a12e` (BAM scheduled blog verification) checks hourly on Will's
-Mac using `~/.hermes/scripts/bam_blog_check.py`. After noon UTC, it verifies due
-pages and their blog-index/sitemap entries. If a due article is missing and no
-build is active, it dispatches the existing production workflow at most once per
-UTC day. It never edits article files, dates, or draft flags. Status is saved at
-`~/.hermes/bam-blog-monitor/status.json`.
+`.github/workflows/blog-releases.yml` dispatches the existing production workflow
+at 11:17 UTC (7:17 a.m. Eastern) on each date. It checks the exact 2026 date, waits
+for a successful deployment, and verifies the live article. It disables itself
+after the October 6 release; no daily builds or ongoing Hermes checks are configured.
+GitHub may delay a scheduled run, so the time is a target rather than a guarantee.
 
-A Codex follow-up in this thread checks daily at 9:15 a.m. Eastern and reports
-missing posts, verification errors, or an inactive Hermes gateway. Local checks
-require the Mac and apps to be running; scheduled GitHub publication is independent.
+A Codex follow-up runs twice, on those Tuesdays at 8 a.m. Eastern, verifies the
+article and notifies Will with its live link for review. Publication is already
+authorized and does not wait for another approval. If the build failed, the
+follow-up may retry once and then report the actual result. App notifications
+require Codex to run; the GitHub releases do not depend on Will's Mac being awake.
+
+Both remaining titles, introductions, and full article bodies were compared to
+Travis's original Basecamp PDFs on September 24. Copy is unchanged; PDF line wraps,
+repeated table headers, and list/table numbering are presentation differences.
 
 ## The BAM Technical Guide series
 
@@ -59,7 +61,7 @@ for publication. Guide 05 was also reviewed against Travis's original PDF and
 approved for publication on September 24; its September 22 date is preserved.
 Its title, introduction, and complete article body match the original, with only
 web formatting differences. No factual or editorial rewrites were made.
-Guides 06 and 07 retain their original future publication dates. The scheduled rebuild and Hermes verification are now configured.
+Guides 06 and 07 retain their original future publication dates. The two dated releases above replace the previous daily rebuild and hourly Hermes checks.
 
 ## One follow-up after Guide 03 publishes (2026-09-08)
 
