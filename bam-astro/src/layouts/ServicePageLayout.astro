@@ -54,6 +54,7 @@ const {
 } = Astro.props;
 
 const categoryLabel = category === 'core' ? 'Core Service' : 'Specialty Service';
+import SectionCta from '../components/SectionCta.astro';
 ---
 
 <BaseLayout
@@ -83,6 +84,7 @@ const categoryLabel = category === 'core' ? 'Core Service' : 'Specialty Service'
         {shortDescription}
       </p>
     </div>
+    <SectionCta tone="dark" class="px-6" />
   </section>
 
   <!-- ════════════════════ DIAGNOSTICS ════════════════════ -->
@@ -151,6 +153,7 @@ const categoryLabel = category === 'core' ? 'Core Service' : 'Specialty Service'
         ))}
       </div>
     </div>
+    <SectionCta tone="light" class="px-6" />
   </section>
 
   <!-- ════════════════════ GALLERY ════════════════════ -->
@@ -219,6 +222,7 @@ const categoryLabel = category === 'core' ? 'Core Service' : 'Specialty Service'
         </div>
       </div>
     </div>
+    <SectionCta tone="dark" class="px-6" />
   </section>
 
   <!-- ════════════════════ FAQ ════════════════════ -->

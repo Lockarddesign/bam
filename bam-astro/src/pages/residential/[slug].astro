@@ -33,6 +33,7 @@ const breadcrumbs = [
 const included = service.included;
 const process = res.process;
 const faq = service.faq;
+import SectionCta from '../../components/SectionCta.astro';
 ---
 
 <ResidentialLayout
@@ -134,6 +135,7 @@ const faq = service.faq;
         ))}
       </ul>
     </div>
+    <SectionCta tone="residential" class="px-6" />
   </section>
 
   {service.id === 'maintenance-plans' && (
@@ -171,7 +173,12 @@ const faq = service.faq;
                   </li>
                 ))}
               </ul>
-              <div class={`text-xs font-semibold uppercase tracking-[0.14em] pt-4 border-t ${plan.featured ? 'border-white/20 text-white/80' : 'border-[var(--color-warm-line)] res-text-slate'}`}>{plan.price}</div>
+              <div class={`pt-4 border-t ${plan.featured ? 'border-white/20' : 'border-[var(--color-warm-line)]'}`}>
+                <a data-open-quote href="/contact/" class={`inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-sm text-xs font-bold uppercase tracking-[0.16em] no-underline transition-opacity hover:opacity-90 ${plan.featured ? 'bg-white text-[var(--color-sage-deep)]' : 'bg-[var(--color-sage-deep)] text-white'}`}>
+                  {plan.price}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+              </div>
             </div>
           ))}
         </div>
@@ -237,6 +244,7 @@ const faq = service.faq;
         ))}
       </div>
     </div>
+    <SectionCta tone="residential" class="px-6" />
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
@@ -316,6 +324,7 @@ const faq = service.faq;
         ))}
       </ul>
     </div>
+    <SectionCta tone="residential" class="px-6" />
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════

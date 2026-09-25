@@ -1,0 +1,48 @@
+---
+/**
+ * SectionCta — the CTA row dropped at the end of content sections so a visitor
+ * is never more than a section away from the opt-in drawer. The primary
+ * button opens QuoteDrawer (data-open-quote); /contact/ is the no-JS fallback.
+ */
+import { siteConfig } from '../config/site.config';
+
+interface Props {
+  tone?: 'light' | 'dark' | 'residential';
+  label?: string;
+  align?: 'center' | 'left';
+  class?: string;
+}
+const { tone = 'light', label, align = 'center', class: extra = '' } = Astro.props;
+const isResidential = tone === 'residential';
+const buttonLabel = label ?? (isResidential ? (siteConfig.residential?.ctaLabel ?? 'Get a Free Estimate') : 'Request a Site Visit');
+const phone = isResidential ? (siteConfig.residential?.phone ?? siteConfig.phone) : siteConfig.phone;
+const phoneRaw = isResidential ? (siteConfig.residential?.phoneRaw ?? siteConfig.phoneRaw) : siteConfig.phoneRaw;
+
+const primary = {
+  light: 'bg-primary text-white hover:bg-[#1e483b]',
+  dark: 'bg-mint text-primary hover:bg-white',
+  residential: 'bg-[var(--color-sage-deep)] text-white hover:opacity-90',
+}[tone];
+const secondary = {
+  light: 'border border-primary/30 text-primary hover:border-primary',
+  dark: 'border border-white/25 text-white hover:border-white/60',
+  residential: 'border res-border-cream res-text-ink hover:border-[var(--color-sage-deep)]',
+}[tone];
+---
+
+<div class={`relative z-10 mt-10 md:mt-12 flex flex-col sm:flex-row gap-3 ${align === 'center' ? 'items-center justify-center' : 'items-center sm:items-start justify-start'} ${extra}`}>
+  <a
+    data-open-quote
+    href="/contact/"
+    class={`inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm text-xs font-bold uppercase tracking-[0.18em] whitespace-nowrap no-underline transition-colors ${primary}`}
+  >
+    {buttonLabel}
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </a>
+  <a
+    href={`tel:${phoneRaw}`}
+    class={`inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm text-xs font-bold uppercase tracking-[0.18em] whitespace-nowrap no-underline transition-colors ${secondary}`}
+  >
+    Call {phone}
+  </a>
+</div>
