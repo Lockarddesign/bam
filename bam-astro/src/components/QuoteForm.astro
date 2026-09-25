@@ -39,12 +39,12 @@ const inquiryTypes = [
 const residentialServices = siteConfig.residential?.services ?? [];
 
 const field = isResidential
-  ? 'w-full bg-white border res-border-cream rounded-sm px-3.5 py-2.5 text-base md:text-sm res-text-ink placeholder:text-gray-400 focus:outline-none focus:border-[var(--color-sage-deep)] transition-colors'
-  : 'w-full bg-white/[0.06] border border-white/15 rounded-sm px-3.5 py-2.5 text-base md:text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-mint transition-colors';
+  ? 'w-full bg-white border res-border-cream rounded-sm px-4 py-2.5 md:py-4 text-base md:text-[15px] res-text-ink placeholder:text-gray-400 focus:outline-none focus:border-[var(--color-sage-deep)] transition-colors'
+  : 'w-full bg-white/[0.06] border border-white/15 rounded-sm px-4 py-2.5 [@media(min-width:768px)_and_(min-height:860px)]:py-3.5 text-base md:text-[15px] text-white placeholder:text-white/40 focus:outline-none focus:border-mint transition-colors';
 const selectCls = isResidential ? 'cursor-pointer' : 'cursor-pointer [&>option]:bg-dark [&>option]:text-white';
 const submit = isResidential
-  ? 'w-full inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-sage-deep)] text-white font-bold text-xs tracking-[0.18em] uppercase px-6 py-3.5 hover:opacity-90 transition-opacity'
-  : 'w-full inline-flex items-center justify-center gap-2 rounded-sm bg-primary text-white font-bold text-xs tracking-[0.18em] uppercase px-6 py-3.5 hover:bg-mint hover:text-primary transition-colors';
+  ? 'w-full inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-sage-deep)] text-white font-bold text-xs tracking-[0.18em] uppercase px-6 py-3.5 md:py-4 hover:opacity-90 transition-opacity'
+  : 'w-full inline-flex items-center justify-center gap-2 rounded-sm bg-primary text-white font-bold text-xs tracking-[0.18em] uppercase px-6 py-3.5 md:py-4 hover:bg-mint hover:text-primary transition-colors';
 const fine = isResidential ? 'res-text-slate' : 'text-white/45';
 const checkText = isResidential ? 'res-text-slate' : 'text-white/70';
 ---
@@ -55,7 +55,7 @@ const checkText = isResidential ? 'res-text-slate' : 'text-white/70';
   action="/thank-you/"
   data-netlify="true"
   netlify-honeypot="bot-field"
-  class="flex flex-col gap-2.5"
+  class={`flex flex-col gap-2.5 ${isResidential ? 'md:gap-4' : '[@media(min-width:768px)_and_(min-height:860px)]:gap-3'}`}
 >
   <input type="hidden" name="form-name" value={formName} />
   <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -66,12 +66,11 @@ const checkText = isResidential ? 'res-text-slate' : 'text-white/70';
       <label class="sr-only" for="qd-residential-name">Full Name</label>
       <input id="qd-residential-name" type="text" name="name" required autocomplete="name" placeholder="Full Name *" class={field} />
 
-      <div class="grid grid-cols-2 gap-2.5">
-        <label class="sr-only" for="qd-residential-phone">Phone</label>
-        <input id="qd-residential-phone" type="tel" name="phone" required autocomplete="tel" placeholder="Phone *" class={field} />
-        <label class="sr-only" for="qd-residential-email">Email</label>
-        <input id="qd-residential-email" type="email" name="email" autocomplete="email" placeholder="Email" class={field} />
-      </div>
+      <label class="sr-only" for="qd-residential-email">Email</label>
+      <input id="qd-residential-email" type="email" name="email" autocomplete="email" placeholder="Email" class={field} />
+
+      <label class="sr-only" for="qd-residential-phone">Phone</label>
+      <input id="qd-residential-phone" type="tel" name="phone" required autocomplete="tel" placeholder="Phone *" class={field} />
 
       <label class="sr-only" for="qd-residential-service">Service Needed</label>
       <select id="qd-residential-service" name="service" class={`${field} ${selectCls}`}>
@@ -83,45 +82,42 @@ const checkText = isResidential ? 'res-text-slate' : 'text-white/70';
       </select>
 
       <label class="sr-only" for="qd-residential-msg">Message</label>
-      <textarea id="qd-residential-msg" name="describe_your_needs" rows="3" placeholder="Tell us a bit about your home and what you are looking for." class={`${field} resize-none`}></textarea>
+      <textarea id="qd-residential-msg" name="describe_your_needs" rows="3" placeholder="Tell us a bit about your home and what you are looking for." class={`${field} resize-none ${isResidential ? 'md:min-h-[10rem]' : '[@media(min-width:768px)_and_(min-height:860px)]:min-h-[7rem]'}`}></textarea>
     </>
   ) : (
     <>
-      <div class="grid grid-cols-2 gap-2.5">
-        <label class="sr-only" for="qd-commercial-name">Full Name</label>
-        <input id="qd-commercial-name" type="text" name="name" required autocomplete="name" placeholder="Full Name *" class={field} />
-        <label class="sr-only" for="qd-commercial-title">Title or Role</label>
-        <input id="qd-commercial-title" type="text" name="job_title" autocomplete="organization-title" placeholder="Title / Role" class={field} />
-      </div>
+      <label class="sr-only" for="qd-commercial-name">Full Name</label>
+      <input id="qd-commercial-name" type="text" name="name" required autocomplete="name" placeholder="Full Name *" class={field} />
 
-      <div class="grid grid-cols-2 gap-2.5">
-        <label class="sr-only" for="qd-commercial-email">Email</label>
-        <input id="qd-commercial-email" type="email" name="email" required autocomplete="email" placeholder="Email *" class={field} />
-        <label class="sr-only" for="qd-commercial-phone">Phone</label>
-        <input id="qd-commercial-phone" type="tel" name="phone" autocomplete="tel" placeholder="Phone" class={field} />
-      </div>
+      <label class="sr-only" for="qd-commercial-email">Email</label>
+      <input id="qd-commercial-email" type="email" name="email" required autocomplete="email" placeholder="Email *" class={field} />
+
+      <label class="sr-only" for="qd-commercial-title">Title or Role</label>
+      <input id="qd-commercial-title" type="text" name="job_title" autocomplete="organization-title" placeholder="Title / Role" class={field} />
+
+      <label class="sr-only" for="qd-commercial-phone">Phone</label>
+      <input id="qd-commercial-phone" type="tel" name="phone" autocomplete="tel" placeholder="Phone" class={field} />
 
       <label class="sr-only" for="qd-commercial-org">Organization or Facility</label>
       <input id="qd-commercial-org" type="text" name="companyName" autocomplete="organization" placeholder="Organization / Facility" class={field} />
 
-      <div class="grid grid-cols-2 gap-2.5">
-        <label class="sr-only" for="qd-commercial-facility">Facility Type</label>
-        <select id="qd-commercial-facility" name="facility_type" class={`${field} ${selectCls}`}>
-          <option value="">Facility Type</option>
-          {facilityTypes.map(([v, l]) => (
-            <option value={v}>{l}</option>
-          ))}
-        </select>
-        <label class="sr-only" for="qd-commercial-inquiry">Inquiry Type</label>
-        <select id="qd-commercial-inquiry" name="inquiry_type" class={`${field} ${selectCls}`}>
-          {inquiryTypes.map(([v, l]) => (
-            <option value={v}>{l}</option>
-          ))}
-        </select>
-      </div>
+      <label class="sr-only" for="qd-commercial-facility">Facility Type</label>
+      <select id="qd-commercial-facility" name="facility_type" class={`${field} ${selectCls}`}>
+        <option value="">Facility Type</option>
+        {facilityTypes.map(([v, l]) => (
+          <option value={v}>{l}</option>
+        ))}
+      </select>
+
+      <label class="sr-only" for="qd-commercial-inquiry">Inquiry Type</label>
+      <select id="qd-commercial-inquiry" name="inquiry_type" class={`${field} ${selectCls}`}>
+        {inquiryTypes.map(([v, l]) => (
+          <option value={v}>{l}</option>
+        ))}
+      </select>
 
       <label class="sr-only" for="qd-commercial-msg">Describe Your Needs</label>
-      <textarea id="qd-commercial-msg" name="describe_your_needs" rows="3" placeholder="Describe your current HVAC challenges, compliance concerns, or what you're looking for." class={`${field} resize-none`}></textarea>
+      <textarea id="qd-commercial-msg" name="describe_your_needs" rows="3" placeholder="Describe your current HVAC challenges, compliance concerns, or what you're looking for." class={`${field} resize-none ${isResidential ? 'md:min-h-[10rem]' : '[@media(min-width:768px)_and_(min-height:860px)]:min-h-[7rem]'}`}></textarea>
 
       <label class="flex items-start gap-2.5 cursor-pointer">
         <input type="checkbox" name="on_site_auditor" value="yes" class="mt-0.5 w-4 h-4 accent-mint flex-shrink-0" />
