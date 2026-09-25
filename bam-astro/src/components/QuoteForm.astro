@@ -52,7 +52,7 @@ const checkText = isResidential ? 'res-text-slate' : 'text-white/70';
 <form
   name={formName}
   method="POST"
-  action="/thank-you/"
+  action={isResidential ? '/residential/thank-you/' : '/thank-you/'}
   data-netlify="true"
   netlify-honeypot="bot-field"
   class={`flex flex-col gap-2.5 ${isResidential ? 'md:gap-4' : '[@media(min-width:768px)_and_(min-height:860px)]:gap-3'}`}

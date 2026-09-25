@@ -125,7 +125,7 @@ import SectionCta from '../../components/SectionCta.astro';
 
       <!-- RIGHT, opt-in form -->
       <div class="w-full animate-fade-in-up opacity-0" style="animation-delay: 250ms;">
-        <form name="residential-hero-quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="bg-white border res-border-cream rounded-xl p-6 md:p-8 shadow-[0_24px_60px_-24px_rgba(14,20,19,0.18)] space-y-4">
+        <form name="residential-hero-quote" method="POST" action="/residential/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="bg-white border res-border-cream rounded-xl p-6 md:p-8 shadow-[0_24px_60px_-24px_rgba(14,20,19,0.18)] space-y-4">
           <input type="hidden" name="form-name" value="residential-hero-quote" />
           <input type="hidden" name="inquiry_type" value="quote" />
           <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
@@ -520,7 +520,7 @@ import SectionCta from '../../components/SectionCta.astro';
               </p>
             </div>
 
-            <form name="residential-bottom-quote" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+            <form name="residential-bottom-quote" method="POST" action="/residential/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="residential-bottom-quote" />
               <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 

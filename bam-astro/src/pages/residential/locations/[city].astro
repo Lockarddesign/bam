@@ -375,7 +375,7 @@ import SectionCta from '../../../components/SectionCta.astro';
               </p>
             </div>
 
-            <form name={`residential-${city.slug}-quote`} method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
+            <form name={`residential-${city.slug}-quote`} method="POST" action="/residential/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value={`residential-${city.slug}-quote`} />
               <input type="hidden" name="facility_location" value={`${city.name}, ${city.state}`} />
               <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
