@@ -1,0 +1,96 @@
+---
+/**
+ * QuoteForm — the compact lead form inside QuoteDrawer. Field names match the
+ * hero forms (site-visit-quick / residential-hero-quote) so BAM OPS maps them
+ * the same way. Keep it short: the drawer must fit one viewport with no scroll.
+ */
+import { siteConfig } from '../config/site.config';
+
+interface Props {
+  variant?: 'commercial' | 'residential';
+}
+const { variant = 'commercial' } = Astro.props;
+const isResidential = variant === 'residential';
+
+const formName = isResidential ? 'residential-drawer-quote' : 'site-visit-drawer';
+const submitLabel = isResidential ? 'Get a Free Estimate' : 'Request Site Visit';
+
+const facilityTypes = [
+  ['healthcare', 'Healthcare / Hospital'],
+  ['education', 'Education / K-12'],
+  ['government', 'Government / Federal'],
+  ['industrial', 'Industrial / Plant'],
+  ['data-center', 'Data Center'],
+  ['commercial', 'Commercial'],
+  ['other', 'Other'],
+];
+const residentialServices = siteConfig.residential?.services ?? [];
+
+const field = isResidential
+  ? 'w-full bg-white border res-border-cream rounded-sm px-4 py-3 text-base md:text-sm res-text-ink placeholder:text-gray-400 focus:outline-none focus:border-[var(--color-sage-deep)] transition-colors'
+  : 'w-full bg-white/[0.06] border border-white/15 rounded-sm px-4 py-3 text-base md:text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-mint transition-colors';
+const submit = isResidential
+  ? 'w-full inline-flex items-center justify-center gap-2 rounded-sm bg-[var(--color-sage-deep)] text-white font-bold text-xs tracking-[0.18em] uppercase px-6 py-4 hover:opacity-90 transition-opacity'
+  : 'w-full inline-flex items-center justify-center gap-2 rounded-sm bg-primary text-white font-bold text-xs tracking-[0.18em] uppercase px-6 py-4 hover:bg-mint hover:text-primary transition-colors';
+const fine = isResidential ? 'res-text-slate' : 'text-white/45';
+---
+
+<form
+  name={formName}
+  method="POST"
+  action="/thank-you/"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="flex flex-col gap-3"
+>
+  <input type="hidden" name="form-name" value={formName} />
+  <input type="hidden" name="inquiry_type" value={isResidential ? 'quote' : 'site-visit'} />
+  <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+  <label class="sr-only" for={`qd-${variant}-name`}>Full Name</label>
+  <input id={`qd-${variant}-name`} type="text" name="name" required autocomplete="name" placeholder="Full Name *" class={field} />
+
+  {!isResidential && (
+    <>
+      <label class="sr-only" for="qd-commercial-company">Facility or Organization</label>
+      <input id="qd-commercial-company" type="text" name="companyName" autocomplete="organization" placeholder="Facility / Organization" class={field} />
+    </>
+  )}
+
+  <label class="sr-only" for={`qd-${variant}-phone`}>Phone</label>
+  <input id={`qd-${variant}-phone`} type="tel" name="phone" required autocomplete="tel" placeholder="Phone *" class={field} />
+
+  <label class="sr-only" for={`qd-${variant}-email`}>Email</label>
+  <input id={`qd-${variant}-email`} type="email" name="email" required autocomplete="email" placeholder={isResidential ? 'Email *' : 'Work Email *'} class={field} />
+
+  {isResidential ? (
+    <>
+      <label class="sr-only" for="qd-residential-service">Service Needed</label>
+      <select id="qd-residential-service" name="service" class={`${field} cursor-pointer`}>
+        <option value="">Service Needed</option>
+        {residentialServices.map((s: any) => (
+          <option value={s.slug}>{s.title}</option>
+        ))}
+        <option value="not-sure">Not sure yet</option>
+      </select>
+    </>
+  ) : (
+    <>
+      <label class="sr-only" for="qd-commercial-facility">Facility Type</label>
+      <select id="qd-commercial-facility" name="facility_type" class={`${field} cursor-pointer [&>option]:bg-dark [&>option]:text-white`}>
+        <option value="">Facility Type</option>
+        {facilityTypes.map(([v, l]) => (
+          <option value={v}>{l}</option>
+        ))}
+      </select>
+    </>
+  )}
+
+  <button type="submit" class={`${submit} mt-1`}>
+    {submitLabel}
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+  </button>
+  <p class={`text-xs text-center ${fine}`}>
+    {isResidential ? 'No obligation. Free home estimate.' : 'No obligation. We respond within one business day.'}
+  </p>
+</form>
