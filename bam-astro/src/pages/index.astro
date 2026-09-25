@@ -567,7 +567,7 @@ import SectionCta from '../components/SectionCta.astro';
       >
         {allPosts.map((post, i) => {
           const isClone = false; // clones are added by JS post-load to shrink initial DOM
-          const dateStr = post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+          const dateStr = post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
           return (
             <a
               href={`/blog/${post.slug}/`}
