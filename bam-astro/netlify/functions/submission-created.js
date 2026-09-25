@@ -16,6 +16,10 @@ exports.handler = async (event) => {
   try {
     const { payload } = JSON.parse(event.body || "{}");
     const data = (payload && payload.data) ? payload.data : {};
+    // Tell BAM OPS which form the lead came from (e.g. residential-drawer-quote
+    // vs site-visit-drawer) so residential and commercial leads can be routed.
+    // Kept flat: the ingest API rejects a wrapped envelope.
+    const body = { ...data, form_name: (payload && payload.form_name) || data["form-name"] || "" };
 
     // Optional: only forward BAM's lead form(s). Netlify gives payload.form_name.
     // Uncomment + adjust if the site grows other forms (newsletter, etc.).
@@ -35,7 +39,7 @@ exports.handler = async (event) => {
         "content-type": "application/json",
         "x-ingest-key": process.env.BAM_INGEST_KEY,
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(body),
     });
 
     if (!res.ok) {
