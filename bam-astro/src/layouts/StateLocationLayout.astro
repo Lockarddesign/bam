@@ -38,6 +38,10 @@ interface Props {
 }
 
 const props = Astro.props;
+// Pages don't pass a full state name; map it from stateAbbrev.
+const stateNames: Record<string, string> = { PA: 'Pennsylvania', NJ: 'New Jersey', MD: 'Maryland', DE: 'Delaware', NY: 'Southern New York' };
+const stateName = stateNames[props.stateAbbrev] ?? props.locationData?.state ?? props.stateAbbrev;
+import SectionCta from '../components/SectionCta.astro';
 ---
 
 <BaseLayout
@@ -49,7 +53,7 @@ const props = Astro.props;
     { name: props.title, url: Astro.url.pathname },
   ]}
   mapEmbedUrl={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(props.mapQuery)}&zoom=${props.mapZoom ?? 7}`}
-  mapLabel={props.state}
+  mapLabel={props.mapLabel ?? stateName}
 >
 
 <!-- Hero -->
@@ -70,7 +74,7 @@ const props = Astro.props;
         {props.heroBody}
       </p>
       <div class="flex flex-col sm:flex-row items-center gap-6">
-        <a href="/contact/" class="inline-flex items-center justify-center px-10 py-4 bg-white text-primary font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-mint transition-colors no-underline">
+        <a data-open-quote href="/contact/" class="inline-flex items-center justify-center px-10 py-4 bg-white text-primary font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-mint transition-colors no-underline">
           Validate Portfolio Alignment
         </a>
       </div>
@@ -120,7 +124,8 @@ const props = Astro.props;
       ))}
     </div>
   </div>
-</section>
+  <SectionCta tone="light" class="px-6" />
+  </section>
 
 <!-- Facility Types -->
 <section class="bg-white border-y border-light-grey/40 py-20 md:py-28">
@@ -173,7 +178,7 @@ const props = Astro.props;
           <li class="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Unified Compliance Reporting</li>
           <li class="flex gap-2 items-center"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary shrink-0"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Capital Planning & Audits</li>
         </ul>
-        <a href="/contact/" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary text-white font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-[#1e483b] transition-colors no-underline">Connect with State Coordinator</a>
+        <a data-open-quote href="/contact/" class="inline-flex items-center justify-center w-full px-6 py-3 bg-primary text-white font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-[#1e483b] transition-colors no-underline">Connect with State Coordinator</a>
       </div>
       <div class="p-10 border border-light-grey/60 bg-white hover:border-mint/40 transition-colors rounded-sm">
         <h3 class="text-xl font-bold text-slate mb-4">Regional Execution</h3>
@@ -219,10 +224,11 @@ const props = Astro.props;
       </div>
     </div>
   </div>
-</section>
+  <SectionCta tone="dark" class="px-6" />
+  </section>
 
 <!-- FAQ -->
-<LocalFAQ cityName={props.state} />
+<LocalFAQ cityName={stateName} />
 
 <!-- CTA -->
 <section class="bg-white border-t border-light-grey/40 py-20 md:py-28">
@@ -230,7 +236,7 @@ const props = Astro.props;
     <h2 class="text-3xl md:text-5xl font-bold text-primary mb-8 tracking-tight">{props.ctaTitle}</h2>
     <p class="text-slate text-lg mb-12 font-light max-w-2xl mx-auto opacity-90">{props.ctaBody}</p>
     <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
-      <a href="/contact/" class="inline-flex items-center justify-center px-10 py-4 bg-primary text-white font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-[#1e483b] transition-colors no-underline">
+      <a data-open-quote href="/contact/" class="inline-flex items-center justify-center px-10 py-4 bg-primary text-white font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-[#1e483b] transition-colors no-underline">
         Request Alignment Review
       </a>
       <div class="flex flex-col items-start text-left">

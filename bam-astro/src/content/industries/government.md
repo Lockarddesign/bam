@@ -5,13 +5,13 @@ icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0
 
 challenges:
   heading: "HVAC Challenges in Government Facilities"
-  introText: "Government buildings — from courthouses and administrative centers to secure federal installations — demand a level of discretion, documentation, and zero-disruption execution that most contractors cannot provide."
+  introText: "Government buildings, from courthouses and administrative centers to secure federal installations, demand a level of discretion, documentation, and zero-disruption execution that most contractors cannot provide."
   cards:
     - title: "Security Protocols"
       description: "Technicians working in secure environments must operate under strict clearance, escort, and access protocols without compromise."
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>'
     - title: "Documentation Standards"
-      description: "Federal and state facilities require audit-grade documentation — before/after evidence, compliance certifications, and chain-of-custody records."
+      description: "Federal and state facilities require audit-grade documentation, before/after evidence, compliance certifications, and chain-of-custody records."
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>'
     - title: "Zero-Disruption Mandate"
       description: "Government operations cannot be interrupted. All HVAC work must be coordinated around facility schedules with absolute precision."
@@ -20,7 +20,7 @@ challenges:
       description: "PA COSTARS contracting, state procurement requirements, and prevailing wage considerations add layers of complexity to every project."
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>'
   sidebarQuote:
-    text: "We trust BAM inside our secure facilities because they understand that discretion and documentation aren't optional — they're mandatory."
+    text: "We trust BAM inside our secure facilities because they understand that discretion and documentation aren't optional, they're mandatory."
     author: "Facilities Management Officer"
     role: "Federal Government Facility, PA"
 
@@ -55,7 +55,7 @@ faq:
   - question: "What documentation does BAM provide for government HVAC restoration projects?"
     answer: "Every project produces audit-grade documentation including before-and-after photographic evidence, equipment condition assessments, compliance certifications, chain-of-custody records, and closeout reports. This level of documentation satisfies federal and state facility management audit requirements and supports future capital planning and budget justification."
   - question: "Can BAM perform HVAC restoration without disrupting government operations?"
-    answer: "Yes. BAM engineers phased work plans coordinated around facility schedules, security protocols, and operational priorities. We have completed full cooling tower restorations and multi-floor duct cleaning inside active government buildings with zero disruption to daily operations—the same standard we maintain at hospitals and manufacturing plants."
+    answer: "Yes. BAM engineers phased work plans coordinated around facility schedules, security protocols, and operational priorities. We have completed full cooling tower restorations and multi-floor duct cleaning inside active government buildings with zero disruption to daily operations, the same standard we maintain at hospitals and manufacturing plants."
   - question: "What Legionella risk management does BAM provide for government cooling towers?"
     answer: "BAM's cooling tower decontamination and restoration protocol aligns with ASHRAE Standard 188 for Legionellosis risk management. We remove biofilm and sediment that harbor Legionella pneumophila, coordinate with your water treatment vendor, and provide documentation that demonstrates compliance with CDC and state health department guidelines."
   - question: "How does BAM handle prevailing wage and procurement compliance for government projects?"

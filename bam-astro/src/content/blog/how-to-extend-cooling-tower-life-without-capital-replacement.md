@@ -7,7 +7,7 @@ author: "BAM Technical Team"
 image: "https://images.unsplash.com/photo-1761115435501-bebf019aba54?auto=format&fit=crop&w=800&q=80"
 ---
 
-For facility directors, the phrase "capital replacement" is often met with a sense of dread. It signifies a significant, often unplanned, budget expenditure, along with operational disruptions and a lengthy procurement process. When a mission-critical cooling tower is the subject of this conversation, the stakes are even higher. A failing cooling tower can cripple production, compromise occupant comfort, and drive energy costs sky-high. But what if there was a third option — a strategic alternative to the binary choice of "run to fail" or "replace"?
+For facility directors, the phrase "capital replacement" is often met with a sense of dread. It signifies a significant, often unplanned, budget expenditure, along with operational disruptions and a lengthy procurement process. When a mission-critical cooling tower is the subject of this conversation, the stakes are even higher. A failing cooling tower can cripple production, compromise occupant comfort, and drive energy costs sky-high. But what if there was a third option, a strategic alternative to the binary choice of "run to fail" or "replace"?
 
 This article explores the significant opportunity that cooling tower refurbishment presents for facility managers. We will delve into the financial and operational benefits of restoration over replacement, outline a clear pathway for a successful refurbishment project, and provide the decision-making criteria you need to extend the life of your critical assets by 5 to 10 years, or even more.
 
@@ -40,7 +40,7 @@ A professional cooling tower refurbishment project is a systematic process desig
 2. **Basin Restoration and Lining:** The cooling tower basin is a critical component that is prone to corrosion and leaks. Our process includes draining and cleaning the basin, sandblasting the surfaces to remove all corrosion and contaminants, and applying a high-performance epoxy lining that provides a durable, long-lasting barrier against future corrosion.
 3. **Fill Media Replacement:** The fill media is the heart of the cooling tower, providing the surface area for heat exchange. Over time, it can become clogged with scale and biofilm, severely restricting airflow and reducing efficiency. We remove the old fill media and replace it with new, high-efficiency media selected based on the specific requirements of your system.
 4. **Mechanical System Overhaul:** We inspect and refurbish all mechanical components, including the fan, motor, gearbox, and driveshaft. This may include bearing replacement, shaft alignment, and motor testing to ensure reliable and efficient operation.
-5. **Post-Refurbishment Verification:** Once the refurbishment is complete, we conduct a series of tests to verify the performance of the cooling tower — measuring airflow, water flow, and energy consumption to document the improvements and provide you with a clear understanding of the ROI.
+5. **Post-Refurbishment Verification:** Once the refurbishment is complete, we conduct a series of tests to verify the performance of the cooling tower, measuring airflow, water flow, and energy consumption to document the improvements and provide you with a clear understanding of the ROI.
 
 ## Key Components of a Successful Refurbishment Project
 

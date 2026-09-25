@@ -25,7 +25,7 @@ diagnostics:
 
 protocol:
   title: "Remediation Standard (S520)"
-  description: "We follow the IICRC S520 Standard for Professional Mold Remediation."
+  description: "We follow the IICRC S520 Standard for Professional Mold Remediation. We use barriers and there are 4 levels of containment depending on the hazard level."
   steps:
     - title: "Engineering Controls"
       description: "Erecting critical barriers and establishing negative air pressure."
@@ -65,7 +65,7 @@ faq:
   - question: "Does commercial mold remediation require building evacuation?"
     answer: "In most cases, no. BAM erects critical containment barriers with negative air pressure to isolate the work zone, allowing normal operations to continue in adjacent areas. For healthcare facilities, we coordinate containment protocols with infection control teams to maintain patient safety throughout the remediation process."
   - question: "Is spraying chemicals an acceptable mold remediation method?"
-    answer: "No. IICRC S520 and industry consensus require physical source removal—not chemical encapsulation—as the primary remediation method. BAM performs HEPA vacuuming, damp wiping, and abrasive cleaning to remove the biomass. EPA-registered biocides are applied only for surface sanitization after the growth has been physically removed."
+    answer: "No. IICRC S520 and industry consensus require physical source removal, not chemical encapsulation, as the primary remediation method. BAM performs HEPA vacuuming, damp wiping, and abrasive cleaning to remove the biomass. EPA-registered biocides are applied only for surface sanitization after the growth has been physically removed."
   - question: "What standard does commercial mold remediation follow?"
     answer: "BAM follows the IICRC S520 Standard for Professional Mold Remediation, which governs containment, source removal, and clearance verification. For healthcare environments, we also align with Joint Commission infection control risk assessment (ICRA) protocols. Every project includes documentation sufficient for insurance, legal, and accreditation purposes."
   - question: "How does mold in HVAC systems spread contamination through a building?"

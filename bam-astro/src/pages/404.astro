@@ -83,7 +83,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
           Back to Home
         </a>
-        <a
+        <a data-open-quote
           href="/contact/"
           class="inline-flex items-center gap-2 border-2 border-primary text-primary px-6 py-3 font-bold text-sm tracking-wide rounded-sm hover:bg-primary hover:text-white transition-colors no-underline"
         >
@@ -111,7 +111,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-top: 5em;
   }
 
-  /* Antenna ball — primary green */
+  /* Antenna ball, primary green */
   .tv-antenna {
     width: 5em;
     height: 5em;
@@ -216,7 +216,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     z-index: 10;
   }
 
-  /* TV body — green themed */
+  /* TV body, green themed */
   .tv-body {
     width: 17em;
     height: 9em;
@@ -386,7 +386,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-radius: 25px 25px 0 0;
   }
 
-  /* Buttons panel — lighter green */
+  /* Buttons panel, lighter green */
   .tv-buttons {
     width: 4.25em;
     align-self: center;

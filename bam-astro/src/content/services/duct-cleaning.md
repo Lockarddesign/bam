@@ -25,19 +25,21 @@ diagnostics:
 
 protocol:
   title: "Source Removal Methodology"
-  description: "We do not just encapsulate dirt. We remove it using high-velocity negative air and mechanical agitation."
+  description: "We do not just encapsulate dirt. We contain and isolate first, then remove it with rotary brushes and air rake tools under negative air. We use a portable ICRA tent to meet ICRA and clean room standards."
   steps:
     - title: "Negative Air Connection"
       description: "Connecting high-volume vacuum trucks or portable collectors to the main trunk."
       details:
-        - "Zone isolation"
+        - "Contain and isolate"
+        - "Portable ICRA tent"
         - "Static pressure maintenance"
         - "Contaminant capture"
     - title: "Mechanical Agitation"
-      description: "Using air whips, brushes, and skipper balls to dislodge debris."
+      description: "Rotary brushes and air rake tools dislodge debris so it can be captured."
       details:
+        - "Rotary brushes"
+        - "Air rake tools"
         - "Compressed air whips"
-        - "Rotary brushing"
         - "Robotic inspection"
     - title: "Component Cleaning"
       description: "Cleaning registers, diffusers, VAV boxes, and reheat coils."
@@ -63,7 +65,7 @@ roi:
 
 faq:
   - question: "What is the difference between NADCA-aligned duct cleaning and standard duct cleaning?"
-    answer: "NADCA ACR (Assessment, Cleaning, and Restoration) requires source removal—physically extracting contaminants using negative air and mechanical agitation—rather than simply blowing debris around. BAM follows this standard on every project, using vacuum trucks and rotary tools to verify measurable cleanliness levels with before-and-after documentation."
+    answer: "NADCA ACR (Assessment, Cleaning, and Restoration) requires source removal, physically extracting contaminants using negative air and mechanical agitation, rather than simply blowing debris around. BAM follows this standard on every project, using vacuum trucks and rotary tools to verify measurable cleanliness levels with before-and-after documentation."
   - question: "Does commercial duct cleaning disrupt building occupancy?"
     answer: "Typically, no. BAM isolates zones and maintains static pressure in active portions of the system while cleaning proceeds section by section. In hospitals and schools, we schedule work during off-hours or low-occupancy periods to eliminate noise and airflow disruption to occupied spaces."
   - question: "Do you use chemical sealants or encapsulants inside ductwork?"
@@ -71,7 +73,7 @@ faq:
   - question: "Can you clean fiber-lined or internally insulated ductwork?"
     answer: "Yes. BAM uses specialized soft-bristle brushes and controlled air-washing tools designed for fiber-lined ducts. These methods remove particulate without damaging the insulation surface. If the liner is deteriorated beyond cleaning, we document the condition and recommend encapsulation or replacement."
   - question: "How often should commercial ductwork be professionally cleaned?"
-    answer: "NADCA recommends assessment-driven intervals rather than fixed schedules. Most commercial facilities benefit from cleaning every 3–7 years, but healthcare and manufacturing environments with higher particulate loads may require shorter cycles. BAM performs a visual inspection and surface sampling to determine the appropriate timeline for your facility."
+    answer: "NADCA recommends assessment-driven intervals rather than fixed schedules. Most commercial facilities benefit from cleaning every 3 to 7 years, but healthcare and manufacturing environments with higher particulate loads may require shorter cycles. BAM performs a visual inspection and surface sampling to determine the appropriate timeline for your facility."
   - question: "What documentation does BAM provide after a commercial duct cleaning?"
     answer: "Every project includes a complete closeout package with before-and-after photographs, a NADCA-standard vacuum test report, zone-by-zone scope verification, and a summary of any deficiencies found. This documentation satisfies Joint Commission, accreditation body, and internal audit requirements for healthcare and educational facilities."
 

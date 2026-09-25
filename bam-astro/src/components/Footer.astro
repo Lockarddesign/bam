@@ -3,6 +3,8 @@ import { siteConfig } from '../config/site.config';
 
 const currentYear = new Date().getFullYear();
 
+const facebookUrl = siteConfig.socialLinks?.find((u) => u.includes('facebook'));
+
 const capabilities = [
   { label: 'Cooling Tower Restoration', href: '/services/cooling-tower/' },
   { label: 'Chiller Restoration', href: '/services/chiller/' },
@@ -37,6 +39,16 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
   label: m.title,
   href: `/locations/${m.slug}/`,
 }));
+
+const residentialServices = (siteConfig.residential?.services ?? []).map(s => ({
+  label: s.title,
+  href: `/residential/${s.slug}/`,
+}));
+
+const residentialCities = (siteConfig.residential?.serviceAreaCities ?? []).map(c => ({
+  label: c.name,
+  href: `/residential/locations/${c.slug}/`,
+}));
 ---
 
 <footer class="relative bg-primary text-ice border-t border-mint/20 overflow-hidden font-sans">
@@ -50,7 +62,7 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
         <a href="/" class="group no-underline">
           <img
             src="/bam-logo.webp"
-            alt="BAM — Building & Air Maintenance"
+            alt="BAM, Building & Air Maintenance"
             class="h-12 w-auto object-contain transition-transform duration-500 group-hover:rotate-180"
             width="48"
             height="48"
@@ -63,13 +75,15 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
 
         <div class="flex items-center gap-2 px-3 py-1.5 bg-[#1e483b] rounded-full border border-mint/20">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span class="text-xs text-light-grey font-medium tracking-wide">NADCA & ASHRAE Member</span>
+          <span class="text-xs text-light-grey font-medium tracking-wide">NADCA Certified &amp; IAQA Member</span>
+        </div>
+
+        <div class="flex items-center gap-2 px-3 py-1.5 bg-[#1e483b] rounded-full border border-mint/20">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          <span class="text-xs text-light-grey font-medium tracking-wide">Philadelphia ASHRAE Chapter</span>
         </div>
 
         <div class="flex flex-col gap-2 pt-4 border-t border-mint/10 w-full">
-          <span class="text-mint text-xs font-semibold uppercase tracking-wider">
-            Verified Member — 21 Jan 2026
-          </span>
           <div class="mt-2 w-full" style="max-width: 200px;">
             <div style="position: relative; width: 100%; padding-bottom: 71.3%;">
               <iframe
@@ -158,6 +172,16 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
                   </a>
                 </>
               )}
+              {facebookUrl && (
+                <>
+                  <br />
+                  <a href={facebookUrl} target="_blank" rel="noopener" aria-label="Building and Air Maintenance on Facebook" class="inline-flex items-center gap-1.5 mt-1 text-mint hover:text-white transition-colors no-underline font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    Find us on Facebook
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </a>
+                </>
+              )}
             </span>
           </li>
           <li class="flex items-center gap-3 text-light-grey">
@@ -174,7 +198,7 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
           </li>
         </ul>
 
-        <a
+        <a data-open-quote
           href="/contact/"
           class="inline-flex items-center justify-center whitespace-nowrap px-5 py-3 bg-mint text-primary font-bold text-sm tracking-wide rounded-sm shadow-[0_10px_30px_-10px_rgba(167,215,197,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(167,215,197,0.6)] hover:-translate-y-0.5 transition-all duration-300 no-underline group"
         >
@@ -183,6 +207,46 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
         </a>
       </div>
 
+    </div>
+
+    <!-- Residential strip -->
+    <div class="mt-12 lg:mt-16 pt-8 border-t border-mint/15">
+      <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
+        <div>
+          <h4 class="text-mint font-bold text-xs uppercase tracking-[0.15em] mb-1">Residential HVAC</h4>
+          <p class="text-light-grey/70 text-xs">Home heating, cooling, and indoor air quality.</p>
+        </div>
+        <a href="/residential/" class="text-mint text-xs font-bold uppercase tracking-[0.15em] hover:text-white transition-colors no-underline inline-flex items-center gap-1.5">
+          Visit Residential
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
+        <div class="md:col-span-2">
+          <h5 class="text-light-grey/80 text-[10px] font-bold uppercase tracking-[0.18em] mb-3">Home Services</h5>
+          <ul class="grid grid-cols-2 gap-x-6 gap-y-2">
+            {residentialServices.map((item) => (
+              <li>
+                <a href={item.href} class="text-light-grey text-sm hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center no-underline">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-light-grey/80 text-[10px] font-bold uppercase tracking-[0.18em] mb-3">Cities</h5>
+          <ul class="grid grid-cols-2 md:grid-cols-1 gap-x-6 gap-y-2">
+            {residentialCities.map((item) => (
+              <li>
+                <a href={item.href} class="text-light-grey text-sm hover:text-white hover:translate-x-1 transition-all duration-200 inline-flex items-center no-underline">
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -197,7 +261,7 @@ const metroLocations = siteConfig.locationMetros.map(m => ({
           <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></div>
           <span>Systems Operational</span>
         </div>
-        <a href="https://lockarddesignco.com" target="_blank" rel="noreferrer" class="text-light-grey/40 hover:text-mint transition-colors no-underline">Site by Lockard Design Co.</a>
+        <a href="https://lockarddesignco.com/" target="_blank" rel="noreferrer" class="text-light-grey/40 hover:text-mint transition-colors no-underline">Professional Web Design by Lockard Design Co.</a>
       </div>
     </div>
   </div>

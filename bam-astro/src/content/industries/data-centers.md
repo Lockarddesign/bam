@@ -5,7 +5,7 @@ icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0
 
 challenges:
   heading: "HVAC Challenges in Data Centers"
-  introText: "Data centers operate at the intersection of extreme thermal load and zero-tolerance uptime. Cooling system degradation doesn't just raise energy costs — it threatens the equipment and operations your clients depend on."
+  introText: "Data centers operate at the intersection of extreme thermal load and zero-tolerance uptime. Cooling system degradation doesn't just raise energy costs, it threatens the equipment and operations your clients depend on."
   cards:
     - title: "Thermal Load Management"
       description: "High-density server racks generate enormous heat loads that require precision cooling with no margin for performance degradation."
@@ -14,7 +14,7 @@ challenges:
       description: "Even brief cooling failures can trigger thermal shutdowns that cost thousands per minute and damage SLA commitments."
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>'
     - title: "Redundancy Coordination"
-      description: "Maintenance must be performed while maintaining N+1 or 2N redundancy — requiring precise planning and execution."
+      description: "Maintenance must be performed while maintaining N+1 or 2N redundancy, requiring precise planning and execution."
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>'
     - title: "Energy Efficiency"
       description: "Cooling accounts for 30-40% of data center energy spend. Degraded coils and towers directly inflate operating costs."
@@ -57,7 +57,7 @@ faq:
   - question: "Does BAM provide documentation that supports data center SLA compliance?"
     answer: "Yes. Every project and maintenance visit produces timestamped documentation including equipment condition assessments, thermal performance measurements, before-and-after photography, and deficiency logs. This documentation supports SLA compliance reporting, insurance requirements, and Uptime Institute certification maintenance for colocation and enterprise facilities."
   - question: "What is the risk of deferred cooling maintenance in a data center?"
-    answer: "Fouled cooling towers and scaled chiller tubes progressively reduce thermal rejection capacity. Under peak summer loads, the system loses its safety margin and trips on high head pressure—the exact moment when cooling is most critical. BAM's preventive approach eliminates this cascading failure risk before it reaches your rack temperatures."
+    answer: "Fouled cooling towers and scaled chiller tubes progressively reduce thermal rejection capacity. Under peak summer loads, the system loses its safety margin and trips on high head pressure, the exact moment when cooling is most critical. BAM's preventive approach eliminates this cascading failure risk before it reaches your rack temperatures."
   - question: "Does BAM service both air-cooled and water-cooled data center cooling systems?"
     answer: "Yes. BAM services water-cooled chiller plants with cooling towers, air-cooled condensers, and the associated AHUs and CRAHs that serve data halls. Our technicians are experienced with the precision cooling requirements of mission-critical environments and carry the OSHA-30 and EPA certifications required for work in these facilities."
 ---

@@ -5,7 +5,7 @@ import { siteConfig } from '../config/site.config';
 ---
 
 <BaseLayout
-  title="Contact BAM | BAM — Building & Air Maintenance"
+  title="Contact BAM | BAM, Building & Air Maintenance"
   description="Contact BAM to schedule an HVAC assessment, request a site visit, or discuss restoration services. Serving PA, NJ, MD, DE, and Southern NY."
   breadcrumbs={[{ name: 'Contact', url: '/contact/' }]}
 >
@@ -113,33 +113,33 @@ import { siteConfig } from '../config/site.config';
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div class="space-y-1.5">
                   <label for="contact-name" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-                  <input type="text" id="contact-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                  <input type="text" id="contact-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                 </div>
                 <div class="space-y-1.5">
                   <label for="contact-title" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Title / Role</label>
-                  <input type="text" id="contact-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                  <input type="text" id="contact-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                 </div>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div class="space-y-1.5">
                   <label for="contact-email" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Email Address *</label>
-                  <input type="email" id="contact-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                  <input type="email" id="contact-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                 </div>
                 <div class="space-y-1.5">
                   <label for="contact-phone" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Phone Number</label>
-                  <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                  <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                 </div>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div class="space-y-1.5">
                   <label for="contact-org" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Organization / Facility</label>
-                  <input type="text" id="contact-org" name="companyName" placeholder="Memorial Regional Hospital" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                  <input type="text" id="contact-org" name="companyName" placeholder="Memorial Regional Hospital" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
                 </div>
                 <div class="space-y-1.5">
                   <label for="contact-facility-type" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Type</label>
-                  <select id="contact-facility-type" name="facility_type" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                  <select id="contact-facility-type" name="facility_type" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                     <option value="">Select facility type</option>
                     <option value="healthcare">Healthcare / Hospital</option>
                     <option value="education">Education (K-12 / Higher Ed)</option>
@@ -176,7 +176,7 @@ import { siteConfig } from '../config/site.config';
 
               <div class="space-y-1.5">
                 <label for="contact-description" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Describe Your Needs</label>
-                <textarea id="contact-description" name="describe_your_needs" rows="5" placeholder="Describe your current HVAC challenges, compliance concerns, equipment issues, or what you're looking for from BAM..." class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA] resize-none"></textarea>
+                <textarea id="contact-description" name="describe_your_needs" rows="5" placeholder="Describe your current HVAC challenges, compliance concerns, equipment issues, or what you're looking for from BAM..." class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA] resize-none"></textarea>
               </div>
 
               <label class="flex items-start gap-3 cursor-pointer">

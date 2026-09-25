@@ -1,5 +1,7 @@
 ---
 import { siteConfig } from '../config/site.config';
+
+const isResidential = Astro.url.pathname.startsWith('/residential');
 ---
 
 <div class="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-dark border-t border-mint/20 safe-area-pb">
@@ -12,15 +14,15 @@ import { siteConfig } from '../config/site.config';
       <span class="text-[10px] font-bold uppercase tracking-wider">Call</span>
     </a>
 
-    <a
+    <a data-open-quote
       href="/contact/"
       class="flex items-center justify-center bg-primary mx-2 my-1.5 rounded-sm no-underline"
     >
-      <span class="text-white text-[11px] font-bold uppercase tracking-widest">Site Visit</span>
+      <span class="text-white text-[11px] font-bold uppercase tracking-widest">{isResidential ? 'Free Estimate' : 'Site Visit'}</span>
     </a>
 
     <a
-      href="/services/"
+      href={isResidential ? '/residential/' : '/services/'}
       class="flex flex-col items-center justify-center gap-1 text-light-grey hover:text-white active:text-mint transition-colors no-underline"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>

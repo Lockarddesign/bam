@@ -1,13 +1,13 @@
 ---
 title: "Legionella Risk in Cooling Towers: Prevention, Documentation, and Compliance Strategy"
-description: "A practical guide to managing Legionella risk in cooling towers through prevention, documentation, and ASHRAE 188 compliance — reducing liability and protecting occupants."
+description: "A practical guide to managing Legionella risk in cooling towers through prevention, documentation, and ASHRAE 188 compliance, reducing liability and protecting occupants."
 date: 2026-01-31
 draft: false
 author: "BAM Technical Team"
 image: "https://images.unsplash.com/photo-1760904730891-8a63cde68d3b?auto=format&fit=crop&w=800&q=80"
 ---
 
-Of all the risks a facility director must manage, few are as serious as Legionella. The bacteria, which causes the severe and sometimes fatal form of pneumonia known as Legionnaires' disease, thrives in the warm, wet environments of water systems — and cooling towers are a primary source of concern. For any facility with a cooling tower, especially in healthcare, hospitality, or senior living, a Legionella outbreak is a worst-case scenario, carrying immense legal, financial, and reputational consequences.
+Of all the risks a facility director must manage, few are as serious as Legionella. The bacteria, which causes the severe and sometimes fatal form of pneumonia known as Legionnaires' disease, thrives in the warm, wet environments of water systems, and cooling towers are a primary source of concern. For any facility with a cooling tower, especially in healthcare, hospitality, or senior living, a Legionella outbreak is a worst-case scenario, carrying immense legal, financial, and reputational consequences.
 
 This article is a straightforward guide for facility leaders on managing Legionella risk in cooling towers. We will move beyond fear and focus on a practical, three-pronged strategy: prevention, documentation, and compliance. We will outline the operational controls required to minimize bacterial growth, explain what a defensible documentation strategy looks like, and clarify your obligations under key industry standards like ASHRAE 188.
 

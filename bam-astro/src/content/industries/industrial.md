@@ -5,7 +5,7 @@ icon: '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0
 
 challenges:
   heading: "HVAC Challenges in Industrial Facilities"
-  introText: "Manufacturing environments place extreme demands on HVAC and process cooling systems. When cooling towers fail or air quality degrades, production stops — and the financial impact compounds by the hour."
+  introText: "Manufacturing environments place extreme demands on HVAC and process cooling systems. When cooling towers fail or air quality degrades, production stops, and the financial impact compounds by the hour."
   cards:
     - title: "Production Line Dependency"
       description: "Process cooling failures can shut down million-dollar-a-day production lines within hours."
@@ -49,17 +49,17 @@ capabilities:
 
 faq:
   - question: "How does cooling tower failure affect manufacturing production?"
-    answer: "A cooling tower failure can force a complete production shutdown within hours if process chillers lose heat rejection capacity. Daily losses can exceed $50,000–$500,000 depending on the operation. BAM's restoration and preventive maintenance programs are specifically designed to eliminate this catastrophic risk through planned intervention rather than emergency response."
+    answer: "A cooling tower failure can force a complete production shutdown within hours if process chillers lose heat rejection capacity. Daily losses can exceed $50,000 to $500,000 depending on the operation. BAM's restoration and preventive maintenance programs are specifically designed to eliminate this catastrophic risk through planned intervention rather than emergency response."
   - question: "Can HVAC restoration be performed without shutting down production?"
-    answer: "In most cases, yes. BAM phases cooling tower and AHU restoration around production schedules, maintaining partial cooling capacity throughout the project. For plants with redundant systems, we sequence work across multiple units. The goal is always zero unplanned downtime—your production calendar drives our project plan."
+    answer: "In most cases, yes. BAM phases cooling tower and AHU restoration around production schedules, maintaining partial cooling capacity throughout the project. For plants with redundant systems, we sequence work across multiple units. The goal is always zero unplanned downtime, your production calendar drives our project plan."
   - question: "What EPA and OSHA regulations apply to industrial HVAC maintenance?"
     answer: "Industrial HVAC work must comply with EPA Section 608 for refrigerant handling, OSHA confined space entry standards for cooling towers and mechanical rooms, and environmental discharge regulations for cleaning wastewater. BAM technicians hold Universal EPA and OSHA-30 certifications and follow strict containment protocols on every industrial project."
   - question: "How does BAM reduce energy costs in industrial cooling systems?"
-    answer: "Fouled cooling towers and scaled heat exchangers force compressors to operate at elevated head pressures, wasting 15–30% more electricity. BAM's restoration—tower decontamination, tube brushing, basin repair, and coil cleaning—returns thermal transfer to near-design conditions, directly reducing kW/ton consumption and compressing your energy spend."
+    answer: "Fouled cooling towers and scaled heat exchangers force compressors to operate at elevated head pressures, wasting 15 to 30% more electricity. BAM's restoration, tower decontamination, tube brushing, basin repair, and coil cleaning, returns thermal transfer to near-design conditions, directly reducing kW/ton consumption and compressing your energy spend."
   - question: "Does BAM provide Legionella risk management for industrial cooling towers?"
     answer: "Yes. BAM's decontamination protocol removes the biofilm and sediment that harbor Legionella pneumophila in open recirculating systems. We align with ASHRAE Standard 188 and coordinate with your water treatment vendor to maintain biological control. Documentation supports compliance with OSHA General Duty Clause and state health department requirements."
   - question: "What preventive maintenance schedule does BAM recommend for manufacturing plants?"
-    answer: "BAM recommends seasonal cooling tower service (start-up, mid-season hygiene, shut-down), annual chiller tube brushing, and coil cleaning on a 2–4 year cycle. The specific cadence is built around your production calendar, equipment criticality, and environmental conditions. Scheduled PM replaces unpredictable emergency spend with budgeted, forecasted maintenance."
+    answer: "BAM recommends seasonal cooling tower service (start-up, mid-season hygiene, shut-down), annual chiller tube brushing, and coil cleaning on a 2 to 4 year cycle. The specific cadence is built around your production calendar, equipment criticality, and environmental conditions. Scheduled PM replaces unpredictable emergency spend with budgeted, forecasted maintenance."
 ---
 
 BAM provides process-critical HVAC restoration for industrial and manufacturing facilities across the Mid-Atlantic.

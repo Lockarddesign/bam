@@ -1,6 +1,6 @@
 ---
 title: "ASHRAE 62.1 and 170 Explained for Facility Directors: What Your Ventilation System Must Actually Deliver"
-description: "A practical guide to ASHRAE 62.1 and 170 ventilation standards — what they require, how they apply to your facility, and how to achieve and document compliance."
+description: "A practical guide to ASHRAE 62.1 and 170 ventilation standards, what they require, how they apply to your facility, and how to achieve and document compliance."
 date: 2026-02-14
 draft: false
 author: "BAM Technical Team"

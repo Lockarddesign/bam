@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Restoration Value Estimator | BAM — HVAC ROI Calculator"
+  title="Restoration Value Estimator | BAM, HVAC ROI Calculator"
   description="Model the financial case for mechanical restoration versus replacement. Calculate potential energy savings, deferred capital costs, and simple payback periods based on ASHRAE degradation curves."
   breadcrumbs={[
     { name: 'Tools', url: '/tools/' },
@@ -53,7 +53,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="facilityType" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Type *</label>
-                <select id="facilityType" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="facilityType" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select facility type</option>
                   <option value="healthcare">Healthcare</option>
                   <option value="education">Education (K-12 &amp; Higher Ed)</option>
@@ -67,11 +67,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </div>
               <div class="space-y-1.5">
                 <label for="sqFt" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Square Footage *</label>
-                <select id="sqFt" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="sqFt" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select range</option>
                   <option value="under-50k">Under 50,000 sq ft</option>
-                  <option value="50k-150k">50,000 – 150,000 sq ft</option>
-                  <option value="150k-500k">150,000 – 500,000 sq ft</option>
+                  <option value="50k-150k">50,000 to 150,000 sq ft</option>
+                  <option value="150k-500k">150,000 to 500,000 sq ft</option>
                   <option value="500k+">500,000+ sq ft</option>
                 </select>
               </div>
@@ -81,7 +81,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="assetFocus" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Asset Focus *</label>
-                <select id="assetFocus" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="assetFocus" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select asset type</option>
                   <option value="cooling-tower">Cooling Tower</option>
                   <option value="chiller">Chiller</option>
@@ -90,11 +90,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </div>
               <div class="space-y-1.5">
                 <label for="assetCount" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Number of Units *</label>
-                <select id="assetCount" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="assetCount" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select count</option>
                   <option value="1">1</option>
-                  <option value="2-3">2 – 3</option>
-                  <option value="4-6">4 – 6</option>
+                  <option value="2-3">2 to 3</option>
+                  <option value="4-6">4 to 6</option>
                   <option value="7+">7+</option>
                 </select>
               </div>
@@ -104,22 +104,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="equipmentAge" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Equipment Age *</label>
-                <select id="equipmentAge" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="equipmentAge" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select age range</option>
-                  <option value="0-5">0 – 5 Years</option>
-                  <option value="5-10">5 – 10 Years</option>
-                  <option value="10-15">10 – 15 Years</option>
-                  <option value="15-20+">15 – 20+ Years</option>
+                  <option value="0-5">0 to 5 Years</option>
+                  <option value="5-10">5 to 10 Years</option>
+                  <option value="10-15">10 to 15 Years</option>
+                  <option value="15-20+">15 to 20+ Years</option>
                 </select>
               </div>
               <div class="space-y-1.5">
                 <label for="energySpend" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Annual Energy Spend *</label>
-                <select id="energySpend" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="energySpend" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select range</option>
                   <option value="under-50k">Under $50k</option>
-                  <option value="50k-150k">$50k – $150k</option>
-                  <option value="150k-500k">$150k – $500k</option>
-                  <option value="500k-1m">$500k – $1M</option>
+                  <option value="50k-150k">$50k to $150k</option>
+                  <option value="150k-500k">$150k to $500k</option>
+                  <option value="500k-1m">$500k to $1M</option>
                   <option value="1m+">$1M+</option>
                 </select>
               </div>
@@ -172,7 +172,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <div class="h-1 bg-emerald-500"></div>
               <div class="p-6">
                 <p class="text-slate text-[10px] font-semibold uppercase tracking-widest mb-1">Potential Utility Savings</p>
-                <p id="energy-savings" class="text-primary text-2xl md:text-3xl font-black tracking-tight">—</p>
+                <p id="energy-savings" class="text-primary text-2xl md:text-3xl font-black tracking-tight">, </p>
                 <p class="text-slate text-xs mt-1">per year</p>
               </div>
             </div>
@@ -182,7 +182,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <div class="h-1 bg-blue-500"></div>
               <div class="p-6">
                 <p class="text-slate text-[10px] font-semibold uppercase tracking-widest mb-1">Deferred Replacement Value</p>
-                <p id="capital-avoidance" class="text-primary text-2xl md:text-3xl font-black tracking-tight">—</p>
+                <p id="capital-avoidance" class="text-primary text-2xl md:text-3xl font-black tracking-tight">, </p>
                 <p class="text-slate text-xs mt-1">capital expenditure deferred</p>
               </div>
             </div>
@@ -192,7 +192,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <div class="h-1 bg-amber-500"></div>
               <div class="p-6">
                 <p class="text-slate text-[10px] font-semibold uppercase tracking-widest mb-1">Simple ROI Horizon</p>
-                <p id="payback-period" class="text-primary text-2xl md:text-3xl font-black tracking-tight">—</p>
+                <p id="payback-period" class="text-primary text-2xl md:text-3xl font-black tracking-tight">, </p>
                 <p class="text-slate text-xs mt-1">estimated payback period</p>
               </div>
             </div>
@@ -249,19 +249,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="w-6 h-6 rounded-full bg-mint/20 flex items-center justify-center shrink-0 mt-0.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
-            <p class="text-light-grey text-sm leading-relaxed">ASHRAE degradation curves confirm <strong class="text-white">10–30% efficiency loss</strong> in aging mechanical systems</p>
+            <p class="text-light-grey text-sm leading-relaxed">ASHRAE degradation curves confirm <strong class="text-white">10 to 30% efficiency loss</strong> in aging mechanical systems</p>
           </li>
           <li class="flex items-start gap-4">
             <div class="w-6 h-6 rounded-full bg-mint/20 flex items-center justify-center shrink-0 mt-0.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
-            <p class="text-light-grey text-sm leading-relaxed">Restoration recovers <strong class="text-white">85–95% of original equipment performance</strong></p>
+            <p class="text-light-grey text-sm leading-relaxed">Restoration recovers <strong class="text-white">85 to 95% of original equipment performance</strong></p>
           </li>
           <li class="flex items-start gap-4">
             <div class="w-6 h-6 rounded-full bg-mint/20 flex items-center justify-center shrink-0 mt-0.5">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M20 6 9 17l-5-5"/></svg>
             </div>
-            <p class="text-light-grey text-sm leading-relaxed">Typical restoration cost is <strong class="text-white">10–20% of full replacement</strong></p>
+            <p class="text-light-grey text-sm leading-relaxed">Typical restoration cost is <strong class="text-white">10 to 20% of full replacement</strong></p>
           </li>
           <li class="flex items-start gap-4">
             <div class="w-6 h-6 rounded-full bg-mint/20 flex items-center justify-center shrink-0 mt-0.5">
@@ -329,33 +329,33 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="space-y-1.5">
             <label for="lead-name" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Full Name *</label>
-            <input type="text" id="lead-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-name" name="name" placeholder="John Smith" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
           <div class="space-y-1.5">
             <label for="lead-email" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Work Email *</label>
-            <input type="email" id="lead-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="email" id="lead-email" name="email" placeholder="john@facility.org" required class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="space-y-1.5">
             <label for="lead-phone" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Phone Number</label>
-            <input type="tel" id="lead-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="tel" id="lead-phone" name="phone" placeholder="(555) 123-4567" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
           <div class="space-y-1.5">
             <label for="lead-title" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Job Title</label>
-            <input type="text" id="lead-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-title" name="job_title" placeholder="Director of Facilities" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div class="space-y-1.5">
             <label for="lead-company" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility / Company Name</label>
-            <input type="text" id="lead-company" name="companyName" placeholder="Memorial Regional Hospital" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-company" name="companyName" placeholder="Memorial Regional Hospital" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
           <div class="space-y-1.5">
             <label for="lead-location" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Facility Location</label>
-            <input type="text" id="lead-location" name="facility_location" placeholder="Philadelphia, PA" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+            <input type="text" id="lead-location" name="facility_location" placeholder="Philadelphia, PA" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
           </div>
         </div>
 
@@ -441,16 +441,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     if (paybackMonths < 6) {
       paybackText = 'Immediate (<6 months)';
     } else if (paybackMonths > 24) {
-      paybackText = '18–24+ Months';
+      paybackText = '18 to 24+ Months';
     } else {
-      paybackText = `${Math.floor(paybackMonths)}–${Math.ceil(paybackMonths)} Months`;
+      paybackText = `${Math.floor(paybackMonths)} to ${Math.ceil(paybackMonths)} Months`;
     }
 
     (document.getElementById('energy-savings') as HTMLElement).textContent =
-      `${formatCurrency(lowSavings)} – ${formatCurrency(highSavings)} / year`;
+      `${formatCurrency(lowSavings)} to ${formatCurrency(highSavings)} / year`;
 
     (document.getElementById('capital-avoidance') as HTMLElement).textContent =
-      `${formatCurrency(lowAvoidance)} – ${formatCurrency(highAvoidance)}`;
+      `${formatCurrency(lowAvoidance)} to ${formatCurrency(highAvoidance)}`;
 
     (document.getElementById('payback-period') as HTMLElement).textContent = paybackText;
 
@@ -462,7 +462,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     const leadSavings = document.getElementById('lead-estimated-savings') as HTMLInputElement;
     if (leadFacility) leadFacility.value = facilityType;
     if (leadAsset) leadAsset.value = asset;
-    if (leadSavings) leadSavings.value = `${formatCurrency(lowSavings)} – ${formatCurrency(highSavings)}`;
+    if (leadSavings) leadSavings.value = `${formatCurrency(lowSavings)} to ${formatCurrency(highSavings)}`;
   }
 
   document.getElementById('roi-form')?.addEventListener('submit', (e) => {

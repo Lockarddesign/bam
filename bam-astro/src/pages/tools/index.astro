@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionCta from '../../components/SectionCta.astro';
 ---
 
 <BaseLayout
-  title="Tools & Calculators | BAM — Decision Support"
+  title="Tools & Calculators | BAM, Decision Support"
   description="Interactive HVAC assessment tools for facility directors and engineers. IAQ Risk Score calculator and Restoration ROI Estimator."
   breadcrumbs={[{ name: 'Tools', url: '/tools/' }]}
 >
@@ -26,7 +27,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
     </div>
   </div>
-</section>
+  <SectionCta tone="dark" class="px-6" />
+  </section>
 
 <!-- Tool Cards -->
 <section class="bg-offwhite py-20 md:py-28">

@@ -1,0 +1,71 @@
+---
+import ResidentialLayout from '../../layouts/ResidentialLayout.astro';
+import { siteConfig } from '../../config/site.config';
+
+const res = siteConfig.residential;
+---
+
+<ResidentialLayout
+  title="Request Received | Building and Air"
+  description="Thanks for reaching out to Building and Air. A real person will call you back about your home."
+  noindex={true}
+>
+  <section class="relative w-full res-bg-warm py-20 md:py-28">
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-full border res-border-cream mb-8">
+        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="res-text-sage" aria-hidden="true">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+      </div>
+
+      <p class="font-bold text-[10px] md:text-xs tracking-[0.3em] uppercase res-text-sage mb-4">Request Received</p>
+
+      <h1 class="text-4xl md:text-6xl font-black res-text-ink tracking-tighter uppercase leading-[0.9] mb-8">
+        Thank You
+      </h1>
+
+      <p class="text-lg md:text-xl res-text-slate max-w-2xl mx-auto leading-relaxed mb-12">
+        We got your request. A real person reads every message and will call you back about your home.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="/residential/"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-[var(--color-sage-deep)] text-white font-bold text-sm uppercase tracking-widest rounded-sm no-underline transition-opacity hover:opacity-90"
+        >
+          Back to Home Services
+        </a>
+        <a
+          href={`tel:${res?.phoneRaw ?? siteConfig.phoneRaw}`}
+          class="inline-flex items-center gap-2 px-8 py-4 border res-border-cream res-text-ink font-bold text-sm uppercase tracking-widest rounded-sm no-underline transition-colors hover:border-[var(--color-sage-deep)] whitespace-nowrap"
+        >
+          Call {res?.phone ?? siteConfig.phone}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative res-bg-cream py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="res-text-ink text-lg font-bold uppercase tracking-tight mb-6">What Happens Next</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="res-bg-surface border res-border-cream rounded-lg p-6">
+          <div class="text-3xl font-black res-text-sage opacity-40 mb-2">01</div>
+          <h3 class="res-text-ink font-bold text-sm uppercase tracking-wide mb-2">We Call You</h3>
+          <p class="res-text-slate text-sm leading-relaxed">We call to learn about your home and what you need.</p>
+        </div>
+        <div class="res-bg-surface border res-border-cream rounded-lg p-6">
+          <div class="text-3xl font-black res-text-sage opacity-40 mb-2">02</div>
+          <h3 class="res-text-ink font-bold text-sm uppercase tracking-wide mb-2">We Take a Look</h3>
+          <p class="res-text-slate text-sm leading-relaxed">We inspect your system and show you what we find, with photos.</p>
+        </div>
+        <div class="res-bg-surface border res-border-cream rounded-lg p-6">
+          <div class="text-3xl font-black res-text-sage opacity-40 mb-2">03</div>
+          <h3 class="res-text-ink font-bold text-sm uppercase tracking-wide mb-2">Written Price</h3>
+          <p class="res-text-slate text-sm leading-relaxed">You get a clear written price before any work begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ResidentialLayout>

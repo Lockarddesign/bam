@@ -1,6 +1,6 @@
 ---
 title: "A Facility Director's Guide to IAQ Technical Standards: From ASHRAE 62.1 to PM2.5"
-description: "Understand the key technical standards and testing protocols that define a comprehensive Indoor Air Quality assessment — CO2, temperature, humidity, VOCs, and particulate matter."
+description: "Understand the key technical standards and testing protocols that define a comprehensive Indoor Air Quality assessment, CO2, temperature, humidity, VOCs, and particulate matter."
 date: 2026-03-01
 draft: false
 author: "BAM Technical Team"
@@ -9,7 +9,7 @@ image: "/images/jobs/perforated-ceiling-supply-diffuser-1_05-05-2025.jpg"
 
 For facility directors, the term "Indoor Air Quality" has evolved from a background concern into a primary performance indicator for a healthy, safe, and productive building. Occupants, tenants, and employees now have a heightened awareness of the air they breathe, and they expect facility leadership to provide a demonstrably clean environment. Meeting this expectation requires moving beyond subjective assessments and embracing a data-driven approach grounded in established technical standards.
 
-This article serves as a definitive guide for facility leaders on the key technical standards and parameters that define a comprehensive Indoor Air Quality (IAQ) assessment. We will demystify the essential benchmarks, including ASHRAE Standard 62.1 for ventilation and EPA guidelines for particulate matter. Furthermore, we will detail the typical testing protocols — what is being measured and why it matters — covering Carbon Dioxide (CO2), Temperature, Relative Humidity, Volatile Organic Compounds (VOCs), and Particulate Matter (PM2.5/PM10).
+This article serves as a definitive guide for facility leaders on the key technical standards and parameters that define a comprehensive Indoor Air Quality (IAQ) assessment. We will demystify the essential benchmarks, including ASHRAE Standard 62.1 for ventilation and EPA guidelines for particulate matter. Furthermore, we will detail the typical testing protocols, what is being measured and why it matters, covering Carbon Dioxide (CO2), Temperature, Relative Humidity, Volatile Organic Compounds (VOCs), and Particulate Matter (PM2.5/PM10).
 
 ## The Foundation of Fresh Air: Understanding ASHRAE Standard 62.1
 
@@ -29,7 +29,7 @@ Particulate matter (PM) refers to microscopic solid or liquid particles suspende
 - **PM10:** Inhalable particles with diameters generally 10 micrometers and smaller. These can include dust, pollen, and mold spores.
 - **PM2.5:** Fine inhalable particles with diameters generally 2.5 micrometers and smaller. These often result from combustion activities, such as vehicle exhaust, industrial processes, and even cooking.
 
-Because of their significant health impacts — including triggering asthma attacks and contributing to cardiovascular disease — monitoring and controlling PM2.5 and PM10 levels are non-negotiable components of a thorough IAQ assessment. This is typically achieved through high-efficiency filtration (MERV 13 or higher) and ensuring the building envelope is well-sealed against outdoor pollutants.
+Because of their significant health impacts, including triggering asthma attacks and contributing to cardiovascular disease, monitoring and controlling PM2.5 and PM10 levels are non-negotiable components of a thorough IAQ assessment. This is typically achieved through high-efficiency filtration (MERV 13 or higher) and ensuring the building envelope is well-sealed against outdoor pollutants.
 
 ## The Testing Protocol: What We Measure and Why It Matters
 
@@ -55,7 +55,7 @@ An IAQ assessment is not the end goal; it is the beginning of a proactive manage
 
 **Q: What are considered "good" levels for these IAQ parameters?**
 
-A: While specific thresholds vary, general targets include CO2 below 1,000 ppm, Relative Humidity between 30–60%, and PM2.5 levels as low as reasonably achievable, ideally below the EPA's guideline of 12 µg/m³.
+A: While specific thresholds vary, general targets include CO2 below 1,000 ppm, Relative Humidity between 30 to 60%, and PM2.5 levels as low as reasonably achievable, ideally below the EPA's guideline of 12 µg/m³.
 
 **Q: How often should a full IAQ assessment be performed?**
 

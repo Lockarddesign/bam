@@ -67,13 +67,13 @@ faq:
   - question: "Is the basin coating resistant to cooling tower water treatment chemicals?"
     answer: "Yes. BAM's lining systems are engineered to withstand standard biocides, scale inhibitors, and corrosion inhibitors used in open recirculating water treatment programs. We select epoxy or urethane-hybrid chemistries based on your specific treatment protocol to ensure long-term chemical compatibility and adhesion."
   - question: "How long does a cooling tower basin restoration take?"
-    answer: "Most single-basin restorations complete in 3–5 working days including decontamination, surface preparation, coating application, and cure time. BAM coordinates with your operations team to schedule work during swing seasons or planned shutdowns to minimize impact on cooling capacity during peak demand periods."
+    answer: "Most single-basin restorations complete in 3 to 5 working days including decontamination, surface preparation, coating application, and cure time. BAM coordinates with your operations team to schedule work during swing seasons or planned shutdowns to minimize impact on cooling capacity during peak demand periods."
   - question: "What is the expected lifespan of a cooling tower basin lining?"
-    answer: "A properly prepared and applied basin lining system delivers 10–15 years of service life. The critical variable is surface preparation quality—BAM blasts or grinds to bare metal and seals every seam before coating to eliminate moisture entrapment. We verify adhesion and film thickness with calibrated instruments before authorizing system refill."
+    answer: "A properly prepared and applied basin lining system delivers 10 to 15 years of service life. The critical variable is surface preparation quality, BAM blasts or grinds to bare metal and seals every seam before coating to eliminate moisture entrapment. We verify adhesion and film thickness with calibrated instruments before authorizing system refill."
   - question: "How much water and chemical spend does a leaking basin waste?"
     answer: "A basin leak of even 1 gallon per minute wastes over 500,000 gallons annually, plus all dissolved treatment chemicals. This increases makeup water costs, accelerates cycles of concentration swings, and degrades biological control. BAM's zero-leakage lining eliminates this waste and stabilizes your water treatment program economics."
   - question: "How does basin restoration compare in cost to replacing the cooling tower?"
-    answer: "Basin relining typically costs 10–20% of full tower replacement and avoids crane mobilization, structural engineering, permitting, and the extended downtime a replacement requires. BAM's restoration addresses the corrosion root cause while preserving the existing fill, fan assembly, and structural frame that may have decades of remaining service life."
+    answer: "Basin relining typically costs 10 to 20% of full tower replacement and avoids crane mobilization, structural engineering, permitting, and the extended downtime a replacement requires. BAM's restoration addresses the corrosion root cause while preserving the existing fill, fan assembly, and structural frame that may have decades of remaining service life."
 ---
 
 Cooling Tower Basin Restoration services from Building & Air Maintenance.

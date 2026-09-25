@@ -3,7 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Filter Match Wizard | BAM — MERV Rating & Pressure Drop Calculator"
+  title="Filter Match Wizard | BAM, MERV Rating & Pressure Drop Calculator"
   description="Dial in the right MERV rating for your facility. Answer a few questions about your building, system, and constraints to receive a pressure-drop-aware filter recommendation."
   breadcrumbs={[
     { name: 'Tools', url: '/tools/' },
@@ -29,7 +29,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="text-mint">Wizard</span>
       </h1>
       <p class="text-light-grey text-lg md:text-xl font-light leading-relaxed border-l-2 border-primary pl-8 opacity-90 max-w-2xl">
-        Dial in the right MERV rating, understand pressure drop risk, and stop changing filters on guesswork — answer a few questions and get a spec you can act on today.
+        Dial in the right MERV rating, understand pressure drop risk, and stop changing filters on guesswork, answer a few questions and get a spec you can act on today.
       </p>
     </div>
   </div>
@@ -43,7 +43,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <!-- Progress -->
       <div class="mb-10">
         <div class="flex items-center justify-between mb-3">
-          <p id="progressLabel" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate">Step 1 of 3 — Building Profile</p>
+          <p id="progressLabel" class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate">Step 1 of 3, Building Profile</p>
           <p id="progressPct" class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">33%</p>
         </div>
         <div class="flex gap-1.5">
@@ -64,7 +64,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="buildingType" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Building Type *</label>
-                <select id="buildingType" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="buildingType" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select&hellip;</option>
                   <option value="office">Office / Commercial</option>
                   <option value="school">School / University</option>
@@ -78,11 +78,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </div>
               <div class="space-y-1.5">
                 <label for="occupancy" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Typical Occupancy *</label>
-                <select id="occupancy" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="occupancy" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select&hellip;</option>
                   <option value="low">Low (under 25 people)</option>
-                  <option value="medium">Medium (25–100 people)</option>
-                  <option value="high">High (100–500 people)</option>
+                  <option value="medium">Medium (25 to 100 people)</option>
+                  <option value="high">High (100 to 500 people)</option>
                   <option value="very-high">Very High (500+ / public)</option>
                 </select>
               </div>
@@ -135,16 +135,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-3 gap-5">
               <div class="space-y-1.5">
                 <label for="filterL" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Length (in)</label>
-                <input type="number" id="filterL" placeholder="e.g. 24" min="8" max="36" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="number" id="filterL" placeholder="e.g. 24" min="8" max="36" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
               <div class="space-y-1.5">
                 <label for="filterW" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Width (in)</label>
-                <input type="number" id="filterW" placeholder="e.g. 24" min="8" max="36" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
+                <input type="number" id="filterW" placeholder="e.g. 24" min="8" max="36" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all placeholder-[#8BA1AA]" />
               </div>
               <div class="space-y-1.5">
                 <label for="filterD" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Depth (in)</label>
-                <select id="filterD" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
-                  <option value="">—</option>
+                <select id="filterD" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                  <option value="">, </option>
                   <option value="1">1"</option>
                   <option value="2">2"</option>
                   <option value="4">4"</option>
@@ -158,7 +158,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="currentMerv" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Current MERV Rating</label>
-                <select id="currentMerv" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="currentMerv" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="0">Unknown / Not sure</option>
                   <option value="4">MERV 4 or below (fiberglass)</option>
                   <option value="6">MERV 6</option>
@@ -170,7 +170,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </div>
               <div class="space-y-1.5">
                 <label for="fanType" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Fan / Motor Type *</label>
-                <select id="fanType" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="fanType" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select&hellip;</option>
                   <option value="ecm">ECM (variable speed / brushless)</option>
                   <option value="belt">Belt-drive / PSC motor (fixed speed)</option>
@@ -226,18 +226,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="systemAge" class="text-slate text-[10px] font-semibold uppercase tracking-widest">System Age *</label>
-                <select id="systemAge" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="systemAge" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="">Select&hellip;</option>
-                  <option value="new">0–5 years (newer)</option>
-                  <option value="mid">5–15 years</option>
+                  <option value="new">0 to 5 years (newer)</option>
+                  <option value="mid">5 to 15 years</option>
                   <option value="old">15+ years (older)</option>
                 </select>
               </div>
               <div class="space-y-1.5">
                 <label for="staticIssue" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Known Static Pressure Issues?</label>
-                <select id="staticIssue" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="staticIssue" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="no">No / Unknown</option>
-                  <option value="yes">Yes — already running high static</option>
+                  <option value="yes">Yes, already running high static</option>
                 </select>
               </div>
             </div>
@@ -245,11 +245,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div class="space-y-1.5">
                 <label for="filterCount" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Number of Filter Slots</label>
-                <input type="number" id="filterCount" value="1" min="1" max="50" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" />
+                <input type="number" id="filterCount" value="1" min="1" max="50" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" />
               </div>
               <div class="space-y-1.5">
                 <label for="priority" class="text-slate text-[10px] font-semibold uppercase tracking-widest">Priority</label>
-                <select id="priority" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
+                <select id="priority" class="w-full bg-ice border border-light-grey rounded text-dark px-4 py-3.5 text-base md:text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all appearance-none cursor-pointer">
                   <option value="balanced">Balanced (performance + cost)</option>
                   <option value="cost">Cost-first</option>
                   <option value="performance">Performance / IAQ-first</option>
@@ -308,7 +308,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="bg-primary rounded-sm shadow-lg shadow-primary/20 p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
             <p class="text-white font-black text-xl uppercase tracking-tight mb-2">Want BAM to verify static pressure &amp; confirm filter compatibility?</p>
-            <p class="text-light-grey/80 text-sm leading-relaxed max-w-lg">Our technicians measure actual static pressure drop, inspect ductwork for bypass gaps, and confirm your recommended filter fits your specific AHU — before you commit to a change.</p>
+            <p class="text-light-grey/80 text-sm leading-relaxed max-w-lg">Our technicians measure actual static pressure drop, inspect ductwork for bypass gaps, and confirm your recommended filter fits your specific AHU, before you commit to a change.</p>
           </div>
           <a href="tel:5709005827" class="shrink-0 inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-light-grey/20 transition-colors no-underline">
             Book 30-Min Site Check
@@ -344,7 +344,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     });
     const labels = ['', 'Building Profile', 'System Details', 'System Constraints'];
     const pcts = ['', '33%', '66%', '100%'];
-    document.getElementById('progressLabel')!.textContent = `Step ${n} of 3 — ${labels[n]}`;
+    document.getElementById('progressLabel')!.textContent = `Step ${n} of 3, ${labels[n]}`;
     document.getElementById('progressPct')!.textContent = pcts[n];
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -438,8 +438,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       if (m >= 14) return '≥90% of PM1';
       if (m >= 13) return '≥85% of PM1';
       if (m >= 11) return '≥65% of PM2.5';
-      if (m >= 8) return '≥70% of PM3–10';
-      return '≥35% of PM3–10';
+      if (m >= 8) return '≥70% of PM3 to 10';
+      return '≥35% of PM3 to 10';
     }
 
     const mervNames: Record<number, string> = {
@@ -506,7 +506,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     // ── Info box ──
     const recTier = tiers.find(t => t.key === rec)!;
     const fanExplain: Record<string, string> = {
-      ecm: '<strong class="text-primary">ECM motor:</strong> Variable-speed ECMs automatically compensate for added static pressure — you have more flexibility to upgrade MERV safely.',
+      ecm: '<strong class="text-primary">ECM motor:</strong> Variable-speed ECMs automatically compensate for added static pressure, you have more flexibility to upgrade MERV safely.',
       belt: '<strong class="text-primary">Belt-drive motor:</strong> Fixed-speed motors can\'t compensate for higher static. Monitor amp draw after any MERV upgrade and consider staying within one pressure class.',
       unknown: '<strong class="text-primary">Fan type unknown:</strong> Confirm whether your motor compensates for increased static before upgrading MERV.',
     };
@@ -516,15 +516,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     // ── Checklist ──
     const checks: { type: 'verify' | 'warn' | 'critical'; heading: string; sub: string }[] = [
-      { type: 'verify', heading: `Confirm slot dimensions: ${filterL}×${filterW}×${depth}"`, sub: 'Measure the actual rack — filter labels can be nominal, not exact.' },
+      { type: 'verify', heading: `Confirm slot dimensions: ${filterL}×${filterW}×${depth}"`, sub: 'Measure the actual rack, filter labels can be nominal, not exact.' },
       { type: 'verify', heading: 'Inspect filter track / rails for warping or bypass gaps', sub: 'Air bypassing the filter defeats the entire MERV upgrade.' },
       ...(fan !== 'ecm' ? [{ type: 'warn' as const, heading: 'Measure blower motor amps before and after swap', sub: 'Higher MERV = more static = risk of motor overload on fixed-speed systems.' }] : []),
-      ...(staticHigh ? [{ type: 'critical' as const, heading: 'Measure static pressure with existing filter first', sub: "Establish baseline before upgrading — don't compound existing problems." }] : []),
+      ...(staticHigh ? [{ type: 'critical' as const, heading: 'Measure static pressure with existing filter first', sub: "Establish baseline before upgrading, don't compound existing problems." }] : []),
       { type: 'verify', heading: `Set ${interval(recTier.merv)}-month replacement schedule for all ${filterCount} slot${filterCount > 1 ? 's' : ''}`, sub: 'Log install date on a label on the filter rack itself.' },
       ...(issues.includes('mold') ? [{ type: 'critical' as const, heading: 'Inspect drain pan and coil for biological growth', sub: 'Filtration alone cannot fix a mold source inside the air handler.' }] : []),
       ...(issues.includes('odors') ? [{ type: 'warn' as const, heading: 'Consider activated carbon module for odor/VOC control', sub: 'MERV-rated particulate filters do not capture gaseous contaminants.' }] : []),
       { type: 'verify', heading: 'Photograph existing filter at removal', sub: 'Loading pattern reveals bypass channels and true loading rate.' },
-      ...(complaints.includes('noise') ? [{ type: 'warn' as const, heading: 'Check face velocity — whistling means filter area is too small', sub: 'Add filter surface area or slow fan speed before upgrading MERV.' }] : []),
+      ...(complaints.includes('noise') ? [{ type: 'warn' as const, heading: 'Check face velocity, whistling means filter area is too small', sub: 'Add filter surface area or slow fan speed before upgrading MERV.' }] : []),
       { type: 'verify', heading: 'Confirm MERV rating uses ASHRAE 52.2 test standard', sub: 'Not all labeled MERV ratings use the same test methodology.' },
     ];
 
