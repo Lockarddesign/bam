@@ -63,7 +63,10 @@ Its title, introduction, and complete article body match the original, with only
 web formatting differences. No factual or editorial rewrites were made.
 Guides 06 and 07 retain their original future publication dates. The two dated releases above replace the previous daily rebuild and hourly Hermes checks.
 
-## One follow-up after Guide 03 publishes (2026-09-08)
+## One follow-up after Guide 03 publishes (2026-09-08): RESOLVED 2026-09-25
+
+Guide 02 now links the phrase to Guide 03. Every guide also shows a "Technical Guide Series" box (`src/components/GuideSeries.astro`, order in `src/data/guideSeries.ts`): published guides link, scheduled ones show their date. Add new guides to `guideSeries.ts`.
+
 
 Guide 02 mentions "our fire and smoke damper inspection guide" in its FAQ as plain
 text, because Guide 03 has no page until its own date and a link would 404 for a week.
@@ -71,7 +74,10 @@ Once Guide 03 is live, link that phrase in
 `joint-commission-physical-environment-chapter-2026-hvac.md` to
 `/blog/fire-and-smoke-damper-inspections-in-hospitals/`.
 
-## Known display quirk
+## Known display quirk: RESOLVED 2026-09-25
+
+Dates now render with `timeZone: 'UTC'`, so every post shows its exact frontmatter date.
+
 
 Post dates render one day earlier than the frontmatter value (a post dated
 `2026-08-25` displays as "August 24, 2026"). `toLocaleDateString` renders the

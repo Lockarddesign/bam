@@ -114,7 +114,7 @@ For spaces constructed or with plans approved on or after July 5, 2016, ASHRAE 1
 
 **Q: Are fire and smoke dampers still tested every six years?**
 
-Yes. The specific EP was deleted, but NFPA 80-2010 and NFPA 105-2010 remain in force through NFPA 101-2012 and NFPA 90A-2012, and PE.04.01.01 EP 2 requires the documentation. See our fire and smoke damper inspection guide.
+Yes. The specific EP was deleted, but NFPA 80-2010 and NFPA 105-2010 remain in force through NFPA 101-2012 and NFPA 90A-2012, and PE.04.01.01 EP 2 requires the documentation. See our [fire and smoke damper inspection guide](/blog/fire-and-smoke-damper-inspections-in-hospitals/).
 
 **Q: Does my ambulatory surgery center follow the new PE chapter?**
 

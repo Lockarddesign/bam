@@ -1,0 +1,53 @@
+---
+/**
+ * GuideSeries — the "BAM Technical Guide Series" box shown on every guide.
+ * Published guides link; scheduled ones show their publish date (no link, so
+ * no 404s before release). Uses the same publish rule as getPublishedPosts.
+ */
+import { getCollection } from 'astro:content';
+import { guideSeries } from '../data/guideSeries';
+
+interface Props {
+  currentSlug: string;
+}
+const { currentSlug } = Astro.props;
+
+const now = Date.now();
+const all = await getCollection('blog');
+const items = guideSeries
+  .map((slug, i) => {
+    const post = all.find((p) => p.slug === slug);
+    if (!post || post.data.draft) return null;
+    const live = import.meta.env.DEV || post.data.date.getTime() <= now;
+    return {
+      n: String(i + 1).padStart(2, '0'),
+      slug,
+      title: post.data.title.split(':')[0],
+      live,
+      current: slug === currentSlug,
+      date: post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' }),
+    };
+  })
+  .filter(Boolean) as Array<{ n: string; slug: string; title: string; live: boolean; current: boolean; date: string }>;
+---
+
+{guideSeries.includes(currentSlug) && (
+  <nav aria-labelledby="guide-series-title" class="not-prose mt-12 border border-light-grey rounded-lg bg-ice p-6 md:p-8">
+    <p class="text-[10px] font-bold uppercase tracking-[0.22em] text-slate mb-2">From the BAM Technical Team</p>
+    <h2 id="guide-series-title" class="text-xl md:text-2xl font-black uppercase tracking-tight text-primary mb-5">The Technical Guide Series</h2>
+    <ol class="divide-y divide-light-grey">
+      {items.map((g) => (
+        <li class="flex items-baseline gap-4 py-3">
+          <span class="text-sm font-black text-primary/40 w-7 flex-shrink-0">{g.n}</span>
+          {g.current ? (
+            <span class="text-[15px] font-bold text-primary">{g.title} <span class="text-xs font-semibold text-slate uppercase tracking-wider ml-1">You are here</span></span>
+          ) : g.live ? (
+            <a href={`/blog/${g.slug}/`} class="text-[15px] font-semibold text-primary hover:text-[#1e483b] underline-offset-4 hover:underline">{g.title}</a>
+          ) : (
+            <span class="text-[15px] text-slate">{g.title} <span class="text-xs uppercase tracking-wider ml-1">Coming {g.date}</span></span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </nav>
+)}
