@@ -8,7 +8,7 @@ export const siteConfig = {
   owner: 'BAM Leadership',
   yearFounded: 2020,
   yearsExperience: 25,
-  logo: '/logo.png',
+  logo: '/bam-logo-512.png',
 
   title: 'BAM | Building & Air Maintenance, Commercial HVAC Restoration',
   description:

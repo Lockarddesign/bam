@@ -5,8 +5,8 @@
  * `data-open-quote` opens it; keep the element's real href (usually
  * /contact/) as the no-JS fallback.
  *
- * The panel never scrolls. If fields are added and it stops fitting a short
- * laptop viewport, cut fields instead of adding overflow.
+ * Form sits at the top; the BAM badge fills the remaining height and shrinks
+ * first. The panel only scrolls on screens too short for the form itself.
  */
 import QuoteForm from './QuoteForm.astro';
 
@@ -49,7 +49,7 @@ const eyebrowText = isResidential ? 'res-text-sage' : 'text-mint';
     role="dialog"
     aria-modal="true"
     aria-labelledby="quote-drawer-title"
-    class={`absolute right-0 top-0 h-[100svh] w-full max-w-[420px] translate-x-full overflow-hidden shadow-2xl transition-transform duration-300 ease-out flex flex-col justify-center ${panel}`}
+    class={`absolute right-0 top-0 h-[100svh] w-full max-w-[420px] translate-x-full overflow-y-auto overscroll-contain shadow-2xl transition-transform duration-300 ease-out flex flex-col ${panel}`}
   >
     <button
       type="button"
@@ -60,13 +60,25 @@ const eyebrowText = isResidential ? 'res-text-sage' : 'text-mint';
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
 
-    <div class="px-6 sm:px-8 py-6">
-      <p class={`text-[10px] font-bold uppercase tracking-[0.22em] mb-2 ${eyebrowText}`}>
+    <div class="flex-shrink-0 px-6 sm:px-8 pt-8 pb-4">
+      <p class={`text-[10px] font-bold uppercase tracking-[0.22em] mb-2 pr-10 ${eyebrowText}`}>
         {isResidential ? 'Schuylkill County Homeowners' : 'Building & Air Maintenance'}
       </p>
       <p id="quote-drawer-title" class={`text-2xl font-black uppercase tracking-tight leading-none mb-2 ${titleText}`}>{heading}</p>
-      <p class={`text-sm leading-snug mb-5 ${blurbText}`}>{blurb}</p>
+      <p class={`text-sm leading-snug mb-4 ${blurbText}`}>{blurb}</p>
       <QuoteForm variant={variant} />
+    </div>
+
+    <!-- Large brand mark fills whatever height is left; shrinks first on short screens -->
+    <div class="flex-1 min-h-[6rem] flex items-center justify-center px-8 pb-8">
+      <img
+        data-src="/images/bam-badge-lg.webp"
+        alt="Building & Air Maintenance"
+        width="640"
+        height="640"
+        decoding="async"
+        class="h-full max-h-[20rem] w-auto max-w-full object-contain"
+      />
     </div>
   </aside>
 </div>
@@ -88,6 +100,7 @@ const eyebrowText = isResidential ? 'res-text-sage' : 'text-mint';
     panel.classList.toggle('translate-x-full', !open);
     document.documentElement.style.overflow = open ? 'hidden' : '';
     if (open) {
+      panel.querySelectorAll<HTMLImageElement>('img[data-src]').forEach((img) => { img.src = img.dataset.src!; img.removeAttribute('data-src'); });
       setTimeout(() => panel.querySelector<HTMLElement>('input:not([type=hidden]):not([name=bot-field])')?.focus(), 250);
     } else {
       lastFocused?.focus();
