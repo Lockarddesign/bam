@@ -15,7 +15,7 @@ const isResidential = Astro.url.pathname.startsWith('/residential');
     </a>
 
     <a data-open-quote
-      href={isResidential ? '/residential/#estimate' : '/contact/'}
+      href={isResidential ? (Astro.url.pathname.startsWith('/residential/thank-you') ? '/residential/#estimate' : '#estimate') : '/contact/'}
       class="flex items-center justify-center bg-primary mx-2 my-1.5 rounded-sm no-underline"
     >
       <span class="text-white text-[11px] font-bold uppercase tracking-widest">{isResidential ? 'Free Estimate' : 'Site Visit'}</span>

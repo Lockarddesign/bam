@@ -3,7 +3,7 @@ import { siteConfig } from '../config/site.config';
 
 const currentYear = new Date().getFullYear();
 const isResidential = Astro.url.pathname.startsWith('/residential');
-const ctaHref = isResidential ? '/residential/#estimate' : '/contact/';
+const ctaHref = isResidential ? (Astro.url.pathname.startsWith('/residential/thank-you') ? '/residential/#estimate' : '#estimate') : '/contact/';
 
 const facebookUrl = siteConfig.socialLinks?.find((u) => u.includes('facebook'));
 

@@ -18,7 +18,9 @@ const residentialNavItems = [
   { label: 'Contact', href: '/residential/#estimate', hasDropdown: false },
 ];
 
-const navItems = isResidential ? residentialNavItems : commercialNavItems;
+const navItems = (isResidential ? residentialNavItems : commercialNavItems).map((item) =>
+  isResidential && item.label === 'Contact' ? { ...item, href: Astro.url.pathname.startsWith('/residential/thank-you') ? '/residential/#estimate' : '#estimate' } : item
+);
 
 const coreServices = siteConfig.services.filter(s => s.category === 'core');
 const specialtyServices = siteConfig.services.filter(s => s.category === 'specialty');
@@ -32,7 +34,9 @@ const airQualityServices = residentialServices.filter((s) => !homeComfortSlugs.i
 const facebookUrl = siteConfig.socialLinks?.find((u) => u.includes('facebook'));
 const residentialCities = siteConfig.residential?.serviceAreaCities ?? [];
 
-const ctaHref = isResidential ? '/residential/#estimate' : '/contact/';
+// Residential pages each have their own #estimate form (except thank-you), so stay on the page.
+const residentialEstimate = Astro.url.pathname.startsWith('/residential/thank-you') ? '/residential/#estimate' : '#estimate';
+const ctaHref = isResidential ? residentialEstimate : '/contact/';
 const headerCtaLabel = isResidential ? (siteConfig.residential?.ctaLabel ?? 'Get a Free Estimate') : 'Request a Site Visit';
 const headerPhone = isResidential ? (siteConfig.residential?.phone ?? siteConfig.phone) : siteConfig.phone;
 const headerPhoneRaw = isResidential ? (siteConfig.residential?.phoneRaw ?? siteConfig.phoneRaw) : siteConfig.phoneRaw;
