@@ -15,10 +15,12 @@ const residentialNavItems = [
   { label: 'Services', href: '/residential/', hasDropdown: true },
   { label: 'Locations', href: '/residential/', hasDropdown: true },
   { label: 'About', href: '/about/', hasDropdown: true },
-  { label: 'Contact', href: '/contact/', hasDropdown: false },
+  { label: 'Contact', href: '/residential/#estimate', hasDropdown: false },
 ];
 
-const navItems = isResidential ? residentialNavItems : commercialNavItems;
+const navItems = (isResidential ? residentialNavItems : commercialNavItems).map((item) =>
+  isResidential && item.label === 'Contact' ? { ...item, href: Astro.url.pathname.startsWith('/residential/thank-you') ? '/residential/#estimate' : '#estimate' } : item
+);
 
 const coreServices = siteConfig.services.filter(s => s.category === 'core');
 const specialtyServices = siteConfig.services.filter(s => s.category === 'specialty');
@@ -32,6 +34,9 @@ const airQualityServices = residentialServices.filter((s) => !homeComfortSlugs.i
 const facebookUrl = siteConfig.socialLinks?.find((u) => u.includes('facebook'));
 const residentialCities = siteConfig.residential?.serviceAreaCities ?? [];
 
+// Residential pages each have their own #estimate form (except thank-you), so stay on the page.
+const residentialEstimate = Astro.url.pathname.startsWith('/residential/thank-you') ? '/residential/#estimate' : '#estimate';
+const ctaHref = isResidential ? residentialEstimate : '/contact/';
 const headerCtaLabel = isResidential ? (siteConfig.residential?.ctaLabel ?? 'Get a Free Estimate') : 'Request a Site Visit';
 const headerPhone = isResidential ? (siteConfig.residential?.phone ?? siteConfig.phone) : siteConfig.phone;
 const headerPhoneRaw = isResidential ? (siteConfig.residential?.phoneRaw ?? siteConfig.phoneRaw) : siteConfig.phoneRaw;
@@ -314,7 +319,7 @@ const industryIconMap: Record<string, string> = {
                     </div>
                   </div>
                   <div class="bg-ice/80 border-t border-light-grey/40 px-6 py-3 flex items-center justify-between">
-                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate">Residential HVAC</span>
+                    <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-slate">Residential Services</span>
                     <a href="/residential/" class="text-[11px] font-bold uppercase tracking-widest text-primary hover:text-[#1e483b] no-underline transition-colors flex items-center gap-1">
                       View Residential Hub
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -552,7 +557,7 @@ const industryIconMap: Record<string, string> = {
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>{headerPhone}</span>
         </a>
-        <a data-open-quote href="/contact/" class="inline-flex items-center justify-center px-5 py-2.5 border border-white/80 text-white font-bold text-[11px] uppercase tracking-widest rounded-sm hover:bg-white hover:text-primary transition-all no-underline">
+        <a data-open-quote href={ctaHref} class="inline-flex items-center justify-center px-5 py-2.5 border border-white/80 text-white font-bold text-[11px] uppercase tracking-widest rounded-sm hover:bg-white hover:text-primary transition-all no-underline">
           {headerCtaLabel}
         </a>
       </div>
@@ -636,7 +641,7 @@ const industryIconMap: Record<string, string> = {
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-mint"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span>{headerPhone}</span>
         </a>
-        <a data-open-quote href="/contact/" class="flex items-center justify-center w-full py-3.5 bg-white text-primary font-bold text-base uppercase tracking-widest rounded-sm shadow-lg no-underline">
+        <a data-open-quote href={ctaHref} class="flex items-center justify-center w-full py-3.5 bg-white text-primary font-bold text-base uppercase tracking-widest rounded-sm shadow-lg no-underline">
           {headerCtaLabel}
         </a>
       </div>
