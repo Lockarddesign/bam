@@ -14,6 +14,7 @@ interface Props {
 }
 const { tone = 'light', label, align = 'center', class: extra = '' } = Astro.props;
 const isResidential = tone === 'residential';
+const fallbackHref = isResidential ? '#estimate' : '/contact/'; // every residential page with CTA rows has an #estimate form
 const buttonLabel = label ?? (isResidential ? (siteConfig.residential?.ctaLabel ?? 'Get a Free Estimate') : 'Request a Site Visit');
 const phone = isResidential ? (siteConfig.residential?.phone ?? siteConfig.phone) : siteConfig.phone;
 const phoneRaw = isResidential ? (siteConfig.residential?.phoneRaw ?? siteConfig.phoneRaw) : siteConfig.phoneRaw;
@@ -33,7 +34,7 @@ const secondary = {
 <div class={`relative z-10 mt-10 md:mt-12 flex flex-col sm:flex-row gap-3 ${align === 'center' ? 'items-center justify-center' : 'items-center sm:items-start justify-start'} ${extra}`}>
   <a
     data-open-quote
-    href="/contact/"
+    href={fallbackHref}
     class={`inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm text-xs font-bold uppercase tracking-[0.18em] whitespace-nowrap no-underline transition-colors ${primary}`}
   >
     {buttonLabel}
