@@ -1,0 +1,7 @@
+{'kind': 'delete', 'pdf': 'Frequency Required activity', 'site': '', 'after': 'maintenance access to equipment is unobstructed'}
+{'kind': 'delete', 'pdf': 'Task Frequency What is new', 'site': '', 'after': 'Semiannually Expanded scope, root cause required'}
+{'kind': 'delete', 'pdf': 'Section 8 expectation Typical condition in a 15-year-old institutional building Result', 'site': '', 'after': 'amplification downstream, water in the insulation'}
+{'kind': 'insert', 'pdf': '', 'site': "ASHRAE 170 governs the clinical spaces, and it references 62.1 for outdoor air on systems serving both 170 and 62.1 spaces. Administrative, support, and campus buildings fall under 62.1 directly, and The Joint Commission's physical environment requirements expect utility system maintenance to be defined, performed, and documented regardless of which standard sets the frequencies.", 'after': '62.1 Section 8 apply to hospitals?'}
+{'kind': 'delete', 'pdf': '1.', 'site': '', 'after': 'standard your building was designed to.'}
+{'kind': 'delete', 'pdf': '2.', 'site': '', 'after': 'pressure relationships, and photograph the conditions.'}
+{'kind': 'delete', 'pdf': '3.', 'site': '', 'after': 'required frequency, and the corrective action.'}

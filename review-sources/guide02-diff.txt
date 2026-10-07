@@ -1,0 +1,10 @@
+{'kind': 'delete', 'pdf': 'Standard Subject', 'site': '', 'after': 'safety PE.02.01.01 Hazardous materials and waste'}
+{'kind': 'delete', 'pdf': '2025 requirement 2026 location What it means in practice', 'site': '', 'after': 'damper PM schedules are still surveyable'}
+{'kind': 'delete', 'pdf': '1.', 'site': '', 'after': 'physical environment findings in hospitals were:'}
+{'kind': 'delete', 'pdf': '2.', 'site': '', 'after': 'spaces that are safe and suitable.'}
+{'kind': 'delete', 'pdf': '3.', 'site': '', 'after': 'suitable. 2. Ensuring critical pressure relationships.'}
+{'kind': 'delete', 'pdf': '4.', 'site': '', 'after': '3. Providing a clean, odor-free environment.'}
+{'kind': 'delete', 'pdf': '5.', 'site': '', 'after': 'Properly handling and storing hazardous chemicals.'}
+{'kind': 'delete', 'pdf': '1.', 'site': '', 'after': '5 p.m. on Friday, start here.'}
+{'kind': 'delete', 'pdf': '2.', 'site': '', 'after': 'filtration, and coil condition against it.'}
+{'kind': 'delete', 'pdf': '3.', 'site': '', 'after': 'drop straight into your readiness binder.'}

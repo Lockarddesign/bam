@@ -1,0 +1,12 @@
+{'kind': 'delete', 'pdf': 'Damper type Occupancy Cycle Source', 'site': '', 'after': 'every 4 years NFPA 80-2010, 19.4.1.1'}
+{'kind': 'delete', 'pdf': '1.', 'site': '', 'after': 'which one applies to your building:'}
+{'kind': 'delete', 'pdf': '2.', 'site': '', 'after': 'dampers in smoke barriers are not.'}
+{'kind': 'delete', 'pdf': '3.', 'site': '', 'after': 'more frequent than the periodic test.'}
+{'kind': 'delete', 'pdf': '4.', 'site': '', 'after': 'but the two get conflated constantly.'}
+{'kind': 'delete', 'pdf': '1.', 'site': '', 'after': 'not the exception. The workable sequence:'}
+{'kind': 'delete', 'pdf': '2.', 'site': '', 'after': 'ductwork is a candidate damper location.'}
+{'kind': 'delete', 'pdf': '3.', 'site': '', 'after': 'inaccessible (hard ceiling, chase, or buried).'}
+{'kind': 'delete', 'pdf': '4.', 'site': '', 'after': 'opening is in a rated assembly.'}
+{'kind': 'delete', 'pdf': '1.', 'site': '', 'after': 'already has a finding on it.'}
+{'kind': 'delete', 'pdf': '2.', 'site': '', 'after': 'your six-year clock is running against.'}
+{'kind': 'delete', 'pdf': '3.', 'site': '', 'after': 'with rated access doors where required.'}
