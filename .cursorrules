@@ -1,0 +1,3 @@
+Canonical client brain: /Users/willlockard/Lockard Vault/Clients/BAM LLC — Building & Air/
+
+On session start, read README.md, CLIENT.md, CONTEXT.md, and LOG.md in that folder in order. All client context, rules, and guardrails live in the vault brain. This repo holds only the code.

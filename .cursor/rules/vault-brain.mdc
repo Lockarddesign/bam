@@ -1,0 +1,14 @@
+---
+description: Route to canonical vault brain for BAM LLC — Building & Air
+alwaysApply: true
+---
+
+# Vault Brain
+
+Canonical brain: ~/Lockard Vault/Clients/BAM LLC — Building & Air/
+
+On session start, read in order:
+README.md → CLIENT.md → CONTEXT.md → LOG.md
+
+All client context, rules, and guardrails live in the vault brain.
+This repo holds only code. Never deploy without Will's approval.

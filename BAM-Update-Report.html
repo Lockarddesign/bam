@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;600;700&display=swap');
+
+  @page {
+    size: letter;
+    margin: 48pt 48pt 60pt 48pt;
+    @bottom-center {
+      content: "Confidential — Building & Air Maintenance";
+      font-family: 'DM Sans', sans-serif;
+      font-size: 7pt;
+      color: #8899AA;
+    }
+    @bottom-right {
+      content: counter(page);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 7pt;
+      color: #8899AA;
+    }
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-size: 9pt;
+    color: #0B1110;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .cover {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 640pt;
+    text-align: center;
+  }
+  .cover-brand {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14pt; font-weight: 700; letter-spacing: 4pt;
+    color: #265A4A; text-transform: uppercase;
+    margin-bottom: 36pt;
+  }
+  .cover-brand .sub {
+    display: block; font-weight: 600; font-size: 10pt;
+    letter-spacing: 3pt; color: #A7D7C5; margin-top: 2pt;
+  }
+  .cover h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28pt; font-weight: 700; color: #0B1110;
+    margin-bottom: 8pt; letter-spacing: -0.3pt;
+  }
+  .cover .subtitle { font-size: 11pt; color: #265A4A; font-weight: 600; margin-bottom: 36pt; }
+  .cover .date { font-size: 9pt; color: #8899AA; }
+  .cover .divider { width: 60pt; height: 2pt; background: #A7D7C5; margin: 24pt auto; }
+  .cover .prepared-by { font-size: 8pt; color: #8899AA; margin-top: 12pt; }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16pt; font-weight: 700; color: #0B1110;
+    margin-top: 24pt; margin-bottom: 6pt;
+    padding-bottom: 4pt; border-bottom: 1.5pt solid #E0E8E5;
+  }
+  h3 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11pt; font-weight: 700; color: #265A4A;
+    margin-top: 16pt; margin-bottom: 6pt;
+  }
+
+  p { margin-bottom: 8pt; color: #3A4F4A; }
+
+  table { width: 100%; border-collapse: collapse; margin-bottom: 16pt; font-size: 8.5pt; }
+  thead th {
+    background: #265A4A; color: #FFFFFF; font-weight: 700;
+    text-align: left; padding: 6pt 8pt; font-size: 8pt;
+    text-transform: uppercase; letter-spacing: 0.4pt;
+  }
+  thead th:last-child { text-align: center; width: 56pt; }
+  tbody td { padding: 5pt 8pt; border-bottom: 0.5pt solid #E0E8E5; vertical-align: top; }
+  tbody tr:nth-child(even) td { background: #F7F9F8; }
+  td.status { text-align: center; font-weight: 700; font-size: 9pt; }
+  .done { color: #265A4A; }
+  .removed { color: #B03030; }
+
+  .summary-box {
+    background: #F7F9F8; border: 1pt solid #E0E8E5;
+    border-left: 3pt solid #A7D7C5; padding: 14pt 16pt;
+    margin: 16pt 0; border-radius: 3pt;
+  }
+  .summary-box strong { color: #0B1110; }
+
+  .stats-row { display: flex; gap: 12pt; margin: 16pt 0 20pt; }
+  .stat-card {
+    flex: 1; background: #265A4A; color: white;
+    padding: 14pt 12pt; border-radius: 4pt; text-align: center;
+  }
+  .stat-card .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22pt; font-weight: 700; display: block; margin-bottom: 2pt;
+  }
+  .stat-card .label { font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5pt; opacity: 0.7; }
+
+  .note { font-size: 8pt; color: #8899AA; font-style: italic; }
+  .page-break { page-break-before: always; }
+
+  .footer {
+    margin-top: 24pt; padding-top: 12pt;
+    border-top: 1pt solid #E0E8E5;
+  }
+  .footer strong { color: #0B1110; }
+  .footer p { font-size: 8pt; color: #8899AA; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-brand">Building & Air<span class="sub">Maintenance</span></div>
+  <h1>Photo & Content Update</h1>
+  <p class="subtitle">Delivery Report</p>
+  <div class="divider"></div>
+  <p class="date">April 10, 2026</p>
+  <p class="prepared-by">Prepared by Lockard Design Co. &nbsp;|&nbsp; will@lockard.co</p>
+</div>
+
+<!-- OVERVIEW -->
+<h2>Update Summary</h2>
+<p>This report covers all changes made to buildingandair.com based on the owner's photo and video submission. All stock imagery has been replaced with real job photos where possible, the flagged cooling tower video has been removed, and new content sections have been added across the site.</p>
+
+<div class="stats-row">
+  <div class="stat-card"><span class="num">19</span><span class="label">Job Photos Added</span></div>
+  <div class="stat-card"><span class="num">2</span><span class="label">Videos Added</span></div>
+  <div class="stat-card"><span class="num">11</span><span class="label">Blog Images Swapped</span></div>
+  <div class="stat-card"><span class="num">1</span><span class="label">New Blog Post</span></div>
+</div>
+
+<!-- PHOTOS ADDED -->
+<h2>Job Photos Added to Site</h2>
+<p>All 19 photos from the owner's submission were optimized (compressed from 3-6MB originals down to 85-322KB each) and added to the site.</p>
+
+<table>
+<thead><tr><th>Photo</th><th>Subject</th><th>Used On</th></tr></thead>
+<tbody>
+<tr><td>Evaporator Coil Fins Closeup</td><td>Coil fin detail during inspection</td><td>Homepage, Blog, AHU Gallery</td></tr>
+<tr><td>Evaporator Coil Surface</td><td>Coil surface during assessment</td><td>Blog, AHU Gallery</td></tr>
+<tr><td>Evaporator Coil Housing Access Panel</td><td>AHU with access panel open</td><td>Homepage, Blog, AHU Gallery</td></tr>
+<tr><td>Flex Duct Interior Inspection (x2)</td><td>Spiral liner inside flex duct</td><td>Blog, Duct Cleaning Gallery</td></tr>
+<tr><td>Rectangular Duct Interior Pre-Cleaning</td><td>Duct before cleaning (debris visible)</td><td>Homepage, Duct Cleaning Gallery</td></tr>
+<tr><td>Insulated Duct Post-Cleaning (x2)</td><td>Clean duct interior with liner pins</td><td>Homepage, Duct Cleaning Gallery</td></tr>
+<tr><td>Insulated Duct Junction</td><td>Clean junction point in ductwork</td><td>Duct Cleaning Gallery</td></tr>
+<tr><td>Duct Interior with Tack Tape (x3)</td><td>Green tack tape at duct bottom</td><td>Blog, Duct Cleaning Gallery</td></tr>
+<tr><td>Clean Plenum with New Liner</td><td>Fresh white plenum liner</td><td>Homepage, Duct Cleaning Gallery</td></tr>
+<tr><td>Plenum Box Duct Liner Inspection</td><td>Duct board liner with pins</td><td>Blog, Duct Cleaning Gallery</td></tr>
+<tr><td>Return Air Grille Dirty (x2)</td><td>Egg crate grilles with buildup</td><td>Blog, IAQ Gallery</td></tr>
+<tr><td>Perforated Ceiling Diffuser (x2)</td><td>Supply diffusers in drop tile</td><td>Blog, IAQ Gallery</td></tr>
+<tr><td>Warehouse HVAC Unit</td><td>Commercial unit above pallet racking</td><td>Homepage Gallery</td></tr>
+</tbody>
+</table>
+
+<!-- VIDEOS -->
+<h2>Video Changes</h2>
+<table>
+<thead><tr><th>Action</th><th>Video</th><th>Details</th><th style="text-align:center;">Status</th></tr></thead>
+<tbody>
+<tr><td><strong>Removed</strong></td><td>Cooling Tower Drone Shot</td><td>Per owner: "does not operate as a normal cooling tower — fan prop visible where it shouldn't be"</td><td class="status removed">Removed</td></tr>
+<tr><td><strong>Added</strong></td><td>Whipping Supply Duct</td><td>Field video showing duct agitation during cleaning</td><td class="status done">Live</td></tr>
+<tr><td><strong>Added</strong></td><td>Fogging Residence</td><td>Fogging treatment demonstration</td><td class="status done">Live</td></tr>
+</tbody>
+</table>
+
+<!-- HOMEPAGE CHANGES -->
+<div class="page-break"></div>
+<h2>Homepage Changes</h2>
+
+<h3>Method Section (4 images replaced)</h3>
+<table>
+<thead><tr><th>Step</th><th>Before</th><th>After</th></tr></thead>
+<tbody>
+<tr><td>Diagnose</td><td>Unsplash stock (generic technician)</td><td>Real: evaporator coil housing with access panel open</td></tr>
+<tr><td>Document</td><td>Unsplash stock (clipboard)</td><td>Real: rectangular duct interior before cleaning</td></tr>
+<tr><td>Restore</td><td>Unsplash stock (coil cleaning)</td><td>Real: insulated duct interior after professional cleaning</td></tr>
+<tr><td>Verify</td><td>Unsplash stock (HVAC unit)</td><td>Real: clean plenum with new liner</td></tr>
+</tbody>
+</table>
+
+<h3>New Section: "From the Field" Scrolling Gallery</h3>
+<p>Added a scrolling photo gallery section between "Why Facilities Choose BAM" and "Industries We Serve." Displays all 19 job photos in a continuous horizontal scroll. Full color, rounded cards, fade edges on both sides. Section heading: "Real Work. Real Facilities." with link to services page.</p>
+
+<!-- BLOG CHANGES -->
+<h2>Blog Post Image Replacements</h2>
+<p>11 of 15 blog posts were updated from Unsplash stock photos to real job photos. 4 posts retained Unsplash images (topics with no matching real photos available).</p>
+
+<table>
+<thead><tr><th>Blog Post</th><th>Before</th><th>After</th><th style="text-align:center;">Status</th></tr></thead>
+<tbody>
+<tr><td>Coil Cleaning vs Restoration</td><td>Unsplash stock</td><td>Real: evaporator coil fins closeup</td><td class="status done">&#10003;</td></tr>
+<tr><td>Dirty Coils & Static Pressure</td><td>Unsplash stock</td><td>Real: evaporator coil closeup</td><td class="status done">&#10003;</td></tr>
+<tr><td>Mechanical Hygiene & Legionella</td><td>Unsplash stock</td><td>Real: evaporator coil housing</td><td class="status done">&#10003;</td></tr>
+<tr><td>ASHRAE IAQ Compliance</td><td>Unsplash stock</td><td>Real: dirty return air grille</td><td class="status done">&#10003;</td></tr>
+<tr><td>IAQ Technical Standards Guide</td><td>Unsplash stock</td><td>Real: perforated ceiling diffuser</td><td class="status done">&#10003;</td></tr>
+<tr><td>Joint Commission Readiness</td><td>Unsplash stock</td><td>Real: return air grille (angled)</td><td class="status done">&#10003;</td></tr>
+<tr><td>R-410A Phasedown (new post)</td><td>N/A</td><td>Real: evaporator coil fins</td><td class="status done">&#10003;</td></tr>
+<tr><td>Deferred HVAC Maintenance</td><td>Unsplash stock</td><td>Real: dirty duct interior</td><td class="status done">&#10003;</td></tr>
+<tr><td>HVAC Energy Waste</td><td>Unsplash stock</td><td>Real: duct with tack tape</td><td class="status done">&#10003;</td></tr>
+<tr><td>Fire Damper Compliance</td><td>Unsplash (hospital)</td><td>Real: plenum/duct liner inspection</td><td class="status done">&#10003;</td></tr>
+<tr><td>ASHRAE 62.1 Explained</td><td>Custom graphic</td><td>Kept as-is</td><td class="status done">&#10003;</td></tr>
+<tr><td>Cooling Tower Life Extension</td><td>Wrong image (hotel)</td><td>Unsplash: actual cooling towers</td><td class="status done">Fixed</td></tr>
+<tr><td>Cooling Tower Restoration vs Replace</td><td>Wrong image (piping)</td><td>Unsplash: aerial cooling tower fans</td><td class="status done">Fixed</td></tr>
+<tr><td>Legionella Risk in Cooling Towers</td><td>Wrong image (desk phone)</td><td>Unsplash: aerial cooling tower fans</td><td class="status done">Fixed</td></tr>
+<tr><td>K-12 Schools IAQ</td><td>Unsplash (school hallway)</td><td>Kept: no matching real photos</td><td class="status done">&#10003;</td></tr>
+</tbody>
+</table>
+
+<h3>Blog Card Hover Fix</h3>
+<p>Fixed an issue where hovering over blog cards on the blog index page caused the image to scale up and crop the top. Reduced hover scale and added centered object positioning.</p>
+
+<!-- SERVICE PAGE GALLERIES -->
+<div class="page-break"></div>
+<h2>Service Page Photo Galleries</h2>
+<p>Added a "From the Field" photo gallery system to service pages. Galleries only appear on pages where real job photos are available. Responsive grid layout: 3 columns on desktop, 2 on tablet, 1 on mobile.</p>
+
+<table>
+<thead><tr><th>Service Page</th><th>Photos</th><th style="text-align:center;">Gallery</th></tr></thead>
+<tbody>
+<tr><td>NADCA-Aligned Duct Cleaning</td><td>13 photos (duct interiors, plenums, diffusers)</td><td class="status done">&#10003;</td></tr>
+<tr><td>Commercial Indoor Air Quality</td><td>4 photos (grilles, diffusers)</td><td class="status done">&#10003;</td></tr>
+<tr><td>AHU & Coil Restoration</td><td>3 photos (coil fins, surface, housing)</td><td class="status done">&#10003;</td></tr>
+<tr><td>Cooling Tower Restoration</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>Chiller Restoration</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>Basin Restoration</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>Epoxy Coating & Lining</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>Tube Brushing & Descaling</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>Fire Damper Compliance</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>HEPA & Filter Management</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>Mold Remediation</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+<tr><td>Preventive Maintenance</td><td>No real photos available</td><td class="status" style="color:#8899AA;">—</td></tr>
+</tbody>
+</table>
+
+<div class="summary-box">
+  <strong>Note:</strong> The gallery system is built and ready. As the owner submits photos from cooling tower, chiller, epoxy, and other service jobs, we can add galleries to those pages with no code changes needed.
+</div>
+
+<!-- NEW BLOG POST -->
+<h2>New Blog Post</h2>
+<table>
+<thead><tr><th>Title</th><th>URL</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>The R-410A Phasedown Is Here: What Facility Directors Need to Know</td><td>/blog/r-410a-phasedown-what-facility-directors-need-to-know/</td><td>Full SEO setup: meta tags, Open Graph, Article + BreadcrumbList schema, E-E-A-T sidebar, related services, CTA</td></tr>
+</tbody>
+</table>
+
+<!-- TECHNICAL -->
+<h2>Technical Details</h2>
+<table>
+<thead><tr><th>Item</th><th>Details</th></tr></thead>
+<tbody>
+<tr><td>Image optimization</td><td>All 19 photos compressed from 3-6MB to 85-322KB (avg ~85% reduction)</td></tr>
+<tr><td>Image format</td><td>JPEG, optimized for web delivery</td></tr>
+<tr><td>Build status</td><td>Clean build, zero errors</td></tr>
+<tr><td>Mobile responsive</td><td>Verified on iPhone 14 Pro viewport (390x844)</td></tr>
+<tr><td>Desktop responsive</td><td>Verified at 1440x900</td></tr>
+<tr><td>Deployment</td><td>Pushed to lockarddesignco/bam → auto-deploys via Netlify (bamhvac)</td></tr>
+<tr><td>Live URL</td><td>buildingandair.com</td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+  <strong>Will Lockard</strong>
+  <p>Lockard Design Co.<br>(609) 870-3758 &nbsp;&bull;&nbsp; will@lockard.co &nbsp;&bull;&nbsp; lockarddesignco.com</p>
+</div>
+
+</body>
+</html>
