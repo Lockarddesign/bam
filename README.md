@@ -1,20 +1,16 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# BAM Live
 
-# Run and deploy your AI Studio app
+Workspace for BAM (Building & Air Mechanical) — institutional HVAC restoration and indoor air quality for mission-critical facilities.
 
-This contains everything you need to run your app locally.
+## Contents
 
-View your app in AI Studio: https://ai.studio/apps/drive/16B2XetFNw3YQWdKwkNfPoVHWohUc-XWn
+- Root: React/Vite tool prototype (Gemini API integration)
+- `bam-astro/`: Production Astro website at https://buildingandair.com
 
-## Run Locally
+## Production Site
 
-**Prerequisites:**  Node.js
+The live site is the Astro project in `bam-astro/`, not the root React app.
 
+## Related
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- See `CONTEXT.md` for full working rules and commands
