@@ -1,0 +1,165 @@
+---
+// Interactive 3D air handler: as-found vs refurbished. The scene module
+// (src/scripts/ahu3d/scene.js) is generated from the bam-ahu-3d prototype and only
+// loads once the viewer scrolls near the viewport. Without WebGL the poster images
+// and the plain-text hotspot list below carry the same content.
+import { siteConfig as site } from '../config/site.config';
+
+const hotspots = [
+  {
+    name: 'Coil',
+    found: "This is a 1970s spiral-fin coil. Every tube has its own round fin wound around it, a style nobody manufactures anymore. Years of biofilm pack the gaps between fins, so air has to force its way through and the coil can't move heat.",
+    ref: "We steam-clean the coil and treat it with a biologically active enzymatic cleaner that breaks down the organic fouling. The steam opens the fin spacing back up, and the coil you can't buy anymore goes back to work.",
+  },
+  {
+    name: 'Drain pan',
+    found: 'Rust, staining and standing water. A pan that holds water grows bacteria directly under the airstream.',
+    ref: 'Three layers: self-leveling elastomeric acrylic, two-part 100% solids epoxy, then an antimicrobial top coat. It covers the pan, basin, floor and six inches up the walls, all pitched so water drains.',
+  },
+  {
+    name: 'Fan section',
+    found: 'A fouled coil raises static pressure, so the fan has to work harder to push the same air through the unit.',
+    ref: 'With the coil open again, static pressure drops and the fan stops fighting the unit.',
+  },
+  {
+    name: 'Casing',
+    found: 'Most institutional air handlers went in during the 1970s and 80s. Replacing one often means blowing out walls to get the old unit out and the new one in. That can run into the millions with months of disruption.',
+    ref: 'Refurbished in place, with every remaining interior surface coated antimicrobial. No walls come down. Work is done to NADCA, IAQA and ASHRAE standards, and BAM is a member of all three.',
+  },
+];
+
+const btn = 'text-[13px] font-bold rounded-sm px-4 py-2.5 cursor-pointer transition-colors';
+---
+
+<section id="ahu-3d" class="relative bg-dark overflow-hidden py-20 md:py-28" aria-labelledby="ahu3d-title">
+  <div class="absolute inset-0 opacity-[0.05] site-grid-dark"></div>
+  <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24">
+    <div class="max-w-3xl mb-10">
+      <span class="text-mint font-bold text-xs tracking-[0.22em] uppercase mb-4 block">See the Refurbishment</span>
+      <h2 id="ahu3d-title" class="text-3xl md:text-5xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-6">
+        <span class="whitespace-nowrap">Refurbish it.</span> <span class="whitespace-nowrap">Don't replace it.</span>
+      </h2>
+      <p class="text-slate text-lg leading-relaxed font-light">
+        Drag the slider to take a 1970s air handler from as-found to refurbished. Tap the + markers for what's wrong and what we do about it.
+      </p>
+    </div>
+
+    <div class="relative">
+      <div id="ahu3d-viewer" class="relative w-full h-[460px] md:h-[min(68vh,640px)] md:min-h-[420px] rounded-sm border border-white/10 overflow-hidden bg-[#0e1514] touch-none [&>canvas]:block [&>canvas]:w-full [&>canvas]:h-full">
+        <img id="ahu3d-loading" src="/ahu-3d/poster-as-found.jpg" alt="Cutaway of a rusted 1970s air handler with a fouled coil, standing water in the drain pan and a belt-driven fan" width="1600" height="900" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover z-0" />
+
+        <div class="absolute left-3 top-3 flex flex-col gap-2 pointer-events-none w-[46%] md:w-[230px] z-[2] [.replacing_&]:hidden">
+          <div class="bg-dark/80 border border-white/10 rounded-sm px-2.5 py-2">
+            <div class="text-[11px] text-light-grey flex justify-between gap-1.5"><span>Static pressure across coil</span><span id="ahu3d-spTxt">High</span></div>
+            <div class="h-1.5 bg-white/10 rounded mt-1.5 overflow-hidden"><div id="ahu3d-spBar" class="h-full w-1/2 rounded"></div></div>
+          </div>
+          <div class="bg-dark/80 border border-white/10 rounded-sm px-2.5 py-2">
+            <div class="text-[11px] text-light-grey flex justify-between gap-1.5"><span>Fan effort</span><span id="ahu3d-feTxt">Strained</span></div>
+            <div class="h-1.5 bg-white/10 rounded mt-1.5 overflow-hidden"><div id="ahu3d-feBar" class="h-full w-1/2 rounded"></div></div>
+          </div>
+          <div id="ahu3d-gaugeNote" class="hidden md:block text-[10px] text-slate pl-0.5">Pressure range: Purdue lab data. BAM measured figures to come.</div>
+        </div>
+
+        <div id="ahu3d-stage" class="absolute right-3 bottom-3 md:bottom-auto md:top-3 z-[2] bg-dark/85 border border-white/10 rounded-sm px-3 py-2 text-xs md:text-[13px] font-semibold text-white text-right max-w-[62%] md:max-w-[52%] [.replacing_&]:hidden [&_small]:block [&_small]:font-medium [&_small]:text-light-grey [&_small]:text-[11px] [&_small]:mt-0.5">As found<small>1970s unit, never refurbished</small></div>
+      </div>
+
+      <div id="ahu3d-rep" class="hidden [&.show]:block relative mt-2.5 md:absolute md:mt-0 md:left-1/2 md:top-3 md:-translate-x-1/2 md:w-[min(620px,calc(100%-24px))] z-[3] bg-dark/95 border border-white/10 rounded-sm px-4 py-3.5" aria-live="polite">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5 md:gap-3.5">
+          <div>
+            <h3 class="m-0 mb-1.5 text-xs uppercase tracking-[0.1em] text-[#e0893a] font-bold">Replace it</h3>
+            <div class="text-[15px] md:text-lg font-extrabold text-white mb-1 leading-tight">Into the millions</div>
+            <p class="m-0 mb-1.5 text-xs md:text-[13px] leading-normal text-light-grey">The new unit is often a couple hundred thousand dollars. The real cost is getting the old one out and the new one in: walls opened up, the unit taken apart and rebuilt in place, months of disruption.</p>
+          </div>
+          <div>
+            <h3 class="m-0 mb-1.5 text-xs uppercase tracking-[0.1em] text-mint font-bold">Refurbish it</h3>
+            <div class="text-[15px] md:text-lg font-extrabold text-white mb-1 leading-tight">A fraction of the cost</div>
+            <p class="m-0 mb-1.5 text-xs md:text-[13px] leading-normal text-light-grey">Done in place. No walls come down. 15 to 20 more years of service life.</p>
+          </div>
+        </div>
+        <button id="ahu3d-repGo" class={`${btn} mt-2 bg-primary text-white hover:bg-mint hover:text-dark border-0`}>Refurbish it instead ▶</button>
+      </div>
+
+      <div id="ahu3d-card" role="dialog" aria-live="polite" class="hidden relative mt-2.5 md:absolute md:mt-0 md:left-3 md:bottom-3 md:max-w-[440px] z-[3] bg-dark/95 border border-white/10 rounded-sm px-4 py-3.5 [&.clean_.tag]:text-mint">
+        <button id="ahu3d-cardX" aria-label="Close" class="absolute right-2 top-1.5 bg-transparent border-0 text-light-grey text-[22px] cursor-pointer px-2 py-1">×</button>
+        <div id="ahu3d-cardTag" class="tag text-[11px] uppercase tracking-[0.1em] text-[#e0893a] font-bold mb-1">As found</div>
+        <h3 id="ahu3d-cardH" class="m-0 mb-1.5 text-base font-bold text-white"></h3>
+        <p id="ahu3d-cardP" class="m-0 text-sm leading-normal text-light-grey"></p>
+      </div>
+    </div>
+
+    <div class="mt-3.5 grid gap-3">
+      <div class="flex items-center gap-2 md:gap-3">
+        <button id="ahu3d-toFound" class={`${btn} whitespace-nowrap border border-white/15 text-white bg-transparent hover:border-mint`}>As&#8209;Found</button>
+        <input type="range" id="ahu3d-t" min="0" max="1000" value="0" aria-label="Refurbishment progress, from as-found to refurbished"
+          class="flex-1 min-w-0 w-full appearance-none h-2 rounded-md bg-linear-to-r from-[#7a4a22] via-[#3a4a44] to-primary outline-none focus-visible:outline-2 focus-visible:outline-mint focus-visible:outline-offset-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:size-[30px] [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-white [&::-webkit-slider-thumb]:border-[3px] [&::-webkit-slider-thumb]:border-primary [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:shadow-[0_2px_8px_rgba(0,0,0,.5)] [&::-moz-range-thumb]:size-[26px] [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-white [&::-moz-range-thumb]:border-[3px] [&::-moz-range-thumb]:border-primary" />
+        <button id="ahu3d-toRef" class={`${btn} whitespace-nowrap border border-white/15 text-white bg-transparent hover:border-mint`}>Refurbished</button>
+      </div>
+      <div class="flex flex-wrap gap-2.5 items-center justify-between">
+        <div class="flex flex-wrap gap-2.5 w-full md:w-auto">
+          <button id="ahu3d-play" class={`${btn} flex-1 md:flex-none bg-primary text-white border-0 hover:bg-mint hover:text-dark`}>▶ Play the refurbishment</button>
+          <button id="ahu3d-repBtn" class={`${btn} flex-1 md:flex-none bg-transparent text-white border border-white/15 hover:border-[#e0893a]`}>What would replacing it take?</button>
+        </div>
+        <div id="ahu3d-finish" role="group" aria-label="Wall finish" class="off flex gap-1.5 items-center text-[13px] text-light-grey [&.off]:opacity-35 [&.off]:pointer-events-none">
+          Walls:
+          <button id="ahu3d-wWhite" aria-pressed="true" class={`${btn} border border-white/15 bg-white/5 text-white aria-pressed:bg-white aria-pressed:text-dark aria-pressed:border-white`}>White</button>
+          <button id="ahu3d-wGray" aria-pressed="false" class={`${btn} border border-white/15 bg-white/5 text-white aria-pressed:bg-white aria-pressed:text-dark aria-pressed:border-white`}>Gray</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="ahu3d-cta" class="hidden [&.show]:flex mt-4 border border-white/10 rounded-sm p-5 bg-white/5 gap-3 flex-wrap items-center justify-between">
+      <div>
+        <h3 class="m-0 text-xl font-bold text-white">Is your air handler a refurbishment candidate?</h3>
+        <p class="mt-1 mb-0 text-light-grey text-sm">We'll assess the unit on site and tell you what refurbishment would take.</p>
+      </div>
+      <div class="flex gap-2.5 flex-wrap">
+        <a data-open-quote href="/contact" data-ahu3d-cta="assessment" class="inline-flex items-center justify-center px-6 py-3.5 bg-white text-primary font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-mint hover:text-dark transition-colors whitespace-nowrap">Request an Assessment</a>
+        <a href={`tel:${site.phoneRaw}`} data-ahu3d-cta="call" class="inline-flex items-center justify-center px-6 py-3.5 border border-white text-white font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-white hover:text-dark transition-colors whitespace-nowrap">Call {site.phone}</a>
+      </div>
+    </div>
+
+    <details class="mt-6 text-light-grey group">
+      <summary class="cursor-pointer text-sm font-semibold text-white">What each part of the unit shows</summary>
+      <dl class="mt-3 grid gap-4 md:grid-cols-2 text-sm leading-relaxed">
+        {hotspots.map((h) => (
+          <div>
+            <dt class="font-bold text-white mb-1">{h.name}</dt>
+            <dd class="m-0"><span class="text-[#e0893a] font-semibold">As found:</span> {h.found}</dd>
+            <dd class="m-0 mt-1"><span class="text-mint font-semibold">Refurbished:</span> {h.ref}</dd>
+          </div>
+        ))}
+      </dl>
+      <div id="ahu3d-refs" class="mt-4 text-xs text-slate leading-relaxed">
+        <p class="m-0"><span class="font-semibold text-light-grey">Reference:</span> In laboratory tests, coil pressure drop rose 6% to 30% and airflow fell about 8% on average after a year of dust loading. Yang, Braun and Groll, "The Role of Filtration in Maintaining Clean Heat Exchanger Coils," Purdue University for ARTI and the U.S. Department of Energy, 2004. <a class="underline hover:text-mint" href="https://www.osti.gov/biblio/833362" target="_blank" rel="noopener">osti.gov/biblio/833362</a>. Typical ranges until BAM's own measured data replaces them.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<script>
+  const root = document.getElementById('ahu-3d');
+  const hasWebGL = (() => {
+    try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); }
+    catch { return false; }
+  })();
+
+  // GA4 clicks on the CTA buttons
+  root?.querySelectorAll<HTMLElement>('[data-ahu3d-cta]').forEach((a) =>
+    a.addEventListener('click', () => { try { (window as any).gtag?.('event', 'ahu3d_cta_click', { cta: a.dataset.ahu3dCta }); } catch {} })
+  );
+
+  if (root && !hasWebGL) {
+    // static fallback: show the refurbished poster next to the as-found one
+    const v = document.getElementById('ahu3d-viewer');
+    if (v) v.innerHTML = '<div class="grid grid-cols-1 md:grid-cols-2 h-full"><img src="/ahu-3d/poster-as-found.jpg" alt="As found: rusted 1970s air handler" class="w-full h-full object-cover" /><img src="/ahu-3d/poster-refurbished.jpg" alt="Refurbished: coated pan and floor, white interior, clean coil" class="w-full h-full object-cover" /></div>';
+    root.querySelectorAll('.mt-3\\.5').forEach((el) => el.remove());
+  } else if (root) {
+    let started = false;
+    const start = () => {
+      if (started) return; started = true;
+      import('../scripts/ahu3d/scene.js').then((m) => m.initAhu3D());
+    };
+    const io = new IntersectionObserver((entries) => { if (entries.some((e) => e.isIntersecting)) { io.disconnect(); start(); } }, { rootMargin: '400px 0px' });
+    io.observe(root);
+  }
+</script>

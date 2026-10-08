@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import FAQ from '../components/FAQ.astro';
+import AHU3D from '../components/AHU3D.astro';
 
 interface DiagnosticItem {
   title: string;
@@ -86,6 +87,8 @@ import SectionCta from '../components/SectionCta.astro';
     </div>
     <SectionCta tone="dark" class="px-6" />
   </section>
+
+  {slug === 'ahu' && <AHU3D />}
 
   <!-- ════════════════════ DIAGNOSTICS ════════════════════ -->
   <section class="relative bg-ice py-20 md:py-28">

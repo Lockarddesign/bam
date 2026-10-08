@@ -46,11 +46,17 @@ protocol:
         - "Rust remediation"
         - "Drain pan clearing"
     - title: "Pan Refurbishment"
-      description: "Coating rusted drain pans with a flexible, waterproof membrane."
+      description: "Our three-layer coating system applied to the drain pan, basin, floor, and six inches up the walls, with everything pitched for drainage."
       details:
-        - "Pan-crete / Epoxy"
-        - "Self-leveling application"
-        - "Leak proofing"
+        - "Self-leveling elastomeric acrylic"
+        - "Two-part 100% solids epoxy"
+        - "Antimicrobial top coat"
+    - title: "Antimicrobial Interior"
+      description: "All remaining interior surfaces painted with the antimicrobial coating."
+      details:
+        - "NADCA, IAQA and ASHRAE standards"
+        - "BAM is a member of all three"
+        - "Gray or white finish"
 
 roi:
   stat1:
@@ -69,7 +75,7 @@ faq:
   - question: "How does a dirty AHU coil affect building energy costs?"
     answer: "Biofilm on coil surfaces acts as an insulator and restricts airflow, forcing fans to run at higher speeds and compressors to work harder. This can increase HVAC energy spend by 10 to 15%. BAM's deep coil cleaning restores static pressure drop to design levels, immediately reducing fan energy consumption."
   - question: "Can a corroded AHU drain pan be repaired instead of replaced?"
-    answer: "Yes. BAM resurfaces rusted or leaking condensate pans with a self-leveling, waterproof epoxy membrane that creates a new monolithic basin liner. This eliminates standing water that harbors Legionella and prevents costly water damage to ceilings below without the lead time and expense of OEM pan replacement."
+    answer: "Yes. BAM resurfaces rusted or leaking condensate pans with a three-layer coating system: self-leveling elastomeric acrylic, two-part 100% solids epoxy, and an antimicrobial top coat, applied to the pan, basin, floor and six inches up the walls and pitched for drainage. This eliminates standing water that harbors Legionella and prevents costly water damage to ceilings below without the lead time and expense of OEM pan replacement."
   - question: "What contaminants does AHU restoration remove from the airstream?"
     answer: "BAM's protocol removes mold, biofilm, bacteria, dust, and construction debris from coils, blower housings, plenums, and drain pans. We use EPA-registered biocides for surface sanitization after physical removal. Post-cleaning verification confirms compliance with ASHRAE 62.1 ventilation and NADCA cleanliness standards."
   - question: "How often should commercial air handling units be deep cleaned?"
